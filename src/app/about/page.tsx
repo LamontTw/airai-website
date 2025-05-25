@@ -38,31 +38,56 @@ const values = [
 
 const teamMembers = [
   {
-    name: '李執行長',
+    name: '呂執行長',
     role: '創辦人暨執行長',
     description: '15年軟體開發經驗，專精AI導入策略規劃',
-    achievements: ['台大資工碩士', '前科技公司技術總監', 'AI領域專利3項']
+    achievements: ['交大資工碩士', '前科技公司技術總監', '多家企業AI顧問經驗']
   },
   {
-    name: '王技術長',
+    name: '郭技術長',
     role: '技術長',
     description: '10年AI研發經驗，專長機器學習與深度學習',
-    achievements: ['交大資工博士', '國際期刊論文20篇', 'Google AI認證專家']
+    achievements: ['台大電機博士', '多項AI技術研究成果', '業界技術領域專家']
   },
   {
-    name: '陳項目經理',
+    name: '羅項目經理',
     role: '專案管理總監',
     description: '豐富中小企業服務經驗，專精AI導入流程管理',
-    achievements: ['PMP國際專案管理師', '成功導入案例100+', '客戶滿意度99%']
+    achievements: ['敏捷專案管理認證', '跨產業服務經驗豐富', '客戶滿意度99%']
   }
 ];
 
-const milestones = [
-  { year: '2020', event: '智流科技成立，專注中小企業AI解決方案' },
-  { year: '2021', event: '完成首批10家企業AI導入，獲得市場認可' },
-  { year: '2022', event: '開發自主AI Agent平台，服務客戶數突破50家' },
-  { year: '2023', event: '獲選台灣AI新創企業獎，服務範圍擴展至全台' },
-  { year: '2024', event: '累積導入案例超過100家，成為業界領導品牌' }
+const serviceEvolution = [
+  { 
+    phase: '需求洞察', 
+    title: '深度市場研究',
+    event: '深入了解台灣中小企業AI轉型的真實需求與痛點',
+    icon: '🔍'
+  },
+  { 
+    phase: '解決方案', 
+    title: '實用導向設計',
+    event: '開發適合台灣企業文化的AI導入方法論與工具',
+    icon: '⚙️'
+  },
+  { 
+    phase: '服務創新', 
+    title: '陪伴式服務',
+    event: '建立全程陪伴的AI導入服務模式，確保客戶成功',
+    icon: '🤝'
+  },
+  { 
+    phase: '技術整合', 
+    title: '平台化發展',
+    event: '整合多項AI技術，提供一站式智能化解決方案',
+    icon: '🚀'
+  },
+  { 
+    phase: '生態建構', 
+    title: '夥伴網絡',
+    event: '建立完整的合作夥伴生態系，擴大服務能量',
+    icon: '🌐'
+  }
 ];
 
 export default function AboutPage() {
@@ -239,7 +264,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Company Milestones */}
+      {/* Service Evolution */}
       <section className="section-padding bg-gray-50">
         <div className="container-max">
           <motion.div
@@ -248,37 +273,45 @@ export default function AboutPage() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">發展歷程</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">服務理念發展</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              從創立至今，我們持續成長，為更多企業提供AI轉型服務
+              我們持續精進服務模式，確保為台灣中小企業提供最適合的AI轉型方案
             </p>
           </motion.div>
 
-          <div className="max-w-4xl mx-auto">
-            {milestones.map((milestone, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {serviceEvolution.map((evolution, index) => (
               <motion.div
-                key={milestone.year}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                animate={inView ? { opacity: 1, x: 0 } : {}}
+                key={evolution.phase}
+                initial={{ opacity: 0, y: 30 }}
+                animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
-                className={`flex items-center mb-8 ${
-                  index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                }`}
+                className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
               >
-                <div className={`flex-1 ${index % 2 === 0 ? 'text-right pr-8' : 'text-left pl-8'}`}>
-                  <div className="bg-white p-6 rounded-xl shadow-md">
-                    <div className="text-2xl font-bold text-blue-600 mb-2">
-                      {milestone.year}
-                    </div>
-                    <p className="text-gray-600">
-                      {milestone.event}
-                    </p>
+                <div className="text-center mb-4">
+                  <div className="text-4xl mb-3">{evolution.icon}</div>
+                  <div className="text-sm font-medium text-blue-600 mb-1">
+                    {evolution.phase}
                   </div>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {evolution.title}
+                  </h3>
                 </div>
-                <div className="w-4 h-4 bg-blue-600 rounded-full border-4 border-white shadow-lg z-10"></div>
-                <div className="flex-1"></div>
+                <p className="text-gray-600 text-sm text-center leading-relaxed">
+                  {evolution.event}
+                </p>
               </motion.div>
             ))}
+          </div>
+
+          <div className="mt-12 text-center">
+            <div className="bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl p-8 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold mb-4">持續進化的服務承諾</h3>
+              <p className="text-blue-100 leading-relaxed">
+                我們相信每一家企業都有獨特的需求，因此我們的服務模式會隨著市場變化和客戶反饋持續優化，
+                確保始終能為客戶提供最具價值的AI導入體驗。
+              </p>
+            </div>
           </div>
         </div>
       </section>

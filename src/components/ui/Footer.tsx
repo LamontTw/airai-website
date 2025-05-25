@@ -29,11 +29,12 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="lg:col-span-1">
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">智</span>
-              </div>
-              <span className="text-xl font-bold">智流科技</span>
+            <div className="mb-4">
+              <img 
+                src="/images/logo-nav.png" 
+                alt="AIRAI - 智流科技" 
+                className="h-10 w-auto max-w-[200px] object-contain brightness-0 invert"
+              />
             </div>
             <p className="text-gray-300 mb-6 text-sm leading-relaxed">
               專注於為台灣中小企業提供AI導入與數位轉型解決方案，將AI融入日常工作，提升營運效率。
@@ -41,11 +42,11 @@ export default function Footer() {
             <div className="space-y-2 text-sm">
               <div className="flex items-center space-x-2 text-gray-300">
                 <MapPinIcon className="w-4 h-4" />
-                <span>台北市信義區信義路五段7號</span>
+                <span>新北市板橋區倉後街26號</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-300">
                 <PhoneIcon className="w-4 h-4" />
-                <span>+886-2-1234-5678</span>
+                <span>+886 953-202-811</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-300">
                 <EnvelopeIcon className="w-4 h-4" />
@@ -118,7 +119,7 @@ export default function Footer() {
               <Link href="/terms" className="text-gray-400 hover:text-white transition-colors duration-200">
                 服務條款
               </Link>
-              <Link href="/sitemap" className="text-gray-400 hover:text-white transition-colors duration-200">
+              <Link href="/site-map" className="text-gray-400 hover:text-white transition-colors duration-200">
                 網站地圖
               </Link>
             </div>

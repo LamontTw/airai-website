@@ -3,8 +3,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import emailjs from '@emailjs/browser';
 import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
+import { OrganizationSchema } from '@/components/seo/StructuredData';
+import { EMAILJS_CONFIG, type EmailTemplateParams } from '@/lib/emailjs-config';
 import { 
   PhoneIcon, 
   EnvelopeIcon, 
@@ -19,9 +22,9 @@ const contactInfo = [
   {
     icon: PhoneIcon,
     title: '電話諮詢',
-    content: '+886-2-1234-5678',
+    content: '+886 953-202-811',
     description: '週一至週五 09:00-18:00',
-    action: 'tel:+886212345678'
+    action: 'tel:+886953202811'
   },
   {
     icon: EnvelopeIcon,
@@ -33,16 +36,16 @@ const contactInfo = [
   {
     icon: MapPinIcon,
     title: '公司地址',
-    content: '台北市信義區信義路五段7號',
-    description: '35樓智流科技',
+    content: '新北市板橋區倉後街26號',
+    description: '智流科技',
     action: 'https://maps.google.com'
   },
   {
     icon: ChatBubbleLeftRightIcon,
     title: 'LINE 官方帳號',
-    content: '@airai-tech',
+    content: '@365cpgih',
     description: '即時線上諮詢',
-    action: 'https://line.me/R/ti/p/@airai-tech'
+    action: 'https://line.me/R/ti/p/@365cpgih'
   }
 ];
 
@@ -73,6 +76,8 @@ export default function ContactPage() {
   });
 
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -82,30 +87,87 @@ export default function ContactPage() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // 在實際應用中，這裡會發送表單數據到後端
-    console.log('Form submitted:', formData);
-    setIsSubmitted(true);
-    
-    // 3秒後重置狀態
-    setTimeout(() => {
-      setIsSubmitted(false);
-      setFormData({
-        name: '',
-        company: '',
-        email: '',
-        phone: '',
-        consultationType: '',
-        message: '',
-        budget: '',
-        timeline: ''
-      });
-    }, 3000);
+    setIsSubmitting(true);
+    setSubmitError('');
+
+    try {
+      // 準備發送的數據
+      const templateParams: EmailTemplateParams = {
+        from_name: formData.name,
+        from_company: formData.company,
+        from_email: formData.email,
+        from_phone: formData.phone,
+        consultation_type: formData.consultationType,
+        budget_range: formData.budget,
+        timeline: formData.timeline,
+        message: formData.message,
+        to_email: EMAILJS_CONFIG.TO_EMAIL,
+        reply_to: formData.email,
+        current_date: new Date().toLocaleString('zh-TW', {
+          year: 'numeric',
+          month: '2-digit', 
+          day: '2-digit',
+          hour: '2-digit',
+          minute: '2-digit'
+        })
+      };
+
+      // 暫時先記錄到 console，等 EmailJS 設定完成後再啟用
+      console.log('表單提交資料:', templateParams);
+      
+      // TODO: 等 EmailJS 設定完成後啟用以下代碼
+      // await emailjs.send(
+      //   EMAILJS_CONFIG.SERVICE_ID, 
+      //   EMAILJS_CONFIG.TEMPLATE_ID, 
+      //   templateParams, 
+      //   EMAILJS_CONFIG.PUBLIC_KEY
+      // );
+      
+      setIsSubmitted(true);
+      
+      // 5秒後重置狀態
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: '',
+          company: '',
+          email: '',
+          phone: '',
+          consultationType: '',
+          message: '',
+          budget: '',
+          timeline: ''
+        });
+      }, 5000);
+
+    } catch (error) {
+      console.error('發送失敗:', error);
+      setSubmitError('發送失敗，請稍後再試或直接聯絡我們');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
     <main className="min-h-screen">
+      <OrganizationSchema customData={{
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+886 953-202-811",
+          "email": "contact@airai.tw",
+          "contactType": "customer service",
+          "availableLanguage": ["Chinese", "English"],
+          "areaServed": "TW",
+          "hoursAvailable": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "18:00"
+          }
+        }
+      }} />
       <Navigation />
       
       {/* Hero Section */}
@@ -149,13 +211,12 @@ export default function ContactPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
             {contactInfo.map((info, index) => (
-              <motion.a
+              <motion.div
                 key={info.title}
-                href={info.action}
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
-                className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100 hover:shadow-lg transition-shadow duration-300 text-center group cursor-pointer"
+                className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl border border-blue-100 hover:shadow-lg transition-shadow duration-300 text-center group"
               >
                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
                   <info.icon className="w-8 h-8 text-white" />
@@ -163,13 +224,30 @@ export default function ContactPage() {
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">
                   {info.title}
                 </h3>
-                <p className="text-blue-600 font-medium mb-1">
-                  {info.content}
-                </p>
+                {info.title === '電子郵件' ? (
+                  <div className="mb-1">
+                    <p className="text-blue-600 font-medium select-text cursor-text">
+                      {info.content}
+                    </p>
+                    <a 
+                      href={info.action}
+                      className="inline-block mt-2 text-sm text-blue-500 hover:text-blue-700 underline"
+                    >
+                      點擊發送郵件
+                    </a>
+                  </div>
+                ) : (
+                  <a 
+                    href={info.action}
+                    className="text-blue-600 font-medium mb-1 block hover:text-blue-700 transition-colors duration-200"
+                  >
+                    {info.content}
+                  </a>
+                )}
                 <p className="text-gray-500 text-sm">
                   {info.description}
                 </p>
-              </motion.a>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -339,12 +417,28 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {submitError && (
+                    <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-red-700 text-sm">
+                      ❌ {submitError}
+                    </div>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full btn-primary inline-flex items-center justify-center group"
+                    disabled={isSubmitting}
+                    className="w-full btn-primary inline-flex items-center justify-center group disabled:opacity-50 disabled:cursor-not-allowed"
                   >
-                    提交諮詢需求
-                    <PaperAirplaneIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                    {isSubmitting ? (
+                      <>
+                        <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin mr-2"></div>
+                        發送中...
+                      </>
+                    ) : (
+                      <>
+                        提交諮詢需求
+                        <PaperAirplaneIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                      </>
+                    )}
                   </button>
                 </form>
               )}

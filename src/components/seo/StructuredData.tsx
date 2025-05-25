@@ -11,21 +11,23 @@ export function OrganizationSchema({ customData }: OrganizationSchemaProps) {
     "name": siteConfig.company.name,
     "description": siteConfig.company.description,
     "url": siteConfig.url,
-    "logo": `${siteConfig.url}/images/logo.png`,
-    "image": `${siteConfig.url}/images/og-image.jpg`,
+    "logo": `${siteConfig.url}/images/logo-full.png`,
+    "image": `${siteConfig.url}/images/logo-full.png`,
     "email": siteConfig.company.email,
     "telephone": siteConfig.company.phone,
     "address": {
       "@type": "PostalAddress",
-      "addressLocality": "台北市",
-      "addressRegion": "台灣",
+      "streetAddress": "倉後街26號",
+      "addressLocality": "板橋區",
+      "addressRegion": "新北市",
       "addressCountry": "TW"
     },
     "sameAs": [
       siteConfig.social.linkedin,
       siteConfig.social.twitter,
       siteConfig.social.facebook,
-      siteConfig.social.youtube
+      siteConfig.social.youtube,
+      siteConfig.social.line
     ],
     "foundingDate": "2024",
     "areaServed": {
@@ -86,13 +88,13 @@ export function WebsiteSchema({ customData }: WebsiteSchemaProps) {
     "name": siteConfig.name,
     "description": siteConfig.description,
     "url": siteConfig.url,
-    "image": `${siteConfig.url}/images/og-image.jpg`,
+    "image": `${siteConfig.url}/images/logo-full.png`,
     "publisher": {
       "@type": "Organization",
       "name": siteConfig.company.name,
       "logo": {
         "@type": "ImageObject",
-        "url": `${siteConfig.url}/images/logo.png`
+        "url": `${siteConfig.url}/images/logo-full.png`
       }
     },
     "potentialAction": {
@@ -146,7 +148,7 @@ export function ServiceSchema({
       "@type": "Organization",
       "name": siteConfig.company.name,
       "url": siteConfig.url,
-      "logo": `${siteConfig.url}/images/logo.png`,
+      "logo": `${siteConfig.url}/images/logo-full.png`,
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": siteConfig.company.phone,

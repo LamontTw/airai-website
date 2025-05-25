@@ -1,7 +1,7 @@
 // SEO配置文件
 export const siteConfig = {
-  name: "AIRAI - 智能AI解決方案專家",
-  title: "AIRAI | 企業AI導入專家 - 智能解決方案顧問",
+  name: "AIRAI - 智流科技",
+  title: "AIRAI | 企業AI導入專家 - 智流科技",
   description: "AIRAI提供專業的企業AI導入諮詢服務，包含AI技術選型、ROI計算、實施指南等完整解決方案。幫助企業成功轉型，提升營運效率。",
   keywords: [
     "AI人工智能",
@@ -26,7 +26,7 @@ export const siteConfig = {
     "語音識別"
   ],
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw",
-  ogImage: "/images/og-image.jpg",
+  ogImage: "/images/logo-full.png",
   twitterHandle: "@airai_tw",
   author: {
     name: "AIRAI Team",
@@ -34,17 +34,18 @@ export const siteConfig = {
     url: "https://airai.tw"
   },
   company: {
-    name: "AIRAI智能科技",
+    name: "智流科技有限公司",
     description: "專業的企業AI導入解決方案提供商",
-    address: "台灣台北市",
-    phone: "+886-2-XXXX-XXXX",
-    email: "info@airai.tw"
+    address: "新北市板橋區倉後街26號",
+    phone: "+886 953-202-811",
+    email: "contact@airai.tw"
   },
   social: {
     twitter: "https://twitter.com/airai_tw",
     linkedin: "https://linkedin.com/company/airai",
     facebook: "https://facebook.com/airai.tw",
-    youtube: "https://youtube.com/@airai"
+    youtube: "https://youtube.com/@airai",
+    line: "https://line.me/R/ti/p/@365cpgih"
   }
 };
 

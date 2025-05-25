@@ -38,11 +38,12 @@ export default function Navigation() {
       <div className="container-max">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center space-x-2">
-            <div className="w-8 h-8 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">智</span>
-            </div>
-            <span className="text-xl font-bold text-gray-900">智流科技</span>
+          <Link href="/" className="flex items-center">
+            <img 
+              src="/images/logo-nav.png" 
+              alt="AIRAI - 智流科技" 
+              className="h-13 w-auto max-w-[200px] object-contain"
+            />
           </Link>
 
           {/* Desktop Navigation */}

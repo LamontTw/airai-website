@@ -120,6 +120,19 @@ const trends: ResourceItem[] = [
 const blogPosts: BlogPost[] = [
   {
     id: 1,
+    title: 'OpenAI企業AI觀點深度解析',
+    description: '解讀OpenAI對企業AI應用的前瞻觀點，探索AI如何重塑企業競爭力。',
+    category: '行業洞察',
+    author: 'AIRAI研究團隊',
+    excerpt: '深入分析OpenAI《AI in the Enterprise》文章的核心觀點，結合台灣市場實況，為企業提供AI轉型策略指引...',
+    readTime: '15分鐘',
+    date: '2024-05-28',
+    tags: ['OpenAI', '企業AI', '數位轉型', '行業洞察'],
+    color: 'purple',
+    featured: true
+  },
+  {
+    id: 2,
     title: 'ChatGPT在企業應用的實務經驗分享',
     description: '如何將ChatGPT整合到企業工作流程中，提升團隊協作效率。',
     category: '技術實務',
@@ -128,11 +141,10 @@ const blogPosts: BlogPost[] = [
     readTime: '8分鐘',
     date: '2024-05-25',
     tags: ['ChatGPT', '企業應用', '實務分享'],
-    color: 'blue',
-    featured: true
+    color: 'blue'
   },
   {
-    id: 2,
+    id: 3,
     title: 'RPA與AI結合的最佳實務',
     description: '探討如何將傳統RPA與現代AI技術結合，創造更大的自動化價值。',
     category: '自動化',
@@ -144,7 +156,7 @@ const blogPosts: BlogPost[] = [
     color: 'green'
   },
   {
-    id: 3,
+    id: 4,
     title: '小型企業AI導入成本控制策略',
     description: '針對預算有限的小型企業，提供實用的AI導入成本控制方法。',
     category: '成本管理',
@@ -470,30 +482,36 @@ export default function ResourcesPage() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={inView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.1 + index * 0.1 }}
-                className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
+                className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer group"
               >
-                <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 ${colorClasses[guide.color]}`}>
-                  {guide.category}
-                </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3">{guide.title}</h3>
-                <p className="text-gray-600 text-sm mb-4">{guide.description}</p>
-                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                  <div className="flex items-center">
-                    <ClockIcon className="w-4 h-4 mr-1" />
-                    {guide.readTime}
+                <Link href={`/resources/ai-guide/${guide.id}`} className="block">
+                  <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 ${colorClasses[guide.color]}`}>
+                    {guide.category}
                   </div>
-                  <div className="flex items-center">
-                    <CalendarIcon className="w-4 h-4 mr-1" />
-                    {guide.date}
+                  <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-200">{guide.title}</h3>
+                  <p className="text-gray-600 text-sm mb-4">{guide.description}</p>
+                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                    <div className="flex items-center">
+                      <ClockIcon className="w-4 h-4 mr-1" />
+                      {guide.readTime}
+                    </div>
+                    <div className="flex items-center">
+                      <CalendarIcon className="w-4 h-4 mr-1" />
+                      {guide.date}
+                    </div>
                   </div>
-                </div>
-                <div className="flex flex-wrap gap-2">
-                  {guide.tags.map((tag) => (
-                    <span key={tag} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {guide.tags.map((tag) => (
+                      <span key={tag} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                        #{tag}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="text-blue-600 hover:text-blue-700 font-medium text-sm inline-flex items-center group">
+                    閱讀指南
+                    <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
+                  </div>
+                </Link>
               </motion.article>
             ))}
           </div>
@@ -559,7 +577,7 @@ export default function ResourcesPage() {
                     ))}
                   </div>
                   
-                  <Link href={`/resources/blog/${post.id}`} className="text-green-600 hover:text-green-700 font-medium text-sm inline-flex items-center group">
+                  <Link href={post.id === 1 ? `/resources/blog/openai-enterprise-ai` : `/resources/blog/${post.id}`} className="text-green-600 hover:text-green-700 font-medium text-sm inline-flex items-center group">
                     閱讀全文
                     <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
                   </Link>
