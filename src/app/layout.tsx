@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { defaultMetadata } from "@/lib/seo";
 import { OrganizationSchema, WebsiteSchema } from "@/components/seo/StructuredData";
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const inter = Inter({
   subsets: ["latin"],
@@ -44,6 +45,7 @@ export default function RootLayout({
             本網站需要JavaScript來提供最佳使用體驗。請啟用JavaScript或使用支援JavaScript的瀏覽器。
           </div>
         </noscript>
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
       </body>
     </html>
   );
