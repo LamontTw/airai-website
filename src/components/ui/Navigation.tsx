@@ -42,7 +42,7 @@ export default function Navigation() {
             <img 
               src="/images/logo-nav.png" 
               alt="AIRAI - 智流科技" 
-              className="h-13 w-auto max-w-[200px] object-contain"
+              className="h-8 sm:h-10 lg:h-[3.25rem] w-auto max-w-[150px] sm:max-w-[180px] lg:max-w-[260px] object-contain"
             />
           </Link>
 

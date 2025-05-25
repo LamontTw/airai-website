@@ -125,21 +125,21 @@ export default function ContactPage() {
       //   EMAILJS_CONFIG.PUBLIC_KEY
       // );
       
-      setIsSubmitted(true);
-      
+    setIsSubmitted(true);
+    
       // 5秒後重置狀態
-      setTimeout(() => {
-        setIsSubmitted(false);
-        setFormData({
-          name: '',
-          company: '',
-          email: '',
-          phone: '',
-          consultationType: '',
-          message: '',
-          budget: '',
-          timeline: ''
-        });
+    setTimeout(() => {
+      setIsSubmitted(false);
+      setFormData({
+        name: '',
+        company: '',
+        email: '',
+        phone: '',
+        consultationType: '',
+        message: '',
+        budget: '',
+        timeline: ''
+      });
       }, 5000);
 
     } catch (error) {
@@ -227,8 +227,8 @@ export default function ContactPage() {
                 {info.title === '電子郵件' ? (
                   <div className="mb-1">
                     <p className="text-blue-600 font-medium select-text cursor-text">
-                      {info.content}
-                    </p>
+                  {info.content}
+                </p>
                     <a 
                       href={info.action}
                       className="inline-block mt-2 text-sm text-blue-500 hover:text-blue-700 underline"
@@ -435,8 +435,8 @@ export default function ContactPage() {
                       </>
                     ) : (
                       <>
-                        提交諮詢需求
-                        <PaperAirplaneIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                    提交諮詢需求
+                    <PaperAirplaneIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
                       </>
                     )}
                   </button>

@@ -485,28 +485,28 @@ export default function ResourcesPage() {
                 className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300 cursor-pointer group"
               >
                 <Link href={`/resources/ai-guide/${guide.id}`} className="block">
-                  <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 ${colorClasses[guide.color]}`}>
-                    {guide.category}
-                  </div>
+                <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium mb-4 ${colorClasses[guide.color]}`}>
+                  {guide.category}
+                </div>
                   <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-200">{guide.title}</h3>
-                  <p className="text-gray-600 text-sm mb-4">{guide.description}</p>
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center">
-                      <ClockIcon className="w-4 h-4 mr-1" />
-                      {guide.readTime}
-                    </div>
-                    <div className="flex items-center">
-                      <CalendarIcon className="w-4 h-4 mr-1" />
-                      {guide.date}
-                    </div>
+                <p className="text-gray-600 text-sm mb-4">{guide.description}</p>
+                <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                  <div className="flex items-center">
+                    <ClockIcon className="w-4 h-4 mr-1" />
+                    {guide.readTime}
                   </div>
+                  <div className="flex items-center">
+                    <CalendarIcon className="w-4 h-4 mr-1" />
+                    {guide.date}
+                  </div>
+                </div>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {guide.tags.map((tag) => (
-                      <span key={tag} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
-                        #{tag}
-                      </span>
-                    ))}
-                  </div>
+                  {guide.tags.map((tag) => (
+                    <span key={tag} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                      #{tag}
+                    </span>
+                  ))}
+                </div>
                   <div className="text-blue-600 hover:text-blue-700 font-medium text-sm inline-flex items-center group">
                     閱讀指南
                     <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
