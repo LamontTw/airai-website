@@ -1,87 +1,106 @@
-# 🚀 快速部署指南
+# 🚀 快速部署指南 (Vercel)
 
-## 方法一：使用自動腳本（推薦）
+## 🎯 如果您已經設定了 Vercel + GitHub 連接
 
-1. **執行部署腳本**：
+### 一鍵部署（推薦）
+只需要執行以下命令，Vercel 會自動檢測到更改並重新部署：
+
+```bash
+git add .
+git commit -m "部署更新 $(date)"
+git push
+```
+
+### 或使用我們的快速腳本：
 ```powershell
-.\deploy.ps1
+.\quick-deploy.ps1
 ```
-
-2. **按照提示完成部署**
-
-## 方法二：手動部署
-
-### 步驟 1：GitHub 設定
-
-1. 在 [GitHub](https://github.com) 創建新倉庫 `airai-website`
-2. 執行以下命令：
-
-```bash
-git remote add origin https://github.com/你的用戶名/airai-website.git
-git branch -M main
-git push -u origin main
-```
-
-### 步驟 2：Vercel 部署
-
-1. **安裝 Vercel CLI**：
-```bash
-npm install -g vercel
-```
-
-2. **登入 Vercel**：
-```bash
-vercel login
-```
-
-3. **部署專案**：
-```bash
-vercel
-```
-
-4. **按照提示設定**：
-   - Project name: `airai-website`
-   - Framework: `Next.js`
-   - 其他選項保持預設
-
-### 步驟 3：設定自定義網域（GoDaddy）
-
-1. **在 Vercel 添加網域**：
-   - 進入專案儀表板
-   - Settings → Domains
-   - 添加您的 GoDaddy 網域
-
-2. **在 GoDaddy 設定 DNS**：
-   - 登入 GoDaddy
-   - 進入 DNS 管理
-   - 添加 A 記錄：
-     ```
-     Type: A
-     Name: @
-     Value: 76.76.19.61
-     TTL: 600
-     ```
-   - 添加 CNAME 記錄：
-     ```
-     Type: CNAME
-     Name: www
-     Value: cname.vercel-dns.com
-     TTL: 600
-     ```
-
-3. **等待 DNS 傳播**（1-48小時）
-
-## 🎯 部署完成檢查
-
-- [ ] 網站可以訪問
-- [ ] SSL 證書正常（綠色鎖頭）
-- [ ] 所有頁面正常載入
-- [ ] 響應式設計正常
-
-## 📞 需要幫助？
-
-查看詳細的 `DEPLOYMENT_GUIDE.md` 或聯繫技術支援。
 
 ---
 
-**恭喜！您的 AI 網站現在已經部署完成！** 🎉 
+## 🔧 首次設定 (僅需一次)
+
+### 方法一：Vercel 網頁界面（推薦）
+
+1. **登入 [Vercel](https://vercel.com)**
+2. **點擊 "Add New Project"**
+3. **連接 GitHub 倉庫**：
+   - 選擇您的 `airai-website` 倉庫
+   - Framework: 自動檢測為 `Next.js`
+   - 保持預設設定
+4. **點擊 "Deploy"**
+5. **完成！** 🎉
+
+### 方法二：使用 Vercel CLI
+
+```bash
+# 安裝 Vercel CLI（如果還沒安裝）
+npm install -g vercel
+
+# 登入
+vercel login
+
+# 部署
+vercel
+
+# 設定生產環境
+vercel --prod
+```
+
+---
+
+## 📋 部署檢查清單
+
+首次部署後：
+- [ ] 網站可以訪問
+- [ ] SSL 證書正常（綠色鎖頭）
+- [ ] Favicon 正常顯示
+- [ ] 響應式設計正常
+- [ ] 所有頁面正常載入
+
+之後每次更新只需：
+- [ ] `git push` 
+- [ ] 等待自動部署完成（通常1-2分鐘）
+
+---
+
+## 🌐 自定義網域設定
+
+1. **在 Vercel 項目設定中**：
+   - Settings → Domains
+   - 添加您的網域（例如：`airai.tw`）
+
+2. **在網域提供商（如 GoDaddy）設定 DNS**：
+   ```
+   A 記錄:
+   Name: @
+   Value: 76.76.19.61
+   
+   CNAME 記錄:
+   Name: www  
+   Value: cname.vercel-dns.com
+   ```
+
+3. **等待 DNS 傳播**（1-48小時）
+
+---
+
+## 🚨 故障排除
+
+**部署失敗？**
+- 檢查 Vercel 儀表板中的建構日誌
+- 確保 `npm run build` 在本地運行正常
+
+**網站無法訪問？**
+- 檢查 DNS 設定
+- 等待 DNS 傳播完成
+
+**需要強制重新部署？**
+```bash
+git commit --allow-empty -m "強制重新部署"
+git push
+```
+
+---
+
+**🎉 恭喜！您的 AI 網站現在使用 Vercel 自動部署！** 
