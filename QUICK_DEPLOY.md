@@ -2,18 +2,23 @@
 
 ## 🎯 如果您已經設定了 Vercel + GitHub 連接
 
-### 一鍵部署（推薦）
-只需要執行以下命令，Vercel 會自動檢測到更改並重新部署：
+### 一鍵智能部署（推薦）
+使用智能腳本，會自動分析修改內容並生成有意義的提交信息：
 
+```powershell
+.\quick-deploy.ps1
+```
+
+### 或手動部署：
 ```bash
 git add .
 git commit -m "部署更新 $(date)"
 git push
 ```
 
-### 或使用我們的快速腳本：
+### 簡單部署（無智能分析）：
 ```powershell
-.\quick-deploy.ps1
+.\simple-deploy.ps1
 ```
 
 ---

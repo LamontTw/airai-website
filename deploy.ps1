@@ -17,16 +17,17 @@ Write-Host ""
 
 # 選擇部署方式
 Write-Host "選擇部署方式：" -ForegroundColor White
-Write-Host "1. 快速部署 (git push，需已設定 Vercel)" -ForegroundColor Cyan  
+Write-Host "1. 智能部署 (自動分析提交信息，需已設定 Vercel)" -ForegroundColor Cyan  
 Write-Host "2. 首次設定 Vercel CLI 部署" -ForegroundColor Cyan
 Write-Host "3. 查看部署指南" -ForegroundColor Cyan
+Write-Host "4. 簡單部署 (固定提交信息)" -ForegroundColor Gray
 Write-Host ""
 
-$choice = Read-Host "請選擇 (1-3)"
+$choice = Read-Host "請選擇 (1-4)"
 
 switch ($choice) {
     "1" {
-        Write-Host "🚀 執行快速部署..." -ForegroundColor Green
+        Write-Host "🚀 執行智能部署..." -ForegroundColor Green
         .\quick-deploy.ps1
     }
     "2" {
@@ -61,6 +62,10 @@ switch ($choice) {
         } else {
             Write-Host "找不到 QUICK_DEPLOY.md 文件" -ForegroundColor Red
         }
+    }
+    "4" {
+        Write-Host "🔄 執行簡單部署..." -ForegroundColor Green
+        .\simple-deploy.ps1
     }
     default {
         Write-Host "❌ 無效選擇" -ForegroundColor Red
