@@ -103,7 +103,7 @@ export default function ContactPage() {
         budget_range: formData.budget,
         timeline: formData.timeline,
         message: formData.message,
-        to_email: EMAILJS_CONFIG.TO_EMAIL,
+        to_email: 'contact@airai.tw',
         reply_to: formData.email,
         current_date: new Date().toLocaleString('zh-TW', {
           year: 'numeric',
@@ -117,13 +117,13 @@ export default function ContactPage() {
       // 暫時先記錄到 console，等 EmailJS 設定完成後再啟用
       console.log('表單提交資料:', templateParams);
       
-      // TODO: 等 EmailJS 設定完成後啟用以下代碼
-      // await emailjs.send(
-      //   EMAILJS_CONFIG.SERVICE_ID, 
-      //   EMAILJS_CONFIG.TEMPLATE_ID, 
-      //   templateParams, 
-      //   EMAILJS_CONFIG.PUBLIC_KEY
-      // );
+      // EmailJS 發送郵件
+      await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!, 
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!, 
+        templateParams, 
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+      );
       
     setIsSubmitted(true);
     

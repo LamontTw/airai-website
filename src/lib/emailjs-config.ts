@@ -22,4 +22,5 @@ export interface EmailTemplateParams {
   to_email: string;
   reply_to: string;
   current_date: string;
+  [key: string]: unknown; // 添加索引簽名以符合EmailJS要求
 } 
