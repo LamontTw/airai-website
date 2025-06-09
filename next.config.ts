@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   async redirects() {
     return [
+      // HTTPS 重新導向（僅在生產環境）
       {
         source: '/:path*',
         has: [
@@ -16,6 +17,7 @@ const nextConfig: NextConfig = {
         destination: 'https://airai.tw/:path*',
         permanent: true,
       },
+      // www 到非 www 重新導向
       {
         source: '/:path*',
         has: [
