@@ -21,13 +21,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: `${baseUrl}/services`,
       lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
+      changeFrequency: 'monthly' as const,
       priority: 0.9,
     },
     {
       url: `${baseUrl}/cases`,
       lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
+      changeFrequency: 'monthly' as const,
       priority: 0.8,
     },
     {
@@ -56,13 +56,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/terms`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.4,
+      lastModified: new Date('2024-05-15'),
+      changeFrequency: 'yearly' as const,
+      priority: 0.6,
     },
   ]
 
-  // 資源頁面
+  // 資源頁面 - 提高優先級
   const resourcePages = [
     {
       url: `${baseUrl}/resources/ai-guide/1`,
@@ -74,7 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/resources/tools/1`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: 0.8,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/resources/tools/2`,
@@ -92,13 +92,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/resources/tools/4`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
-      priority: 0.8,
+      priority: 0.7,
     },
     {
       url: `${baseUrl}/resources/trends/1`,
       lastModified: new Date(),
-      changeFrequency: 'weekly' as const,
+      changeFrequency: 'monthly' as const,
       priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/resources/trends`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
     },
   ]
 
