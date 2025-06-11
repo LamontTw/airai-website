@@ -109,11 +109,10 @@ export const defaultMetadata = {
   },
   alternates: {
     canonical: siteConfig.url,
-    // 暫時移除多語言設置，避免 404 錯誤
-    // languages: {
-    //   'zh-TW': siteConfig.url,
-    //   'zh-CN': `${siteConfig.url}/cn`,
-    //   'en-US': `${siteConfig.url}/en`,
-    // },
+    languages: {
+      'zh-TW': siteConfig.url,
+      'en-US': `${siteConfig.url}/en`,
+      'ja-JP': `${siteConfig.url}/ja`,
+    },
   },
 }; 

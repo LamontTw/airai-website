@@ -149,6 +149,162 @@ export const translations = {
       serviceProcess: '服務流程',
       learnMore: '了解更多'
     },
+
+    // 問題解決方案區塊
+    problemSolution: {
+      title: '中小企業的',
+      titleHighlight: '挑戰與機會',
+      subtitle: '了解您的痛點，提供精準的 AI 解決方案',
+      problemsTitle: '常見挑戰',
+      solutionsTitle: '智流科技解決方案',
+      ctaText: '了解更多解決方案',
+      problems: {
+        staffShortage: {
+          title: '人力短缺困境',
+          description: '少子化與高齡化導致專業人才招募困難，員工身兼數職影響效率',
+          stat: '45.5%',
+          statDesc: '企業擔心投入資金無預期成效'
+        },
+        manualWork: {
+          title: '繁瑣手工作業',
+          description: '大量重複性工作耗費人力，手動數據輸入容易出錯且效率低下',
+          stat: '14小時',
+          statDesc: '每日手動作業時間'
+        },
+        highCost: {
+          title: '高成本低效益',
+          description: '缺乏自動化工具，營運成本居高不下，難以提升競爭力',
+          stat: '24.5%',
+          statDesc: '企業認為解決方案價格難以負擔'
+        }
+      },
+      solutions: {
+        aiAgent: {
+          title: 'AI Agent 智能導入',
+          description: '客製化 AI 解決方案，自動化重複性工作，24/7 不間斷服務',
+          benefits: ['85% 詢問自動回覆', '14小時人工時間節省', '99% 數據準確率']
+        },
+        dataAnalytics: {
+          title: '數據驅動決策',
+          description: '即時數據收集與分析，智能儀表板提供營運洞察',
+          benefits: ['即時銷售分析', '自動補貨建議', '精準庫存管理']
+        },
+        hrOptimization: {
+          title: '人力資源優化',
+          description: '釋放人力投入高價值工作，提升員工滿意度與生產力',
+          benefits: ['50% 營運成本降低', '員工專注核心業務', '提升服務品質']
+        }
+      }
+    },
+
+    // 成功案例區塊
+    caseStudies: {
+      title: '成功案例',
+      subtitle: '真實客戶案例，證實AI導入的實際效益',
+      viewMore: '查看更多案例',
+      challenge: '挑戰',
+      solution: '解決方案',
+      results: '成果',
+      testimonial: '客戶回饋',
+      cases: {
+        wholesale: {
+          industry: '批發零售業',
+          company: '中型批發商',
+          challenge: '每天手動錄入十幾到數十張進貨單，常常加班到很晚，人為疏失頻繁',
+          solution: 'AI辨識系統',
+          description: '開發AI辨識系統，只要用手機拍下進貨單，系統就能自動讀取關鍵資訊，直接更新到資料庫',
+          results: [
+            '14小時人工作業時間大幅縮減',
+            '99%數據準確率，杜絕人為疏失',
+            '精準掌握庫存狀況',
+            '成本比iPhone還便宜'
+          ],
+          testimonial: '早知道AI這麼好用，我就不會拖這麼久才開始！'
+        },
+        ecommerce: {
+          industry: '電商平台',
+          company: '多平台電商',
+          challenge: '無法即時掌握各平台銷售狀況，庫存管理困難，缺乏數據洞察',
+          solution: '智慧儀表板',
+          description: '建立智慧儀表板，自動整合MOMO、PChome等大平台的銷售數據，AI分析銷售趨勢並提供補貨建議',
+          results: [
+            '即時掌握多平台銷售狀況',
+            'AI自動補貨建議',
+            '銷售趨勢分析',
+            '庫存週轉率提升30%'
+          ],
+          testimonial: '現在每天只要看一個畫面，就能掌握昨天的銷售狀況，還能即時發現熱賣商品。'
+        },
+        accounting: {
+          industry: '會計服務業',
+          company: '中小型會計事務所',
+          challenge: '報稅季加班到半夜，大量重複性文件處理工作耗費人力',
+          solution: 'RPA自動化系統',
+          description: '設計RPA系統，自動登入財政部網站，下載相關文件憑證，並做好分類歸檔',
+          results: [
+            '原本14小時工作，現在半夜自動完成',
+            '100%文件分類準確性',
+            '員工可專注高價值工作',
+            '客戶滿意度大幅提升'
+          ],
+          testimonial: '系統在半夜默默完成所有繁瑣工作，隔天上班就能看到整理好的文件。'
+        },
+        customerService: {
+          industry: '客服中心',
+          company: '線上服務平台',
+          challenge: '客戶詢問量大，客服人員不足，回覆速度慢影響客戶滿意度',
+          solution: 'AI聊天機器人',
+          description: '打造AI聊天機器人，將過去累積的數百筆Q&A訓練模型，透過LINE即時回應客戶問題',
+          results: [
+            '85%詢問自動回覆',
+            '24/7不間斷服務',
+            '客服人員專注複雜問題',
+            '客戶滿意度提升40%'
+          ],
+          testimonial: '超過85%的詢問都可以自動回覆，客服人員現在能專注處理更有價值的工作。'
+        }
+      }
+    },
+
+    // CTA 區塊
+    cta: {
+      title: '準備好開始您的',
+      titleHighlight: 'AI 轉型之旅',
+      titleSuffix: '了嗎？',
+      subtitle: '不要讓競爭對手搶得先機。立即與我們聯繫，獲得專屬的AI導入諮詢，讓您的企業在數位時代中脫穎而出。',
+      primaryButton: '立即免費諮詢',
+      secondaryButton: '查看成功案例',
+      whyChooseTitle: '為什麼選擇智流科技？',
+      urgencyNote: '限時優惠：本月諮詢免費提供AI導入可行性評估報告',
+      customerQuote: '智流科技不只是技術供應商，更是我們數位轉型路上的最佳夥伴',
+      customerQuoteSource: '客戶真實回饋',
+      benefits: [
+        '免費評估您的AI導入需求',
+        '客製化解決方案設計',
+        '專業團隊全程服務',
+        '可衡量的投資回報',
+        '完整的培訓與支援',
+        '持續優化與維護'
+      ],
+      stats: {
+        cases: {
+          number: '100+',
+          label: '成功導入案例'
+        },
+        automation: {
+          number: '85%',
+          label: '平均自動化率'
+        },
+        roi: {
+          number: '6個月',
+          label: '平均投資回收期'
+        },
+        support: {
+          number: '24/7',
+          label: '技術支援服務'
+        }
+      }
+    },
     
     // 頁尾
     footer: {
