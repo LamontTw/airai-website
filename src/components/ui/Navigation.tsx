@@ -1,22 +1,37 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import LanguageSwitcher from './LanguageSwitcher';
+import { getTranslations } from '@/lib/i18n';
 
-const navigationItems = [
-  { name: '首頁', href: '/' },
-  { name: '關於我們', href: '/about' },
-  { name: '服務項目', href: '/services' },
-  { name: '成功案例', href: '/cases' },
-  { name: '資源洞察', href: '/resources' },
-  { name: '聯絡我們', href: '/contact' },
-];
+// 導航項目配置
+const getNavigationItems = (isEnglish: boolean) => {
+  const t = getTranslations(isEnglish ? 'en' : 'zh');
+  const prefix = isEnglish ? '/en' : '';
+  
+  return [
+    { name: t.nav.home, href: `${prefix}/` },
+    { name: t.nav.about, href: `${prefix}/about` },
+    { name: t.nav.services, href: `${prefix}/services` },
+    { name: t.nav.cases, href: `${prefix}/cases` },
+    { name: t.nav.resources, href: `${prefix}/resources` },
+    { name: t.nav.contact, href: `${prefix}/contact` },
+  ];
+};
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  
+  // 判斷當前語言
+  const isEnglish = pathname.startsWith('/en');
+  const t = getTranslations(isEnglish ? 'en' : 'zh');
+  const navigationItems = getNavigationItems(isEnglish);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -58,11 +73,12 @@ export default function Navigation() {
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-blue-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
             ))}
+            <LanguageSwitcher />
             <Link
-              href="/contact"
+              href={isEnglish ? "/en/contact" : "/contact"}
               className="btn-primary"
             >
-              免費諮詢
+              {t.nav.consultation}
             </Link>
           </div>
 
@@ -100,12 +116,15 @@ export default function Navigation() {
                   {item.name}
                 </Link>
               ))}
+              <div className="py-2">
+                <LanguageSwitcher />
+              </div>
               <Link
-                href="/contact"
+                href={isEnglish ? "/en/contact" : "/contact"}
                 className="block w-full text-center btn-primary mt-4"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
-                免費諮詢
+                {t.nav.consultation}
               </Link>
             </div>
           </motion.div>
