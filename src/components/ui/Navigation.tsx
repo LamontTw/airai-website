@@ -9,12 +9,12 @@ import LanguageSwitcher from './LanguageSwitcher';
 import { getTranslations } from '@/lib/i18n';
 
 // 導航項目配置
-const getNavigationItems = (isEnglish: boolean) => {
-  const t = getTranslations(isEnglish ? 'en' : 'zh');
-  const prefix = isEnglish ? '/en' : '';
+const getNavigationItems = (locale: 'zh' | 'en' | 'ja') => {
+  const t = getTranslations(locale);
+  const prefix = locale === 'zh' ? '' : `/${locale}`;
   
   return [
-    { name: t.nav.home, href: `${prefix}/` },
+    { name: t.nav.home, href: locale === 'zh' ? '/' : `/${locale}` },
     { name: t.nav.about, href: `${prefix}/about` },
     { name: t.nav.services, href: `${prefix}/services` },
     { name: t.nav.cases, href: `${prefix}/cases` },
@@ -29,9 +29,15 @@ export default function Navigation() {
   const pathname = usePathname();
   
   // 判斷當前語言
-  const isEnglish = pathname.startsWith('/en');
-  const t = getTranslations(isEnglish ? 'en' : 'zh');
-  const navigationItems = getNavigationItems(isEnglish);
+  const getCurrentLocale = (): 'zh' | 'en' | 'ja' => {
+    if (pathname.startsWith('/en/') || pathname === '/en') return 'en';
+    if (pathname.startsWith('/ja/') || pathname === '/ja') return 'ja';
+    return 'zh';
+  };
+  
+  const currentLocale = getCurrentLocale();
+  const t = getTranslations(currentLocale);
+  const navigationItems = getNavigationItems(currentLocale);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -53,7 +59,7 @@ export default function Navigation() {
       <div className="container-max">
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
-          <Link href="/" className="flex items-center">
+          <Link href={currentLocale === 'zh' ? '/' : `/${currentLocale}`} className="flex items-center">
             <img 
               src="/images/logo-nav.png" 
               alt="AIRAI - 智流科技" 
@@ -75,7 +81,7 @@ export default function Navigation() {
             ))}
             <LanguageSwitcher />
             <Link
-              href={isEnglish ? "/en/contact" : "/contact"}
+              href={currentLocale === 'zh' ? "/contact" : `/${currentLocale}/contact`}
               className="btn-primary"
             >
               {t.nav.consultation}
@@ -120,7 +126,7 @@ export default function Navigation() {
                 <LanguageSwitcher />
               </div>
               <Link
-                href={isEnglish ? "/en/contact" : "/contact"}
+                href={currentLocale === 'zh' ? "/contact" : `/${currentLocale}/contact`}
                 className="block w-full text-center btn-primary mt-4"
                 onClick={() => setIsMobileMenuOpen(false)}
               >

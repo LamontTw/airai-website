@@ -1,28 +1,39 @@
-import Link from 'next/link';
-import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
+'use client';
 
-const footerLinks = {
-  services: [
-    { name: '程式外包', href: '/services#programming' },
-    { name: 'AI Agent導入', href: '/services#ai-agent' },
-    { name: '智能客服', href: '/services#chatbot' },
-    { name: '流程自動化', href: '/services#automation' },
-  ],
-  company: [
-    { name: '關於我們', href: '/about' },
-    { name: '成功案例', href: '/cases' },
-    { name: '資源洞察', href: '/resources' },
-    { name: '聯絡我們', href: '/contact' },
-  ],
-  resources: [
-    { name: 'AI轉型指南', href: '/resources/ai-guide' },
-    { name: '行業趨勢', href: '/resources/trends' },
-    { name: '技術部落格', href: '/resources/blog' },
-    { name: '免費工具', href: '/resources/tools' },
-  ],
-};
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
+import { getTranslations } from '@/lib/i18n';
 
 export default function Footer() {
+  const pathname = usePathname();
+  
+  // 判斷當前語言並取得翻譯
+  const isEnglish = pathname.startsWith('/en');
+  const t = getTranslations(isEnglish ? 'en' : 'zh');
+  const prefix = isEnglish ? '/en' : '';
+
+  const footerLinks = {
+    services: [
+      { name: isEnglish ? 'Software Outsourcing' : '程式外包', href: `${prefix}/services#programming` },
+      { name: isEnglish ? 'AI Agent Implementation' : 'AI Agent導入', href: `${prefix}/services#ai-agent` },
+      { name: isEnglish ? 'Intelligent Customer Service' : '智能客服', href: `${prefix}/services#chatbot` },
+      { name: isEnglish ? 'Process Automation' : '流程自動化', href: `${prefix}/services#automation` },
+    ],
+    company: [
+      { name: t.nav.about, href: `${prefix}/about` },
+      { name: t.nav.cases, href: `${prefix}/cases` },
+      { name: t.nav.resources, href: `${prefix}/resources` },
+      { name: t.nav.contact, href: `${prefix}/contact` },
+    ],
+    resources: [
+      { name: isEnglish ? 'AI Transformation Guide' : 'AI轉型指南', href: `${prefix}/resources/ai-guide` },
+      { name: isEnglish ? 'Industry Trends' : '行業趨勢', href: `${prefix}/resources/trends` },
+      { name: isEnglish ? 'Tech Blog' : '技術部落格', href: `${prefix}/resources/blog` },
+      { name: isEnglish ? 'Free Tools' : '免費工具', href: `${prefix}/resources/tools` },
+    ],
+  };
+
   return (
     <footer className="bg-gray-900 text-white">
       <div className="container-max section-padding">
@@ -37,27 +48,27 @@ export default function Footer() {
               />
             </div>
             <p className="text-gray-300 mb-6 text-sm leading-relaxed">
-              專注於為台灣中小企業提供AI導入與數位轉型解決方案，將AI融入日常工作，提升營運效率。
+              {t.footer.description}
             </p>
             <div className="space-y-2 text-sm">
               <div className="flex items-center space-x-2 text-gray-300">
                 <MapPinIcon className="w-4 h-4" />
-                <span>新北市板橋區倉後街26號</span>
+                <span>{t.company.address}</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-300">
                 <PhoneIcon className="w-4 h-4" />
-                <span>+886 953-202-811</span>
+                <span>{t.company.phone}</span>
               </div>
               <div className="flex items-center space-x-2 text-gray-300">
                 <EnvelopeIcon className="w-4 h-4" />
-                <span>contact@airai.tw</span>
+                <span>{t.company.email}</span>
               </div>
             </div>
           </div>
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold mb-4">服務項目</h3>
+            <h3 className="font-semibold mb-4">{t.footer.services}</h3>
             <ul className="space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
@@ -74,7 +85,7 @@ export default function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-semibold mb-4">公司資訊</h3>
+            <h3 className="font-semibold mb-4">{t.footer.quickLinks}</h3>
             <ul className="space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -91,7 +102,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold mb-4">資源中心</h3>
+            <h3 className="font-semibold mb-4">{isEnglish ? 'Resources' : '資源中心'}</h3>
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
@@ -110,17 +121,17 @@ export default function Footer() {
         <div className="border-t border-gray-800 mt-12 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <p className="text-gray-400 text-sm">
-              © 2024 智流科技有限公司. 保留所有權利.
+              © 2024 {t.company.name}. {t.footer.copyright}.
             </p>
             <div className="flex space-x-6 text-sm">
-              <Link href="/privacy" className="text-gray-400 hover:text-white transition-colors duration-200">
-                隱私政策
+              <Link href={`${prefix}/privacy`} className="text-gray-400 hover:text-white transition-colors duration-200">
+                {t.footer.privacy}
               </Link>
-              <Link href="/terms" className="text-gray-400 hover:text-white transition-colors duration-200">
-                服務條款
+              <Link href={`${prefix}/terms`} className="text-gray-400 hover:text-white transition-colors duration-200">
+                {t.footer.terms}
               </Link>
-              <Link href="/site-map" className="text-gray-400 hover:text-white transition-colors duration-200">
-                網站地圖
+              <Link href={`${prefix}/site-map`} className="text-gray-400 hover:text-white transition-colors duration-200">
+                {isEnglish ? 'Site Map' : '網站地圖'}
               </Link>
             </div>
           </div>

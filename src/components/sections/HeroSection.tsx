@@ -1,13 +1,26 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRightIcon, PlayIcon } from '@heroicons/react/24/outline';
 import VideoModal from '@/components/ui/VideoModal';
+import { getTranslations } from '@/lib/i18n';
 
 export default function HeroSection() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
+  const pathname = usePathname();
+  
+  // 判斷當前語言並取得翻譯
+  const getCurrentLocale = (): 'zh' | 'en' | 'ja' => {
+    if (pathname.startsWith('/en')) return 'en';
+    if (pathname.startsWith('/ja')) return 'ja';
+    return 'zh';
+  };
+  
+  const currentLocale = getCurrentLocale();
+  const t = getTranslations(currentLocale);
   
   // 設定是否使用影片功能（可以改為 true 來啟用影片彈出）
   const useVideoModal = false;
@@ -32,7 +45,7 @@ export default function HeroSection() {
               className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-8"
             >
               <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-              專為台灣中小企業設計的AI解決方案
+              {t.home.badge}
             </motion.div>
 
             {/* Main Heading */}
@@ -42,11 +55,23 @@ export default function HeroSection() {
               transition={{ delay: 0.4, duration: 0.8 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight"
             >
-              將 <span className="gradient-text">AI 融入日常工作</span>
-              <br />
-              <span className="text-3xl sm:text-4xl lg:text-5xl text-gray-700">
-                加速中小企業數位轉型
-              </span>
+              {currentLocale === 'zh' ? (
+                <>
+                  將 <span className="gradient-text">AI 融入日常工作</span>
+                  <br />
+                  <span className="text-3xl sm:text-4xl lg:text-5xl text-gray-700">
+                    加速中小企業數位轉型
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span className="gradient-text">{t.home.title}</span>
+                  <br />
+                  <span className="text-3xl sm:text-4xl lg:text-5xl text-gray-700">
+                    {t.home.subtitle}
+                  </span>
+                </>
+              )}
             </motion.h1>
 
             {/* Subtitle */}
@@ -56,8 +81,7 @@ export default function HeroSection() {
               transition={{ delay: 0.6, duration: 0.8 }}
               className="text-xl text-gray-600 mb-10 max-w-3xl mx-auto leading-relaxed"
             >
-              透過實用的 AI Agent 導入與程式外包服務，解決人力短缺、提升作業效率，
-              為您的企業打造可衡量的競爭優勢。成本比一台 iPhone 還便宜。
+              {t.home.description}
             </motion.p>
 
             {/* CTA Buttons */}
@@ -68,10 +92,10 @@ export default function HeroSection() {
               className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12"
             >
               <Link
-                href="/contact"
+                href={currentLocale === 'zh' ? "/contact" : `/${currentLocale}/contact`}
                 className="btn-primary inline-flex items-center group"
               >
-                免費諮詢 AI 導入方案
+                {t.home.cta.primary}
                 <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
               
@@ -82,15 +106,15 @@ export default function HeroSection() {
                   className="btn-secondary inline-flex items-center group"
                 >
                   <PlayIcon className="w-5 h-5 mr-2" />
-                  觀看成功案例
+                  {t.home.cta.secondary}
                 </button>
               ) : (
                 <Link
-                  href="/cases"
+                  href={currentLocale === 'zh' ? "/cases" : `/${currentLocale}/cases`}
                   className="btn-secondary inline-flex items-center group"
                 >
                   <PlayIcon className="w-5 h-5 mr-2" />
-                  觀看成功案例
+                  {t.home.cta.secondary}
                 </Link>
               )}
             </motion.div>
@@ -104,15 +128,15 @@ export default function HeroSection() {
             >
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-600 mb-2">85%</div>
-                <div className="text-gray-600 text-sm">客服詢問自動回覆率</div>
+                <div className="text-gray-600 text-sm">{t.home.stats.autoReply}</div>
               </div>
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600 mb-2">14小時</div>
-                <div className="text-gray-600 text-sm">每日節省人工作業時間</div>
+                <div className="text-3xl font-bold text-blue-600 mb-2">14{currentLocale === 'zh' ? '小時' : 'hrs'}</div>
+                <div className="text-gray-600 text-sm">{t.home.stats.timeSaved}</div>
               </div>
               <div className="text-center">
                 <div className="text-3xl font-bold text-blue-600 mb-2">50%</div>
-                <div className="text-gray-600 text-sm">營運成本降低</div>
+                <div className="text-gray-600 text-sm">{t.home.stats.costReduction}</div>
               </div>
             </motion.div>
           </motion.div>
@@ -152,8 +176,8 @@ export default function HeroSection() {
           isOpen={isVideoOpen}
           onClose={() => setIsVideoOpen(false)}
           videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ" // 替換為您的影片URL
-          title="智流科技成功案例展示"
-          description="了解我們如何幫助台灣中小企業實現AI轉型"
+          title={currentLocale === 'zh' ? "智流科技成功案例展示" : "AIRAI Success Stories"}
+          description={currentLocale === 'zh' ? "了解我們如何幫助台灣中小企業實現AI轉型" : "Learn how we help Taiwan SMEs achieve AI transformation"}
         />
       )}
     </>

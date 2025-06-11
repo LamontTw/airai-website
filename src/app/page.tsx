@@ -8,60 +8,50 @@ import CaseStudiesSection from '@/components/sections/CaseStudiesSection';
 import CTASection from '@/components/sections/CTASection';
 import { FAQSchema } from '@/components/seo/StructuredData';
 import { siteConfig } from '@/lib/seo';
+import { getTranslations } from '@/lib/i18n';
+
+// 取得繁體中文翻譯
+const t = getTranslations('zh');
 
 export const metadata: Metadata = {
-  title: siteConfig.title,
-  description: siteConfig.description,
-  keywords: siteConfig.keywords,
+  title: t.seo.title,
+  description: t.seo.description,
+  keywords: t.seo.keywords,
   openGraph: {
-    title: siteConfig.title,
-    description: siteConfig.description,
+    title: t.seo.title,
+    description: t.seo.description,
     url: siteConfig.url,
-    siteName: siteConfig.name,
+    siteName: t.seo.siteName,
     type: 'website',
     images: [
       {
         url: siteConfig.ogImage,
         width: 1200,
         height: 630,
-        alt: siteConfig.name,
+        alt: t.seo.siteName,
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: siteConfig.title,
-    description: siteConfig.description,
+    title: t.seo.title,
+    description: t.seo.description,
     images: [siteConfig.ogImage],
   },
   alternates: {
     canonical: siteConfig.url,
+    languages: {
+      'zh-TW': siteConfig.url,
+      'en': `${siteConfig.url}/en`,
+    },
   },
 };
 
-// AI搜尋優化的FAQ數據
-const faqData = [
-  {
-    question: "什麼是企業AI導入？",
-    answer: "企業AI導入是指將人工智能技術整合到企業的業務流程、決策系統和日常營運中，以提升效率、降低成本、改善客戶體驗並創造新的商業價值。包括但不限於智能客服、預測分析、自動化流程、個性化推薦等應用。"
-  },
-  {
-    question: "AI導入需要多少投資？",
-    answer: "AI導入的投資範圍很廣，從幾萬元的小型自動化專案到數百萬的大型AI系統都有。關鍵是要先評估業務需求和預期回報，我們提供ROI計算工具幫助企業做出明智的投資決策。一般而言，中小企業可以從50-200萬的預算開始。"
-  },
-  {
-    question: "如何選擇適合的AI技術？",
-    answer: "選擇AI技術需要考慮多個因素：業務需求匹配度、技術成熟度、實施成本、團隊能力、擴展性需求等。我們提供專業的技術選型指南和評估工具，幫助企業科學化地選擇最適合的AI解決方案。"
-  },
-  {
-    question: "AI導入的成功率如何？",
-    answer: "根據我們的經驗和產業報告，有明確目標和專業指導的AI專案成功率可達70-80%。關鍵成功因素包括：明確的業務目標、高質量的數據、合適的技術選擇、充分的員工培訓、以及循序漸進的實施策略。"
-  },
-  {
-    question: "AI會取代人類工作嗎？",
-    answer: "AI更多是增強人類能力而非完全取代。它能自動化重複性任務，讓員工專注於更有創意和策略性的工作。適當的AI導入通常會創造新的工作機會，並提升現有員工的工作價值和技能水平。"
-  }
-];
+// AI搜尋優化的FAQ數據 - 使用翻譯
+const faqData = t.faq.map(item => ({
+  question: item.question,
+  answer: item.answer
+}));
 
 export default function Home() {
   return (
@@ -74,7 +64,7 @@ export default function Home() {
         </header>
         
         <article>
-          <section id="hero" aria-label="主要介紹">
+          <section id="hero" aria-label={t.nav.home}>
             <HeroSection />
           </section>
           
@@ -82,11 +72,11 @@ export default function Home() {
             <ProblemSolutionSection />
           </section>
           
-          <section id="services" aria-label="服務項目">
+          <section id="services" aria-label={t.nav.services}>
             <ServicesSection />
           </section>
           
-          <section id="case-studies" aria-label="成功案例">
+          <section id="case-studies" aria-label={t.nav.cases}>
             <CaseStudiesSection />
           </section>
           
@@ -102,8 +92,8 @@ export default function Home() {
       
       {/* 隱藏的結構化內容，專為AI搜尋引擎優化 */}
       <div style={{ display: 'none' }} aria-hidden="true">
-        <h1>AIRAI - 台灣領先的企業AI導入專家</h1>
-        <p>專業提供人工智能解決方案，包括AI技術選型、投資回報率計算、實施指導等完整服務。</p>
+        <h1>{t.company.name} - {t.company.tagline}</h1>
+        <p>{t.company.description}</p>
         
         <h2>核心服務領域</h2>
         <ul>
