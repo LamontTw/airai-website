@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { usePathname } from 'next/navigation';
 import { 
   UserGroupIcon, 
   ClockIcon, 
@@ -10,57 +11,62 @@ import {
   CpuChipIcon,
   ArrowRightIcon
 } from '@heroicons/react/24/outline';
-
-const problems = [
-  {
-    icon: UserGroupIcon,
-    title: '人力短缺困境',
-    description: '少子化與高齡化導致專業人才招募困難，員工身兼數職影響效率',
-    stat: '45.5%',
-    statDesc: '企業擔心投入資金無預期成效'
-  },
-  {
-    icon: ClockIcon,
-    title: '繁瑣手工作業',
-    description: '大量重複性工作耗費人力，手動數據輸入容易出錯且效率低下',
-    stat: '14小時',
-    statDesc: '每日手動作業時間'
-  },
-  {
-    icon: CurrencyDollarIcon,
-    title: '高成本低效益',
-    description: '缺乏自動化工具，營運成本居高不下，難以提升競爭力',
-    stat: '24.5%',
-    statDesc: '企業認為解決方案價格難以負擔'
-  }
-];
-
-const solutions = [
-  {
-    icon: CpuChipIcon,
-    title: 'AI Agent 智能導入',
-    description: '客製化 AI 解決方案，自動化重複性工作，24/7 不間斷服務',
-    benefits: ['85% 詢問自動回覆', '14小時人工時間節省', '99% 數據準確率']
-  },
-  {
-    icon: ChartBarIcon,
-    title: '數據驅動決策',
-    description: '即時數據收集與分析，智能儀表板提供營運洞察',
-    benefits: ['即時銷售分析', '自動補貨建議', '精準庫存管理']
-  },
-  {
-    icon: UserGroupIcon,
-    title: '人力資源優化',
-    description: '釋放人力投入高價值工作，提升員工滿意度與生產力',
-    benefits: ['50% 營運成本降低', '員工專注核心業務', '提升服務品質']
-  }
-];
+import { getTranslations, getCurrentLocale } from '@/lib/i18n';
 
 export default function ProblemSolutionSection() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   });
+
+  const pathname = usePathname();
+  const currentLocale = getCurrentLocale(pathname);
+  const t = getTranslations(currentLocale);
+
+  const problems = [
+    {
+      icon: UserGroupIcon,
+      title: t.problemSolution.problems.staffShortage.title,
+      description: t.problemSolution.problems.staffShortage.description,
+      stat: t.problemSolution.problems.staffShortage.stat,
+      statDesc: t.problemSolution.problems.staffShortage.statDesc
+    },
+    {
+      icon: ClockIcon,
+      title: t.problemSolution.problems.manualWork.title,
+      description: t.problemSolution.problems.manualWork.description,
+      stat: t.problemSolution.problems.manualWork.stat,
+      statDesc: t.problemSolution.problems.manualWork.statDesc
+    },
+    {
+      icon: CurrencyDollarIcon,
+      title: t.problemSolution.problems.highCost.title,
+      description: t.problemSolution.problems.highCost.description,
+      stat: t.problemSolution.problems.highCost.stat,
+      statDesc: t.problemSolution.problems.highCost.statDesc
+    }
+  ];
+
+  const solutions = [
+    {
+      icon: CpuChipIcon,
+      title: t.problemSolution.solutions.aiAgent.title,
+      description: t.problemSolution.solutions.aiAgent.description,
+      benefits: t.problemSolution.solutions.aiAgent.benefits
+    },
+    {
+      icon: ChartBarIcon,
+      title: t.problemSolution.solutions.dataAnalytics.title,
+      description: t.problemSolution.solutions.dataAnalytics.description,
+      benefits: t.problemSolution.solutions.dataAnalytics.benefits
+    },
+    {
+      icon: UserGroupIcon,
+      title: t.problemSolution.solutions.hrOptimization.title,
+      description: t.problemSolution.solutions.hrOptimization.description,
+      benefits: t.problemSolution.solutions.hrOptimization.benefits
+    }
+  ];
 
   return (
     <section ref={ref} className="section-padding bg-white">
@@ -73,10 +79,10 @@ export default function ProblemSolutionSection() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            中小企業的 <span className="gradient-text">挑戰與機會</span>
+            {t.problemSolution.title} <span className="gradient-text">{t.problemSolution.titleHighlight}</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            了解您的痛點，提供精準的 AI 解決方案
+            {t.problemSolution.subtitle}
           </p>
         </motion.div>
 
@@ -88,7 +94,7 @@ export default function ProblemSolutionSection() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-2xl font-bold text-gray-900 mb-8 text-center"
           >
-            常見挑戰
+            {t.problemSolution.problemsTitle}
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {problems.map((problem, index) => (
@@ -139,7 +145,7 @@ export default function ProblemSolutionSection() {
             transition={{ duration: 0.8, delay: 1 }}
             className="text-2xl font-bold text-gray-900 mb-8 text-center"
           >
-            智流科技解決方案
+            {t.problemSolution.solutionsTitle}
           </motion.h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {solutions.map((solution, index) => (
@@ -181,7 +187,7 @@ export default function ProblemSolutionSection() {
             href="#services"
             className="btn-primary inline-flex items-center group"
           >
-            了解更多解決方案
+            {t.problemSolution.ctaText}
             <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
           </a>
         </motion.div>

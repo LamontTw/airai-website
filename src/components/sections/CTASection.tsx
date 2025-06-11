@@ -2,23 +2,20 @@
 
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { ArrowRightIcon, CheckCircleIcon } from '@heroicons/react/24/outline';
-
-const benefits = [
-  '免費評估您的AI導入需求',
-  '客製化解決方案設計',
-  '專業團隊全程服務',
-  '可衡量的投資回報',
-  '完整的培訓與支援',
-  '持續優化與維護'
-];
+import { getTranslations, getCurrentLocale } from '@/lib/i18n';
 
 export default function CTASection() {
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   });
+
+  const pathname = usePathname();
+  const currentLocale = getCurrentLocale(pathname);
+  const t = getTranslations(currentLocale);
 
   return (
     <section ref={ref} className="section-padding bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 relative overflow-hidden">
@@ -35,18 +32,17 @@ export default function CTASection() {
             className="text-white"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              準備好開始您的
+              {t.cta.title}
               <br />
-              <span className="text-yellow-300">AI 轉型之旅</span>了嗎？
+              <span className="text-yellow-300">{t.cta.titleHighlight}</span>{t.cta.titleSuffix}
             </h2>
             <p className="text-xl text-blue-100 mb-8 leading-relaxed">
-              不要讓競爭對手搶得先機。立即與我們聯繫，
-              獲得專屬的AI導入諮詢，讓您的企業在數位時代中脫穎而出。
+              {t.cta.subtitle}
             </p>
             
             {/* Benefits Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
-              {benefits.map((benefit, index) => (
+              {t.cta.benefits.map((benefit, index) => (
                 <motion.div
                   key={benefit}
                   initial={{ opacity: 0, y: 20 }}
@@ -68,17 +64,17 @@ export default function CTASection() {
               className="flex flex-col sm:flex-row gap-4"
             >
               <Link
-                href="/contact"
+                href={currentLocale === 'zh' ? "/contact" : `/${currentLocale}/contact`}
                 className="bg-white hover:bg-gray-100 text-blue-600 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 inline-flex items-center justify-center group"
               >
-                立即免費諮詢
+                {t.cta.primaryButton}
                 <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
               <Link
-                href="/cases"
+                href={currentLocale === 'zh' ? "/cases" : `/${currentLocale}/cases`}
                 className="bg-transparent hover:bg-white/10 text-white font-semibold py-4 px-8 rounded-lg border-2 border-white transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 inline-flex items-center justify-center"
               >
-                查看成功案例
+                {t.cta.secondaryButton}
               </Link>
             </motion.div>
           </motion.div>
@@ -91,37 +87,37 @@ export default function CTASection() {
             className="bg-white/10 backdrop-blur-md rounded-2xl p-8 border border-white/20"
           >
             <h3 className="text-2xl font-bold text-white mb-6 text-center">
-              為什麼選擇智流科技？
+              {t.cta.whyChooseTitle}
             </h3>
             
             <div className="space-y-6">
               <div className="text-center">
-                <div className="text-4xl font-bold text-yellow-300 mb-2">100+</div>
-                <div className="text-blue-100">成功導入案例</div>
+                <div className="text-4xl font-bold text-yellow-300 mb-2">{t.cta.stats.cases.number}</div>
+                <div className="text-blue-100">{t.cta.stats.cases.label}</div>
               </div>
               
               <div className="text-center">
-                <div className="text-4xl font-bold text-yellow-300 mb-2">85%</div>
-                <div className="text-blue-100">平均自動化率</div>
+                <div className="text-4xl font-bold text-yellow-300 mb-2">{t.cta.stats.automation.number}</div>
+                <div className="text-blue-100">{t.cta.stats.automation.label}</div>
               </div>
               
               <div className="text-center">
-                <div className="text-4xl font-bold text-yellow-300 mb-2">6個月</div>
-                <div className="text-blue-100">平均投資回收期</div>
+                <div className="text-4xl font-bold text-yellow-300 mb-2">{t.cta.stats.roi.number}</div>
+                <div className="text-blue-100">{t.cta.stats.roi.label}</div>
               </div>
               
               <div className="text-center">
-                <div className="text-4xl font-bold text-yellow-300 mb-2">24/7</div>
-                <div className="text-blue-100">技術支援服務</div>
+                <div className="text-4xl font-bold text-yellow-300 mb-2">{t.cta.stats.support.number}</div>
+                <div className="text-blue-100">{t.cta.stats.support.label}</div>
               </div>
             </div>
 
             <div className="mt-8 p-4 bg-white/10 rounded-lg border border-white/20">
               <p className="text-center text-blue-100 text-sm italic">
-                &ldquo;智流科技不只是技術供應商，更是我們數位轉型路上的最佳夥伴&rdquo;
+                &ldquo;{t.cta.customerQuote}&rdquo;
               </p>
               <p className="text-center text-yellow-300 text-xs mt-2">
-                - 客戶真實回饋
+                - {t.cta.customerQuoteSource}
               </p>
             </div>
           </motion.div>
@@ -137,7 +133,7 @@ export default function CTASection() {
           <div className="inline-flex items-center bg-yellow-400/20 border border-yellow-400/30 rounded-full px-6 py-3">
             <div className="w-2 h-2 bg-yellow-400 rounded-full animate-pulse mr-3"></div>
             <span className="text-yellow-100 text-sm font-medium">
-              限時優惠：本月諮詢免費提供AI導入可行性評估報告
+              {t.cta.urgencyNote}
             </span>
           </div>
         </motion.div>
