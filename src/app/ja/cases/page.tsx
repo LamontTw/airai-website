@@ -42,34 +42,34 @@ export const metadata: Metadata = {
 export default function CasesPage() {
   const caseStudies = [
     {
-      industry: "製造業",
-      company: "台湾精密機械株式会社",
-      challenge: "品質検査の人為ミスと検査時間の長さが生産効率を制限",
-      solution: "コンピュータビジョンによる自動品質検査システムを導入",
+      industry: "卸売業",
+      company: "中規模卸売業者",
+      challenge: "毎日数十件の発注書を手動入力、深夜まで残業することが多く、人的ミスが頻発",
+      solution: "AI認識システム - モバイル写真から発注書の重要情報を自動読み取り、データベースに直接更新",
       results: [
-        { metric: "検査精度", value: "99.8%", improvement: "+15%" },
-        { metric: "検査時間", value: "30秒/個", improvement: "-80%" },
-        { metric: "人件費削減", value: "年間500万円", improvement: "40%" },
-        { metric: "不良品率", value: "0.1%", improvement: "-90%" }
+        { metric: "手動作業時間", value: "14時間大幅削減", improvement: "-90%" },
+        { metric: "データ精度", value: "99%", improvement: "人的ミス排除" },
+        { metric: "在庫管理", value: "正確な管理", improvement: "精密制御" },
+        { metric: "導入コスト", value: "iPhoneより安い", improvement: "低コスト" }
       ],
-      testimonial: "AIRAIのソリューションにより、品質管理が革命的に改善されました。検査精度の向上と同時に大幅なコスト削減を実現できました。",
-      author: "品質管理部長 陳先生",
-      icon: "🏭",
+      testimonial: "AIがこんなに便利だと知っていたら、こんなに導入を遅らせることはありませんでした！",
+      author: "王老闆 負責人",
+      icon: "📦",
       color: "blue"
     },
     {
-      industry: "小売業",
-      company: "台湾チェーンストア株式会社",
-      challenge: "在庫管理の非効率と需要予測の不正確さによる機会損失",
-      solution: "機械学習による需要予測と在庫最適化システムを構築",
+      industry: "Eコマース",
+      company: "快購電商",
+      challenge: "MOMO、PChome、蝦皮など複数プラットフォームのリアルタイム販売状況把握困難、在庫管理が複雑",
+      solution: "AI智慧分析ダッシュボード - 多プラットフォームデータ統合、機械学習による販売予測と自動補充推奨",
       results: [
-        { metric: "予測精度", value: "92%", improvement: "+25%" },
-        { metric: "在庫回転率", value: "12回/年", improvement: "+50%" },
-        { metric: "売上増加", value: "年間2000万円", improvement: "18%" },
-        { metric: "在庫コスト", value: "30%削減", improvement: "-30%" }
+        { metric: "在庫回転率", value: "30%向上", improvement: "+30%" },
+        { metric: "欠品率", value: "85%削減", improvement: "-85%" },
+        { metric: "販売予測精度", value: "92%", improvement: "+92%" },
+        { metric: "売上成長", value: "18%", improvement: "+18%" }
       ],
-      testimonial: "需要予測の精度向上により、適切な在庫レベルを維持しながら売上を大幅に増加させることができました。",
-      author: "運営部長 林先生",
+      testimonial: "現在毎日一つの画面を見るだけで昨日の販売状況を理解し、人気商品を即座に発見できます。",
+      author: "陳経理 営業経理",
       icon: "🛒",
       color: "green"
     },
@@ -90,19 +90,19 @@ export default function CasesPage() {
       color: "purple"
     },
     {
-      industry: "物流業",
-      company: "台湾物流グループ",
-      challenge: "配送ルート最適化の困難と配送時間の予測不正確",
-      solution: "AIルート最適化と配送時間予測システムを実装",
+      industry: "カスタマーサービス",
+      company: "優質サービスセンター",
+      challenge: "顧客問い合わせ量が多く、カスタマーサービス人員不足、応答速度が遅く顧客満足度が低い",
+      solution: "AI智能カスタマーサービスロボット - LINE公式アカウントAIチャットボット、知識ベース管理システム統合",
       results: [
-        { metric: "配送効率", value: "35%向上", improvement: "+35%" },
-        { metric: "燃料コスト", value: "年間1200万円削減", improvement: "-25%" },
-        { metric: "配送時間精度", value: "95%", improvement: "+40%" },
-        { metric: "顧客満足度", value: "98%", improvement: "+15%" }
+        { metric: "問い合わせ自動返信", value: "85%", improvement: "+85%" },
+        { metric: "平均応答時間", value: "30分→3秒", improvement: "-99%" },
+        { metric: "サービス時間", value: "24/7", improvement: "中断なし" },
+        { metric: "顧客満足度", value: "65%→91%", improvement: "+40%" }
       ],
-      testimonial: "ルート最適化により配送効率が大幅に向上し、顧客満足度とコスト削減の両方を実現できました。",
-      author: "物流部長 張先生",
-      icon: "🚛",
+      testimonial: "85%以上の問い合わせが自動返信でき、カスタマーサービス人員はより複雑な問題に集中できるようになりました。",
+      author: "張主管 カスタマーサービス部主管",
+      icon: "💬",
       color: "orange"
     }
   ];
@@ -242,24 +242,24 @@ export default function CasesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 text-center">
-              <div className="text-4xl mb-4">🏭</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">製造業</h3>
+              <div className="text-4xl mb-4">📦</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">卸売業</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>品質検査自動化</li>
-                <li>予防保全</li>
-                <li>生産最適化</li>
-                <li>不良品率削減</li>
+                <li>発注書自動読取</li>
+                <li>在庫管理</li>
+                <li>データ入力自動化</li>
+                <li>ミス削減</li>
               </ul>
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 text-center">
               <div className="text-4xl mb-4">🛒</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">小売業</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Eコマース</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>需要予測</li>
+                <li>多プラットフォーム統合</li>
+                <li>販売予測</li>
                 <li>在庫最適化</li>
-                <li>価格最適化</li>
-                <li>顧客分析</li>
+                <li>自動補充推奨</li>
               </ul>
             </div>
 
@@ -275,13 +275,13 @@ export default function CasesPage() {
             </div>
 
             <div className="bg-white p-8 rounded-xl shadow-sm border border-gray-200 text-center">
-              <div className="text-4xl mb-4">🚛</div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">物流業</h3>
+              <div className="text-4xl mb-4">💬</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-4">カスタマーサービス</h3>
               <ul className="space-y-2 text-gray-600">
-                <li>ルート最適化</li>
-                <li>配送予測</li>
-                <li>倉庫管理</li>
-                <li>需要予測</li>
+                <li>AI自動応答</li>
+                <li>24/7サービス</li>
+                <li>応答時間短縮</li>
+                <li>顧客満足度向上</li>
               </ul>
             </div>
           </div>
