@@ -480,169 +480,169 @@ export const translations = {
       copyright: 'All rights reserved'
     },
 
-    // 問題解決方案セクション
+    // Problem Solution Section
     problemSolution: {
-      title: '中小企業の',
-      titleHighlight: '課題と機会',
-      subtitle: 'お客様の痛点を理解し、精密なAIソリューションを提供',
-      problemsTitle: '一般的な課題',
-      solutionsTitle: 'AIRAIテクノロジーソリューション',
-      ctaText: 'より多くのソリューションを見る',
+      title: 'Challenges and Opportunities for',
+      titleHighlight: 'SMEs',
+      subtitle: 'Understanding your pain points, providing precise AI solutions',
+      problemsTitle: 'Common Challenges',
+      solutionsTitle: 'AIRAI Technology Solutions',
+      ctaText: 'Learn More Solutions',
       problems: {
         staffShortage: {
-          title: '人材不足の困境',
-          description: '少子高齢化により専門人材の採用が困難、従業員の兼務が効率に影響',
+          title: 'Staffing Shortage Crisis',
+          description: 'Declining birth rates and aging population make professional talent recruitment difficult, employees juggling multiple roles affecting efficiency',
           stat: '45.5%',
-          statDesc: '企業が資金投入に対する期待効果を懸念'
+          statDesc: 'Companies worry about investing funds without expected results'
         },
         manualWork: {
-          title: '煩雑な手作業',
-          description: '大量の反復作業が人力を消費、手動データ入力はエラーが多く効率が低い',
-          stat: '14時間',
-          statDesc: '日次手動作業時間'
+          title: 'Tedious Manual Operations',
+          description: 'Large amounts of repetitive work consume manpower, manual data entry is error-prone and inefficient',
+          stat: '14 hours',
+          statDesc: 'Daily manual operation time'
         },
         highCost: {
-          title: '高コスト低効率',
-          description: '自動化ツールの不足により運営コストが高止まり、競争力向上が困難',
+          title: 'High Cost Low Efficiency',
+          description: 'Lack of automation tools, high operating costs, difficult to improve competitiveness',
           stat: '24.5%',
-          statDesc: '企業がソリューション価格を負担困難と認識'
+          statDesc: 'Companies find solution prices unaffordable'
         }
       },
       solutions: {
         aiAgent: {
-          title: 'AIエージェントスマート導入',
-          description: 'カスタマイズされたAIソリューション、反復作業の自動化、24/7中断なしサービス',
-          benefits: ['85%問い合わせ自動返信', '14時間手動時間節約', '99%データ精度']
+          title: 'AI Agent Smart Implementation',
+          description: 'Customized AI solutions, automate repetitive work, 24/7 uninterrupted service',
+          benefits: ['85% inquiry auto-reply', '14 hours manual time saved', '99% data accuracy']
         },
         dataAnalytics: {
-          title: 'データ駆動意思決定',
-          description: 'リアルタイムデータ収集・分析、インテリジェントダッシュボードが運営洞察を提供',
-          benefits: ['リアルタイム販売分析', '自動補充推奨', '精密在庫管理']
+          title: 'Data-Driven Decision Making',
+          description: 'Real-time data collection and analysis, intelligent dashboard provides operational insights',
+          benefits: ['Real-time sales analysis', 'Automated replenishment recommendations', 'Precise inventory management']
         },
         hrOptimization: {
-          title: '人的資源最適化',
-          description: '人力を高価値業務に投入、従業員満足度と生産性を向上',
-          benefits: ['50%運営コスト削減', '従業員がコア業務に集中', 'サービス品質向上']
+          title: 'Human Resource Optimization',
+          description: 'Free up manpower for high-value work, improve employee satisfaction and productivity',
+          benefits: ['50% operational cost reduction', 'Employees focus on core business', 'Improve service quality']
         }
       }
     },
 
-    // 成功事例セクション
+    // Case Studies Section
     caseStudies: {
-      title: '成功事例',
-      subtitle: '実際のクライアント事例でAI導入の実際効果を証明',
-      viewMore: 'より多くの事例を見る',
-      challenge: '課題',
-      solution: 'ソリューション',
-      results: '成果',
-      testimonial: 'クライアントフィードバック',
-      overallStats: '全体効果統計',
+      title: 'Success Stories',
+      subtitle: 'Real client cases proving the actual benefits of AI implementation',
+      viewMore: 'View More Cases',
+      challenge: 'Challenge',
+      solution: 'Solution',
+      results: 'Results',
+      testimonial: 'Client Feedback',
+      overallStats: 'Overall Impact Statistics',
       stats: {
-        automation: '平均自動化率',
-        costReduction: '運営コスト削減',
-        timeSaved: '日次時間節約',
-        satisfaction: '顧客満足度'
+        automation: 'Average Automation Rate',
+        costReduction: 'Operational Cost Reduction',
+        timeSaved: 'Daily Time Savings',
+        satisfaction: 'Customer Satisfaction'
       },
       ctaButtons: {
-        viewMore: 'より多くの事例を見る',
-        startJourney: 'AI変革の旅を始める'
+        viewMore: 'View More Cases',
+        startJourney: 'Start Your AI Transformation Journey'
       },
       cases: {
         wholesale: {
-          industry: '卸売小売業',
-          company: '中型卸売業者',
-          challenge: '毎日数十枚の仕入れ伝票を手動入力、深夜まで残業、人為ミスが頻発',
-          solution: 'AI認識システム',
-          description: 'AI認識システムを開発、スマホで仕入れ伝票を撮影するだけで重要情報を自動読み取り、データベースに直接更新',
+          industry: 'Wholesale & Retail',
+          company: 'Mid-size Wholesale Distributor',
+          challenge: 'Daily manual entry of dozens of purchase invoices, working overtime until midnight, frequent human errors',
+          solution: 'AI Recognition System',
+          description: 'Developed AI recognition system that automatically reads key information from purchase invoices by simply taking photos with smartphones, directly updating the database',
           results: [
-            '14時間の手動作業を大幅削減',
-            '99%データ精度、人為ミスを根絶',
-            '在庫状況を精密把握',
-            'iPhoneより安いコスト'
+            'Significantly reduced 14 hours of manual work',
+            '99% data accuracy, eliminated human errors',
+            'Precise inventory status tracking',
+            'Cost lower than an iPhone'
           ],
-          testimonial: 'AIがこんなに便利だと知っていれば、こんなに遅らせることはなかった！'
+          testimonial: 'If I had known AI was this convenient, I wouldn\'t have delayed it for so long!'
         },
         ecommerce: {
-          industry: 'Eコマースプラットフォーム',
-          company: 'マルチプラットフォームEコマース',
-          challenge: '各プラットフォームの販売状況をリアルタイムで把握できず、在庫管理困難、データ洞察不足',
-          solution: 'スマートダッシュボード',
-          description: 'スマートダッシュボードを構築、MOMO、PChomeなど大手プラットフォームの販売データを自動統合、AI分析で販売トレンドと補充推奨を提供',
+          industry: 'E-commerce Platform',
+          company: 'Multi-platform E-commerce',
+          challenge: 'Unable to track sales performance across platforms in real-time, difficult inventory management, lack of data insights',
+          solution: 'Smart Dashboard',
+          description: 'Built smart dashboard integrating sales data from major platforms like MOMO and PChome, providing AI analysis for sales trends and replenishment recommendations',
           results: [
-            'マルチプラットフォーム販売状況をリアルタイム把握',
-            'AI自動補充推奨',
-            '販売トレンド分析',
-            '在庫回転率30%向上'
+            'Real-time multi-platform sales tracking',
+            'AI-powered automatic replenishment recommendations',
+            'Sales trend analysis',
+            '30% improvement in inventory turnover'
           ],
-          testimonial: '今は毎日一つの画面を見るだけで昨日の販売状況を把握でき、人気商品も即座に発見できる。'
+          testimonial: 'Now I can see yesterday\'s sales performance on one screen every day and instantly discover popular products.'
         },
         accounting: {
-          industry: '会計サービス業',
-          company: '中小型会計事務所',
-          challenge: '税務シーズンに深夜まで残業、大量の反復文書処理作業が人力を消費',
-          solution: 'RPA自動化システム',
-          description: 'RPAシステムを設計、財政部ウェブサイトに自動ログイン、関連文書証憑をダウンロードし、適切に分類整理',
+          industry: 'Accounting Services',
+          company: 'Small-Medium Accounting Firm',
+          challenge: 'Working overtime until midnight during tax season, massive repetitive document processing consuming manpower',
+          solution: 'RPA Automation System',
+          description: 'Designed RPA system that automatically logs into Ministry of Finance website, downloads relevant documents and vouchers, and properly categorizes them',
           results: [
-            '元々14時間の作業が深夜に自動完了',
-            '100%文書分類精度',
-            '従業員が高価値業務に集中可能',
-            '顧客満足度大幅向上'
+            'Originally 14-hour tasks now completed automatically overnight',
+            '100% document classification accuracy',
+            'Staff can focus on high-value work',
+            'Significantly improved customer satisfaction'
           ],
-          testimonial: 'システムが深夜に黙々と煩雑な作業を完了し、翌朝出勤時には整理された文書を見ることができる。'
+          testimonial: 'The system silently completes tedious work overnight, and I can see organized documents when I arrive at work in the morning.'
         },
         customerService: {
-          industry: 'カスタマーサービスセンター',
-          company: 'オンラインサービスプラットフォーム',
-          challenge: '顧客問い合わせ量が多く、カスタマーサービス人員不足、返信速度が遅く顧客満足度に影響',
-          solution: 'AIチャットボット',
-          description: 'AIチャットボットを構築、過去蓄積した数百のQ&Aでモデルを訓練、LINEを通じて顧客問題に即座に対応',
+          industry: 'Customer Service Center',
+          company: 'Online Service Platform',
+          challenge: 'High volume of customer inquiries, insufficient customer service staff, slow response times affecting customer satisfaction',
+          solution: 'AI Chatbot',
+          description: 'Built AI chatbot trained on hundreds of accumulated Q&As, providing instant responses to customer questions through LINE',
           results: [
-            '85%問い合わせ自動返信',
-            '24/7中断なしサービス',
-            'カスタマーサービス人員が複雑問題に集中',
-            '顧客満足度40%向上'
+            '85% of inquiries automatically answered',
+            '24/7 uninterrupted service',
+            'Customer service staff focus on complex issues',
+            '40% improvement in customer satisfaction'
           ],
-          testimonial: '85%以上の問い合わせが自動返信でき、カスタマーサービス人員は今より価値ある業務に集中できる。'
+          testimonial: 'Over 85% of inquiries can be automatically answered, allowing customer service staff to focus on more valuable work.'
         }
       }
     },
 
-    // CTAセクション
+    // CTA Section
     cta: {
-      title: 'あなたの',
-      titleHighlight: 'AI変革の旅',
-      titleSuffix: 'を始める準備はできましたか？',
-      subtitle: '競合他社に先を越されないでください。今すぐお問い合わせいただき、専用のAI導入コンサルティングを受けて、デジタル時代でビジネスを際立たせましょう。',
-      primaryButton: '今すぐ無料相談',
-      secondaryButton: '成功事例を見る',
-      whyChooseTitle: 'なぜAIRAIテクノロジーを選ぶのか？',
-      urgencyNote: '期間限定オファー：今月のコンサルティングでAI導入実現可能性評価レポートを無料提供',
-      customerQuote: 'AIRAIテクノロジーは単なる技術サプライヤーではなく、私たちのデジタル変革路上の最良のパートナーです',
-      customerQuoteSource: '実際のクライアントフィードバック',
+      title: 'Ready to Start Your',
+      titleHighlight: 'AI Transformation Journey',
+      titleSuffix: '?',
+      subtitle: 'Don\'t let competitors get ahead. Contact us now for dedicated AI implementation consulting and make your business stand out in the digital age.',
+      primaryButton: 'Free Consultation Now',
+      secondaryButton: 'View Success Stories',
+      whyChooseTitle: 'Why Choose AIRAI Technology?',
+      urgencyNote: 'Limited Time Offer: Free AI Implementation Feasibility Assessment Report with this month\'s consultation',
+      customerQuote: 'AIRAI Technology is not just a technology supplier, but our best partner on the digital transformation journey',
+      customerQuoteSource: 'Actual Client Feedback',
       benefits: [
-        'AI導入ニーズの無料評価',
-        'カスタマイズソリューション設計',
-        '専門チーム全工程サービス',
-        '測定可能な投資収益',
-        '完全なトレーニングとサポート',
-        '継続的最適化とメンテナンス'
+        'Free AI implementation needs assessment',
+        'Customized solution design',
+        'Professional team full-process service',
+        'Measurable return on investment',
+        'Complete training and support',
+        'Continuous optimization and maintenance'
       ],
       stats: {
         cases: {
           number: '100+',
-          label: '成功導入事例'
+          label: 'Successful Implementation Cases'
         },
         automation: {
           number: '85%',
-          label: '平均自動化率'
+          label: 'Average Automation Rate'
         },
         roi: {
-          number: '6ヶ月',
-          label: '平均投資回収期間'
+          number: '6 months',
+          label: 'Average ROI Period'
         },
         support: {
           number: '24/7',
-          label: '技術サポートサービス'
+          label: 'Technical Support Service'
         }
       }
     }
@@ -800,167 +800,167 @@ export const translations = {
 
     // Problem Solution Section
     problemSolution: {
-      title: 'Challenges and Opportunities for',
-      titleHighlight: 'SMEs',
-      subtitle: 'Understanding your pain points, providing precise AI solutions',
-      problemsTitle: 'Common Challenges',
-      solutionsTitle: 'AIRAI Technology Solutions',
-      ctaText: 'Learn More Solutions',
+      title: '中小企業の',
+      titleHighlight: '課題と機会',
+      subtitle: 'お客様の痛みを理解し、精密なAIソリューションを提供',
+      problemsTitle: '共通の課題',
+      solutionsTitle: 'AIRAIテクノロジーソリューション',
+      ctaText: 'さらなるソリューションを見る',
       problems: {
         staffShortage: {
-          title: 'Staffing Shortage Crisis',
-          description: 'Declining birth rates and aging population make professional talent recruitment difficult, employees juggling multiple roles affecting efficiency',
+          title: '人材不足の危機',
+          description: '少子高齢化により専門人材の採用が困難、従業員が複数の役割を兼任し効率に影響',
           stat: '45.5%',
-          statDesc: 'Companies worry about investing funds without expected results'
+          statDesc: '企業が投資資金に対する期待結果を心配'
         },
         manualWork: {
-          title: 'Tedious Manual Operations',
-          description: 'Large amounts of repetitive work consume manpower, manual data entry is error-prone and inefficient',
-          stat: '14 hours',
-          statDesc: 'Daily manual operation time'
+          title: '面倒な手動作業',
+          description: '大量の反復作業が人手を消費、手動データ入力はミスが多く非効率',
+          stat: '14時間',
+          statDesc: '日次手動作業時間'
         },
         highCost: {
-          title: 'High Cost Low Efficiency',
-          description: 'Lack of automation tools, high operating costs, difficult to improve competitiveness',
+          title: '高コスト低効率',
+          description: '自動化ツールの不足、運営コストが高く、競争力向上が困難',
           stat: '24.5%',
-          statDesc: 'Companies find solution prices unaffordable'
+          statDesc: '企業がソリューション価格を手頃でないと感じる'
         }
       },
       solutions: {
         aiAgent: {
-          title: 'AI Agent Smart Implementation',
-          description: 'Customized AI solutions, automate repetitive work, 24/7 uninterrupted service',
-          benefits: ['85% inquiry auto-reply', '14 hours manual time saved', '99% data accuracy']
+          title: 'AIエージェントスマート導入',
+          description: 'カスタマイズされたAIソリューション、反復作業を自動化、24/7中断なしサービス',
+          benefits: ['85%問い合わせ自動返信', '14時間手動時間節約', '99%データ精度']
         },
         dataAnalytics: {
-          title: 'Data-Driven Decision Making',
-          description: 'Real-time data collection and analysis, intelligent dashboard provides operational insights',
-          benefits: ['Real-time sales analysis', 'Automated replenishment recommendations', 'Precise inventory management']
+          title: 'データ駆動意思決定',
+          description: 'リアルタイムデータ収集・分析、インテリジェントダッシュボードが運営洞察を提供',
+          benefits: ['リアルタイム販売分析', '自動補充推奨', '精密在庫管理']
         },
         hrOptimization: {
-          title: 'Human Resource Optimization',
-          description: 'Free up manpower for high-value work, improve employee satisfaction and productivity',
-          benefits: ['50% operational cost reduction', 'Employees focus on core business', 'Improve service quality']
+          title: '人的資源最適化',
+          description: '人材を高付加価値業務に解放し、従業員満足度と生産性を向上',
+          benefits: ['50%運営コスト削減', '従業員がコア業務に集中', 'サービス品質向上']
         }
       }
     },
 
     // Case Studies Section
     caseStudies: {
-      title: 'Success Stories',
-      subtitle: 'Real client cases proving the actual benefits of AI implementation',
-      viewMore: 'View More Cases',
-      challenge: 'Challenge',
-      solution: 'Solution',
-      results: 'Results',
-      testimonial: 'Client Feedback',
-      overallStats: 'Overall Performance Statistics',
+      title: '成功事例',
+      subtitle: 'AI導入の実際の効果を証明する実際のクライアント事例',
+      viewMore: 'さらに事例を見る',
+      challenge: '課題',
+      solution: '解決策',
+      results: '成果',
+      testimonial: 'クライアントの声',
+      overallStats: '全体的なパフォーマンス統計',
       stats: {
-        automation: 'Average Automation Rate',
-        costReduction: 'Operational Cost Reduction',
-        timeSaved: 'Daily Time Saved',
-        satisfaction: 'Customer Satisfaction'
+        automation: '平均自動化率',
+        costReduction: '運営コスト削減',
+        timeSaved: '日次時間節約',
+        satisfaction: '顧客満足度'
       },
       ctaButtons: {
-        viewMore: 'View More Cases',
-        startJourney: 'Start Your AI Transformation Journey'
+        viewMore: 'さらに事例を見る',
+        startJourney: 'AI変革の旅を始める'
       },
       cases: {
         wholesale: {
-          industry: 'Wholesale & Retail',
-          company: 'Medium-sized Wholesaler',
-          challenge: 'Manually entering dozens of purchase orders daily, often working overtime until late, frequent human errors',
-          solution: 'AI Recognition System',
-          description: 'Developed AI recognition system that automatically reads key information from mobile photos of purchase orders and updates database directly',
+          industry: '卸売・小売業',
+          company: '中規模卸売業者',
+          challenge: '毎日数十件の発注書を手動入力、深夜まで残業することが多く、人的ミスが頻発',
+          solution: 'AI認識システム',
+          description: 'モバイル写真から発注書の重要情報を自動読み取り、データベースに直接更新するAI認識システムを開発',
           results: [
-            '14 hours of manual work significantly reduced',
-            '99% data accuracy, eliminating human errors',
-            'Precise inventory control',
-            'Cost cheaper than an iPhone'
+            '14時間の手動作業を大幅削減',
+            '99%のデータ精度、人的ミスを排除',
+            '正確な在庫管理',
+            'iPhoneより安いコスト'
           ],
-          testimonial: 'If I had known AI was this useful, I wouldn\'t have delayed starting for so long!'
+          testimonial: 'AIがこんなに便利だと知っていたら、こんなに導入を遅らせることはありませんでした！'
         },
         ecommerce: {
-          industry: 'E-commerce Platform',
-          company: 'Multi-platform E-commerce',
-          challenge: 'Unable to grasp real-time sales status across platforms, difficult inventory management, lack of data insights',
-          solution: 'Smart Dashboard',
-          description: 'Built smart dashboard that automatically integrates sales data from major platforms like MOMO and PChome, AI analyzes sales trends and provides replenishment recommendations',
+          industry: 'Eコマースプラットフォーム',
+          company: 'マルチプラットフォームEコマース',
+          challenge: '各プラットフォームのリアルタイム販売状況を把握できず、在庫管理が困難、データ洞察が不足',
+          solution: 'スマートダッシュボード',
+          description: 'MOMO、PChomeなど主要プラットフォームの販売データを自動統合し、AIが販売トレンドを分析して補充推奨を提供するスマートダッシュボードを構築',
           results: [
-            'Real-time grasp of multi-platform sales status',
-            'AI automated replenishment recommendations',
-            'Sales trend analysis',
-            '30% improvement in inventory turnover rate'
+            'マルチプラットフォーム販売状況をリアルタイムで把握',
+            'AI自動補充推奨',
+            '販売トレンド分析',
+            '在庫回転率30%向上'
           ],
-          testimonial: 'Now I just need to look at one screen daily to understand yesterday\'s sales situation and instantly discover hot-selling products.'
+          testimonial: '今は毎日一つの画面を見るだけで昨日の販売状況を理解し、人気商品を即座に発見できます。'
         },
         accounting: {
-          industry: 'Accounting Services',
-          company: 'Small-Medium Accounting Firm',
-          challenge: 'Working overtime until midnight during tax season, large amounts of repetitive document processing consuming manpower',
-          solution: 'RPA Automation System',
-          description: 'Designed RPA system that automatically logs into Ministry of Finance website, downloads relevant document certificates, and categorizes them properly',
+          industry: '会計サービス',
+          company: '中小会計事務所',
+          challenge: '税務シーズンに深夜まで残業、大量の反復的な書類処理が人手を消費',
+          solution: 'RPA自動化システム',
+          description: '財政部ウェブサイトに自動ログインし、関連書類証明書をダウンロードして適切に分類するRPAシステムを設計',
           results: [
-            'Original 14-hour work now completed automatically at midnight',
-            '100% document classification accuracy',
-            'Employees can focus on high-value work',
-            'Significant improvement in customer satisfaction'
+            '元の14時間の作業が深夜に自動完了',
+            '100%の書類分類精度',
+            '従業員が高付加価値業務に集中可能',
+            '顧客満足度大幅向上'
           ],
-          testimonial: 'The system silently completes all tedious work at midnight, and we can see organized documents when we arrive at work the next day.'
+          testimonial: 'システムが深夜に静かにすべての面倒な作業を完了し、翌朝出勤すると整理された書類を見ることができます。'
         },
         customerService: {
-          industry: 'Customer Service Center',
-          company: 'Online Service Platform',
-          challenge: 'High volume of customer inquiries, insufficient customer service staff, slow response affecting customer satisfaction',
-          solution: 'AI Chatbot',
-          description: 'Built AI chatbot that trains models with hundreds of accumulated Q&As, responding to customer questions instantly via LINE',
+          industry: 'カスタマーサービスセンター',
+          company: 'オンラインサービスプラットフォーム',
+          challenge: '大量の顧客問い合わせ、カスタマーサービススタッフ不足、応答が遅く顧客満足度に影響',
+          solution: 'AIチャットボット',
+          description: '蓄積された数百のQ&Aでモデルを訓練し、LINEを通じて顧客の質問に即座に応答するAIチャットボットを構築',
           results: [
-            '85% inquiry auto-reply',
-            '24/7 uninterrupted service',
-            'Customer service staff focus on complex issues',
-            '40% improvement in customer satisfaction'
+            '85%の問い合わせを自動返信',
+            '24/7中断なしサービス',
+            'カスタマーサービススタッフが複雑な問題に集中',
+            '顧客満足度40%向上'
           ],
-          testimonial: 'Over 85% of inquiries can be automatically replied to, customer service staff can now focus on handling more valuable work.'
+          testimonial: '85%以上の問い合わせが自動返信でき、カスタマーサービススタッフはより価値のある業務に集中できるようになりました。'
         }
       }
     },
 
     // CTA Section
     cta: {
-      title: 'Ready to Start Your',
-      titleHighlight: 'AI Transformation Journey',
-      titleSuffix: '?',
-      subtitle: 'Don\'t let competitors get ahead. Contact us immediately for exclusive AI implementation consultation and make your business stand out in the digital age.',
-      primaryButton: 'Free Consultation Now',
-      secondaryButton: 'View Success Stories',
-      whyChooseTitle: 'Why Choose AIRAI Technology?',
-      urgencyNote: 'Limited Time Offer: Free AI Implementation Feasibility Assessment Report for consultations this month',
-      customerQuote: 'AIRAI Technology is not just a technology supplier, but our best partner on the digital transformation journey',
-      customerQuoteSource: 'Real Client Feedback',
+      title: 'あなたの',
+      titleHighlight: 'AI変革の旅を始める',
+      titleSuffix: '準備はできましたか？',
+      subtitle: '競合他社に先を越されないでください。今すぐお問い合わせいただき、専用のAI導入コンサルティングを受けて、デジタル時代でビジネスを際立たせましょう。',
+      primaryButton: '今すぐ無料相談',
+      secondaryButton: '成功事例を見る',
+      whyChooseTitle: 'なぜAIRAIテクノロジーを選ぶのか？',
+      urgencyNote: '期間限定オファー：今月のコンサルティングでAI導入実現可能性評価レポートを無料提供',
+      customerQuote: 'AIRAIテクノロジーは単なる技術サプライヤーではなく、私たちのデジタル変革路上の最良のパートナーです',
+      customerQuoteSource: '実際のクライアントフィードバック',
       benefits: [
-        'Free assessment of your AI implementation needs',
-        'Customized solution design',
-        'Professional team full service',
-        'Measurable return on investment',
-        'Complete training and support',
-        'Continuous optimization and maintenance'
+        'AI導入ニーズの無料評価',
+        'カスタマイズソリューション設計',
+        '専門チーム全工程サービス',
+        '測定可能な投資収益',
+        '完全なトレーニングとサポート',
+        '継続的最適化とメンテナンス'
       ],
       stats: {
         cases: {
           number: '100+',
-          label: 'Successful Implementation Cases'
+          label: '成功導入事例'
         },
         automation: {
           number: '85%',
-          label: 'Average Automation Rate'
+          label: '平均自動化率'
         },
         roi: {
-          number: '6 months',
-          label: 'Average ROI Period'
+          number: '6ヶ月',
+          label: '平均投資回収期間'
         },
         support: {
           number: '24/7',
-          label: 'Technical Support Service'
+          label: '技術サポートサービス'
         }
       }
     }
