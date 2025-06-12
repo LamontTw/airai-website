@@ -107,3 +107,13 @@ pids
 # yarn.lock
 # package-lock.json
 # pnpm-lock.yaml
+
+# Local documentation files (ignore all .md files except README.md and docs/)
+*.md
+!README.md
+!docs/**/*.md
+
+# Test results and reports
+/test-results/
+/playwright-report/
+/coverage/
