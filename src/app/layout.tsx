@@ -41,6 +41,44 @@ export default function RootLayout({
         <link rel="alternate" hrefLang="en-US" href={`${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/en`} />
         <link rel="alternate" hrefLang="ja-JP" href={`${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/ja`} />
         <link rel="alternate" hrefLang="x-default" href={process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "AIRAI Technology",
+              "alternateName": "AIRAI科技",
+              "url": "https://airai.tw",
+              "logo": "https://airai.tw/images/logo.png",
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "telephone": "+886-953-202-811",
+                "contactType": "customer service",
+                "availableLanguage": ["zh-TW", "en", "ja"]
+              },
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "倉後街26号",
+                "addressLocality": "板橋区",
+                "addressRegion": "新北市",
+                "addressCountry": "TW"
+              },
+              "sameAs": [
+                "https://airai.tw/en",
+                "https://airai.tw/ja"
+              ],
+              "description": "專業的AI導入顧問公司，為中小企業提供RPA自動化、智能客服、數據分析等AI解決方案",
+              "foundingDate": "2024",
+              "numberOfEmployees": "1-10",
+              "industry": "Software Development",
+              "serviceArea": {
+                "@type": "Place",
+                "name": "Taiwan"
+              }
+            })
+          }}
+        />
       </head>
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
