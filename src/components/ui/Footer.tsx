@@ -8,31 +8,61 @@ import { getTranslations } from '@/lib/i18n';
 export default function Footer() {
   const pathname = usePathname();
   
-  // 判斷當前語言並取得翻譯
-  const isEnglish = pathname.startsWith('/en');
-  const t = getTranslations(isEnglish ? 'en' : 'zh');
-  const prefix = isEnglish ? '/en' : '';
+  // 判斷當前語言
+  const getCurrentLocale = (): 'zh' | 'en' | 'ja' => {
+    if (pathname.startsWith('/en/') || pathname === '/en') return 'en';
+    if (pathname.startsWith('/ja/') || pathname === '/ja') return 'ja';
+    return 'zh';
+  };
+  
+  const currentLocale = getCurrentLocale();
+  const t = getTranslations(currentLocale);
+  const prefix = currentLocale === 'zh' ? '' : `/${currentLocale}`;
 
   const footerLinks = {
     services: [
-      { name: isEnglish ? 'Software Outsourcing' : '程式外包', href: `${prefix}/services#programming` },
-      { name: isEnglish ? 'AI Agent Implementation' : 'AI Agent導入', href: `${prefix}/services#ai-agent` },
-      { name: isEnglish ? 'Intelligent Customer Service' : '智能客服', href: `${prefix}/services#chatbot` },
-      { name: isEnglish ? 'Process Automation' : '流程自動化', href: `${prefix}/services#automation` },
+      { 
+        name: currentLocale === 'zh' ? '程式外包' : 
+              currentLocale === 'en' ? 'Software Outsourcing' : 
+              'ソフトウェア外注', 
+        href: `${prefix}/services#programming` 
+      },
+      { 
+        name: currentLocale === 'zh' ? 'AI Agent導入' : 
+              currentLocale === 'en' ? 'AI Agent Implementation' : 
+              'AIエージェント導入', 
+        href: `${prefix}/services#ai-agent` 
+      },
+      { 
+        name: currentLocale === 'zh' ? '智能客服' : 
+              currentLocale === 'en' ? 'Intelligent Customer Service' : 
+              'インテリジェントカスタマーサービス', 
+        href: `${prefix}/services#chatbot` 
+      },
+      { 
+        name: currentLocale === 'zh' ? '流程自動化' : 
+              currentLocale === 'en' ? 'Process Automation' : 
+              'プロセス自動化', 
+        href: `${prefix}/services#automation` 
+      },
     ],
     company: [
       { name: t.nav.about, href: `${prefix}/about` },
       { name: t.nav.cases, href: `${prefix}/cases` },
-      { name: t.nav.resources, href: `${prefix}/resources` },
       { name: t.nav.contact, href: `${prefix}/contact` },
-    ],
-    resources: [
-      { name: isEnglish ? 'AI Transformation Guide' : 'AI轉型指南', href: `${prefix}/resources/ai-guide` },
-      { name: isEnglish ? 'Industry Trends' : '行業趨勢', href: `${prefix}/resources/trends` },
-      { name: isEnglish ? 'Tech Blog' : '技術部落格', href: `${prefix}/resources/blog` },
-      { name: isEnglish ? 'Free Tools' : '免費工具', href: `${prefix}/resources/tools` },
-    ],
+    ] as Array<{ name: string; href: string }>,
+    resources: currentLocale === 'zh' ? [
+      { name: 'AI轉型指南', href: `${prefix}/resources/ai-guide` },
+      { name: '行業趨勢', href: `${prefix}/resources/trends` },
+      { name: '技術部落格', href: `${prefix}/resources/blog` },
+      { name: '免費工具', href: `${prefix}/resources/tools` },
+    ] : [],
   };
+
+  // 只在中文模式下添加資源洞察到公司連結
+  if (currentLocale === 'zh') {
+    footerLinks.company.splice(2, 0, { name: t.nav.resources, href: `${prefix}/resources` });
+  }
 
   return (
     <footer className="bg-gray-900 text-white">
@@ -102,7 +132,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div>
-            <h3 className="font-semibold mb-4">{isEnglish ? 'Resources' : '資源中心'}</h3>
+            <h3 className="font-semibold mb-4">{currentLocale === 'zh' ? '資源中心' : currentLocale === 'en' ? 'Resources' : 'リソースセンター'}</h3>
             <ul className="space-y-2">
               {footerLinks.resources.map((link) => (
                 <li key={link.name}>
@@ -131,7 +161,7 @@ export default function Footer() {
                 {t.footer.terms}
               </Link>
               <Link href={`${prefix}/site-map`} className="text-gray-400 hover:text-white transition-colors duration-200">
-                {isEnglish ? 'Site Map' : '網站地圖'}
+                {currentLocale === 'zh' ? '網站地圖' : currentLocale === 'en' ? 'Site Map' : 'サイトマップ'}
               </Link>
             </div>
           </div>

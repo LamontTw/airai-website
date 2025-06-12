@@ -1,10 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter, Noto_Sans_JP } from 'next/font/google'
-import Navigation from '@/components/ui/Navigation'
-import Footer from '@/components/ui/Footer'
 import '@/app/globals.css'
-import { OrganizationSchema, WebsiteSchema } from '@/components/seo/StructuredData'
-import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ['latin'] })
 const notoSansJP = Noto_Sans_JP({ 
@@ -102,32 +98,8 @@ export default function JapaneseLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="ja" className={`${inter.className} ${notoSansJP.variable}`}>
-      <head>
-        <OrganizationSchema />
-        <WebsiteSchema />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/site.webmanifest" />
-        {/* 語言切換連結 */}
-        <link rel="alternate" hrefLang="zh-TW" href={process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"} />
-        <link rel="alternate" hrefLang="en-US" href={`${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/en`} />
-        <link rel="alternate" hrefLang="ja-JP" href={`${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/ja`} />
-        <link rel="alternate" hrefLang="x-default" href={process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"} />
-      </head>
-      <body className={`${inter.className} ${notoSansJP.variable} font-sans antialiased`}>
-        <Navigation />
-        {children}
-        <Footer />
-        <noscript>
-          <div style={{ display: 'none' }}>
-            このウェブサイトは最高のユーザーエクスペリエンスを提供するためにJavaScriptが必要です。JavaScriptを有効にするか、JavaScript対応ブラウザをご使用ください。
-          </div>
-        </noscript>
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
-      </body>
-    </html>
+    <>
+      {children}
+    </>
   )
 } 

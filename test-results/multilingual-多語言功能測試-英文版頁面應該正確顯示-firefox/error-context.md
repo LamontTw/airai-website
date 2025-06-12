@@ -1,0 +1,198 @@
+# Page snapshot
+
+```yaml
+- main:
+  - navigation:
+    - link "AIRAI - 智流科技":
+      - /url: /en
+      - img "AIRAI - 智流科技"
+    - link "Home":
+      - /url: /en
+    - link "About Us":
+      - /url: /en/about
+    - link "Services":
+      - /url: /en/services
+    - link "Case Studies":
+      - /url: /en/cases
+    - link "Contact":
+      - /url: /en/contact
+    - button "Language":
+      - text: Language English
+      - img
+    - link "Free Consultation":
+      - /url: /en/contact
+  - article:
+    - region "Main Introduction":
+      - text: AI Solutions Designed for Taiwan SMEs
+      - heading "Integrate AI into Daily Operations Accelerate Digital Transformation for SMEs" [level=1]
+      - paragraph: Through practical AI Agent implementation and software outsourcing services, we solve staffing shortages, improve operational efficiency, and create measurable competitive advantages for your business. More affordable than an iPhone.
+      - link "Free AI Implementation Consultation":
+        - /url: /en/contact
+      - link "View Success Stories":
+        - /url: /en/cases
+      - text: 85% Customer Service Auto-Reply Rate 14hrs Daily Manual Work Hours Saved 50% Operational Cost Reduction
+    - region "Problems and Solutions":
+      - heading "中小企業の 課題と機会" [level=2]
+      - paragraph: お客様の痛点を理解し、精密なAIソリューションを提供
+      - heading "一般的な課題" [level=3]
+      - heading "人材不足の困境" [level=4]
+      - paragraph: 少子高齢化により専門人材の採用が困難、従業員の兼務が効率に影響
+      - text: 45.5% 企業が資金投入に対する期待効果を懸念
+      - heading "煩雑な手作業" [level=4]
+      - paragraph: 大量の反復作業が人力を消費、手動データ入力はエラーが多く効率が低い
+      - text: 14時間 日次手動作業時間
+      - heading "高コスト低効率" [level=4]
+      - paragraph: 自動化ツールの不足により運営コストが高止まり、競争力向上が困難
+      - text: 24.5% 企業がソリューション価格を負担困難と認識
+      - heading "AIRAIテクノロジーソリューション" [level=3]
+      - heading "AIエージェントスマート導入" [level=4]
+      - paragraph: カスタマイズされたAIソリューション、反復作業の自動化、24/7中断なしサービス
+      - text: 85%問い合わせ自動返信 14時間手動時間節約 99%データ精度
+      - heading "データ駆動意思決定" [level=4]
+      - paragraph: リアルタイムデータ収集・分析、インテリジェントダッシュボードが運営洞察を提供
+      - text: リアルタイム販売分析 自動補充推奨 精密在庫管理
+      - heading "人的資源最適化" [level=4]
+      - paragraph: 人力を高価値業務に投入、従業員満足度と生産性を向上
+      - text: 50%運営コスト削減 従業員がコア業務に集中 サービス品質向上
+      - link "より多くのソリューションを見る":
+        - /url: "#services"
+    - region "Services":
+      - heading "Our Services" [level=2]
+      - paragraph: Comprehensive digital transformation solutions, from infrastructure to intelligent upgrades
+      - heading "Software Outsourcing" [level=3]
+      - paragraph: Custom Software Development
+      - paragraph: Provide customized software development for specific business needs, build digital infrastructure, and improve operational efficiency.
+      - heading "Core Benefits" [level=4]
+      - text: Tailored Solutions Reduce Operating Costs Improve Data Management Bridge Internal Technology Gaps
+      - heading "Service Process" [level=4]
+      - text: 1. Requirement Consultation 2. System Design 3. Development & Testing 4. Deployment & Maintenance
+      - link "Learn More":
+        - /url: /en/services#programming
+      - heading "AI Agent Implementation" [level=3]
+      - paragraph: Intelligent Automation Solutions
+      - paragraph: Implement intelligent automation tools to simplify workflows, enhance decision-making capabilities, and operate 24/7 without interruption.
+      - heading "Core Benefits" [level=4]
+      - text: Automate Repetitive Tasks Real-time Data Insights Improve Accuracy Scalable Intelligence
+      - heading "Service Process" [level=4]
+      - text: 1. Requirement Identification 2. Agent Selection 3. System Integration 4. Optimization & Training
+      - link "Learn More":
+        - /url: /en/services#ai-agent
+      - heading "AI Agent Application Scenarios" [level=3]
+      - heading "Intelligent Customer Service" [level=4]
+      - paragraph: AI chatbot provides 24/7 customer support with 85% auto-reply rate
+      - paragraph: "Example: LINE bot automatically responds to customer inquiries"
+      - heading "Process Automation (RPA)" [level=4]
+      - paragraph: Automate data entry, document processing, financial reconciliation and other repetitive tasks
+      - paragraph: "Example: Automatically log into Ministry of Finance website to download and categorize documents"
+      - heading "Data Insights Analytics" [level=4]
+      - paragraph: AI-driven dashboard provides sales, inventory and customer behavior analysis
+      - paragraph: "Example: Integrate multi-platform sales data with automated replenishment recommendations"
+      - heading "Intelligent Recognition System" [level=4]
+      - paragraph: AI recognizes invoices, purchase orders and other documents, automatically extracting key information
+      - paragraph: "Example: Mobile photo capture automatically reads purchase orders and updates database"
+    - region "Success Stories":
+      - heading "成功事例" [level=2]
+      - paragraph: 実際のクライアント事例でAI導入の実際効果を証明
+      - heading "中型卸売業者" [level=3]
+      - paragraph: 卸売小売業
+      - heading "課題" [level=4]
+      - paragraph: 毎日数十枚の仕入れ伝票を手動入力、深夜まで残業、人為ミスが頻発
+      - heading "ソリューション" [level=4]
+      - text: AI認識システム
+      - paragraph: AI認識システムを開発、スマホで仕入れ伝票を撮影するだけで重要情報を自動読み取り、データベースに直接更新
+      - heading "成果" [level=4]
+      - text: 14時間の手動作業を大幅削減 99%データ精度、人為ミスを根絶 在庫状況を精密把握 iPhoneより安いコスト
+      - paragraph: “AIがこんなに便利だと知っていれば、こんなに遅らせることはなかった！”
+      - heading "マルチプラットフォームEコマース" [level=3]
+      - paragraph: Eコマースプラットフォーム
+      - heading "課題" [level=4]
+      - paragraph: 各プラットフォームの販売状況をリアルタイムで把握できず、在庫管理困難、データ洞察不足
+      - heading "ソリューション" [level=4]
+      - text: スマートダッシュボード
+      - paragraph: スマートダッシュボードを構築、MOMO、PChomeなど大手プラットフォームの販売データを自動統合、AI分析で販売トレンドと補充推奨を提供
+      - heading "成果" [level=4]
+      - text: マルチプラットフォーム販売状況をリアルタイム把握 AI自動補充推奨 販売トレンド分析 在庫回転率30%向上
+      - paragraph: “今は毎日一つの画面を見るだけで昨日の販売状況を把握でき、人気商品も即座に発見できる。”
+      - heading "中小型会計事務所" [level=3]
+      - paragraph: 会計サービス業
+      - heading "課題" [level=4]
+      - paragraph: 税務シーズンに深夜まで残業、大量の反復文書処理作業が人力を消費
+      - heading "ソリューション" [level=4]
+      - text: RPA自動化システム
+      - paragraph: RPAシステムを設計、財政部ウェブサイトに自動ログイン、関連文書証憑をダウンロードし、適切に分類整理
+      - heading "成果" [level=4]
+      - text: 元々14時間の作業が深夜に自動完了 100%文書分類精度 従業員が高価値業務に集中可能 顧客満足度大幅向上
+      - paragraph: “システムが深夜に黙々と煩雑な作業を完了し、翌朝出勤時には整理された文書を見ることができる。”
+      - heading "オンラインサービスプラットフォーム" [level=3]
+      - paragraph: カスタマーサービスセンター
+      - heading "課題" [level=4]
+      - paragraph: 顧客問い合わせ量が多く、カスタマーサービス人員不足、返信速度が遅く顧客満足度に影響
+      - heading "ソリューション" [level=4]
+      - text: AIチャットボット
+      - paragraph: AIチャットボットを構築、過去蓄積した数百のQ&Aでモデルを訓練、LINEを通じて顧客問題に即座に対応
+      - heading "成果" [level=4]
+      - text: 85%問い合わせ自動返信 24/7中断なしサービス カスタマーサービス人員が複雑問題に集中 顧客満足度40%向上
+      - paragraph: “85%以上の問い合わせが自動返信でき、カスタマーサービス人員は今より価値ある業務に集中できる。”
+      - heading "全体効果統計" [level=3]
+      - text: 85% 平均自動化率 50% 運営コスト削減 14小時 日次時間節約 99% 顧客満足度
+      - link "より多くの事例を見る":
+        - /url: /en/cases
+      - link "AI変革の旅を始める":
+        - /url: /en/contact
+    - region "Call to Action":
+      - heading "あなたの AI変革の旅を始める準備はできましたか？" [level=2]
+      - paragraph: 競合他社に先を越されないでください。今すぐお問い合わせいただき、専用のAI導入コンサルティングを受けて、デジタル時代でビジネスを際立たせましょう。
+      - text: AI導入ニーズの無料評価 カスタマイズソリューション設計 専門チーム全工程サービス 測定可能な投資収益 完全なトレーニングとサポート 継続的最適化とメンテナンス
+      - link "今すぐ無料相談":
+        - /url: /en/contact
+      - link "成功事例を見る":
+        - /url: /en/cases
+      - heading "なぜAIRAIテクノロジーを選ぶのか？" [level=3]
+      - text: 100+ 成功導入事例 85% 平均自動化率 6ヶ月 平均投資回収期間 24/7 技術サポートサービス
+      - paragraph: “AIRAIテクノロジーは単なる技術サプライヤーではなく、私たちのデジタル変革路上の最良のパートナーです”
+      - paragraph: "- 実際のクライアントフィードバック"
+      - text: 期間限定オファー：今月のコンサルティングでAI導入実現可能性評価レポートを無料提供
+  - img "AIRAI - 智流科技"
+  - paragraph: Professional enterprise AI implementation solution provider
+  - text: No. 26, Canghou St., Banqiao Dist., New Taipei City +886 953-202-811 contact@airai.tw
+  - heading "Services" [level=3]
+  - list:
+    - listitem:
+      - link "Software Outsourcing":
+        - /url: /en/services#programming
+    - listitem:
+      - link "AI Agent Implementation":
+        - /url: /en/services#ai-agent
+    - listitem:
+      - link "Intelligent Customer Service":
+        - /url: /en/services#chatbot
+    - listitem:
+      - link "Process Automation":
+        - /url: /en/services#automation
+  - heading "Quick Links" [level=3]
+  - list:
+    - listitem:
+      - link "About Us":
+        - /url: /en/about
+    - listitem:
+      - link "Case Studies":
+        - /url: /en/cases
+    - listitem:
+      - link "Contact":
+        - /url: /en/contact
+  - heading "Resources" [level=3]
+  - list
+  - paragraph: © 2024 AIRAI Technology Co., Ltd.. All rights reserved.
+  - link "Privacy Policy":
+    - /url: /en/privacy
+  - link "Terms of Service":
+    - /url: /en/terms
+  - link "Site Map":
+    - /url: /en/site-map
+- status:
+  - img
+  - text: Static route
+  - button "Hide static indicator":
+    - img
+- alert
+```

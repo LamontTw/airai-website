@@ -13,14 +13,20 @@ const getNavigationItems = (locale: 'zh' | 'en' | 'ja') => {
   const t = getTranslations(locale);
   const prefix = locale === 'zh' ? '' : `/${locale}`;
   
-  return [
+  const baseItems: Array<{ name: string; href: string }> = [
     { name: t.nav.home, href: locale === 'zh' ? '/' : `/${locale}` },
     { name: t.nav.about, href: `${prefix}/about` },
     { name: t.nav.services, href: `${prefix}/services` },
     { name: t.nav.cases, href: `${prefix}/cases` },
-    { name: t.nav.resources, href: `${prefix}/resources` },
     { name: t.nav.contact, href: `${prefix}/contact` },
   ];
+
+  // 只在中文模式下顯示資源洞察
+  if (locale === 'zh') {
+    baseItems.splice(4, 0, { name: t.nav.resources, href: `${prefix}/resources` });
+  }
+
+  return baseItems;
 };
 
 export default function Navigation() {

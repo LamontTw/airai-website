@@ -8,16 +8,11 @@ import Footer from '@/components/ui/Footer';
 import { 
   BuildingOfficeIcon,
   ShoppingBagIcon,
-  TruckIcon,
   DocumentTextIcon,
   ArrowRightIcon,
-  ChatBubbleLeftIcon,
   ChartBarIcon,
-  ClockIcon,
-  CurrencyDollarIcon,
   UserGroupIcon,
   CheckCircleIcon,
-  StarIcon,
   CalendarIcon,
   MapPinIcon
 } from '@heroicons/react/24/outline';

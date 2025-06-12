@@ -1,0 +1,271 @@
+# Page snapshot
+
+```yaml
+- navigation:
+  - link "AIRAI - 智流科技":
+    - /url: /ja
+    - img "AIRAI - 智流科技"
+  - link "ホーム":
+    - /url: /ja
+  - link "私たちについて":
+    - /url: /ja/about
+  - link "サービス":
+    - /url: /ja/services
+  - link "ケーススタディ":
+    - /url: /ja/cases
+  - link "お問い合わせ":
+    - /url: /ja/contact
+  - button "言語":
+    - text: 言語 日本語
+    - img
+  - link "無料相談":
+    - /url: /ja/contact
+- main:
+  - navigation:
+    - link "AIRAI - 智流科技":
+      - /url: /ja
+      - img "AIRAI - 智流科技"
+    - link "ホーム":
+      - /url: /ja
+    - link "私たちについて":
+      - /url: /ja/about
+    - link "サービス":
+      - /url: /ja/services
+    - link "ケーススタディ":
+      - /url: /ja/cases
+    - link "お問い合わせ":
+      - /url: /ja/contact
+    - button "言語":
+      - text: 言語 日本語
+      - img
+    - link "無料相談":
+      - /url: /ja/contact
+  - article:
+    - region "メイン紹介":
+      - text: 台湾の中小企業向けに設計されたAIソリューション
+      - heading "AIを日常業務に統合 中小企業のデジタル変革を加速" [level=1]
+      - paragraph: 実用的なAIエージェント導入とソフトウェア外注サービスを通じて、人材不足を解決し、運営効率を向上させ、ビジネスに測定可能な競争優位性を創造します。iPhoneよりも手頃な価格。
+      - link "無料AI導入相談":
+        - /url: /ja/contact
+      - link "成功事例を見る":
+        - /url: /ja/cases
+      - text: 85% カスタマーサービス自動返信率 14hrs 日次手動作業時間削減 50% 運営コスト削減
+    - region "問題と解決策":
+      - heading "Challenges and Opportunities for SMEs" [level=2]
+      - paragraph: Understanding your pain points, providing precise AI solutions
+      - heading "Common Challenges" [level=3]
+      - heading "Staffing Shortage Crisis" [level=4]
+      - paragraph: Declining birth rates and aging population make professional talent recruitment difficult, employees juggling multiple roles affecting efficiency
+      - text: 45.5% Companies worry about investing funds without expected results
+      - heading "Tedious Manual Operations" [level=4]
+      - paragraph: Large amounts of repetitive work consume manpower, manual data entry is error-prone and inefficient
+      - text: 14 hours Daily manual operation time
+      - heading "High Cost Low Efficiency" [level=4]
+      - paragraph: Lack of automation tools, high operating costs, difficult to improve competitiveness
+      - text: 24.5% Companies find solution prices unaffordable
+      - heading "AIRAI Technology Solutions" [level=3]
+      - heading "AI Agent Smart Implementation" [level=4]
+      - paragraph: Customized AI solutions, automate repetitive work, 24/7 uninterrupted service
+      - text: 85% inquiry auto-reply 14 hours manual time saved 99% data accuracy
+      - heading "Data-Driven Decision Making" [level=4]
+      - paragraph: Real-time data collection and analysis, intelligent dashboard provides operational insights
+      - text: Real-time sales analysis Automated replenishment recommendations Precise inventory management
+      - heading "Human Resource Optimization" [level=4]
+      - paragraph: Free up manpower for high-value work, improve employee satisfaction and productivity
+      - text: 50% operational cost reduction Employees focus on core business Improve service quality
+      - link "Learn More Solutions":
+        - /url: "#services"
+    - region "サービス":
+      - heading "私たちのサービス" [level=2]
+      - paragraph: 基盤構築からインテリジェント化まで、包括的なデジタル変革ソリューション
+      - heading "ソフトウェア外注" [level=3]
+      - paragraph: カスタムソフトウェア開発
+      - paragraph: 特定のビジネスニーズに対応したカスタムソフトウェア開発を提供し、デジタル基盤を構築し、運営効率を向上させます。
+      - heading "コア効果" [level=4]
+      - text: オーダーメイドソリューション 運営コスト削減 データ管理改善 内部技術ギャップの補完
+      - heading "サービスプロセス" [level=4]
+      - text: 1. 要件相談 2. システム設計 3. 開発・テスト 4. 展開・保守
+      - link "詳細を見る":
+        - /url: /ja/services#programming
+      - heading "AIエージェント導入" [level=3]
+      - paragraph: インテリジェント自動化ソリューション
+      - paragraph: インテリジェント自動化ツールを実装し、ワークフローを簡素化し、意思決定能力を強化し、24/7中断なく動作します。
+      - heading "コア効果" [level=4]
+      - text: 反復タスクの自動化 リアルタイムデータ洞察 精度向上 スケーラブルなインテリジェンス
+      - heading "サービスプロセス" [level=4]
+      - text: 1. 要件識別 2. エージェント選択 3. システム統合 4. 最適化・トレーニング
+      - link "詳細を見る":
+        - /url: /ja/services#ai-agent
+      - heading "AIエージェント応用シナリオ" [level=3]
+      - heading "インテリジェントカスタマーサービス" [level=4]
+      - paragraph: AIチャットボットが24/7カスタマーサポートを提供、85%の問い合わせを自動返信
+      - paragraph: 実例：LINEボットが顧客の問い合わせに自動応答
+      - heading "プロセス自動化 (RPA)" [level=4]
+      - paragraph: データ入力、文書処理、財務照合などの反復作業を自動化
+      - paragraph: 実例：財政部ウェブサイトに自動ログインして文書をダウンロード・分類
+      - heading "データ洞察分析" [level=4]
+      - paragraph: AI駆動のダッシュボードが販売、在庫、顧客行動分析を提供
+      - paragraph: 実例：マルチプラットフォーム販売データを統合し、自動補充推奨
+      - heading "インテリジェント認識システム" [level=4]
+      - paragraph: AI が請求書、発注書などの文書を認識し、重要情報を自動抽出
+      - paragraph: 実例：モバイル写真撮影で発注書を自動読み取り、データベース更新
+    - region "成功事例":
+      - heading "Success Stories" [level=2]
+      - paragraph: Real client cases proving the actual benefits of AI implementation
+      - heading "Medium-sized Wholesaler" [level=3]
+      - paragraph: Wholesale & Retail
+      - heading "Challenge" [level=4]
+      - paragraph: Manually entering dozens of purchase orders daily, often working overtime until late, frequent human errors
+      - heading "Solution" [level=4]
+      - text: AI Recognition System
+      - paragraph: Developed AI recognition system that automatically reads key information from mobile photos of purchase orders and updates database directly
+      - heading "Results" [level=4]
+      - text: 14 hours of manual work significantly reduced 99% data accuracy, eliminating human errors Precise inventory control Cost cheaper than an iPhone
+      - paragraph: “If I had known AI was this useful, I wouldn't have delayed starting for so long!”
+      - heading "Multi-platform E-commerce" [level=3]
+      - paragraph: E-commerce Platform
+      - heading "Challenge" [level=4]
+      - paragraph: Unable to grasp real-time sales status across platforms, difficult inventory management, lack of data insights
+      - heading "Solution" [level=4]
+      - text: Smart Dashboard
+      - paragraph: Built smart dashboard that automatically integrates sales data from major platforms like MOMO and PChome, AI analyzes sales trends and provides replenishment recommendations
+      - heading "Results" [level=4]
+      - text: Real-time grasp of multi-platform sales status AI automated replenishment recommendations Sales trend analysis 30% improvement in inventory turnover rate
+      - paragraph: “Now I just need to look at one screen daily to understand yesterday's sales situation and instantly discover hot-selling products.”
+      - heading "Small-Medium Accounting Firm" [level=3]
+      - paragraph: Accounting Services
+      - heading "Challenge" [level=4]
+      - paragraph: Working overtime until midnight during tax season, large amounts of repetitive document processing consuming manpower
+      - heading "Solution" [level=4]
+      - text: RPA Automation System
+      - paragraph: Designed RPA system that automatically logs into Ministry of Finance website, downloads relevant document certificates, and categorizes them properly
+      - heading "Results" [level=4]
+      - text: Original 14-hour work now completed automatically at midnight 100% document classification accuracy Employees can focus on high-value work Significant improvement in customer satisfaction
+      - paragraph: “The system silently completes all tedious work at midnight, and we can see organized documents when we arrive at work the next day.”
+      - heading "Online Service Platform" [level=3]
+      - paragraph: Customer Service Center
+      - heading "Challenge" [level=4]
+      - paragraph: High volume of customer inquiries, insufficient customer service staff, slow response affecting customer satisfaction
+      - heading "Solution" [level=4]
+      - text: AI Chatbot
+      - paragraph: Built AI chatbot that trains models with hundreds of accumulated Q&As, responding to customer questions instantly via LINE
+      - heading "Results" [level=4]
+      - text: 85% inquiry auto-reply 24/7 uninterrupted service Customer service staff focus on complex issues 40% improvement in customer satisfaction
+      - paragraph: “Over 85% of inquiries can be automatically replied to, customer service staff can now focus on handling more valuable work.”
+      - heading "Overall Performance Statistics" [level=3]
+      - text: 85% Average Automation Rate 50% Operational Cost Reduction 14小時 Daily Time Saved 99% Customer Satisfaction
+      - link "View More Cases":
+        - /url: /ja/cases
+      - link "Start Your AI Transformation Journey":
+        - /url: /ja/contact
+    - region "お問い合わせ":
+      - heading "Ready to Start Your AI Transformation Journey?" [level=2]
+      - paragraph: Don't let competitors get ahead. Contact us immediately for exclusive AI implementation consultation and make your business stand out in the digital age.
+      - text: Free assessment of your AI implementation needs Customized solution design Professional team full service Measurable return on investment Complete training and support Continuous optimization and maintenance
+      - link "Free Consultation Now":
+        - /url: /ja/contact
+      - link "View Success Stories":
+        - /url: /ja/cases
+      - heading "Why Choose AIRAI Technology?" [level=3]
+      - text: 100+ Successful Implementation Cases 85% Average Automation Rate 6 months Average ROI Period 24/7 Technical Support Service
+      - paragraph: “AIRAI Technology is not just a technology supplier, but our best partner on the digital transformation journey”
+      - paragraph: "- Real Client Feedback"
+      - text: "Limited Time Offer: Free AI Implementation Feasibility Assessment Report for consultations this month"
+  - heading "よくある質問" [level=2]
+  - paragraph: 企業AI導入に関するよくある質問にお答えします
+  - heading "企業AI導入とは何ですか？" [level=3]
+  - paragraph: 企業AI導入とは、人工知能技術をビジネスプロセス、意思決定システム、日常業務に統合し、効率性の向上、コスト削減、顧客体験の改善、新しいビジネス価値の創造を図ることです。インテリジェントカスタマーサービス、予測分析、プロセス自動化、パーソナライズされた推奨などの応用が含まれます。
+  - heading "AI導入にはどのくらいの投資が必要ですか？" [level=3]
+  - paragraph: AI導入の投資範囲は広く、小規模な自動化プロジェクトの数万元から大規模AIシステムの数百万元まであります。重要なのは、まずビジネスニーズと期待される収益を評価することです。企業が賢明な投資決定を行うためのROI計算ツールを提供しています。一般的に、中小企業は50-200万元の予算から始めることができます。
+  - heading "適切なAI技術をどのように選択しますか？" [level=3]
+  - paragraph: AI技術の選択には複数の要因を考慮する必要があります：ビジネス要件の適合性、技術の成熟度、実装コスト、チームの能力、拡張性のニーズなど。企業が最適なAIソリューションを科学的に選択できるよう、専門的な技術選定ガイドと評価ツールを提供しています。
+  - heading "AI導入の成功率はどのくらいですか？" [level=3]
+  - paragraph: 私たちの経験と業界レポートに基づくと、明確な目標と専門的な指導があるAIプロジェクトの成功率は70-80%に達することができます。主要な成功要因には、明確なビジネス目標、高品質なデータ、適切な技術選択、十分なスタッフトレーニング、段階的な実装戦略が含まれます。
+  - heading "AIは人間の仕事を置き換えますか？" [level=3]
+  - paragraph: AIは完全な置き換えよりも人間の能力を強化することが多いです。反復的なタスクを自動化し、従業員がより創造的で戦略的な仕事に集中できるようにします。適切なAI導入は通常、新しい雇用機会を創出し、既存従業員の仕事の価値とスキルレベルを向上させます。
+  - img "AIRAI - 智流科技"
+  - paragraph: 専門的な企業AI導入ソリューションプロバイダー
+  - text: 新北市板橋区倉後街26号 +886 953-202-811 contact@airai.tw
+  - heading "サービス" [level=3]
+  - list:
+    - listitem:
+      - link "ソフトウェア外注":
+        - /url: /ja/services#programming
+    - listitem:
+      - link "AIエージェント導入":
+        - /url: /ja/services#ai-agent
+    - listitem:
+      - link "インテリジェントカスタマーサービス":
+        - /url: /ja/services#chatbot
+    - listitem:
+      - link "プロセス自動化":
+        - /url: /ja/services#automation
+  - heading "クイックリンク" [level=3]
+  - list:
+    - listitem:
+      - link "私たちについて":
+        - /url: /ja/about
+    - listitem:
+      - link "ケーススタディ":
+        - /url: /ja/cases
+    - listitem:
+      - link "お問い合わせ":
+        - /url: /ja/contact
+  - heading "リソースセンター" [level=3]
+  - list
+  - paragraph: © 2024 AIRAI テクノロジー株式会社. 全著作権所有.
+  - link "プライバシーポリシー":
+    - /url: /ja/privacy
+  - link "利用規約":
+    - /url: /ja/terms
+  - link "サイトマップ":
+    - /url: /ja/site-map
+- contentinfo:
+  - img "AIRAI - 智流科技"
+  - paragraph: 専門的な企業AI導入ソリューションプロバイダー
+  - text: 新北市板橋区倉後街26号 +886 953-202-811 contact@airai.tw
+  - heading "サービス" [level=3]
+  - list:
+    - listitem:
+      - link "ソフトウェア外注":
+        - /url: /ja/services#programming
+    - listitem:
+      - link "AIエージェント導入":
+        - /url: /ja/services#ai-agent
+    - listitem:
+      - link "インテリジェントカスタマーサービス":
+        - /url: /ja/services#chatbot
+    - listitem:
+      - link "プロセス自動化":
+        - /url: /ja/services#automation
+  - heading "クイックリンク" [level=3]
+  - list:
+    - listitem:
+      - link "私たちについて":
+        - /url: /ja/about
+    - listitem:
+      - link "ケーススタディ":
+        - /url: /ja/cases
+    - listitem:
+      - link "お問い合わせ":
+        - /url: /ja/contact
+  - heading "リソースセンター" [level=3]
+  - list
+  - paragraph: © 2024 AIRAI テクノロジー株式会社. 全著作権所有.
+  - link "プライバシーポリシー":
+    - /url: /ja/privacy
+  - link "利用規約":
+    - /url: /ja/terms
+  - link "サイトマップ":
+    - /url: /ja/site-map
+- img
+- text: 1 error
+- button "Hide Errors":
+  - img
+- status:
+  - img
+  - text: Static route
+  - button "Hide static indicator":
+    - img
+- alert
+```

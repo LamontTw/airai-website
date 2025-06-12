@@ -7,7 +7,7 @@ import emailjs from '@emailjs/browser';
 import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
 import { OrganizationSchema } from '@/components/seo/StructuredData';
-import { EMAILJS_CONFIG, type EmailTemplateParams } from '@/lib/emailjs-config';
+import { type EmailTemplateParams } from '@/lib/emailjs-config';
 import { 
   PhoneIcon, 
   EnvelopeIcon, 

@@ -9,8 +9,7 @@ import {
   UserGroupIcon, 
   CpuChipIcon,
   HeartIcon,
-  StarIcon,
-  AcademicCapIcon
+  StarIcon
 } from '@heroicons/react/24/outline';
 
 const values = [
