@@ -213,6 +213,12 @@ export const translations = {
         timeSaved: '每日節省時間',
         satisfaction: '客戶滿意度'
       },
+      statsValues: {
+        automation: '85%',
+        costReduction: '50%',
+        timeSaved: '14小時',
+        satisfaction: '99%'
+      },
       ctaButtons: {
         viewMore: '查看更多案例',
         startJourney: '開始您的AI轉型之旅'
@@ -543,6 +549,12 @@ export const translations = {
         timeSaved: 'Daily Time Savings',
         satisfaction: 'Customer Satisfaction'
       },
+      statsValues: {
+        automation: '85%',
+        costReduction: '50%',
+        timeSaved: '14 hours',
+        satisfaction: '99%'
+      },
       ctaButtons: {
         viewMore: 'View More Cases',
         startJourney: 'Start Your AI Transformation Journey'
@@ -860,6 +872,12 @@ export const translations = {
         costReduction: '運営コスト削減',
         timeSaved: '日次時間節約',
         satisfaction: '顧客満足度'
+      },
+      statsValues: {
+        automation: '85%',
+        costReduction: '50%',
+        timeSaved: '14時間',
+        satisfaction: '99%'
       },
       ctaButtons: {
         viewMore: 'さらに事例を見る',

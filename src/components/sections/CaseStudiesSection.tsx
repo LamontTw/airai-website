@@ -212,19 +212,19 @@ export default function CaseStudiesSection() {
           <h3 className="text-2xl font-bold mb-8">{t.caseStudies.overallStats}</h3>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
             <div>
-              <div className="text-3xl font-bold mb-2">85%</div>
+              <div className="text-3xl font-bold mb-2">{t.caseStudies.statsValues.automation}</div>
               <div className="text-blue-100">{t.caseStudies.stats.automation}</div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">50%</div>
+              <div className="text-3xl font-bold mb-2">{t.caseStudies.statsValues.costReduction}</div>
               <div className="text-blue-100">{t.caseStudies.stats.costReduction}</div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">14小時</div>
+              <div className="text-3xl font-bold mb-2">{t.caseStudies.statsValues.timeSaved}</div>
               <div className="text-blue-100">{t.caseStudies.stats.timeSaved}</div>
             </div>
             <div>
-              <div className="text-3xl font-bold mb-2">99%</div>
+              <div className="text-3xl font-bold mb-2">{t.caseStudies.statsValues.satisfaction}</div>
               <div className="text-blue-100">{t.caseStudies.stats.satisfaction}</div>
             </div>
           </div>
