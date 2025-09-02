@@ -257,14 +257,6 @@ export default function TermsOfService() {
                       </div>
                     </div>
 
-                    <div className="mt-4 p-4 bg-purple-100 rounded">
-                      <p className="text-sm text-purple-800">
-                        <strong>專業顧問費率：</strong><br/>
-                        • 資深顧問：NT$ 5,000-8,000/時<br/>
-                        • 技術專家：NT$ 3,000-5,000/時<br/>
-                        • 工程師：NT$ 2,000-3,000/時
-                      </p>
-                    </div>
                   </div>
 
                   <div className="bg-red-50 border border-red-200 rounded-lg p-6">
@@ -422,7 +414,7 @@ export default function TermsOfService() {
                     
                     <div className="space-y-4">
                       <div>
-                        <h4 className="font-medium text-teal-800 mb-2">免費保固（90天）</h4>
+                        <h4 className="font-medium text-teal-800 mb-2">免費保固（30天）</h4>
                         <ul className="text-gray-600 text-sm space-y-1">
                           <li>• 程式錯誤修正</li>
                           <li>• 功能不符合規格書</li>
