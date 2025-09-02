@@ -1,0 +1,33 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(chcp:*)",
+      "Bash(npm run build:*)",
+      "Bash(find:*)",
+      "Bash(npm install:*)",
+      "Bash(mkdir:*)",
+      "Bash(ls:*)",
+      "Bash(node:*)",
+      "Bash(rm:*)",
+      "Bash(true)",
+      "Bash(git rm:*)",
+      "Bash(diff:*)",
+      "Bash(claude doctor)",
+      "Bash(where git)",
+      "Bash(where bash)",
+      "Bash(/doctor)",
+      "Bash(echo $HOME)",
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(claude /doctor)",
+      "Bash(dir:*)",
+      "Bash(cmd /c:*)",
+      "Bash(npm run dev:*)",
+      "Bash(npm audit:*)",
+      "Bash(git log:*)",
+      "Bash(vercel:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
+    ],
+    "deny": []
+  }
+}
