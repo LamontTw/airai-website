@@ -39,6 +39,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: `${siteConfig.url}/terms`,
+    languages: {
+      'zh': `${siteConfig.url}/terms`,
+      'en': `${siteConfig.url}/en/terms`,
+      'ja': `${siteConfig.url}/ja/terms`,
+    },
   },
   robots: {
     index: true,
