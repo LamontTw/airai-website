@@ -74,8 +74,8 @@ export default function TermsOfService() {
                 </h2>
                 <div className="bg-green-50 border border-green-200 rounded-lg p-6">
                   <p className="text-gray-700 leading-relaxed">
-                    Welcome to AIRAI Technology Co., Ltd. (hereinafter referred to as "the Company", "we" or "AIRAI Technology") services.
-                    These Terms of Service (hereinafter referred to as "these Terms") constitute a legally binding agreement between you and the Company.
+                    Welcome to AIRAI Technology Co., Ltd. (hereinafter referred to as &quot;the Company&quot;, &quot;we&quot; or &quot;AIRAI Technology&quot;) services.
+                    These Terms of Service (hereinafter referred to as &quot;these Terms&quot;) constitute a legally binding agreement between you and the Company.
                   </p>
                   <p className="text-gray-700 leading-relaxed mt-4">
                     By accessing or using our website, services or products, you agree to be bound by these Terms.
