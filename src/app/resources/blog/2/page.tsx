@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
-import { 
+import {
   ChatBubbleLeftRightIcon,
   CpuChipIcon,
   ShieldCheckIcon,
@@ -48,7 +48,7 @@ export default function ChatGPTEnterpriseArticle() {
   return (
     <main className="min-h-screen bg-gray-50">
       <Navigation />
-      
+
       {/* Hero Section */}
       <section className="pt-20 pb-12 bg-gradient-to-br from-blue-50 via-cyan-50 to-indigo-50">
         <div className="container-max section-padding">
@@ -67,8 +67,8 @@ export default function ChatGPTEnterpriseArticle() {
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
               深入分享我們團隊在導入ChatGPT過程中的實際經驗，包括技術整合、安全考量與效益評估
             </p>
-            
-            {/* Article Meta */}
+
+            {/* Article  Meta */}
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 mb-8">
               <div className="flex items-center">
                 <ClockIcon className="w-4 h-4 mr-1" />
@@ -88,7 +88,7 @@ export default function ChatGPTEnterpriseArticle() {
               </div>
             </div>
 
-            {/* Action Buttons */}
+            {/* Action Bu ttons */}
             <div className="flex flex-wrap justify-center gap-4">
               <button className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200">
                 <BookmarkIcon className="w-5 h-5 mr-2" />
@@ -107,7 +107,7 @@ export default function ChatGPTEnterpriseArticle() {
       <section ref={ref} className="section-padding bg-white">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-4 gap-12">
-            
+
             {/* Table of Contents */}
             <div className="lg:col-span-1">
               <div className="sticky top-24">
@@ -122,11 +122,10 @@ export default function ChatGPTEnterpriseArticle() {
                         setActiveSection(item.id);
                         document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' });
                       }}
-                      className={`flex items-center px-3 py-2 rounded-lg text-sm transition-colors duration-200 ${
-                        activeSection === item.id
+                      className={`flex items-center px-3 py-2 rounded-lg text-sm transition-colors duration-200 ${activeSection === item.id
                           ? 'bg-blue-100 text-blue-700 font-medium'
                           : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
-                      }`}
+                        }`}
                     >
                       <item.icon className="w-4 h-4 mr-2" />
                       {item.title}
@@ -139,7 +138,7 @@ export default function ChatGPTEnterpriseArticle() {
             {/* Article Content */}
             <div className="lg:col-span-3">
               <div className="prose prose-lg max-w-none">
-                
+
                 {/* Introduction */}
                 <section id="introduction" className="scroll-mt-20 mb-12">
                   <motion.div
@@ -151,13 +150,13 @@ export default function ChatGPTEnterpriseArticle() {
                       <LightBulbIcon className="w-8 h-8 text-yellow-600 mr-3" />
                       導入背景與動機
                     </h2>
-                    
+
                     <div className="text-gray-700 leading-relaxed space-y-4">
                       <p>
                         作為一家中型科技公司的技術長，我一直在尋找能夠提升團隊生產力的解決方案。
                         當ChatGPT在2022年底問世時，我們立即意識到這可能是一個改變遊戲規則的工具。
                       </p>
-                      
+
                       <p>
                         經過6個月的深度評估和3個月的逐步導入，我們成功將ChatGPT整合到日常工作流程中，
                         取得了顯著的效益。本文將詳細分享我們的實際經驗，希望能為其他企業提供參考。
@@ -211,7 +210,7 @@ export default function ChatGPTEnterpriseArticle() {
                       <CpuChipIcon className="w-8 h-8 text-purple-600 mr-3" />
                       技術整合策略
                     </h2>
-                    
+
                     <div className="text-gray-700 leading-relaxed space-y-6">
                       <p>
                         技術整合是ChatGPT企業導入的核心環節。我們採用分階段的導入策略，
@@ -220,7 +219,7 @@ export default function ChatGPTEnterpriseArticle() {
 
                       <div className="bg-purple-50 border border-purple-200 rounded-xl p-6">
                         <h3 className="text-xl font-bold text-purple-900 mb-4">整合架構設計</h3>
-                        
+
                         <div className="space-y-6">
                           <div className="bg-white p-4 rounded-lg border border-purple-200">
                             <h4 className="font-semibold text-purple-800 mb-3">API整合層</h4>
@@ -303,7 +302,7 @@ export default function ChatGPTEnterpriseArticle() {
                       <ShieldCheckIcon className="w-8 h-8 text-green-600 mr-3" />
                       安全性與合規考量
                     </h2>
-                    
+
                     <div className="text-gray-700 leading-relaxed space-y-6">
                       <p>
                         企業級ChatGPT應用最重要的考量之一就是資料安全與合規性。
@@ -312,7 +311,7 @@ export default function ChatGPTEnterpriseArticle() {
 
                       <div className="bg-green-50 border border-green-200 rounded-xl p-6">
                         <h3 className="text-xl font-bold text-green-900 mb-4">安全控制措施</h3>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="bg-white p-4 rounded-lg border border-green-200">
                             <h4 className="font-semibold text-green-800 mb-3">資料保護</h4>
@@ -398,7 +397,7 @@ export default function ChatGPTEnterpriseArticle() {
                       <CogIcon className="w-8 h-8 text-orange-600 mr-3" />
                       工作流程優化
                     </h2>
-                    
+
                     <div className="text-gray-700 leading-relaxed space-y-6">
                       <p>
                         成功的ChatGPT導入不僅是技術實現，更重要的是工作流程的重新設計。
@@ -408,7 +407,7 @@ export default function ChatGPTEnterpriseArticle() {
                       <div className="space-y-6">
                         <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
                           <h3 className="text-xl font-bold text-orange-900 mb-4">軟體開發流程</h3>
-                          
+
                           <div className="space-y-4">
                             <div className="bg-white p-4 rounded-lg border border-orange-200">
                               <h4 className="font-semibold text-orange-800 mb-3">程式碼開發</h4>
@@ -450,7 +449,7 @@ export default function ChatGPTEnterpriseArticle() {
 
                         <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
                           <h3 className="text-xl font-bold text-blue-900 mb-4">文件管理流程</h3>
-                          
+
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                             <div className="bg-white p-4 rounded-lg border border-blue-200">
                               <h4 className="font-semibold text-blue-800 mb-3">技術文件</h4>
@@ -481,7 +480,7 @@ export default function ChatGPTEnterpriseArticle() {
 
                         <div className="bg-green-50 border border-green-200 rounded-xl p-6">
                           <h3 className="text-xl font-bold text-green-900 mb-4">客戶服務流程</h3>
-                          
+
                           <div className="bg-white p-4 rounded-lg border border-green-200">
                             <h4 className="font-semibold text-green-800 mb-3">多層次回應機制</h4>
                             <div className="space-y-3">
@@ -531,7 +530,7 @@ export default function ChatGPTEnterpriseArticle() {
                       <ChartBarIcon className="w-8 h-8 text-indigo-600 mr-3" />
                       效益評估與指標
                     </h2>
-                    
+
                     <div className="text-gray-700 leading-relaxed space-y-6">
                       <p>
                         經過9個月的實際運行，我們收集了豐富的數據來評估ChatGPT導入的實際效益。
@@ -540,7 +539,7 @@ export default function ChatGPTEnterpriseArticle() {
 
                       <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
                         <h3 className="text-xl font-bold text-indigo-900 mb-4">量化效益分析</h3>
-                        
+
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div className="bg-white p-4 rounded-lg border border-indigo-200">
                             <h4 className="font-semibold text-indigo-800 mb-3">開發效率提升</h4>
@@ -644,7 +643,7 @@ export default function ChatGPTEnterpriseArticle() {
                       <ExclamationTriangleIcon className="w-8 h-8 text-red-600 mr-3" />
                       挑戰與解決方案
                     </h2>
-                    
+
                     <div className="text-gray-700 leading-relaxed space-y-6">
                       <p>
                         ChatGPT導入過程並非一帆風順。我們遇到了技術、人員、流程等多方面的挑戰，
@@ -654,7 +653,7 @@ export default function ChatGPTEnterpriseArticle() {
                       <div className="space-y-6">
                         <div className="bg-red-50 border border-red-200 rounded-xl p-6">
                           <h3 className="text-xl font-bold text-red-900 mb-4">技術挑戰</h3>
-                          
+
                           <div className="space-y-4">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               <div className="bg-red-100 border border-red-300 rounded-lg p-4">
@@ -702,7 +701,7 @@ export default function ChatGPTEnterpriseArticle() {
 
                         <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-6">
                           <h3 className="text-xl font-bold text-yellow-900 mb-4">組織挑戰</h3>
-                          
+
                           <div className="space-y-4">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               <div className="bg-yellow-100 border border-yellow-300 rounded-lg p-4">
@@ -793,7 +792,7 @@ export default function ChatGPTEnterpriseArticle() {
                       <RocketLaunchIcon className="w-8 h-8 text-blue-600 mr-3" />
                       未來發展規劃
                     </h2>
-                    
+
                     <div className="text-gray-700 leading-relaxed space-y-6">
                       <p>
                         基於目前的成功經驗，我們制定了未來12個月的ChatGPT深化應用計劃，
@@ -895,16 +894,16 @@ export default function ChatGPTEnterpriseArticle() {
                             歡迎與我們交流ChatGPT企業導入的實務經驗，或討論您的AI應用規劃
                           </p>
                           <div className="flex flex-wrap justify-center gap-4">
-                            <a 
-                              href="/contact" 
+                            <a
+                              href="/contact"
                               className="inline-flex items-center px-6 py-3 bg-white text-blue-600 rounded-lg font-medium hover:bg-gray-50 transition-colors duration-200"
                             >
                               <ChatBubbleLeftRightIcon className="w-5 h-5 mr-2" />
                               預約諮詢
                               <ArrowRightIcon className="w-5 h-5 ml-2" />
                             </a>
-                            <a 
-                              href="/resources/tools" 
+                            <a
+                              href="/resources/tools"
                               className="inline-flex items-center px-6 py-3 border border-white text-white rounded-lg font-medium hover:bg-white hover:text-blue-600 transition-colors duration-200"
                             >
                               <DocumentTextIcon className="w-5 h-5 mr-2" />
