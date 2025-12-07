@@ -8,7 +8,7 @@
 
 ## 🚀 核心特色
 
-- **現代化設計**: 使用 React + Next.js 14 和 Tailwind CSS 構建
+- **現代化設計**: 使用 React 19 + Next.js 15 和 Tailwind CSS 構建
 - **響應式設計**: 完美適配桌面、平板和手機設備
 - **動畫效果**: 使用 Framer Motion 提供流暢的動畫體驗
 - **SEO 優化**: 針對搜尋引擎進行優化，提升網站曝光度
@@ -16,7 +16,7 @@
 
 ## 🛠 技術棧
 
-- **框架**: Next.js 14 (App Router)
+- **框架**: Next.js 15 (App Router)
 - **語言**: TypeScript
 - **樣式**: Tailwind CSS
 - **動畫**: Framer Motion
