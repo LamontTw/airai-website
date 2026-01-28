@@ -137,6 +137,17 @@ export default function ChatGPTEnterpriseArticle() {
 
             {/* Article Content */}
             <div className="lg:col-span-3">
+              {/* 內鏈到支柱頁 */}
+              <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8 rounded-r-lg">
+                <p className="text-blue-800 mb-2">想了解完整的 AI 導入流程嗎？</p>
+                <a
+                  href="/resources/ai-introduction-guide"
+                  className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800"
+                >
+                  → 閱讀《AI導入完整指南》
+                </a>
+              </div>
+
               <div className="prose prose-lg max-w-none">
 
                 {/* Introduction */}

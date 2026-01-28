@@ -40,7 +40,7 @@ describe('i18n', () => {
 
     it('應該有完整的服務項目翻譯', () => {
       const translations = getTranslations('zh');
-      expect(translations.services.programming.title).toBe('程式外包');
+      expect(translations.services.programming.title).toBe('客製化 AI 解決方案');
       expect(translations.services.aiAgent.title).toBe('AI Agent 導入');
       expect(translations.services.applications.smartCustomerService.title).toBe('智能客服');
       expect(translations.services.applications.rpa.title).toBe('流程自動化 (RPA)');

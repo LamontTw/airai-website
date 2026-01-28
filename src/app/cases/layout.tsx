@@ -2,8 +2,8 @@ import { Metadata } from 'next';
 import { siteConfig } from '@/lib/seo';
 
 export const metadata: Metadata = {
-  title: '成功案例 | 企業AI導入實戰經驗分享',
-  description: '真實的企業AI導入成功案例，涵蓋製造業、零售業、服務業等多個行業。了解AI如何幫助企業提升效率、降低成本。',
+  title: 'AI導入成功案例 | 台灣企業AI導入實戰經驗',
+  description: 'AI導入實戰案例分享。跨國供應商業務自動化節省14小時、電子零件代理商發票AI自動化入帳效率提升90%。了解台灣中小企業如何成功導入AI。',
   keywords: [
     'AI成功案例',
     '企業AI實例',
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     'AI轉型案例'
   ],
   openGraph: {
-    title: '成功案例 | 企業AI導入實戰經驗分享',
-    description: '真實的企業AI導入成功案例，涵蓋製造業、零售業、服務業等多個行業。了解AI如何幫助企業提升效率、降低成本。',
+    title: 'AI導入成功案例 | 台灣企業AI導入實戰經驗',
+    description: 'AI導入實戰案例分享。跨國供應商業務自動化節省14小時、電子零件代理商發票AI自動化入帳效率提升90%。了解台灣中小企業如何成功導入AI。',
     url: `${siteConfig.url}/cases`,
     siteName: siteConfig.name,
     type: 'website',
@@ -33,8 +33,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: '成功案例 | 企業AI導入實戰經驗分享',
-    description: '真實的企業AI導入成功案例，涵蓋製造業、零售業、服務業等多個行業。',
+    title: 'AI導入成功案例 | 台灣企業AI導入實戰經驗',
+    description: 'AI導入實戰案例分享。跨國供應商業務自動化、電子零件代理商發票AI自動化。了解台灣中小企業如何成功導入AI。',
     images: [`${siteConfig.url}/images/cases-og.png`],
   },
   alternates: {

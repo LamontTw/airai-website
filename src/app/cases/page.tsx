@@ -369,10 +369,10 @@ export default function CasesPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              客戶 <span className="gradient-text">成功案例</span>
+              <span className="gradient-text">AI導入</span>成功案例
             </h1>
             <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              真實的客戶案例，證實AI導入的實際效益與投資回報
+              真實的客戶 AI 導入案例，證實智能化轉型的實際效益與投資回報
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 max-w-3xl mx-auto">
               <div className="text-center">

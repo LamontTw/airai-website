@@ -65,6 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 資源頁面 - 提高優先級
   const resourcePages = [
     {
+      url: `${baseUrl}/resources/ai-introduction-guide`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/resources/ai-guide/1`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
