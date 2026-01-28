@@ -798,41 +798,47 @@ export default function AIIntroductionGuide() {
 
                     {/* 案例 1 */}
                     <div className="border border-gray-200 rounded-xl overflow-hidden mb-6">
-                      <div className="bg-blue-600 text-white px-6 py-4">
+                      <div className="bg-emerald-600 text-white px-6 py-4">
                         <h3 className="text-xl font-bold">案例一：跨國供應商業務自動化</h3>
-                        <p className="text-blue-100 text-sm">產業：批發零售｜規模：20 人｜導入時程：3 個月</p>
+                        <p className="text-emerald-100 text-sm">產業：跨國貿易｜規模：80-150 人｜導入時程：4 個月</p>
                       </div>
                       <div className="p-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                           <div>
                             <h4 className="font-semibold text-red-600 mb-2">導入前的痛點</h4>
                             <ul className="text-sm text-gray-600 space-y-1">
-                              <li>• 業務收到詢問需查詢 4 個系統（庫存、價格、物流、客戶）</li>
-                              <li>• 平均報價時間 2 小時，客戶流失率高</li>
-                              <li>• 報價錯誤率約 8%，常需重新議價</li>
+                              <li>• 業務收到詢問需查詢多個系統（ERP庫存、報價、物流）</li>
+                              <li>• 回覆一個報價需要 30 分鐘以上</li>
+                              <li>• 客戶等待時間長，競爭對手經常搶先報價</li>
                             </ul>
                           </div>
                           <div>
                             <h4 className="font-semibold text-green-600 mb-2">導入後的成果</h4>
                             <ul className="text-sm text-gray-600 space-y-1">
-                              <li>• 統一介面自動查詢所有系統</li>
-                              <li>• AI 自動生成報價建議，確認後自動進 ERP</li>
-                              <li>• 報價時間縮短至 10 分鐘，錯誤率降至 0.5%</li>
+                              <li>• 統一介面整合 ERP、報價、物流系統</li>
+                              <li>• AI 自動彙整資訊並生成報價建議</li>
+                              <li>• 報價回應時間縮短至 3 分鐘，準確率 98%</li>
                             </ul>
                           </div>
                         </div>
-                        <div className="mt-4 bg-green-50 rounded-lg p-4 flex items-center justify-between">
-                          <span className="text-sm text-green-800">每日節省業務時間</span>
-                          <span className="text-2xl font-bold text-green-700">14 小時</span>
+                        <div className="mt-4 bg-emerald-50 rounded-lg p-4 grid grid-cols-2 gap-4">
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-emerald-800">每日節省時間</span>
+                            <span className="text-xl font-bold text-emerald-700">14 小時</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-emerald-800">訂單成交率提升</span>
+                            <span className="text-xl font-bold text-emerald-700">35%</span>
+                          </div>
                         </div>
                       </div>
                     </div>
 
                     {/* 案例 2 */}
                     <div className="border border-gray-200 rounded-xl overflow-hidden mb-6">
-                      <div className="bg-indigo-600 text-white px-6 py-4">
+                      <div className="bg-blue-600 text-white px-6 py-4">
                         <h3 className="text-xl font-bold">案例二：電子零件代理商發票自動化</h3>
-                        <p className="text-indigo-100 text-sm">產業：電子零件代理｜規模：15 人｜導入時程：2 個月</p>
+                        <p className="text-blue-100 text-sm">產業：電子零件代理｜規模：40-80 人｜導入時程：3 個月</p>
                       </div>
                       <div className="p-6">
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -840,22 +846,28 @@ export default function AIIntroductionGuide() {
                             <h4 className="font-semibold text-red-600 mb-2">導入前的痛點</h4>
                             <ul className="text-sm text-gray-600 space-y-1">
                               <li>• 跨國供應商發票有英文、日文、簡體中文等多語言</li>
-                              <li>• 不同幣別（USD、JPY、EUR、CNY）需手動換算</li>
-                              <li>• 入帳 Business Central 困難，每月需 3 天處理</li>
+                              <li>• 不同幣別需手動換算，每張發票處理需 15 分鐘</li>
+                              <li>• 入帳 Business Central 錯誤率約 8%</li>
                             </ul>
                           </div>
                           <div>
                             <h4 className="font-semibold text-green-600 mb-2">導入後的成果</h4>
                             <ul className="text-sm text-gray-600 space-y-1">
                               <li>• AI 自動辨識多語言發票內容</li>
-                              <li>• 自動轉換幣別、匹配會計科目</li>
-                              <li>• 一鍵匯入 BC，錯誤自動標記審核</li>
+                              <li>• 自動轉換幣別、一鍵匯入 BC</li>
+                              <li>• 每張發票處理縮短至 30 秒，錯誤率降至 0.5%</li>
                             </ul>
                           </div>
                         </div>
-                        <div className="mt-4 bg-indigo-50 rounded-lg p-4 flex items-center justify-between">
-                          <span className="text-sm text-indigo-800">每月入帳時間縮短</span>
-                          <span className="text-2xl font-bold text-indigo-700">3 天 → 4 小時</span>
+                        <div className="mt-4 bg-blue-50 rounded-lg p-4 grid grid-cols-2 gap-4">
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-blue-800">每月節省時間</span>
+                            <span className="text-xl font-bold text-blue-700">80 小時</span>
+                          </div>
+                          <div className="flex items-center justify-between">
+                            <span className="text-sm text-blue-800">月結時間縮短</span>
+                            <span className="text-xl font-bold text-blue-700">60%</span>
+                          </div>
                         </div>
                       </div>
                     </div>
