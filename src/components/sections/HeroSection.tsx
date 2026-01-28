@@ -16,9 +16,24 @@ function useIsDesktop() {
     const mediaQuery = window.matchMedia('(min-width: 1024px)');
     setIsDesktop(mediaQuery.matches);
 
-    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
-    mediaQuery.addEventListener('change', handler);
-    return () => mediaQuery.removeEventListener('change', handler);
+    // Safari < 14 相容性：使用 addListener/removeListener fallback
+    const handler = (e: MediaQueryListEvent | MediaQueryList) => {
+      setIsDesktop('matches' in e ? e.matches : mediaQuery.matches);
+    };
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', handler);
+    } else if (typeof mediaQuery.addListener === 'function') {
+      mediaQuery.addListener(handler);
+    }
+
+    return () => {
+      if (typeof mediaQuery.removeEventListener === 'function') {
+        mediaQuery.removeEventListener('change', handler);
+      } else if (typeof mediaQuery.removeListener === 'function') {
+        mediaQuery.removeListener(handler);
+      }
+    };
   }, []);
 
   return isDesktop;
@@ -554,29 +569,38 @@ export default function HeroSection() {
               </motion.div>
             </motion.div>
 
-            {/* Right: Animation (Desktop only) */}
-            {isDesktop && (
+            {/* Right: Animation (Desktop) - 包含占位避免 CLS */}
+            <div className="hidden lg:block">
+              {isDesktop === null ? (
+                // 占位元素：與動畫容器同高，避免版面跳動
+                <div className="w-full h-[480px] rounded-xl bg-slate-100/50" />
+              ) : isDesktop ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ delay: 0.4, duration: 0.8 }}
+                >
+                  <HeroScanAnimation locale={currentLocale} />
+                </motion.div>
+              ) : null}
+            </div>
+          </div>
+
+          {/* Mobile Animation (below content) - 包含占位避免 CLS */}
+          <div className="mt-8 lg:hidden">
+            {isDesktop === null ? (
+              // 占位元素：與動畫容器同高，避免版面跳動
+              <div className="w-full h-[420px] rounded-xl bg-slate-100/50" />
+            ) : isDesktop === false ? (
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.4, duration: 0.8 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.8 }}
               >
                 <HeroScanAnimation locale={currentLocale} />
               </motion.div>
-            )}
+            ) : null}
           </div>
-
-          {/* Mobile Animation (below content) */}
-          {isDesktop === false && (
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.2, duration: 0.8 }}
-              className="mt-8"
-            >
-              <HeroScanAnimation locale={currentLocale} />
-            </motion.div>
-          )}
         </div>
 
         {/* Floating Elements */}
