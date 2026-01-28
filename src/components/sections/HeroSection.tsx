@@ -1,12 +1,28 @@
 'use client';
 
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect, useMemo, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRightIcon, PlayIcon, CheckIcon } from '@heroicons/react/24/outline';
 import VideoModal from '@/components/ui/VideoModal';
 import { getTranslations } from '@/lib/i18n';
+
+// Hook: 偵測是否為桌機版（lg breakpoint = 1024px）
+function useIsDesktop() {
+  const [isDesktop, setIsDesktop] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia('(min-width: 1024px)');
+    setIsDesktop(mediaQuery.matches);
+
+    const handler = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    mediaQuery.addEventListener('change', handler);
+    return () => mediaQuery.removeEventListener('change', handler);
+  }, []);
+
+  return isDesktop;
+}
 
 // ========================================
 // Hero Scan Animation Components (from v7)
@@ -165,43 +181,63 @@ function CheckMark({ delay = 0 }: { delay?: number }) {
   );
 }
 
-// Hero 掃描動畫
+// Hero 掃描動畫（只執行一次）
 function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
   const [phase, setPhase] = useState<'scatter' | 'scanning' | 'ordered'>('scatter');
   const [scanProgress, setScanProgress] = useState(0);
   const icons = useMemo(() => generateLayeredIcons(45), []);
   const categories = useMemo(() => getCategories(locale), [locale]);
+  const rafIdRef = useRef<number | null>(null);
+  const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
-    const runAnimation = async () => {
+    let isMounted = true;
+
+    const runAnimation = () => {
+      if (!isMounted) return;
+
       setPhase('scatter');
       setScanProgress(0);
 
-      await new Promise(r => setTimeout(r, 1200));
-      setPhase('scanning');
+      // 1.2 秒後開始掃描
+      timeoutIdRef.current = setTimeout(() => {
+        if (!isMounted) return;
+        setPhase('scanning');
 
-      const scanDuration = 1600;
-      const startTime = Date.now();
+        const scanDuration = 1600;
+        const startTime = Date.now();
 
-      const animateScan = () => {
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / scanDuration, 1);
-        setScanProgress(progress);
+        const animateScan = () => {
+          if (!isMounted) return;
 
-        if (progress < 1) {
-          requestAnimationFrame(animateScan);
-        } else {
-          setPhase('ordered');
-        }
-      };
+          const elapsed = Date.now() - startTime;
+          const progress = Math.min(elapsed / scanDuration, 1);
+          setScanProgress(progress);
 
-      requestAnimationFrame(animateScan);
+          if (progress < 1) {
+            rafIdRef.current = requestAnimationFrame(animateScan);
+          } else {
+            setPhase('ordered');
+            // 動畫完成，停在 ordered 狀態，不再循環
+          }
+        };
 
-      await new Promise(r => setTimeout(r, 6500));
-      runAnimation();
+        rafIdRef.current = requestAnimationFrame(animateScan);
+      }, 1200);
     };
 
     runAnimation();
+
+    // Cleanup: 取消所有 pending 的 timeout 和 rAF
+    return () => {
+      isMounted = false;
+      if (timeoutIdRef.current) {
+        clearTimeout(timeoutIdRef.current);
+      }
+      if (rafIdRef.current) {
+        cancelAnimationFrame(rafIdRef.current);
+      }
+    };
   }, []);
 
   const isOrdered = phase === 'ordered';
@@ -385,6 +421,7 @@ function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
 export default function HeroSection() {
   const [isVideoOpen, setIsVideoOpen] = useState(false);
   const pathname = usePathname();
+  const isDesktop = useIsDesktop();
 
   // 判斷當前語言並取得翻譯
   const getCurrentLocale = (): 'zh' | 'en' | 'ja' => {
@@ -517,26 +554,29 @@ export default function HeroSection() {
               </motion.div>
             </motion.div>
 
-            {/* Right: Animation */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 0.4, duration: 0.8 }}
-              className="hidden lg:block"
-            >
-              <HeroScanAnimation locale={currentLocale} />
-            </motion.div>
+            {/* Right: Animation (Desktop only) */}
+            {isDesktop && (
+              <motion.div
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.4, duration: 0.8 }}
+              >
+                <HeroScanAnimation locale={currentLocale} />
+              </motion.div>
+            )}
           </div>
 
           {/* Mobile Animation (below content) */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.2, duration: 0.8 }}
-            className="mt-8 lg:hidden"
-          >
-            <HeroScanAnimation locale={currentLocale} />
-          </motion.div>
+          {isDesktop === false && (
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.2, duration: 0.8 }}
+              className="mt-8"
+            >
+              <HeroScanAnimation locale={currentLocale} />
+            </motion.div>
+          )}
         </div>
 
         {/* Floating Elements */}
