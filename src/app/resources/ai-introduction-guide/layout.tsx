@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: 'article',
     images: [
       {
-        url: `${siteConfig.url}/images/ai-guide-og.png`,
+        url: `${siteConfig.url}/images/og-image.jpg`,
         width: 1200,
         height: 630,
         alt: 'AI導入完整指南',
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'AI導入完整指南：企業如何成功導入人工智能',
     description: 'AI導入是什麼？完整解析企業AI導入流程、成本評估、技術選型、成功案例。專為台灣中小企業設計的AI導入指南。',
-    images: [`${siteConfig.url}/images/ai-guide-og.png`],
+    images: [`${siteConfig.url}/images/og-image.jpg`],
   },
   alternates: {
     canonical: `${siteConfig.url}/resources/ai-introduction-guide`,
