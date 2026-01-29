@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
 import { ArrowRightIcon, PlayIcon, CheckIcon } from '@heroicons/react/24/outline';
 import VideoModal from '@/components/ui/VideoModal';
@@ -198,14 +198,22 @@ function CheckMark({ delay = 0 }: { delay?: number }) {
 
 // Hero 掃描動畫（只執行一次）
 function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
+  const prefersReducedMotion = useReducedMotion();
   const [phase, setPhase] = useState<'scatter' | 'scanning' | 'ordered'>('scatter');
   const [scanProgress, setScanProgress] = useState(0);
-  const icons = useMemo(() => generateLayeredIcons(45), []);
+  const icons = useMemo(() => generateLayeredIcons(prefersReducedMotion ? 12 : 45), [prefersReducedMotion]);
   const categories = useMemo(() => getCategories(locale), [locale]);
   const rafIdRef = useRef<number | null>(null);
   const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
+    // 偏好減少動態：直接跳到最終狀態
+    if (prefersReducedMotion) {
+      setPhase('ordered');
+      setScanProgress(1);
+      return;
+    }
+
     let isMounted = true;
 
     const runAnimation = () => {
@@ -253,7 +261,7 @@ function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
         cancelAnimationFrame(rafIdRef.current);
       }
     };
-  }, []);
+  }, [prefersReducedMotion]);
 
   const isOrdered = phase === 'ordered';
   const isScanning = phase === 'scanning';
