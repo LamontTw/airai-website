@@ -14,19 +14,17 @@ const getNavigationItems = (locale: 'zh' | 'en' | 'ja') => {
   const prefix = locale === 'zh' ? '' : `/${locale}`;
   
   const baseItems: Array<{ name: string; href: string }> = [
+    { name: t.nav.home, href: locale === 'zh' ? '/' : `/${locale}` },
+    { name: t.nav.about, href: `${prefix}/about` },
     { name: t.nav.services, href: `${prefix}/services` },
     { name: t.nav.cases, href: `${prefix}/cases` },
+    { name: t.nav.contact, href: `${prefix}/contact` },
   ];
 
   // 只在中文模式下顯示資源洞察
   if (locale === 'zh') {
-    baseItems.push({ name: t.nav.resources, href: `${prefix}/resources` });
+    baseItems.splice(4, 0, { name: t.nav.resources, href: `${prefix}/resources` });
   }
-
-  baseItems.push(
-    { name: t.nav.about, href: `${prefix}/about` },
-    { name: t.nav.contact, href: `${prefix}/contact` },
-  );
 
   return baseItems;
 };
@@ -60,8 +58,8 @@ export default function Navigation() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-white/80 backdrop-blur-lg shadow-lg'
-          : 'bg-white/80 backdrop-blur-lg'
+          ? 'bg-white/95 backdrop-blur-md shadow-lg'
+          : 'bg-transparent'
       }`}
     >
       <div className="container-max">

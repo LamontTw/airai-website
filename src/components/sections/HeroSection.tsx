@@ -47,19 +47,19 @@ function useIsDesktop() {
 const getCategories = (locale: 'zh' | 'en' | 'ja') => {
   const translations = {
     zh: [
-      { id: 'code', icon: 'code', title: '老舊系統', subtitle: '不用砍掉重練', desc: 'AI 自動串接整合' },
-      { id: 'chat', icon: 'chat', title: '客服爆量', subtitle: '不再漏接訊息', desc: '智能分流秒回覆' },
-      { id: 'doc', icon: 'doc', title: 'Excel 地獄', subtitle: '告別手動輸入', desc: '自動化報表生成' },
+      { id: 'code', icon: 'code', title: '系統混亂', subtitle: '不用砍掉重練', desc: 'AI 自動串接整合' },
+      { id: 'chat', icon: 'chat', title: '訊息爆炸', subtitle: '不再漏接訊息', desc: '智能分流秒回覆' },
+      { id: 'doc', icon: 'doc', title: '文件地獄', subtitle: '告別手動輸入', desc: '自動化報表生成' },
     ],
     en: [
-      { id: 'code', icon: 'code', title: 'Legacy Systems', subtitle: 'No need to rebuild', desc: 'AI auto-integration' },
-      { id: 'chat', icon: 'chat', title: 'Support Overload', subtitle: 'Never miss a message', desc: 'Smart routing & replies' },
-      { id: 'doc', icon: 'doc', title: 'Excel Hell', subtitle: 'No more manual entry', desc: 'Automated reporting' },
+      { id: 'code', icon: 'code', title: 'System Chaos', subtitle: 'No need to rebuild', desc: 'AI auto-integration' },
+      { id: 'chat', icon: 'chat', title: 'Message Overload', subtitle: 'Never miss a message', desc: 'Smart routing & replies' },
+      { id: 'doc', icon: 'doc', title: 'Document Hell', subtitle: 'No more manual entry', desc: 'Automated reporting' },
     ],
     ja: [
-      { id: 'code', icon: 'code', title: 'レガシーシステム', subtitle: '作り直し不要', desc: 'AI自動連携' },
-      { id: 'chat', icon: 'chat', title: 'サポート過負荷', subtitle: '取りこぼしゼロ', desc: 'スマート振り分け' },
-      { id: 'doc', icon: 'doc', title: 'Excel地獄', subtitle: '手入力から解放', desc: '自動レポート作成' },
+      { id: 'code', icon: 'code', title: 'システム混乱', subtitle: '作り直し不要', desc: 'AI自動連携' },
+      { id: 'chat', icon: 'chat', title: 'メッセージ爆発', subtitle: '取りこぼしゼロ', desc: 'スマート振り分け' },
+      { id: 'doc', icon: 'doc', title: '書類地獄', subtitle: '手入力から解放', desc: '自動レポート作成' },
     ],
   };
   return translations[locale];
@@ -289,6 +289,12 @@ function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
     ja: '50社以上の台湾企業が信頼',
   };
 
+  const workflowSubtext = {
+    zh: '診斷 · 整合 · 落地',
+    en: 'Diagnose · Integrate · Deploy',
+    ja: '診断 · 統合 · 実装',
+  };
+
   return (
     <motion.div
       className="relative w-full h-[420px] lg:h-[480px] rounded-xl overflow-hidden"
@@ -364,11 +370,11 @@ function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
             </motion.div>
 
             {/* 三張卡片 */}
-            <div className="absolute top-[15%] left-0 right-0 flex justify-center gap-2 md:gap-4 px-2">
+            <div className="absolute top-[13%] left-0 right-0 flex justify-center gap-2 md:gap-3 px-4">
               {categories.map((cat, i) => (
                 <motion.div
                   key={cat.id}
-                  className="relative bg-white rounded-xl p-3 md:p-4 shadow-lg shadow-slate-200/50 border border-slate-100 w-[100px] md:w-[130px]"
+                  className="relative bg-white rounded-xl p-3 md:p-4 shadow-lg shadow-slate-200/50 border border-slate-100 w-[110px] md:w-[145px]"
                   initial={{ opacity: 0, y: 30, scale: 0.9 }}
                   animate={{ opacity: 1, y: 0, scale: 1 }}
                   transition={{ delay: 0.3 + i * 0.12, duration: 0.5 }}
@@ -383,7 +389,7 @@ function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
                   <p className="text-center text-[10px] md:text-xs text-blue-600 font-medium mb-1">
                     {cat.subtitle}
                   </p>
-                  <p className="text-center text-[10px] md:text-xs text-slate-500 hidden md:block">
+                  <p className="text-center text-[10px] md:text-xs text-slate-500 hidden md:block whitespace-nowrap">
                     {cat.desc}
                   </p>
                 </motion.div>
@@ -407,9 +413,9 @@ function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
               </div>
             </motion.div>
 
-            {/* AI Circuit Lines */}
+            {/* AI Circuit Lines - 卡片底部連線 */}
             {!prefersReducedMotion && (
-              <svg className="absolute top-[15%] left-0 right-0 w-full h-[60%] pointer-events-none" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+              <svg className="absolute top-[52%] left-0 right-0 w-full h-[20%] pointer-events-none" viewBox="0 0 400 80" preserveAspectRatio="none" aria-hidden="true">
                 <defs>
                   <linearGradient id="circuit-grad" x1="0%" y1="0%" x2="100%" y2="0%">
                     <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.4" />
@@ -417,33 +423,31 @@ function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
                     <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.4" />
                   </linearGradient>
                 </defs>
-                {/* 左卡到中卡連線 */}
-                <path
-                  d="M 100 110 Q 150 150 200 110"
-                  fill="none"
-                  stroke="url(#circuit-grad)"
-                  strokeWidth="1.5"
-                  strokeDasharray="8 6"
-                  style={{ animation: 'circuit-flow 2s linear infinite' }}
-                />
-                {/* 中卡到右卡連線 */}
-                <path
-                  d="M 200 110 Q 250 150 300 110"
-                  fill="none"
-                  stroke="url(#circuit-grad)"
-                  strokeWidth="1.5"
-                  strokeDasharray="8 6"
-                  style={{ animation: 'circuit-flow 2s linear infinite', animationDelay: '0.5s' }}
-                />
-                {/* 流動光點 */}
+                <path d="M 105 10 Q 152 45 200 10" fill="none" stroke="url(#circuit-grad)" strokeWidth="1.5" strokeDasharray="8 6" style={{ animation: 'circuit-flow 2s linear infinite' }} />
+                <path d="M 200 10 Q 248 45 295 10" fill="none" stroke="url(#circuit-grad)" strokeWidth="1.5" strokeDasharray="8 6" style={{ animation: 'circuit-flow 2s linear infinite', animationDelay: '0.5s' }} />
                 <circle r="3" fill="#3b82f6" style={{ animation: 'circuit-pulse 1.5s ease-in-out infinite' }}>
-                  <animateMotion dur="2s" repeatCount="indefinite" path="M 100 110 Q 150 150 200 110" />
+                  <animateMotion dur="2s" repeatCount="indefinite" path="M 105 10 Q 152 45 200 10" />
                 </circle>
                 <circle r="3" fill="#06b6d4" style={{ animation: 'circuit-pulse 1.5s ease-in-out infinite', animationDelay: '0.7s' }}>
-                  <animateMotion dur="2s" repeatCount="indefinite" path="M 200 110 Q 250 150 300 110" />
+                  <animateMotion dur="2s" repeatCount="indefinite" path="M 200 10 Q 248 45 295 10" />
                 </circle>
               </svg>
             )}
+
+            {/* AI Workflow 文字 */}
+            <motion.div
+              className="absolute top-[72%] left-0 right-0 text-center"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2 }}
+            >
+              <div className="text-base font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent tracking-[0.15em] uppercase">
+                AI Workflow
+              </div>
+              <div className="text-xs text-slate-400 mt-0.5">
+                {workflowSubtext[locale]}
+              </div>
+            </motion.div>
           </>
         )}
       </AnimatePresence>
@@ -488,14 +492,14 @@ export default function HeroSection() {
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzNzM3MzciIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSI+PC9jaXJjbGU+PC9nPjwvZz48L3N2Zz4=')] opacity-40"></div>
 
-        <div className="container-max relative z-10 px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        <div className="max-w-screen-xl mx-auto relative z-10 px-4 sm:px-6 lg:px-12 py-8 lg:py-12">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
             {/* Left: Text Content (SEO Critical) */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center lg:text-left lg:col-span-7"
+              className="text-center lg:text-left"
             >
               {/* Badge */}
               <motion.div
@@ -604,7 +608,7 @@ export default function HeroSection() {
             </motion.div>
 
             {/* Right: Animation (Desktop) - 包含占位避免 CLS */}
-            <div className="hidden lg:block lg:col-span-5">
+            <div className="hidden lg:block">
               {isDesktop === null ? (
                 // 占位元素：與動畫容器同高，避免版面跳動
                 <div className="w-full h-[480px] rounded-xl bg-slate-100/50" />
@@ -638,14 +642,8 @@ export default function HeroSection() {
         </div>
 
         {/* Decorative Blur Circles */}
-        <div
-          className="absolute top-20 right-10 w-72 h-72 bg-blue-100/30 rounded-full blur-3xl hidden lg:block"
-          aria-hidden="true"
-        />
-        <div
-          className="absolute bottom-20 left-10 w-56 h-56 bg-slate-100/40 rounded-full blur-3xl hidden lg:block"
-          aria-hidden="true"
-        />
+        <div className="absolute -top-20 -right-20 w-64 h-64 bg-blue-100/10 rounded-full blur-3xl hidden lg:block" aria-hidden="true" />
+        <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-slate-200/10 rounded-full blur-3xl hidden lg:block" aria-hidden="true" />
       </section>
 
       {/* 影片彈出組件 */}
