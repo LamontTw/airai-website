@@ -61,16 +61,20 @@ export const translations = {
       badge: '專為台灣中小企業設計的AI解決方案',
       title: '將 AI 融入日常工作',
       subtitle: '加速中小企業數位轉型',
-      description: '透過實用的 AI Agent 導入與客製化 AI 解決方案，解決人力短缺、提升作業效率，為您的企業打造可衡量的競爭優勢。從需求診斷到上線維護，完整陪跑服務。',
+      description: '解決人力短缺、提升作業效率，從需求診斷到上線維護，完整陪跑服務。',
       cta: {
         primary: '免費諮詢 AI 導入方案',
         secondary: '觀看成功案例'
       },
       stats: {
         autoReply: '客服詢問自動回覆率',
+        autoReplySub: '自動化處理',
         timeSaved: '每日節省人工作業時間',
-        costReduction: '營運成本降低'
-      }
+        timeSavedSub: '效率提升',
+        costReduction: '營運成本降低',
+        costReductionSub: '成本優化'
+      },
+      trustBar: '50+ 台灣企業信賴的 AI 導入夥伴'
     },
     
     // 公司資訊
@@ -385,16 +389,20 @@ export const translations = {
       badge: 'AI Solutions Designed for Taiwan SMEs',
       title: 'Integrate AI into Daily Operations',
       subtitle: 'Accelerate Digital Transformation for SMEs',
-      description: 'Through practical AI Agent implementation and software outsourcing services, we solve staffing shortages, improve operational efficiency, and create measurable competitive advantages for your business. More affordable than an iPhone.',
+      description: 'Solve staffing shortages, boost efficiency — full support from diagnosis to deployment.',
       cta: {
         primary: 'Free AI Implementation Consultation',
         secondary: 'View Success Stories'
       },
       stats: {
         autoReply: 'Customer Service Auto-Reply Rate',
+        autoReplySub: 'Automation',
         timeSaved: 'Daily Manual Work Hours Saved',
-        costReduction: 'Operational Cost Reduction'
-      }
+        timeSavedSub: 'Efficiency',
+        costReduction: 'Operational Cost Reduction',
+        costReductionSub: 'Cost Optimization'
+      },
+      trustBar: '50+ Taiwan enterprises trust our AI solutions'
     },
     
     // Company Information
@@ -709,16 +717,20 @@ export const translations = {
       badge: '台湾の中小企業向けに設計されたAIソリューション',
       title: 'AIを日常業務に統合',
       subtitle: '中小企業のデジタル変革を加速',
-      description: '実用的なAIエージェント導入とソフトウェア外注サービスを通じて、人材不足を解決し、運営効率を向上させ、ビジネスに測定可能な競争優位性を創造します。iPhoneよりも手頃な価格。',
+      description: '人材不足を解決し、効率を向上。診断から導入まで、フルサポート。',
       cta: {
         primary: '無料AI導入相談',
         secondary: '成功事例を見る'
       },
       stats: {
         autoReply: 'カスタマーサービス自動返信率',
+        autoReplySub: '自動化',
         timeSaved: '日次手動作業時間削減',
-        costReduction: '運営コスト削減'
-      }
+        timeSavedSub: '効率化',
+        costReduction: '運営コスト削減',
+        costReductionSub: 'コスト最適化'
+      },
+      trustBar: '50社以上の台湾企業が信頼するAIパートナー'
     },
     
     // 会社情報

@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRightIcon, PlayIcon, CheckIcon } from '@heroicons/react/24/outline';
+import { ArrowRightIcon, PlayIcon } from '@heroicons/react/24/outline';
 import VideoModal from '@/components/ui/VideoModal';
 import { getTranslations } from '@/lib/i18n';
 
@@ -179,7 +179,7 @@ function CheckMark({ delay = 0 }: { delay?: number }) {
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ delay, type: 'spring', stiffness: 500, damping: 25 }}
-      className="absolute -top-2 -right-2 w-5 h-5 bg-emerald-500 rounded-full flex items-center justify-center shadow-lg shadow-emerald-500/30"
+      className="absolute -top-2 -right-2 w-5 h-5 bg-blue-500 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/30"
       aria-hidden="true"
     >
       <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
@@ -283,10 +283,10 @@ function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
 
   const bgWhiteProgress = Math.min(scanProgress * 1.15, 1);
 
-  const ctaText = {
-    zh: { title: '這些問題，AI 都能解決', subtitle: '不需要懂技術，我們幫你從頭打造', free: '免費評估', noTech: '無需技術背景' },
-    en: { title: 'AI Can Solve All These', subtitle: 'No tech skills needed. We build it for you.', free: 'Free Assessment', noTech: 'No Tech Required' },
-    ja: { title: 'AIがすべて解決します', subtitle: '技術知識不要。私たちが構築します。', free: '無料診断', noTech: '技術不要' },
+  const trustBarText = {
+    zh: '50+ 台灣企業信賴的 AI 導入夥伴',
+    en: '50+ Taiwan enterprises trust us',
+    ja: '50社以上の台湾企業が信頼',
   };
 
   return (
@@ -380,7 +380,7 @@ function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
                   <h4 className="text-center text-xs md:text-sm font-bold text-slate-800 mb-0.5">
                     {cat.title}
                   </h4>
-                  <p className="text-center text-[10px] md:text-xs text-emerald-600 font-medium mb-1">
+                  <p className="text-center text-[10px] md:text-xs text-blue-600 font-medium mb-1">
                     {cat.subtitle}
                   </p>
                   <p className="text-center text-[10px] md:text-xs text-slate-500 hidden md:block">
@@ -390,50 +390,73 @@ function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
               ))}
             </div>
 
-            {/* CTA 區塊 */}
+            {/* Trust Bar */}
             <motion.div
               className="absolute bottom-4 left-0 right-0 px-4"
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
             >
-              <div className="max-w-sm mx-auto bg-white rounded-xl p-4 text-center shadow-xl shadow-slate-200/50 border border-slate-100">
-                <h3 className="text-lg font-bold text-slate-900 mb-1">
-                  {ctaText[locale].title}
-                </h3>
-                <p className="text-slate-500 text-xs mb-3">
-                  {ctaText[locale].subtitle}
-                </p>
-
-                <motion.div
-                  className="flex justify-center gap-4 text-[10px] text-slate-400"
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 1.3 }}
-                >
-                  <span className="flex items-center gap-1">
-                    <CheckIcon className="w-3 h-3 text-emerald-500" />
-                    {ctaText[locale].free}
-                  </span>
-                  <span className="flex items-center gap-1">
-                    <CheckIcon className="w-3 h-3 text-emerald-500" />
-                    {ctaText[locale].noTech}
-                  </span>
-                </motion.div>
+              <div className="flex items-center justify-center gap-2 text-xs text-slate-400">
+                <div className="flex -space-x-1">
+                  {[...Array(4)].map((_, i) => (
+                    <div key={i} className="w-5 h-5 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-white" />
+                  ))}
+                </div>
+                <span>{trustBarText[locale]}</span>
               </div>
             </motion.div>
+
+            {/* AI Circuit Lines */}
+            {!prefersReducedMotion && (
+              <svg className="absolute top-[15%] left-0 right-0 w-full h-[60%] pointer-events-none" viewBox="0 0 400 200" preserveAspectRatio="none" aria-hidden="true">
+                <defs>
+                  <linearGradient id="circuit-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#3b82f6" stopOpacity="0.4" />
+                    <stop offset="50%" stopColor="#06b6d4" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#3b82f6" stopOpacity="0.4" />
+                  </linearGradient>
+                </defs>
+                {/* 左卡到中卡連線 */}
+                <path
+                  d="M 100 110 Q 150 150 200 110"
+                  fill="none"
+                  stroke="url(#circuit-grad)"
+                  strokeWidth="1.5"
+                  strokeDasharray="8 6"
+                  style={{ animation: 'circuit-flow 2s linear infinite' }}
+                />
+                {/* 中卡到右卡連線 */}
+                <path
+                  d="M 200 110 Q 250 150 300 110"
+                  fill="none"
+                  stroke="url(#circuit-grad)"
+                  strokeWidth="1.5"
+                  strokeDasharray="8 6"
+                  style={{ animation: 'circuit-flow 2s linear infinite', animationDelay: '0.5s' }}
+                />
+                {/* 流動光點 */}
+                <circle r="3" fill="#3b82f6" style={{ animation: 'circuit-pulse 1.5s ease-in-out infinite' }}>
+                  <animateMotion dur="2s" repeatCount="indefinite" path="M 100 110 Q 150 150 200 110" />
+                </circle>
+                <circle r="3" fill="#06b6d4" style={{ animation: 'circuit-pulse 1.5s ease-in-out infinite', animationDelay: '0.7s' }}>
+                  <animateMotion dur="2s" repeatCount="indefinite" path="M 200 110 Q 250 150 300 110" />
+                </circle>
+              </svg>
+            )}
           </>
         )}
       </AnimatePresence>
 
       {/* 階段指示 */}
-      <div className="absolute top-3 right-3 text-[10px] font-mono">
-        <span className={isOrdered ? 'text-slate-400' : 'text-slate-500'}>
-          {phase === 'scatter' && '● CHAOS'}
-          {phase === 'scanning' && `◐ ${Math.round(scanProgress * 100)}%`}
-          {phase === 'ordered' && '✓ SOLVED'}
-        </span>
-      </div>
+      {!isOrdered && (
+        <div className="absolute top-3 right-3 text-[10px] font-mono">
+          <span className="text-slate-500">
+            {phase === 'scatter' && '● CHAOS'}
+            {phase === 'scanning' && `◐ ${Math.round(scanProgress * 100)}%`}
+          </span>
+        </div>
+      )}
     </motion.div>
   );
 }
@@ -461,27 +484,30 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 overflow-hidden pt-16 lg:pt-20">
+      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden pt-16 lg:pt-20">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzNzM3MzciIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSI+PC9jaXJjbGU+PC9nPjwvZz48L3N2Zz4=')] opacity-40"></div>
 
         <div className="container-max relative z-10 px-4 sm:px-6 lg:px-8 py-8 lg:py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             {/* Left: Text Content (SEO Critical) */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center lg:text-left"
+              className="text-center lg:text-left lg:col-span-7"
             >
               {/* Badge */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.2, duration: 0.6 }}
-                className="inline-flex items-center px-4 py-2 rounded-full bg-blue-100 text-blue-800 text-sm font-medium mb-6"
+                className="inline-flex items-center px-4 py-2 rounded-full bg-blue-50/80 text-blue-800 text-sm font-medium mb-6"
               >
-                <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
+                <span className="relative w-2 h-2 mr-2">
+                  <span className="absolute inset-0 bg-blue-600 rounded-full animate-ping opacity-75"></span>
+                  <span className="relative block w-2 h-2 bg-blue-600 rounded-full"></span>
+                </span>
                 {t.home.badge}
               </motion.div>
 
@@ -490,26 +516,19 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight"
+                className="text-3xl sm:text-4xl lg:text-[3.5rem] font-bold text-gray-900 mb-4 leading-[1.15]"
               >
                 {currentLocale === 'zh' ? (
                   <>
-                    將 <span className="gradient-text">AI 融入日常工作</span>
-                    <br />
-                    <span className="text-2xl sm:text-3xl lg:text-4xl text-gray-700">
-                      加速中小企業數位轉型
-                    </span>
+                    將 <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">AI 融入日常工作</span>
                   </>
                 ) : (
-                  <>
-                    <span className="gradient-text">{t.home.title}</span>
-                    <br />
-                    <span className="text-2xl sm:text-3xl lg:text-4xl text-gray-700">
-                      {t.home.subtitle}
-                    </span>
-                  </>
+                  <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">{t.home.title}</span>
                 )}
               </motion.h1>
+              <p className="text-xl sm:text-2xl lg:text-3xl text-slate-500 font-medium mb-4">
+                {currentLocale === 'zh' ? '加速中小企業數位轉型' : t.home.subtitle}
+              </p>
 
               {/* Subtitle */}
               <motion.p
@@ -530,7 +549,7 @@ export default function HeroSection() {
               >
                 <Link
                   href={currentLocale === 'zh' ? "/contact" : `/${currentLocale}/contact`}
-                  className="btn-primary inline-flex items-center group"
+                  className="btn-primary inline-flex items-center group shadow-lg shadow-blue-500/25 hover:-translate-y-0.5 hover:shadow-xl transition-all duration-200"
                 >
                   {t.home.cta.primary}
                   <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
@@ -539,17 +558,21 @@ export default function HeroSection() {
                 {useVideoModal ? (
                   <button
                     onClick={() => setIsVideoOpen(true)}
-                    className="btn-secondary inline-flex items-center group"
+                    className="inline-flex items-center group text-slate-600 hover:text-blue-600 font-medium py-3 px-6 transition-colors duration-200"
                   >
-                    <PlayIcon className="w-5 h-5 mr-2" />
+                    <span className="w-8 h-8 rounded-full border-2 border-slate-300 group-hover:border-blue-500 flex items-center justify-center mr-2 transition-colors duration-200">
+                      <PlayIcon className="w-4 h-4" />
+                    </span>
                     {t.home.cta.secondary}
                   </button>
                 ) : (
                   <Link
                     href={currentLocale === 'zh' ? "/cases" : `/${currentLocale}/cases`}
-                    className="btn-secondary inline-flex items-center group"
+                    className="inline-flex items-center group text-slate-600 hover:text-blue-600 font-medium py-3 px-6 transition-colors duration-200"
                   >
-                    <PlayIcon className="w-5 h-5 mr-2" />
+                    <span className="w-8 h-8 rounded-full border-2 border-slate-300 group-hover:border-blue-500 flex items-center justify-center mr-2 transition-colors duration-200">
+                      <PlayIcon className="w-4 h-4" />
+                    </span>
                     {t.home.cta.secondary}
                   </Link>
                 )}
@@ -563,22 +586,25 @@ export default function HeroSection() {
                 className="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0"
               >
                 <div className="text-center lg:text-left">
-                  <div className="text-2xl font-bold text-blue-600 mb-1">85%</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent mb-1">85%</div>
                   <div className="text-gray-600 text-xs">{t.home.stats.autoReply}</div>
+                  <div className="text-gray-400 text-[10px]">{t.home.stats.autoReplySub}</div>
                 </div>
                 <div className="text-center lg:text-left">
-                  <div className="text-2xl font-bold text-blue-600 mb-1">14{currentLocale === 'zh' ? '小時' : 'hrs'}</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent mb-1">14{currentLocale === 'zh' ? '小時' : 'hrs'}</div>
                   <div className="text-gray-600 text-xs">{t.home.stats.timeSaved}</div>
+                  <div className="text-gray-400 text-[10px]">{t.home.stats.timeSavedSub}</div>
                 </div>
                 <div className="text-center lg:text-left">
-                  <div className="text-2xl font-bold text-blue-600 mb-1">50%</div>
+                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent mb-1">50%</div>
                   <div className="text-gray-600 text-xs">{t.home.stats.costReduction}</div>
+                  <div className="text-gray-400 text-[10px]">{t.home.stats.costReductionSub}</div>
                 </div>
               </motion.div>
             </motion.div>
 
             {/* Right: Animation (Desktop) - 包含占位避免 CLS */}
-            <div className="hidden lg:block">
+            <div className="hidden lg:block lg:col-span-5">
               {isDesktop === null ? (
                 // 占位元素：與動畫容器同高，避免版面跳動
                 <div className="w-full h-[480px] rounded-xl bg-slate-100/50" />
@@ -611,32 +637,13 @@ export default function HeroSection() {
           </div>
         </div>
 
-        {/* Floating Elements */}
-        <motion.div
-          animate={{
-            y: [0, -20, 0],
-            rotate: [0, 5, 0]
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-          className="absolute top-20 right-10 w-20 h-20 bg-blue-200 rounded-full opacity-20 hidden lg:block"
+        {/* Decorative Blur Circles */}
+        <div
+          className="absolute top-20 right-10 w-72 h-72 bg-blue-100/30 rounded-full blur-3xl hidden lg:block"
           aria-hidden="true"
         />
-        <motion.div
-          animate={{
-            y: [0, 15, 0],
-            rotate: [0, -5, 0]
-          }}
-          transition={{
-            duration: 8,
-            repeat: Infinity,
-            ease: "easeInOut",
-            delay: 1
-          }}
-          className="absolute bottom-20 left-10 w-16 h-16 bg-indigo-200 rounded-full opacity-20 hidden lg:block"
+        <div
+          className="absolute bottom-20 left-10 w-56 h-56 bg-slate-100/40 rounded-full blur-3xl hidden lg:block"
           aria-hidden="true"
         />
       </section>
