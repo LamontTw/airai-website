@@ -97,14 +97,6 @@ export function WebsiteSchema({ customData }: WebsiteSchemaProps) {
         "url": `${siteConfig.url}/images/logo-full.png`
       }
     },
-    "potentialAction": {
-      "@type": "SearchAction",
-      "target": {
-        "@type": "EntryPoint",
-        "urlTemplate": `${siteConfig.url}/search?q={search_term_string}`
-      },
-      "query-input": "required name=search_term_string"
-    },
     "mainEntity": {
       "@type": "Organization",
       "name": siteConfig.company.name,

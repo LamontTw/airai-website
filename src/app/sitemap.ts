@@ -65,6 +65,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 資源頁面 - 提高優先級
   const resourcePages = [
     {
+      url: `${baseUrl}/resources/ai-introduction-guide`,
+      lastModified: new Date(),
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/resources/ai-guide/1`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
@@ -105,6 +111,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'weekly' as const,
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/resources/blog/openai-enterprise-ai`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/resources/blog/2`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/resources/blog/3`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/resources/blog/4`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
     },
   ]
 

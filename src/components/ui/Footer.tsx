@@ -21,11 +21,11 @@ export default function Footer() {
 
   const footerLinks = {
     services: [
-      { 
-        name: currentLocale === 'zh' ? '程式外包' : 
-              currentLocale === 'en' ? 'Software Outsourcing' : 
-              'ソフトウェア外注', 
-        href: `${prefix}/services#programming` 
+      {
+        name: currentLocale === 'zh' ? '客製化 AI 解決方案' :
+              currentLocale === 'en' ? 'Custom AI Solutions' :
+              'カスタムAIソリューション',
+        href: `${prefix}/services#programming`
       },
       { 
         name: currentLocale === 'zh' ? 'AI Agent導入' : 

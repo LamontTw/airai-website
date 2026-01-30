@@ -50,7 +50,7 @@ const contactInfo = [
 ];
 
 const consultationTypes = [
-  '程式外包需求評估',
+  'AI 導入需求評估',
   'AI Agent 導入規劃',
   '智能客服系統建置',
   'RPA 流程自動化',

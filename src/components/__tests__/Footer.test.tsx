@@ -22,7 +22,7 @@ describe('Footer', () => {
 
   it('應該顯示服務項目連結', () => {
     render(<Footer />);
-    expect(screen.getByText('程式外包')).toBeInTheDocument();
+    expect(screen.getByText('客製化 AI 解決方案')).toBeInTheDocument();
     expect(screen.getByText('AI Agent導入')).toBeInTheDocument();
     expect(screen.getByText('智能客服')).toBeInTheDocument();
     expect(screen.getByText('流程自動化')).toBeInTheDocument();
@@ -52,7 +52,7 @@ describe('Footer', () => {
     render(<Footer />);
     
     // 檢查服務項目連結
-    const programmingLink = screen.getByText('程式外包').closest('a');
+    const programmingLink = screen.getByText('客製化 AI 解決方案').closest('a');
     expect(programmingLink).toHaveAttribute('href', '/services#programming');
     
     const aiAgentLink = screen.getByText('AI Agent導入').closest('a');

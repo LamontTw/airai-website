@@ -5,304 +5,31 @@ import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
 import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
-import { 
-  BuildingOfficeIcon,
-  ShoppingBagIcon,
-  TruckIcon,
-  DocumentTextIcon,
+import {
   ArrowRightIcon,
   ChatBubbleLeftIcon,
-  ChartBarIcon,
-  ClockIcon,
-  CurrencyDollarIcon,
   UserGroupIcon,
   CheckCircleIcon,
   StarIcon,
   CalendarIcon,
   MapPinIcon
 } from '@heroicons/react/24/outline';
-
-interface DetailedCaseStudy {
-  id: number;
-  industry: string;
-  icon: React.ComponentType<{ className?: string }>;
-  company: string;
-  location: string;
-  size: string;
-  projectDuration: string;
-  challenge: string;
-  solution: string;
-  description: string;
-  implementation: string[];
-  results: string[];
-  testimonial: string;
-  clientName: string;
-  clientRole: string;
-  metrics: {
-    roi: string;
-    timeSaved: string;
-    costReduction: string;
-    efficiency: string;
-  };
-  technologies: string[];
-  color: 'emerald' | 'blue' | 'purple' | 'indigo' | 'orange' | 'red';
-  featured: boolean;
-}
-
-const detailedCases: DetailedCaseStudy[] = [
-  {
-    id: 1,
-    industry: '批發零售業',
-    icon: ShoppingBagIcon,
-    company: '批發商行',
-    location: '台中市',
-    size: '中型企業 (50-100人)',
-    projectDuration: '3個月',
-    challenge: '每天需要手動錄入十幾到數十張進貨單，員工經常加班到深夜，人為疏失導致庫存管理混亂，客戶抱怨增加。',
-    solution: 'AI智能辨識系統',
-    description: '開發基於深度學習的OCR辨識系統，結合自然語言處理技術，自動提取進貨單關鍵資訊並整合到ERP系統。',
-    implementation: [
-      '收集並標註2000+張進貨單樣本',
-      '訓練專屬的OCR模型',
-      '開發手機APP拍照上傳介面',
-      '建立資料驗證與錯誤修正機制',
-      '整合現有ERP系統API',
-      '員工培訓與系統上線'
-    ],
-    results: [
-      '每日節省14小時人工作業時間',
-      '資料準確率提升至99.2%',
-      '庫存週轉率提升35%',
-      '客戶滿意度從72%提升至94%',
-      '員工加班時間減少80%',
-      '月營運成本降低NT$120,000'
-    ],
-    testimonial: '早知道AI這麼好用，我就不會拖這麼久才開始！現在員工下班後還有時間陪家人，工作效率也大幅提升。',
-    clientName: '王老闆',
-    clientRole: '負責人',
-    metrics: {
-      roi: '480%',
-      timeSaved: '14小時/日',
-      costReduction: '50%',
-      efficiency: '99.2%'
-    },
-    technologies: ['深度學習OCR', 'React Native', 'Python Flask', 'PostgreSQL', 'AWS'],
-    color: 'emerald',
-    featured: true
-  },
-  {
-    id: 2,
-    industry: '電商平台',
-    icon: ShoppingBagIcon,
-    company: '快購電商',
-    location: '台北市',
-    size: '中型企業 (30-50人)',
-    projectDuration: '4個月',
-    challenge: '經營MOMO、PChome、蝦皮等多個平台，無法即時掌握各平台銷售狀況，庫存管理困難，經常缺貨或積壓。',
-    solution: 'AI智慧分析儀表板',
-    description: '建立統一的數據中台，整合多平台API，運用機器學習預測銷售趨勢，自動化補貨建議系統。',
-    implementation: [
-      '串接8個電商平台API',
-      '建立即時數據同步機制',
-      '開發銷售預測ML模型',
-      '設計直觀的儀表板介面',
-      '建立自動化補貨警示系統',
-      '整合庫存管理流程'
-    ],
-    results: [
-      '庫存週轉率提升30%',
-      '缺貨率降低85%',
-      '銷售預測準確率達92%',
-      '庫存成本降低25%',
-      '客戶滿意度提升40%',
-      '營業額成長18%'
-    ],
-    testimonial: '現在每天只要看一個畫面，就能掌握昨天的銷售狀況，還能即時發現熱賣商品，真的太方便了！',
-    clientName: '陳經理',
-    clientRole: '營運經理',
-    metrics: {
-      roi: '320%',
-      timeSaved: '8小時/日',
-      costReduction: '25%',
-      efficiency: '92%'
-    },
-    technologies: ['Python Django', 'Vue.js', 'TensorFlow', 'Redis', 'MongoDB'],
-    color: 'blue',
-    featured: true
-  },
-  {
-    id: 3,
-    industry: '會計服務業',
-    icon: DocumentTextIcon,
-    company: '會計事務所',
-    location: '高雄市',
-    size: '小型企業 (10-30人)',
-    projectDuration: '2個月',
-    challenge: '報稅季期間員工需要加班到半夜，大量重複性文件處理工作，人工下載分類政府網站文件耗時又容易出錯。',
-    solution: 'RPA流程自動化系統',
-    description: '設計智能機器人流程，自動登入財政部網站，批量下載文件並進行智能分類歸檔，24小時不間斷運作。',
-    implementation: [
-      '分析現有作業流程',
-      '開發RPA自動化腳本',
-      '建立文件分類AI模型',
-      '設置排程與監控系統',
-      '建立異常處理機制',
-      '員工操作培訓'
-    ],
-    results: [
-      '原本14小時工作現在半夜自動完成',
-      '文件分類準確率100%',
-      '處理速度提升500%',
-      '員工可專注高價值諮詢工作',
-      '客戶案件處理量增加60%',
-      '加班費用節省NT$200,000/年'
-    ],
-    testimonial: '系統在半夜默默完成所有繁瑣工作，隔天上班就能看到整理好的文件，員工終於不用熬夜了。',
-    clientName: '林會計師',
-    clientRole: '所長',
-    metrics: {
-      roi: '650%',
-      timeSaved: '14小時/日',
-      costReduction: '60%',
-      efficiency: '100%'
-    },
-    technologies: ['UiPath RPA', 'Python Selenium', 'NLP分類', 'MySQL', 'Windows Server'],
-    color: 'purple',
-    featured: true
-  },
-  {
-    id: 4,
-    industry: '客服中心',
-    icon: BuildingOfficeIcon,
-    company: '優質服務中心',
-    location: '台北市',
-    size: '中型企業 (80-120人)',
-    projectDuration: '5個月',
-    challenge: '客戶詢問量大，客服人員不足，回覆速度慢，客戶滿意度低，人力成本持續上升。',
-    solution: 'AI智能客服機器人',
-    description: '打造LINE官方帳號AI聊天機器人，整合知識庫管理系統，提供多輪對話與人工轉接功能。',
-    implementation: [
-      '收集歷史客服對話記錄',
-      '建立知識庫與FAQ系統',
-      '訓練對話AI模型',
-      '開發LINE Bot介面',
-      '建立人工轉接機制',
-      '持續學習優化系統'
-    ],
-    results: [
-      '85%詢問自動回覆',
-      '平均回應時間從30分鐘縮短至3秒',
-      '24/7不間斷服務',
-      '客戶滿意度從65%提升至91%',
-      '客服人力需求減少40%',
-      '年度人力成本節省NT$800,000'
-    ],
-    testimonial: '超過85%的詢問都可以自動回覆，客服人員現在能專注處理更複雜的問題，客戶滿意度大幅提升。',
-    clientName: '張主管',
-    clientRole: '客服部主管',
-    metrics: {
-      roi: '420%',
-      timeSaved: '24/7',
-      costReduction: '40%',
-      efficiency: '85%'
-    },
-    technologies: ['自然語言處理', 'LINE Bot SDK', 'Node.js', 'MongoDB', 'Docker'],
-    color: 'indigo',
-    featured: false
-  },
-  {
-    id: 5,
-    industry: '製造業',
-    icon: TruckIcon,
-    company: '精密機械有限公司',
-    location: '桃園市',
-    size: '中型企業 (100-200人)',
-    projectDuration: '6個月',
-    challenge: '生產線品質檢測依賴人工目視，效率低且容易疲勞出錯，產品良率不穩定，客戶退貨率偏高。',
-    solution: 'AI視覺檢測系統',
-    description: '導入機器視覺AI檢測系統，自動識別產品瑕疵，即時品質監控與預警，提升產品良率。',
-    implementation: [
-      '收集產品圖像資料集',
-      '訓練瑕疵檢測CNN模型',
-      '安裝工業相機設備',
-      '開發即時檢測軟體',
-      '建立品質管理儀表板',
-      '產線人員操作培訓'
-    ],
-    results: [
-      '檢測準確率達99.5%',
-      '檢測速度提升10倍',
-      '產品良率從92%提升至98.5%',
-      '客戶退貨率降低75%',
-      '品質檢測人力減少50%',
-      '年度品質成本節省NT$500,000'
-    ],
-    testimonial: 'AI檢測系統比人眼更精準，24小時不會疲勞，產品品質穩定多了，客戶對我們更有信心。',
-    clientName: '李廠長',
-    clientRole: '生產部廠長',
-    metrics: {
-      roi: '380%',
-      timeSaved: '24/7',
-      costReduction: '30%',
-      efficiency: '99.5%'
-    },
-    technologies: ['Computer Vision', 'TensorFlow', 'OpenCV', 'C++', '工業相機'],
-    color: 'orange',
-    featured: false
-  },
-  {
-    id: 6,
-    industry: '物流運輸',
-    icon: TruckIcon,
-    company: '快速物流',
-    location: '新北市',
-    size: '大型企業 (200+人)',
-    projectDuration: '4個月',
-    challenge: '配送路線規劃全靠經驗，油耗成本高，客戶等待時間長，司機工作負荷不均，客訴增加。',
-    solution: 'AI智能調度系統',
-    description: '開發智能路線規劃系統，整合GPS定位、交通資訊，自動最佳化配送路線與車輛調度。',
-    implementation: [
-      '收集歷史配送數據',
-      '整合Google Maps API',
-      '開發路線優化演算法',
-      '建立即時調度系統',
-      '開發司機手機APP',
-      '建立KPI監控儀表板'
-    ],
-    results: [
-      '配送效率提升25%',
-      '油耗成本降低20%',
-      '客戶等待時間減少30%',
-      '司機滿意度提升40%',
-      '客訴案件減少60%',
-      '年度營運成本節省NT$1,200,000'
-    ],
-    testimonial: '現在系統會自動安排最佳路線，司機不用再煩惱怎麼走，客戶也能準時收到貨物，大家都很滿意。',
-    clientName: '劉經理',
-    clientRole: '營運經理',
-    metrics: {
-      roi: '285%',
-      timeSaved: '6小時/日',
-      costReduction: '20%',
-      efficiency: '25%'
-    },
-    technologies: ['優化演算法', 'React Native', 'Google Maps API', 'PostgreSQL', 'Redis'],
-    color: 'red',
-    featured: false
-  }
-];
-
-const industryStats = [
-  { industry: '零售業', cases: 25, avgROI: '380%', avgTimeSaved: '12小時/日' },
-  { industry: '製造業', cases: 18, avgROI: '320%', avgTimeSaved: '8小時/日' },
-  { industry: '服務業', cases: 32, avgROI: '450%', avgTimeSaved: '16小時/日' },
-  { industry: '物流業', cases: 15, avgROI: '290%', avgTimeSaved: '6小時/日' },
-  { industry: '金融業', cases: 12, avgROI: '520%', avgTimeSaved: '20小時/日' },
-  { industry: '醫療業', cases: 8, avgROI: '400%', avgTimeSaved: '10小時/日' }
-];
+import { detailedCases, industryStats } from '@/lib/data/caseStudies';
 
 export default function CasesPage() {
-  const [ref, inView] = useInView({
+  const [featuredRef, featuredInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+  const [statsRef, statsInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+  const [otherRef, otherInView] = useInView({
+    triggerOnce: true,
+    threshold: 0.1
+  });
+  const [ctaRef, ctaInView] = useInView({
     triggerOnce: true,
     threshold: 0.1
   });
@@ -369,10 +96,19 @@ export default function CasesPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              客戶 <span className="gradient-text">成功案例</span>
+              <span className="gradient-text">AI導入</span>成功案例
             </h1>
-            <p className="text-xl text-gray-600 leading-relaxed mb-8">
-              真實的客戶案例，證實AI導入的實際效益與投資回報
+            <p className="text-xl text-gray-600 leading-relaxed mb-4">
+              真實的客戶 AI 導入案例，證實智能化轉型的實際效益與投資回報
+            </p>
+            <p className="mb-8">
+              <Link
+                href="/resources/ai-introduction-guide"
+                className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-800"
+              >
+                閱讀《AI導入完整指南》
+                <ArrowRightIcon className="w-4 h-4 ml-1" />
+              </Link>
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 max-w-3xl mx-auto">
               <div className="text-center">
@@ -397,11 +133,11 @@ export default function CasesPage() {
       </section>
 
       {/* Featured Cases */}
-      <section ref={ref} className="section-padding bg-white">
+      <section ref={featuredRef} className="section-padding bg-white">
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={featuredInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
@@ -418,7 +154,7 @@ export default function CasesPage() {
               <motion.div
                 key={study.id}
                 initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                animate={featuredInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
                 className={`${colorClasses[study.color].bg} ${colorClasses[study.color].border} border rounded-3xl p-8 lg:p-12`}
               >
@@ -567,11 +303,11 @@ export default function CasesPage() {
       </section>
 
       {/* Industry Statistics */}
-      <section className="section-padding bg-gray-50">
+      <section ref={statsRef} className="section-padding bg-gray-50">
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={statsInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
@@ -588,7 +324,7 @@ export default function CasesPage() {
               <motion.div
                 key={stat.industry}
                 initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                animate={statsInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
                 className="bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300"
               >
@@ -614,11 +350,11 @@ export default function CasesPage() {
       </section>
 
       {/* Other Cases */}
-      <section className="section-padding bg-white">
+      <section ref={otherRef} className="section-padding bg-white">
         <div className="container-max">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={otherInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
@@ -635,7 +371,7 @@ export default function CasesPage() {
               <motion.div
                 key={study.id}
                 initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
+                animate={otherInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
                 className={`${colorClasses[study.color].bg} ${colorClasses[study.color].border} border rounded-2xl p-6 hover:shadow-lg transition-shadow duration-300`}
               >
@@ -685,11 +421,11 @@ export default function CasesPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="section-padding bg-gradient-to-r from-blue-600 to-indigo-600">
+      <section ref={ctaRef} className="section-padding bg-gradient-to-r from-blue-600 to-indigo-600">
         <div className="container-max text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
+            animate={ctaInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
             className="text-white"
           >

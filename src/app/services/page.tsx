@@ -148,11 +148,11 @@ export default function ServicesPage() {
             <div className="flex items-center justify-center mb-6">
               <CodeBracketIcon className="w-12 h-12 text-purple-600 mr-4" />
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900">
-                程式外包服務
+                客製化 AI 解決方案
               </h2>
             </div>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              專業的軟體開發團隊，為您的企業建立穩固的數位基礎設施
+              專業的 AI 系統整合團隊，為您的企業建立智能化數位基礎設施
             </p>
           </motion.div>
 
@@ -189,7 +189,7 @@ export default function ServicesPage() {
             transition={{ duration: 0.8, delay: 0.6 }}
             className="bg-purple-600 rounded-2xl p-8 text-white text-center"
           >
-            <h3 className="text-2xl font-bold mb-4">為什麼選擇我們的程式外包服務？</h3>
+            <h3 className="text-2xl font-bold mb-4">為什麼選擇我們的客製化 AI 解決方案？</h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div>
                 <div className="text-3xl font-bold mb-2">10+</div>

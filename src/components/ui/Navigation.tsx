@@ -88,7 +88,7 @@ export default function Navigation() {
             <LanguageSwitcher />
             <Link
               href={currentLocale === 'zh' ? "/contact" : `/${currentLocale}/contact`}
-              className="btn-primary"
+              className="btn-primary shadow-lg shadow-blue-500/25"
             >
               {t.nav.consultation}
             </Link>

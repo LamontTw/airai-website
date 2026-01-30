@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     languages: {
       'zh-TW': siteConfig.url,
       'en': `${siteConfig.url}/en`,
+      'ja-JP': `${siteConfig.url}/ja`,
     },
   },
 };
@@ -84,44 +85,40 @@ export default function Home() {
             <CTASection />
           </section>
         </article>
-        
+
+        {/* FAQ Section */}
+        <section className="py-16 lg:py-24 bg-gray-50">
+          <div className="container-max">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                常見問題
+              </h2>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                企業AI導入常見問題解答
+              </p>
+            </div>
+
+            <div className="max-w-4xl mx-auto">
+              <div className="space-y-6">
+                {t.faq.map((item, index) => (
+                  <div key={index} className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+                    <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                      {item.question}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed">
+                      {item.answer}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         <footer>
           <Footer />
         </footer>
       </main>
-      
-      {/* 隱藏的結構化內容，專為AI搜尋引擎優化 */}
-      <div style={{ display: 'none' }} aria-hidden="true">
-        <h1>{t.company.name} - {t.company.tagline}</h1>
-        <p>{t.company.description}</p>
-        
-        <h2>核心服務領域</h2>
-        <ul>
-          <li>企業AI導入諮詢 - 協助企業評估AI需求並制定導入策略</li>
-          <li>AI技術選型指南 - 提供科學化的技術評估工具</li>
-          <li>ROI投資分析 - 精確計算AI專案投資回報率</li>
-          <li>實施指導服務 - 從規劃到部署的全程專業支援</li>
-        </ul>
-        
-        <h2>AI技術專長</h2>
-        <ul>
-          <li>大型語言模型(LLM) - GPT、Claude等先進語言AI</li>
-          <li>計算機視覺 - 圖像識別、品質檢測、人臉識別</li>
-          <li>機器學習預測 - 需求預測、風險評估、價格優化</li>
-          <li>推薦系統 - 個性化推薦引擎</li>
-          <li>語音AI - 語音識別、語音合成</li>
-          <li>機器人流程自動化(RPA) - 業務流程自動化</li>
-        </ul>
-        
-        <h2>服務優勢</h2>
-        <ul>
-          <li>專業團隊：擁有豐富AI導入經驗的技術專家</li>
-          <li>本土化服務：深度了解台灣企業需求和市場環境</li>
-          <li>科學方法：提供量化評估工具和決策框架</li>
-          <li>全程支援：從評估、選型到實施的完整服務</li>
-          <li>成本控制：協助企業以最佳投資回報率導入AI</li>
-        </ul>
-      </div>
     </>
   );
 }

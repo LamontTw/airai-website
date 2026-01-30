@@ -52,11 +52,11 @@ interface Tool extends ResourceItem {
 const guides: ResourceItem[] = [
   {
     id: 1,
-    title: 'AI轉型完整指南：從評估到導入',
+    title: 'AI轉型五步驟：從現況評估到效果追蹤',
     description: '完整的中小企業AI導入指南，涵蓋需求評估、技術選擇、實施規劃到效果追蹤的全流程。',
     category: '導入指南',
     readTime: '15分鐘',
-    date: '2024-05-20',
+    date: '2025-09-12',
     tags: ['AI導入', '數位轉型', '流程規劃'],
     color: 'blue',
     featured: true
@@ -67,7 +67,7 @@ const guides: ResourceItem[] = [
     description: '學習如何正確計算AI專案的投資回報率，建立可衡量的效益指標體系。',
     category: '效益評估',
     readTime: '12分鐘',
-    date: '2024-05-15',
+    date: '2025-07-03',
     tags: ['ROI', '效益評估', '財務分析'],
     color: 'green'
   },
@@ -77,7 +77,7 @@ const guides: ResourceItem[] = [
     description: '深入分析中小企業在AI導入過程中的常見問題，提供實用的解決策略。',
     category: '問題解決',
     readTime: '10分鐘',
-    date: '2024-05-10',
+    date: '2025-04-18',
     tags: ['問題解決', '最佳實務', '經驗分享'],
     color: 'orange'
   }
@@ -86,12 +86,12 @@ const guides: ResourceItem[] = [
 const trends: ResourceItem[] = [
   {
     id: 1,
-    title: '2024年中小企業AI應用趨勢報告',
-    description: '深度分析台灣中小企業AI應用現況，預測未來發展趨勢與投資機會。',
+    title: 'AI導入完整指南：成本、選型與實戰案例',
+    description: '完整解析企業AI導入流程、成本評估、技術選型，專為台灣中小企業設計的導入指南。',
     category: '趨勢分析',
     views: '5,230',
-    date: '2024-05-22',
-    tags: ['趨勢分析', '市場報告', '產業洞察'],
+    date: '2026-01-30',
+    tags: ['AI導入', '數位轉型', '流程規劃'],
     color: 'purple',
     featured: true
   },
@@ -101,7 +101,7 @@ const trends: ResourceItem[] = [
     description: '探討製造業在AI時代的轉型重點，包括智能製造、預測維護等應用領域。',
     category: '製造業',
     views: '3,840',
-    date: '2024-05-18',
+    date: '2025-11-07',
     tags: ['製造業', '智能製造', '工業4.0'],
     color: 'indigo'
   },
@@ -111,7 +111,7 @@ const trends: ResourceItem[] = [
     description: '分析零售業AI客服的導入現況、技術發展與未來商機。',
     category: '零售業',
     views: '2,950',
-    date: '2024-05-12',
+    date: '2025-06-21',
     tags: ['零售業', 'AI客服', '消費者體驗'],
     color: 'red'
   }
@@ -126,7 +126,7 @@ const blogPosts: BlogPost[] = [
     author: 'AIRAI研究團隊',
     excerpt: '深入分析OpenAI《AI in the Enterprise》文章的核心觀點，結合台灣市場實況，為企業提供AI轉型策略指引...',
     readTime: '15分鐘',
-    date: '2024-05-28',
+    date: '2025-10-14',
     tags: ['OpenAI', '企業AI', '數位轉型', '行業洞察'],
     color: 'purple',
     featured: true
@@ -139,7 +139,7 @@ const blogPosts: BlogPost[] = [
     author: '李技術長',
     excerpt: '分享我們團隊在導入ChatGPT時的實際經驗，包括技術整合、安全考量與效益評估...',
     readTime: '8分鐘',
-    date: '2024-05-25',
+    date: '2025-08-22',
     tags: ['ChatGPT', '企業應用', '實務分享'],
     color: 'blue'
   },
@@ -151,7 +151,7 @@ const blogPosts: BlogPost[] = [
     author: '陳專案經理',
     excerpt: 'RPA搭配AI技術可以處理更複雜的業務流程，我們將分享成功案例與實施心得...',
     readTime: '12分鐘',
-    date: '2024-05-20',
+    date: '2025-05-09',
     tags: ['RPA', 'AI整合', '流程自動化'],
     color: 'green'
   },
@@ -163,7 +163,7 @@ const blogPosts: BlogPost[] = [
     author: '王顧問',
     excerpt: '小企業也能享受AI帶來的效益！關鍵在於選擇合適的技術方案與循序漸進的導入策略...',
     readTime: '10分鐘',
-    date: '2024-05-15',
+    date: '2025-03-27',
     tags: ['成本控制', '小型企業', 'AI策略'],
     color: 'orange'
   }
@@ -177,7 +177,7 @@ const tools: Tool[] = [
     category: '評估工具',
     type: 'assessment',
     downloadCount: '2,450',
-    date: '2024-05-20',
+    date: '2025-12-08',
     tags: ['需求評估', '流程分析', '免費工具'],
     color: 'blue',
     features: [
@@ -195,7 +195,7 @@ const tools: Tool[] = [
     category: '計算工具',
     type: 'calculator',
     downloadCount: '1,830',
-    date: '2024-05-15',
+    date: '2025-09-19',
     tags: ['ROI計算', '財務分析', '效益評估'],
     color: 'green',
     features: [
@@ -212,7 +212,7 @@ const tools: Tool[] = [
     category: '規劃範本',
     type: 'template',
     downloadCount: '1,620',
-    date: '2024-05-10',
+    date: '2025-06-14',
     tags: ['專案規劃', '範本', '時程管理'],
     color: 'purple',
     features: [
@@ -229,7 +229,7 @@ const tools: Tool[] = [
     category: '選型指南',
     type: 'guide',
     downloadCount: '980',
-    date: '2024-05-05',
+    date: '2025-02-23',
     tags: ['技術選型', '比較分析', '決策支援'],
     color: 'indigo',
     features: [
@@ -329,7 +329,7 @@ export default function ResourcesPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {/* Featured Guide */}
             {guides.filter(g => g.featured).map((guide, index) => (
               <motion.div
@@ -339,12 +339,12 @@ export default function ResourcesPage() {
                 transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border-l-4 border-blue-500"
               >
-                <div className="p-6">
+                <div className="p-8">
                   <div className="flex items-center mb-4">
                     <BookOpenIcon className="w-8 h-8 text-blue-600 mr-3" />
                     <span className="text-blue-600 text-sm font-medium">AI導入指南</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{guide.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{guide.title}</h3>
                   <p className="text-gray-600 mb-4 text-sm">{guide.description}</p>
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                     <div className="flex items-center">
@@ -380,12 +380,12 @@ export default function ResourcesPage() {
                 transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border-l-4 border-purple-500"
               >
-                <div className="p-6">
+                <div className="p-8">
                   <div className="flex items-center mb-4">
                     <ChartBarSquareIcon className="w-8 h-8 text-purple-600 mr-3" />
                     <span className="text-purple-600 text-sm font-medium">趨勢分析</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{trend.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{trend.title}</h3>
                   <p className="text-gray-600 mb-4 text-sm">{trend.description}</p>
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                     <div className="flex items-center">
@@ -404,7 +404,7 @@ export default function ResourcesPage() {
                       </span>
                     ))}
                   </div>
-                  <Link href={`/resources/trends/${trend.id}`} className="text-purple-600 hover:text-purple-700 font-medium text-sm inline-flex items-center group">
+                  <Link href="/resources/ai-introduction-guide" className="text-purple-600 hover:text-purple-700 font-medium text-sm inline-flex items-center group">
                     查看報告
                     <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
                   </Link>
@@ -421,12 +421,12 @@ export default function ResourcesPage() {
                 transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border-l-4 border-green-500"
               >
-                <div className="p-6">
+                <div className="p-8">
                   <div className="flex items-center mb-4">
                     <CalculatorIcon className="w-8 h-8 text-green-600 mr-3" />
                     <span className="text-green-600 text-sm font-medium">免費工具</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{tool.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{tool.title}</h3>
                   <p className="text-gray-600 mb-4 text-sm">{tool.description}</p>
                   <div className="mb-4">
                     <h4 className="text-sm font-semibold text-gray-900 mb-2">主要功能：</h4>
