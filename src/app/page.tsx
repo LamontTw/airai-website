@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     languages: {
       'zh-TW': siteConfig.url,
       'en': `${siteConfig.url}/en`,
+      'ja-JP': `${siteConfig.url}/ja`,
     },
   },
 };
