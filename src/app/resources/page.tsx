@@ -86,12 +86,12 @@ const guides: ResourceItem[] = [
 const trends: ResourceItem[] = [
   {
     id: 1,
-    title: '2024年中小企業AI應用趨勢報告',
-    description: '深度分析台灣中小企業AI應用現況，預測未來發展趨勢與投資機會。',
+    title: 'AI導入完整指南：從評估到導入',
+    description: '完整解析企業AI導入流程、成本評估、技術選型，專為台灣中小企業設計的導入指南。',
     category: '趨勢分析',
     views: '5,230',
     date: '2024-05-22',
-    tags: ['趨勢分析', '市場報告', '產業洞察'],
+    tags: ['AI導入', '數位轉型', '流程規劃'],
     color: 'purple',
     featured: true
   },
@@ -404,7 +404,7 @@ export default function ResourcesPage() {
                       </span>
                     ))}
                   </div>
-                  <Link href={`/resources/trends/${trend.id}`} className="text-purple-600 hover:text-purple-700 font-medium text-sm inline-flex items-center group">
+                  <Link href="/resources/ai-introduction-guide" className="text-purple-600 hover:text-purple-700 font-medium text-sm inline-flex items-center group">
                     查看報告
                     <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
                   </Link>

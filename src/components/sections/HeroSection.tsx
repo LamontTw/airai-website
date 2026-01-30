@@ -4,8 +4,8 @@ import { useState, useEffect, useMemo, useRef } from 'react';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 import Link from 'next/link';
-import { ArrowRightIcon, PlayIcon } from '@heroicons/react/24/outline';
-import VideoModal from '@/components/ui/VideoModal';
+import { ArrowRightIcon, BookOpenIcon } from '@heroicons/react/24/outline';
+import LineQRModal from '@/components/ui/LineQRModal';
 import { getTranslations } from '@/lib/i18n';
 
 // Hook: 偵測是否為桌機版（lg breakpoint = 1024px）
@@ -469,9 +469,9 @@ function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
 // Main HeroSection Component
 // ========================================
 export default function HeroSection() {
-  const [isVideoOpen, setIsVideoOpen] = useState(false);
   const pathname = usePathname();
   const isDesktop = useIsDesktop();
+  const [isLineModalOpen, setIsLineModalOpen] = useState(false);
 
   // 判斷當前語言並取得翻譯
   const getCurrentLocale = (): 'zh' | 'en' | 'ja' => {
@@ -482,9 +482,6 @@ export default function HeroSection() {
 
   const currentLocale = getCurrentLocale();
   const t = getTranslations(currentLocale);
-
-  // 設定是否使用影片功能
-  const useVideoModal = false;
 
   return (
     <>
@@ -551,35 +548,41 @@ export default function HeroSection() {
                 transition={{ delay: 0.8, duration: 0.8 }}
                 className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start items-center mb-8"
               >
-                <Link
-                  href={currentLocale === 'zh' ? "/contact" : `/${currentLocale}/contact`}
-                  className="btn-primary inline-flex items-center group shadow-lg shadow-blue-500/25 hover:-translate-y-0.5 hover:shadow-xl transition-all duration-200"
-                >
-                  {t.home.cta.primary}
-                  <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-                </Link>
-
-                {useVideoModal ? (
+                {isDesktop === true ? (
                   <button
-                    onClick={() => setIsVideoOpen(true)}
-                    className="inline-flex items-center group text-slate-600 hover:text-blue-600 font-medium py-3 px-6 transition-colors duration-200"
+                    onClick={() => setIsLineModalOpen(true)}
+                    className="btn-primary inline-flex items-center group shadow-lg shadow-blue-500/25 hover:-translate-y-0.5 hover:shadow-xl transition-all duration-200"
                   >
-                    <span className="w-8 h-8 rounded-full border-2 border-slate-300 group-hover:border-blue-500 flex items-center justify-center mr-2 transition-colors duration-200">
-                      <PlayIcon className="w-4 h-4" />
-                    </span>
-                    {t.home.cta.secondary}
+                    <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                    </svg>
+                    {t.home.cta.primary}
+                    <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
                   </button>
                 ) : (
-                  <Link
-                    href={currentLocale === 'zh' ? "/cases" : `/${currentLocale}/cases`}
-                    className="inline-flex items-center group text-slate-600 hover:text-blue-600 font-medium py-3 px-6 transition-colors duration-200"
+                  <a
+                    href="https://line.me/R/ti/p/@365cpgih"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary inline-flex items-center group shadow-lg shadow-blue-500/25 hover:-translate-y-0.5 hover:shadow-xl transition-all duration-200"
                   >
-                    <span className="w-8 h-8 rounded-full border-2 border-slate-300 group-hover:border-blue-500 flex items-center justify-center mr-2 transition-colors duration-200">
-                      <PlayIcon className="w-4 h-4" />
-                    </span>
-                    {t.home.cta.secondary}
-                  </Link>
+                    <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M19.365 9.863c.349 0 .63.285.63.631 0 .345-.281.63-.63.63H17.61v1.125h1.755c.349 0 .63.283.63.63 0 .344-.281.629-.63.629h-2.386c-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63h2.386c.349 0 .63.285.63.63 0 .349-.281.63-.63.63H17.61v1.125h1.755zm-3.855 3.016c0 .27-.174.51-.432.596-.064.021-.133.031-.199.031-.211 0-.391-.09-.51-.25l-2.443-3.317v2.94c0 .344-.279.629-.631.629-.346 0-.626-.285-.626-.629V8.108c0-.27.173-.51.43-.595.06-.023.136-.033.194-.033.195 0 .375.104.495.254l2.462 3.33V8.108c0-.345.282-.63.63-.63.345 0 .63.285.63.63v4.771zm-5.741 0c0 .344-.282.629-.631.629-.345 0-.627-.285-.627-.629V8.108c0-.345.282-.63.627-.63.349 0 .631.285.631.63v4.771zm-2.466.629H4.917c-.345 0-.63-.285-.63-.629V8.108c0-.345.285-.63.63-.63.348 0 .63.285.63.63v4.141h1.756c.348 0 .629.283.629.63 0 .344-.282.629-.629.629M24 10.314C24 4.943 18.615.572 12 .572S0 4.943 0 10.314c0 4.811 4.27 8.842 10.035 9.608.391.082.923.258 1.058.59.12.301.079.766.038 1.08l-.164 1.02c-.045.301-.24 1.186 1.049.645 1.291-.539 6.916-4.078 9.436-6.975C23.176 14.393 24 12.458 24 10.314" />
+                    </svg>
+                    {t.home.cta.primary}
+                    <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+                  </a>
                 )}
+
+                <Link
+                  href="/resources/ai-introduction-guide"
+                  className="inline-flex items-center group text-slate-600 hover:text-blue-600 font-medium py-3 px-6 transition-colors duration-200"
+                >
+                  <span className="w-8 h-8 rounded-full border-2 border-slate-300 group-hover:border-blue-500 flex items-center justify-center mr-2 transition-colors duration-200">
+                    <BookOpenIcon className="w-4 h-4" />
+                  </span>
+                  {t.home.cta.secondary}
+                </Link>
               </motion.div>
 
               {/* Stats */}
@@ -646,16 +649,11 @@ export default function HeroSection() {
         <div className="absolute -bottom-20 -left-20 w-48 h-48 bg-slate-200/10 rounded-full blur-3xl hidden lg:block" aria-hidden="true" />
       </section>
 
-      {/* 影片彈出組件 */}
-      {useVideoModal && (
-        <VideoModal
-          isOpen={isVideoOpen}
-          onClose={() => setIsVideoOpen(false)}
-          videoUrl="https://www.youtube.com/embed/dQw4w9WgXcQ"
-          title={currentLocale === 'zh' ? "智流科技成功案例展示" : "AIRAI Success Stories"}
-          description={currentLocale === 'zh' ? "了解我們如何幫助台灣中小企業實現AI轉型" : "Learn how we help Taiwan SMEs achieve AI transformation"}
-        />
-      )}
+      <LineQRModal
+        isOpen={isLineModalOpen}
+        onClose={() => setIsLineModalOpen(false)}
+        locale={currentLocale}
+      />
     </>
   );
 }

@@ -63,8 +63,8 @@ export const translations = {
       subtitle: '加速中小企業數位轉型',
       description: '解決人力短缺、提升作業效率，從需求診斷到上線維護，完整陪跑服務。',
       cta: {
-        primary: '免費諮詢 AI 導入方案',
-        secondary: '觀看成功案例'
+        primary: 'LINE 免費諮詢',
+        secondary: '免費 AI 導入指南'
       },
       stats: {
         autoReply: '客服詢問自動回覆率',
@@ -391,8 +391,8 @@ export const translations = {
       subtitle: 'Accelerate Digital Transformation for SMEs',
       description: 'Solve staffing shortages, boost efficiency — full support from diagnosis to deployment.',
       cta: {
-        primary: 'Free AI Implementation Consultation',
-        secondary: 'View Success Stories'
+        primary: 'LINE Consultation',
+        secondary: 'AI Implementation Guide'
       },
       stats: {
         autoReply: 'Customer Service Auto-Reply Rate',
@@ -719,8 +719,8 @@ export const translations = {
       subtitle: '中小企業のデジタル変革を加速',
       description: '人材不足を解決し、効率を向上。診断から導入まで、フルサポート。',
       cta: {
-        primary: '無料AI導入相談',
-        secondary: '成功事例を見る'
+        primary: 'LINE 無料相談',
+        secondary: 'AI導入ガイド'
       },
       stats: {
         autoReply: 'カスタマーサービス自動返信率',
