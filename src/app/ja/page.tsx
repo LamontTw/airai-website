@@ -79,19 +79,19 @@ export default function JapanesePage() {
           </section>
           
           <section id="problem-solution" aria-label="問題と解決策">
-            <ProblemSolutionSection />
+            <ProblemSolutionSection locale="ja" />
           </section>
           
           <section id="services" aria-label="サービス">
-            <ServicesSection />
+            <ServicesSection locale="ja" />
           </section>
           
           <section id="case-studies" aria-label="成功事例">
-            <CaseStudiesSection />
+            <CaseStudiesSection locale="ja" />
           </section>
-          
+
           <section id="cta" aria-label="お問い合わせ">
-            <CTASection />
+            <CTASection locale="ja" />
           </section>
         </article>
         

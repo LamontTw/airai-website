@@ -1,17 +1,14 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import { usePathname } from 'next/navigation';
 import Link from 'next/link';
-import { 
-  ShoppingBagIcon, 
-  DocumentTextIcon, 
+import {
+  ShoppingBagIcon,
+  DocumentTextIcon,
   BuildingOfficeIcon,
   ArrowRightIcon,
   ChatBubbleLeftIcon
 } from '@heroicons/react/24/outline';
-import { getTranslations, getCurrentLocale } from '@/lib/i18n';
+import { getTranslations } from '@/lib/i18n';
+import type { Locale } from '@/lib/i18n';
+import ScrollReveal from '@/components/ui/ScrollReveal';
 
 type ColorType = 'emerald' | 'blue' | 'purple' | 'indigo';
 
@@ -28,15 +25,8 @@ interface CaseStudy {
   color: ColorType;
 }
 
-export default function CaseStudiesSection() {
-  const [ref, inView] = useInView({
-    triggerOnce: true,
-    threshold: 0.1
-  });
-
-  const pathname = usePathname();
-  const currentLocale = getCurrentLocale(pathname);
-  const t = getTranslations(currentLocale);
+export default function CaseStudiesSection({ locale = 'zh' }: { locale?: Locale }) {
+  const t = getTranslations(locale);
 
   const caseStudies: CaseStudy[] = [
     {
@@ -117,142 +107,131 @@ export default function CaseStudiesSection() {
   };
 
   return (
-    <section ref={ref} className="section-padding bg-white">
+    <section className="section-padding bg-white">
       <div className="container-max">
         {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            <span className="gradient-text">{t.caseStudies.title}</span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            {t.caseStudies.subtitle}
-          </p>
-        </motion.div>
+        <ScrollReveal delay={0}>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+              <span className="gradient-text">{t.caseStudies.title}</span>
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              {t.caseStudies.subtitle}
+            </p>
+          </div>
+        </ScrollReveal>
 
         {/* Case Studies Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
           {caseStudies.map((study, index) => (
-            <motion.div
-              key={study.id}
-              initial={{ opacity: 0, y: 30 }}
-              animate={inView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
-              className={`${colorClasses[study.color].bg} ${colorClasses[study.color].border} border rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300`}
-            >
-              {/* Header */}
-              <div className="flex items-center mb-6">
-                <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm">
-                  <study.icon className={`w-6 h-6 ${colorClasses[study.color].icon}`} />
+            <ScrollReveal key={study.id} delay={200 + index * 100}>
+              <div
+                className={`${colorClasses[study.color].bg} ${colorClasses[study.color].border} border rounded-2xl p-8 hover:shadow-lg transition-shadow duration-300`}
+              >
+                {/* Header */}
+                <div className="flex items-center mb-6">
+                  <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center shadow-sm">
+                    <study.icon className={`w-6 h-6 ${colorClasses[study.color].icon}`} />
+                  </div>
+                  <div className="ml-4">
+                    <h3 className="text-lg font-bold text-gray-900">{study.company}</h3>
+                    <p className={`text-sm font-medium ${colorClasses[study.color].icon}`}>
+                      {study.industry}
+                    </p>
+                  </div>
                 </div>
-                <div className="ml-4">
-                  <h3 className="text-lg font-bold text-gray-900">{study.company}</h3>
-                  <p className={`text-sm font-medium ${colorClasses[study.color].icon}`}>
-                    {study.industry}
+
+                {/* Challenge */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-2">{t.caseStudies.challenge}</h4>
+                  <p className="text-gray-600 text-sm">
+                    {study.challenge}
                   </p>
                 </div>
-              </div>
 
-              {/* Challenge */}
-              <div className="mb-6">
-                <h4 className="font-semibold text-gray-900 mb-2">{t.caseStudies.challenge}</h4>
-                <p className="text-gray-600 text-sm">
-                  {study.challenge}
-                </p>
-              </div>
-
-              {/* Solution */}
-              <div className="mb-6">
-                <h4 className="font-semibold text-gray-900 mb-2">{t.caseStudies.solution}</h4>
-                <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${colorClasses[study.color].accent} mb-2`}>
-                  {study.solution}
-                </div>
-                <p className="text-gray-600 text-sm">
-                  {study.description}
-                </p>
-              </div>
-
-              {/* Results */}
-              <div className="mb-6">
-                <h4 className="font-semibold text-gray-900 mb-3">{t.caseStudies.results}</h4>
-                <div className="space-y-2">
-                  {study.results.map((result, idx) => (
-                    <div key={idx} className="flex items-center text-sm text-gray-600">
-                      <div className={`w-2 h-2 rounded-full mr-2 ${colorClasses[study.color].icon.replace('text-', 'bg-')}`}></div>
-                      {result}
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              {/* Testimonial */}
-              <div className="bg-white p-4 rounded-lg border border-gray-100">
-                <div className="flex items-start">
-                  <ChatBubbleLeftIcon className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" />
-                  <p className="text-gray-700 text-sm italic ml-2">
-                    &ldquo;{study.testimonial}&rdquo;
+                {/* Solution */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-2">{t.caseStudies.solution}</h4>
+                  <div className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${colorClasses[study.color].accent} mb-2`}>
+                    {study.solution}
+                  </div>
+                  <p className="text-gray-600 text-sm">
+                    {study.description}
                   </p>
                 </div>
+
+                {/* Results */}
+                <div className="mb-6">
+                  <h4 className="font-semibold text-gray-900 mb-3">{t.caseStudies.results}</h4>
+                  <div className="space-y-2">
+                    {study.results.map((result, idx) => (
+                      <div key={idx} className="flex items-center text-sm text-gray-600">
+                        <div className={`w-2 h-2 rounded-full mr-2 ${colorClasses[study.color].icon.replace('text-', 'bg-')}`}></div>
+                        {result}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Testimonial */}
+                <div className="bg-white p-4 rounded-lg border border-gray-100">
+                  <div className="flex items-start">
+                    <ChatBubbleLeftIcon className="w-5 h-5 text-gray-400 mt-1 flex-shrink-0" />
+                    <p className="text-gray-700 text-sm italic ml-2">
+                      &ldquo;{study.testimonial}&rdquo;
+                    </p>
+                  </div>
+                </div>
               </div>
-            </motion.div>
+            </ScrollReveal>
           ))}
         </div>
 
         {/* Stats Summary */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-          className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white text-center mb-12"
-        >
-          <h3 className="text-2xl font-bold mb-8">{t.caseStudies.overallStats}</h3>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-3xl font-bold mb-2">{t.caseStudies.statsValues.automation}</div>
-              <div className="text-blue-100">{t.caseStudies.stats.automation}</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">{t.caseStudies.statsValues.costReduction}</div>
-              <div className="text-blue-100">{t.caseStudies.stats.costReduction}</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">{t.caseStudies.statsValues.timeSaved}</div>
-              <div className="text-blue-100">{t.caseStudies.stats.timeSaved}</div>
-            </div>
-            <div>
-              <div className="text-3xl font-bold mb-2">{t.caseStudies.statsValues.satisfaction}</div>
-              <div className="text-blue-100">{t.caseStudies.stats.satisfaction}</div>
+        <ScrollReveal delay={800}>
+          <div className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white text-center mb-12">
+            <h3 className="text-2xl font-bold mb-8">{t.caseStudies.overallStats}</h3>
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+              <div>
+                <div className="text-3xl font-bold mb-2">{t.caseStudies.statsValues.automation}</div>
+                <div className="text-blue-100">{t.caseStudies.stats.automation}</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">{t.caseStudies.statsValues.costReduction}</div>
+                <div className="text-blue-100">{t.caseStudies.stats.costReduction}</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">{t.caseStudies.statsValues.timeSaved}</div>
+                <div className="text-blue-100">{t.caseStudies.stats.timeSaved}</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold mb-2">{t.caseStudies.statsValues.satisfaction}</div>
+                <div className="text-blue-100">{t.caseStudies.stats.satisfaction}</div>
+              </div>
             </div>
           </div>
-        </motion.div>
+        </ScrollReveal>
 
         {/* CTA */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1 }}
-          className="text-center"
-        >
-          <Link
-            href={currentLocale === 'zh' ? "/cases" : `/${currentLocale}/cases`}
-            className="btn-primary inline-flex items-center group mr-4 mb-4"
-          >
-            {t.caseStudies.ctaButtons.viewMore}
-            <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-          </Link>
-          <Link
-            href={currentLocale === 'zh' ? "/contact" : `/${currentLocale}/contact`}
-            className="btn-secondary inline-flex items-center group mb-4"
-          >
-            {t.caseStudies.ctaButtons.startJourney}
-            <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
-          </Link>
-        </motion.div>
+        <ScrollReveal delay={1000}>
+          <div className="text-center">
+            <Link
+              href={locale === 'zh' ? "/cases" : `/${locale}/cases`}
+              className="btn-primary inline-flex items-center group mr-4 mb-4"
+            >
+              {t.caseStudies.ctaButtons.viewMore}
+              <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+            </Link>
+            <Link
+              href={locale === 'zh' ? "/contact" : `/${locale}/contact`}
+              className="btn-secondary inline-flex items-center group mb-4"
+            >
+              {t.caseStudies.ctaButtons.startJourney}
+              <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
+            </Link>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );
-} 
+}
