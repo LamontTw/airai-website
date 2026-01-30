@@ -60,7 +60,7 @@ export const translations = {
     home: {
       badge: '專為台灣中小企業設計的AI解決方案',
       title: '將 AI 融入日常工作',
-      subtitle: '加速中小企業數位轉型',
+      subtitle: '加速中小企業AI轉型',
       description: '解決人力短缺、提升作業效率，從需求診斷到上線維護，完整陪跑服務。',
       cta: {
         primary: 'LINE 免費諮詢',
