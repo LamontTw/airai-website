@@ -528,7 +528,7 @@ export default function HeroSection() {
                 )}
               </motion.h1>
               <p className="text-2xl sm:text-3xl lg:text-4xl text-slate-500 font-medium mb-6">
-                {currentLocale === 'zh' ? '加速中小企業數位轉型' : t.home.subtitle}
+                {currentLocale === 'zh' ? '加速中小企業AI轉型' : t.home.subtitle}
               </p>
 
               {/* Subtitle */}
