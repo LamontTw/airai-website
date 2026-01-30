@@ -488,18 +488,18 @@ export default function HeroSection() {
 
   return (
     <>
-      <section className="relative min-h-screen flex items-center bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden pt-16 lg:pt-20">
+      <section className="relative flex items-start bg-gradient-to-br from-slate-50 via-white to-blue-50/30 overflow-hidden py-20 lg:py-28">
         {/* Background Pattern */}
         <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxnIGZpbGw9IiMzNzM3MzciIGZpbGwtb3BhY2l0eT0iMC4wMyI+PGNpcmNsZSBjeD0iMzAiIGN5PSIzMCIgcj0iMSI+PC9jaXJjbGU+PC9nPjwvZz48L3N2Zz4=')] opacity-40"></div>
 
-        <div className="max-w-screen-xl mx-auto relative z-10 px-4 sm:px-6 lg:px-12 py-8 lg:py-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="max-w-7xl mx-auto relative z-10 px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-8 items-start">
             {/* Left: Text Content (SEO Critical) */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8 }}
-              className="text-center lg:text-left"
+              className="text-center lg:text-left lg:col-span-3 xl:w-[630px] xl:h-[610px] lg:pt-[15px]"
             >
               {/* Badge */}
               <motion.div
@@ -520,7 +520,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8 }}
-                className="text-3xl sm:text-4xl lg:text-[3.5rem] font-bold text-gray-900 mb-4 leading-[1.15]"
+                className="text-4xl sm:text-5xl lg:text-[4.2rem] font-bold text-gray-900 mb-6 leading-[1.15]"
               >
                 {currentLocale === 'zh' ? (
                   <>
@@ -530,7 +530,7 @@ export default function HeroSection() {
                   <span className="bg-gradient-to-r from-blue-600 to-cyan-500 bg-clip-text text-transparent">{t.home.title}</span>
                 )}
               </motion.h1>
-              <p className="text-xl sm:text-2xl lg:text-3xl text-slate-500 font-medium mb-4">
+              <p className="text-2xl sm:text-3xl lg:text-4xl text-slate-500 font-medium mb-6">
                 {currentLocale === 'zh' ? '加速中小企業數位轉型' : t.home.subtitle}
               </p>
 
@@ -539,7 +539,7 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.8 }}
-                className="text-lg text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0 leading-relaxed"
+                className="text-xl text-gray-600 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed"
               >
                 {t.home.description}
               </motion.p>
@@ -587,28 +587,28 @@ export default function HeroSection() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 1, duration: 0.8 }}
-                className="grid grid-cols-3 gap-4 max-w-md mx-auto lg:mx-0"
+                className="grid grid-cols-3 gap-6 max-w-md mx-auto lg:mx-0"
               >
                 <div className="text-center lg:text-left">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent mb-1">85%</div>
-                  <div className="text-gray-600 text-xs">{t.home.stats.autoReply}</div>
-                  <div className="text-gray-400 text-[10px]">{t.home.stats.autoReplySub}</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-blue-400 bg-clip-text text-transparent mb-1">85%</div>
+                  <div className="text-gray-600 text-sm">{t.home.stats.autoReply}</div>
+                  <div className="text-gray-400 text-xs">{t.home.stats.autoReplySub}</div>
                 </div>
                 <div className="text-center lg:text-left">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent mb-1">14{currentLocale === 'zh' ? '小時' : 'hrs'}</div>
-                  <div className="text-gray-600 text-xs">{t.home.stats.timeSaved}</div>
-                  <div className="text-gray-400 text-[10px]">{t.home.stats.timeSavedSub}</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-emerald-600 to-emerald-400 bg-clip-text text-transparent mb-1">14{currentLocale === 'zh' ? '小時' : 'hrs'}</div>
+                  <div className="text-gray-600 text-sm">{t.home.stats.timeSaved}</div>
+                  <div className="text-gray-400 text-xs">{t.home.stats.timeSavedSub}</div>
                 </div>
                 <div className="text-center lg:text-left">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent mb-1">50%</div>
-                  <div className="text-gray-600 text-xs">{t.home.stats.costReduction}</div>
-                  <div className="text-gray-400 text-[10px]">{t.home.stats.costReductionSub}</div>
+                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-600 to-purple-400 bg-clip-text text-transparent mb-1">50%</div>
+                  <div className="text-gray-600 text-sm">{t.home.stats.costReduction}</div>
+                  <div className="text-gray-400 text-xs">{t.home.stats.costReductionSub}</div>
                 </div>
               </motion.div>
             </motion.div>
 
             {/* Right: Animation (Desktop) - 包含占位避免 CLS */}
-            <div className="hidden lg:block">
+            <div className="hidden lg:block lg:col-span-2 xl:w-[500px] lg:mt-[75px]">
               {isDesktop === null ? (
                 // 占位元素：與動畫容器同高，避免版面跳動
                 <div className="w-full h-[480px] rounded-xl bg-slate-100/50" />
