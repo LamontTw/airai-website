@@ -52,7 +52,7 @@ interface Tool extends ResourceItem {
 const guides: ResourceItem[] = [
   {
     id: 1,
-    title: 'AI轉型完整指南：從評估到導入',
+    title: 'AI轉型五步驟：從現況評估到效果追蹤',
     description: '完整的中小企業AI導入指南，涵蓋需求評估、技術選擇、實施規劃到效果追蹤的全流程。',
     category: '導入指南',
     readTime: '15分鐘',
@@ -86,11 +86,11 @@ const guides: ResourceItem[] = [
 const trends: ResourceItem[] = [
   {
     id: 1,
-    title: 'AI導入完整指南：從評估到導入',
+    title: 'AI導入完整指南：成本、選型與實戰案例',
     description: '完整解析企業AI導入流程、成本評估、技術選型，專為台灣中小企業設計的導入指南。',
     category: '趨勢分析',
     views: '5,230',
-    date: '2026-01-25',
+    date: '2026-01-30',
     tags: ['AI導入', '數位轉型', '流程規劃'],
     color: 'purple',
     featured: true
@@ -329,7 +329,7 @@ export default function ResourcesPage() {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {/* Featured Guide */}
             {guides.filter(g => g.featured).map((guide, index) => (
               <motion.div
@@ -339,12 +339,12 @@ export default function ResourcesPage() {
                 transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border-l-4 border-blue-500"
               >
-                <div className="p-6">
+                <div className="p-8">
                   <div className="flex items-center mb-4">
                     <BookOpenIcon className="w-8 h-8 text-blue-600 mr-3" />
                     <span className="text-blue-600 text-sm font-medium">AI導入指南</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{guide.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{guide.title}</h3>
                   <p className="text-gray-600 mb-4 text-sm">{guide.description}</p>
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                     <div className="flex items-center">
@@ -380,12 +380,12 @@ export default function ResourcesPage() {
                 transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border-l-4 border-purple-500"
               >
-                <div className="p-6">
+                <div className="p-8">
                   <div className="flex items-center mb-4">
                     <ChartBarSquareIcon className="w-8 h-8 text-purple-600 mr-3" />
                     <span className="text-purple-600 text-sm font-medium">趨勢分析</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{trend.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{trend.title}</h3>
                   <p className="text-gray-600 mb-4 text-sm">{trend.description}</p>
                   <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
                     <div className="flex items-center">
@@ -421,12 +421,12 @@ export default function ResourcesPage() {
                 transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
                 className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border-l-4 border-green-500"
               >
-                <div className="p-6">
+                <div className="p-8">
                   <div className="flex items-center mb-4">
                     <CalculatorIcon className="w-8 h-8 text-green-600 mr-3" />
                     <span className="text-green-600 text-sm font-medium">免費工具</span>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{tool.title}</h3>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{tool.title}</h3>
                   <p className="text-gray-600 mb-4 text-sm">{tool.description}</p>
                   <div className="mb-4">
                     <h4 className="text-sm font-semibold text-gray-900 mb-2">主要功能：</h4>
