@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import LanguageSwitcher from './LanguageSwitcher';
@@ -66,9 +67,12 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href={currentLocale === 'zh' ? '/' : `/${currentLocale}`} className="flex items-center">
-            <img 
-              src="/images/logo-nav.png" 
-              alt="AIRAI - 智流科技" 
+            <Image
+              src="/images/logo-nav.png"
+              alt="AIRAI - 智流科技"
+              width={260}
+              height={52}
+              priority
               className="h-8 sm:h-10 lg:h-[3.25rem] w-auto max-w-[150px] sm:max-w-[180px] lg:max-w-[260px] object-contain"
             />
           </Link>

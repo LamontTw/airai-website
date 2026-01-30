@@ -1,6 +1,7 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { getTranslations } from '@/lib/i18n';
@@ -71,9 +72,11 @@ export default function Footer() {
           {/* Company Info */}
           <div className="lg:col-span-1">
             <div className="mb-4">
-              <img 
-                src="/images/logo-nav.png" 
-                alt="AIRAI - 智流科技" 
+              <Image
+                src="/images/logo-nav.png"
+                alt="AIRAI - 智流科技"
+                width={200}
+                height={40}
                 className="h-10 w-auto max-w-[200px] object-contain brightness-0 invert"
               />
             </div>

@@ -78,19 +78,19 @@ export default function EnglishHomePage() {
           </section>
           
           <section id="problem-solution" aria-label="Problems and Solutions">
-            <ProblemSolutionSection />
+            <ProblemSolutionSection locale="en" />
           </section>
           
           <section id="services" aria-label="Services">
-            <ServicesSection />
+            <ServicesSection locale="en" />
           </section>
           
           <section id="case-studies" aria-label="Success Stories">
-            <CaseStudiesSection />
+            <CaseStudiesSection locale="en" />
           </section>
-          
+
           <section id="cta" aria-label="Call to Action">
-            <CTASection />
+            <CTASection locale="en" />
           </section>
         </article>
 

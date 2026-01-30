@@ -8,6 +8,7 @@ import { GoogleAnalytics } from '@next/third-parties/google';
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: 'swap',
 });
 
 export const metadata: Metadata = defaultMetadata;
@@ -45,7 +46,7 @@ export default function RootLayout({
       <body className={`${inter.variable} font-sans antialiased`}>
         {children}
         <noscript>
-          <div style={{ display: 'none' }}>
+          <div>
             本網站需要JavaScript來提供最佳使用體驗。請啟用JavaScript或使用支援JavaScript的瀏覽器。
           </div>
         </noscript>
