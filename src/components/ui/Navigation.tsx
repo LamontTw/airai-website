@@ -70,8 +70,8 @@ export default function Navigation() {
             <Image
               src="/images/logo-nav.png"
               alt="AIRAI - 智流科技"
-              width={260}
-              height={52}
+              width={200}
+              height={71}
               priority
               className="h-8 sm:h-10 lg:h-[3.25rem] w-auto max-w-[150px] sm:max-w-[180px] lg:max-w-[260px] object-contain"
             />
@@ -102,6 +102,7 @@ export default function Navigation() {
           <button
             className="lg:hidden p-2 rounded-md text-gray-700 hover:text-blue-600 hover:bg-gray-100 transition-colors duration-200"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label={isMobileMenuOpen ? '關閉選單' : '開啟選單'}
           >
             {isMobileMenuOpen ? (
               <XMarkIcon className="w-6 h-6" />

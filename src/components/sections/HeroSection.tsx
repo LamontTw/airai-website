@@ -366,7 +366,7 @@ function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
             >
-              <span className="text-xs text-slate-400 tracking-widest uppercase">Say Goodbye To</span>
+              <span className="text-xs text-slate-500 tracking-widest uppercase">Say Goodbye To</span>
             </motion.div>
 
             {/* 三張卡片 */}
@@ -403,7 +403,7 @@ function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1 }}
             >
-              <div className="flex items-center justify-center gap-2 text-xs text-slate-400">
+              <div className="flex items-center justify-center gap-2 text-xs text-slate-500">
                 <div className="flex -space-x-1">
                   {[...Array(4)].map((_, i) => (
                     <div key={i} className="w-5 h-5 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 border-2 border-white" />
@@ -444,7 +444,7 @@ function HeroScanAnimation({ locale }: { locale: 'zh' | 'en' | 'ja' }) {
               <div className="text-base font-bold bg-gradient-to-r from-blue-500 to-cyan-500 bg-clip-text text-transparent tracking-[0.15em] uppercase">
                 AI Workflow
               </div>
-              <div className="text-xs text-slate-400 mt-0.5">
+              <div className="text-xs text-slate-500 mt-0.5">
                 {workflowSubtext[locale]}
               </div>
             </motion.div>
