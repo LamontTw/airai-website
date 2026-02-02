@@ -93,6 +93,7 @@ export const metadata: Metadata = {
     languages: {
       'zh-TW': process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw",
       'en-US': `${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/en`,
+      'ja-JP': `${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/ja`,
     },
   },
 };

@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     languages: {
       'zh-TW': `${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/about`,
       'en-US': `${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/en/about`,
+      'ja-JP': `${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/ja/about`,
     },
   },
 };
