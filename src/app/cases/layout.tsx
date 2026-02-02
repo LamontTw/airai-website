@@ -39,6 +39,11 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: `${siteConfig.url}/cases`,
+    languages: {
+      'zh-TW': `${siteConfig.url}/cases`,
+      'en-US': `${siteConfig.url}/en/cases`,
+      'ja-JP': `${siteConfig.url}/ja/cases`,
+    },
   },
 };
 
