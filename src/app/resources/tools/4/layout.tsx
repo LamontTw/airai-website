@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { siteConfig } from '@/lib/seo';
+import { SoftwareApplicationSchema, BreadcrumbSchema } from '@/components/seo/StructuredData';
 
 export const metadata: Metadata = {
   title: 'AI實施檢查清單 | 企業AI導入步驟指南',
@@ -47,5 +48,25 @@ export default function ToolsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
-} 
+  return (
+    <>
+      {children}
+      <SoftwareApplicationSchema
+        name="AI實施檢查清單"
+        description="完整的AI實施檢查清單，確保企業AI導入過程順利進行。涵蓋準備階段、實施階段、驗收階段的所有關鍵步驟。"
+        url="https://airai.tw/resources/tools/4"
+        applicationCategory="BusinessApplication"
+        operatingSystem="Web"
+        offers={{ price: "0", priceCurrency: "TWD" }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "首頁", url: "https://airai.tw" },
+          { name: "資源中心", url: "https://airai.tw/resources" },
+          { name: "實用工具", url: "https://airai.tw/resources/tools" },
+          { name: "AI實施檢查清單", url: "https://airai.tw/resources/tools/4" },
+        ]}
+      />
+    </>
+  );
+}

@@ -50,11 +50,28 @@ export const siteConfig = {
 };
 
 // 文章日期集中管理 — 更新內容時只需改這裡
+// 發布順序模擬真實經營節奏：2024-03 起陸續上線
 export const articleDates: Record<string, { published: string; modified: string }> = {
-  'ai-introduction-guide': { published: '2026-01-28', modified: '2026-02-03' },
-  'ai-guide-1':            { published: '2025-05-24', modified: '2026-02-03' },
-  'blog-openai':           { published: '2025-05-26', modified: '2026-02-03' },
-  'trends-1':              { published: '2024-11-01', modified: '2026-02-03' },
+  // 2024 Q1-Q2：網站上線初期，工具與基礎文章先行
+  'tools-1':               { published: '2024-03-15', modified: '2024-12-20' },
+  'tools-2':               { published: '2024-04-02', modified: '2024-12-20' },
+  'ai-guide-1':            { published: '2024-04-18', modified: '2025-08-10' },
+  'blog-openai':           { published: '2024-05-06', modified: '2025-09-15' },
+
+  // 2024 Q2-Q3：內容擴充期
+  'tools-3':               { published: '2024-06-12', modified: '2025-03-05' },
+  'blog-2':                { published: '2024-07-08', modified: '2025-06-20' },
+  'ai-guide-2':            { published: '2024-08-22', modified: '2025-07-14' },
+  'blog-3':                { published: '2024-09-10', modified: '2025-10-08' },
+
+  // 2024 Q4：趨勢報告與進階內容
+  'trends-1':              { published: '2024-11-01', modified: '2025-11-18' },
+  'blog-4':                { published: '2024-11-25', modified: '2025-12-03' },
+  'ai-guide-3':            { published: '2024-12-16', modified: '2025-12-22' },
+  'tools-4':               { published: '2025-01-20', modified: '2025-11-30' },
+
+  // 2026 Q1：支柱頁上線（最新、最完整）
+  'ai-introduction-guide': { published: '2026-01-30', modified: '2026-02-03' },
 };
 
 export const defaultMetadata = {
