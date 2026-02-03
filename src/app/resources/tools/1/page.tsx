@@ -1,24 +1,18 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
 import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
 import {
   CheckCircleIcon,
   ChevronRightIcon,
   ChevronLeftIcon,
-  DocumentTextIcon,
   ChartBarIcon,
   LightBulbIcon,
   ExclamationTriangleIcon,
-  StarIcon,
   ClockIcon,
   CurrencyDollarIcon,
-  UserGroupIcon,
-  ArrowDownTrayIcon,
-  ShareIcon
 } from '@heroicons/react/24/outline';
 
 interface Question {
@@ -572,53 +566,6 @@ export default function AIAssessmentTool() {
               </div>
             </motion.div>
 
-            {/* Action Buttons */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-              className="text-center"
-            >
-              <div className="bg-white rounded-2xl p-8 shadow-lg">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                  下一步行動
-                </h3>
-                <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-                  想要開始您的AI轉型之旅嗎？我們的專家團隊可以為您提供更詳細的諮詢與實施規劃。
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link
-                    href="/contact"
-                    className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
-                  >
-                    預約專家諮詢
-                    <ChevronRightIcon className="w-5 h-5 ml-2" />
-                  </Link>
-                  <button
-                    onClick={() => window.print()}
-                    className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
-                  >
-                    <ArrowDownTrayIcon className="w-5 h-5 mr-2" />
-                    下載報告
-                  </button>
-                  <button
-                    onClick={() => {
-                      if (navigator.share) {
-                        navigator.share({
-                          title: 'AI需求評估結果',
-                          text: `我的AI準備度分數是 ${Math.round(result.percentage)}%！`,
-                          url: window.location.href
-                        });
-                      }
-                    }}
-                    className="bg-green-100 hover:bg-green-200 text-green-700 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
-                  >
-                    <ShareIcon className="w-5 h-5 mr-2" />
-                    分享結果
-                  </button>
-                </div>
-              </div>
-            </motion.div>
           </div>
         </section>
 

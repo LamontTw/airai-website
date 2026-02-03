@@ -16,7 +16,6 @@ import {
   CogIcon,
   ChartBarIcon,
   ArrowDownTrayIcon,
-  PrinterIcon,
   PlusIcon,
   MinusIcon,
   PencilIcon,
@@ -27,7 +26,6 @@ import {
   LightBulbIcon,
   BeakerIcon,
   RocketLaunchIcon,
-  PlayIcon,
   PauseIcon,
   StopIcon,
   ArrowRightIcon,
@@ -527,29 +525,12 @@ export default function AIProjectPlanningTemplate() {
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => setActiveTab('overview')}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
-              >
-                <PlayIcon className="w-5 h-5 mr-2" />
-                開始規劃
-              </button>
-              <button
-                onClick={() => setActiveTab('templates')}
-                className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
-              >
-                <ArrowDownTrayIcon className="w-5 h-5 mr-2" />
-                下載範本
-              </button>
-              <button
-                onClick={() => window.print()}
-                className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
-              >
-                <PrinterIcon className="w-5 h-5 mr-2" />
-                列印計畫
-              </button>
+            {/* TL;DR - GEO 優化 */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
+              <p className="sr-only">摘要 TL;DR</p>
+              <p className="text-sm text-blue-800 leading-relaxed">
+                AI 專案規劃範本提供標準化的專案管理框架，涵蓋需求分析、技術選型、時程規劃與風險管理四大模組。適用於 3-12 個月的 AI 導入專案，內含甘特圖、里程碑追蹤與預算控管工具，幫助團隊有效管理 AI 專案從啟動到上線的全流程。
+              </p>
             </div>
           </motion.div>
         </div>

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Navigation from '@/components/ui/Navigation';
@@ -17,10 +17,7 @@ import {
   UserGroupIcon,
   DocumentTextIcon,
   StarIcon,
-  PrinterIcon,
-  ChevronDownIcon,
   ChevronRightIcon,
-  PlayIcon,
   AcademicCapIcon,
   BanknotesIcon,
   ShieldCheckIcon,
@@ -28,16 +25,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 export default function AITransformationGuide() {
-  const [activeSection, setActiveSection] = useState('introduction');
-  const [expandedStep, setExpandedStep] = useState<string | null>(null);
 
-  const scrollToSection = (sectionId: string) => {
-    setActiveSection(sectionId);
-    const element = document.getElementById(sectionId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <main className="min-h-screen bg-gray-50">
@@ -90,30 +78,6 @@ export default function AITransformationGuide() {
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                onClick={() => scrollToSection('introduction')}
-                className="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
-              >
-                <PlayIcon className="w-5 h-5 mr-2" />
-                開始閱讀
-              </button>
-              <button
-                onClick={() => window.print()}
-                className="bg-gray-100 hover:bg-gray-200 text-gray-700 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
-              >
-                <PrinterIcon className="w-5 h-5 mr-2" />
-                列印指南
-              </button>
-              <Link
-                href="/resources/tools/1"
-                className="bg-green-100 hover:bg-green-200 text-green-700 font-semibold py-3 px-6 rounded-lg transition-colors duration-200 inline-flex items-center justify-center"
-              >
-                <DocumentTextIcon className="w-5 h-5 mr-2" />
-                使用評估工具
-              </Link>
-            </div>
           </motion.div>
         </div>
       </section>
