@@ -59,10 +59,21 @@ const blogPosts = [
     tags: ['AI趨勢', '生成式AI', '商業模式'],
     image: '/images/og-image.jpg',
     author: '產業分析師'
+  },
+  {
+    id: 'ai-customer-service-agent',
+    title: 'AI客服Agent完整解析：RAG知識庫 + LINE整合實戰指南',
+    excerpt: '深入了解AI客服Agent如何結合RAG知識庫與LINE整合，為中小企業打造24/7智能客服。含成本分析、導入流程與實戰案例。',
+    date: '2026年2月3日',
+    readTime: '12分鐘',
+    category: 'AI Agent',
+    tags: ['AI Agent', 'AI客服', 'RAG', 'LINE'],
+    image: '/images/og-image.jpg',
+    author: 'AIRAI研究團隊'
   }
 ];
 
-const categories = ['全部', 'AI技術', '應用案例', '戰略規劃', '趨勢分析'];
+const categories = ['全部', 'AI Agent', 'AI技術', '應用案例', '戰略規劃', '趨勢分析'];
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = React.useState('全部');

@@ -128,8 +128,7 @@ const blogPosts: BlogPost[] = [
     readTime: '15分鐘',
     date: '2025-10-14',
     tags: ['OpenAI', '企業AI', '數位轉型', '行業洞察'],
-    color: 'purple',
-    featured: true
+    color: 'purple'
   },
   {
     id: 2,
@@ -166,6 +165,19 @@ const blogPosts: BlogPost[] = [
     date: '2025-03-27',
     tags: ['成本控制', '小型企業', 'AI策略'],
     color: 'orange'
+  },
+  {
+    id: 5,
+    title: 'AI客服Agent完整解析：RAG知識庫 + LINE整合實戰指南',
+    description: '深入了解AI客服Agent如何結合RAG知識庫與LINE整合，為中小企業打造24/7智能客服。',
+    category: 'AI Agent',
+    author: 'AIRAI研究團隊',
+    excerpt: '深入了解AI客服Agent如何結合RAG知識庫與LINE整合，為中小企業打造24/7智能客服。含成本分析、導入流程與實戰案例。',
+    readTime: '12分鐘',
+    date: '2026-02-03',
+    tags: ['AI Agent', 'AI客服', 'RAG', 'LINE'],
+    color: 'orange',
+    featured: true
   }
 ];
 
@@ -332,127 +344,128 @@ export default function ResourcesPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {/* Featured Guide */}
             {guides.filter(g => g.featured).map((guide, index) => (
-              <motion.div
-                key={guide.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border-l-4 border-blue-500"
-              >
-                <div className="p-8">
-                  <div className="flex items-center mb-4">
-                    <BookOpenIcon className="w-8 h-8 text-blue-600 mr-3" />
-                    <span className="text-blue-600 text-sm font-medium">AI導入指南</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{guide.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm">{guide.description}</p>
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center">
-                      <ClockIcon className="w-4 h-4 mr-1" />
-                      {guide.readTime}
+              <Link key={guide.id} href={`/resources/ai-guide/${guide.id}`} className="block group">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, delay: 0.2 + index * 0.1 }}
+                  className="bg-white rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden border-l-4 border-blue-500 h-full"
+                >
+                  <div className="p-8">
+                    <div className="flex items-center mb-4">
+                      <BookOpenIcon className="w-8 h-8 text-blue-600 mr-3" />
+                      <span className="text-blue-600 text-sm font-medium">AI導入指南</span>
                     </div>
-                    <div className="flex items-center">
-                      <CalendarIcon className="w-4 h-4 mr-1" />
-                      {guide.date}
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors duration-200">{guide.title}</h3>
+                    <p className="text-gray-600 mb-4 text-sm">{guide.description}</p>
+                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                      <div className="flex items-center">
+                        <ClockIcon className="w-4 h-4 mr-1" />
+                        {guide.readTime}
+                      </div>
+                      <div className="flex items-center">
+                        <CalendarIcon className="w-4 h-4 mr-1" />
+                        {guide.date}
+                      </div>
                     </div>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {guide.tags.map((tag) => (
+                        <span key={tag} className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="text-blue-600 font-medium text-sm inline-flex items-center">
+                      閱讀全文
+                      <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
+                    </span>
                   </div>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {guide.tags.map((tag) => (
-                      <span key={tag} className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded-full">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <Link href={`/resources/ai-guide/${guide.id}`} className="text-blue-600 hover:text-blue-700 font-medium text-sm inline-flex items-center group">
-                    閱讀全文
-                    <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
-                  </Link>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Link>
             ))}
 
             {/* Featured Trend */}
             {trends.filter(t => t.featured).map((trend, index) => (
-              <motion.div
-                key={trend.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border-l-4 border-purple-500"
-              >
-                <div className="p-8">
-                  <div className="flex items-center mb-4">
-                    <ChartBarSquareIcon className="w-8 h-8 text-purple-600 mr-3" />
-                    <span className="text-purple-600 text-sm font-medium">趨勢分析</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{trend.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm">{trend.description}</p>
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center">
-                      <EyeIcon className="w-4 h-4 mr-1" />
-                      {trend.views} 次瀏覽
+              <Link key={trend.id} href="/resources/ai-introduction-guide" className="block group">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, delay: 0.3 + index * 0.1 }}
+                  className="bg-white rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden border-l-4 border-purple-500 h-full"
+                >
+                  <div className="p-8">
+                    <div className="flex items-center mb-4">
+                      <ChartBarSquareIcon className="w-8 h-8 text-purple-600 mr-3" />
+                      <span className="text-purple-600 text-sm font-medium">趨勢分析</span>
                     </div>
-                    <div className="flex items-center">
-                      <CalendarIcon className="w-4 h-4 mr-1" />
-                      {trend.date}
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-purple-600 transition-colors duration-200">{trend.title}</h3>
+                    <p className="text-gray-600 mb-4 text-sm">{trend.description}</p>
+                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                      <div className="flex items-center">
+                        <EyeIcon className="w-4 h-4 mr-1" />
+                        {trend.views} 次瀏覽
+                      </div>
+                      <div className="flex items-center">
+                        <CalendarIcon className="w-4 h-4 mr-1" />
+                        {trend.date}
+                      </div>
                     </div>
-                  </div>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {trend.tags.map((tag) => (
-                      <span key={tag} className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <Link href="/resources/ai-introduction-guide" className="text-purple-600 hover:text-purple-700 font-medium text-sm inline-flex items-center group">
-                    查看報告
-                    <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
-                  </Link>
-                </div>
-              </motion.div>
-            ))}
-
-            {/* Featured Tool */}
-            {tools.filter(t => t.featured).map((tool, index) => (
-              <motion.div
-                key={tool.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
-                className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden border-l-4 border-green-500"
-              >
-                <div className="p-8">
-                  <div className="flex items-center mb-4">
-                    <CalculatorIcon className="w-8 h-8 text-green-600 mr-3" />
-                    <span className="text-green-600 text-sm font-medium">免費工具</span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3">{tool.title}</h3>
-                  <p className="text-gray-600 mb-4 text-sm">{tool.description}</p>
-                  <div className="mb-4">
-                    <h4 className="text-sm font-semibold text-gray-900 mb-2">主要功能：</h4>
-                    <div className="space-y-1">
-                      {tool.features.slice(0, 3).map((feature) => (
-                        <div key={feature} className="flex items-center text-sm text-gray-600">
-                          <CheckCircleIcon className="w-4 h-4 text-green-600 mr-2" />
-                          {feature}
-                        </div>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {trend.tags.map((tag) => (
+                        <span key={tag} className="px-2 py-1 bg-purple-100 text-purple-700 text-xs rounded-full">
+                          {tag}
+                        </span>
                       ))}
                     </div>
-                  </div>
-                  <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
-                    <div className="flex items-center">
-                      <ArrowDownTrayIcon className="w-4 h-4 mr-1" />
-                      {tool.downloadCount} 次下載
-                    </div>
-                    <span className="bg-green-100 text-green-700 px-2 py-1 rounded-full text-xs font-medium">
-                      免費
+                    <span className="text-purple-600 font-medium text-sm inline-flex items-center">
+                      查看報告
+                      <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
                     </span>
                   </div>
-                  <Link href={`/resources/tools/${tool.id}`} className="w-full bg-green-600 hover:bg-green-700 text-white font-medium py-2 px-4 rounded-lg transition-colors duration-200 text-center block">
-                    立即使用
-                  </Link>
-                </div>
-              </motion.div>
+                </motion.div>
+              </Link>
+            ))}
+
+            {/* Featured Blog - AI客服Agent */}
+            {blogPosts.filter(p => p.featured).map((post, index) => (
+              <Link key={post.id} href="/resources/blog/ai-customer-service-agent" className="block group">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, delay: 0.4 + index * 0.1 }}
+                  className="bg-white rounded-2xl shadow-lg group-hover:shadow-xl transition-shadow duration-300 overflow-hidden border-l-4 border-orange-500 h-full"
+                >
+                  <div className="p-8">
+                    <div className="flex items-center mb-4">
+                      <ChatBubbleLeftRightIcon className="w-8 h-8 text-orange-600 mr-3" />
+                      <span className="text-orange-600 text-sm font-medium">部落格</span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-orange-600 transition-colors duration-200">{post.title}</h3>
+                    <p className="text-gray-600 mb-4 text-sm">{post.description}</p>
+                    <div className="flex items-center justify-between text-sm text-gray-500 mb-4">
+                      <div className="flex items-center">
+                        <ClockIcon className="w-4 h-4 mr-1" />
+                        {post.readTime}
+                      </div>
+                      <div className="flex items-center">
+                        <CalendarIcon className="w-4 h-4 mr-1" />
+                        {post.date}
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {post.tags.map((tag) => (
+                        <span key={tag} className="px-2 py-1 bg-orange-100 text-orange-700 text-xs rounded-full">
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <span className="text-orange-600 font-medium text-sm inline-flex items-center">
+                      閱讀文章
+                      <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
+                    </span>
+                  </div>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>
@@ -577,7 +590,7 @@ export default function ResourcesPage() {
                     ))}
                   </div>
                   
-                  <Link href={post.id === 1 ? `/resources/blog/openai-enterprise-ai` : `/resources/blog/${post.id}`} className="text-green-600 hover:text-green-700 font-medium text-sm inline-flex items-center group">
+                  <Link href={post.id === 1 ? `/resources/blog/openai-enterprise-ai` : post.id === 5 ? `/resources/blog/ai-customer-service-agent` : `/resources/blog/${post.id}`} className="text-green-600 hover:text-green-700 font-medium text-sm inline-flex items-center group">
                     閱讀全文
                     <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
                   </Link>

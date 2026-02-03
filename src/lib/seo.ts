@@ -2,13 +2,15 @@
 export const siteConfig = {
   name: "AIRAI - 智流科技",
   title: "AIRAI | 企業AI導入專家 - 智流科技",
-  description: "AIRAI提供專業的企業AI導入諮詢服務，包含AI技術選型、ROI計算、實施指南等完整解決方案。幫助企業成功轉型，提升營運效率。",
+  description: "AIRAI提供專業的企業AI導入與AI Agent諮詢服務，包含AI Agent客服、RPA流程自動化、ROI計算、實施指南等完整解決方案。幫助企業成功轉型，提升營運效率。",
   keywords: [
-    "AI人工智能",
+    "AI Agent",
+    "AI Agent導入",
+    "企業AI Agent",
+    "AI客服機器人",
+    "LINE AI客服",
+    "RAG知識庫",
     "企業AI導入",
-    "AI技術選型",
-    "機器學習",
-    "深度學習",
     "AI解決方案",
     "智能自動化",
     "AI顧問服務",
@@ -17,13 +19,11 @@ export const siteConfig = {
     "人工智慧應用",
     "企業數位化",
     "AI實施指南",
-    "智能科技",
     "AI諮詢",
     "大型語言模型",
-    "計算機視覺",
     "自然語言處理",
-    "推薦系統",
-    "語音識別"
+    "機器學習",
+    "深度學習"
   ],
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw",
   ogImage: "/images/logo-full.png",
@@ -72,6 +72,9 @@ export const articleDates: Record<string, { published: string; modified: string 
 
   // 2026 Q1：支柱頁上線（最新、最完整）
   'ai-introduction-guide': { published: '2026-01-30', modified: '2026-02-03' },
+
+  // 2026 Q1：AI客服Agent專題
+  'blog-ai-cs-agent':      { published: '2026-02-03', modified: '2026-02-03' },
 };
 
 export const defaultMetadata = {

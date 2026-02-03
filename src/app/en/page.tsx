@@ -12,23 +12,23 @@ import { getTranslations } from '@/lib/i18n';
 const t = getTranslations('en');
 
 export const metadata: Metadata = {
-  title: "AIRAI | Enterprise AI Implementation Expert - AIRAI Technology",
-  description: "AIRAI provides professional enterprise AI implementation consulting services, including AI technology selection, ROI calculation, implementation guidance and complete solutions. Help enterprises successfully transform and improve operational efficiency.",
+  title: "AIRAI | Enterprise AI & AI Agent Implementation Expert",
+  description: "AI Agent & AI implementation expert for Taiwan SMEs. We deliver AI Agent customer service, RPA automation, and data analytics solutions. Full support from diagnosis to deployment. Free consultation.",
   keywords: [
-    "AI Artificial Intelligence",
-    "Enterprise AI Implementation", 
-    "AI Technology Selection",
-    "Machine Learning",
-    "Deep Learning",
-    "AI Solutions",
-    "Intelligent Automation",
-    "AI Consulting Services",
+    "AI Agent",
+    "Enterprise AI Agent",
+    "AI Implementation",
+    "AI Chatbot",
+    "RAG Knowledge Base",
+    "Enterprise AI",
     "Digital Transformation",
-    "AI ROI"
+    "Intelligent Automation",
+    "AI Solutions",
+    "AI Consulting Services"
   ],
   openGraph: {
-    title: "AIRAI | Enterprise AI Implementation Expert - AIRAI Technology",
-    description: "AIRAI provides professional enterprise AI implementation consulting services, including AI technology selection, ROI calculation, implementation guidance and complete solutions.",
+    title: "AIRAI | Enterprise AI & AI Agent Implementation Expert",
+    description: "AI Agent & AI implementation expert for Taiwan SMEs. We deliver AI Agent customer service, RPA automation, and data analytics solutions. Full support from diagnosis to deployment. Free consultation.",
     url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/en`,
     siteName: "AIRAI Technology",
     type: 'website',
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "AIRAI | Enterprise AI Implementation Expert - AIRAI Technology",
-    description: "AIRAI provides professional enterprise AI implementation consulting services, including AI technology selection, ROI calculation, implementation guidance and complete solutions.",
+    title: "AIRAI | Enterprise AI & AI Agent Implementation Expert",
+    description: "AI Agent & AI implementation expert for Taiwan SMEs. We deliver AI Agent customer service, RPA automation, and data analytics solutions. Full support from diagnosis to deployment. Free consultation.",
     images: ["/images/logo-full.png"],
   },
   alternates: {

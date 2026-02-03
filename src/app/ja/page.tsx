@@ -12,23 +12,23 @@ import { getTranslations } from '@/lib/i18n';
 const t = getTranslations('ja');
 
 export const metadata: Metadata = {
-  title: "AIRAI | 台湾をリードする企業AI導入エキスパート - AIRAI テクノロジー",
-  description: "AIRAIは専門的な企業AI導入コンサルティングサービスを提供し、AI技術選択、ROI計算、実装ガイダンス、完全ソリューションを含みます。企業の成功的な変革と運営効率向上を支援します。",
+  title: "AIRAI | 企業AI導入・AIエージェント専門家 - AIRAI テクノロジー",
+  description: "AIエージェントとAI導入の専門家｜台湾中小企業向けにAIエージェント、インテリジェントカスタマーサービス、RPA自動化を提供。診断から運用まで完全サポート。無料相談。",
   keywords: [
-    "AI 人工知能",
-    "企業AI導入", 
-    "AI技術選択",
-    "機械学習",
-    "深層学習",
+    "AIエージェント",
+    "AIエージェント導入",
+    "企業AI導入",
+    "AIチャットボット",
+    "RAGナレッジベース",
     "AIソリューション",
-    "インテリジェント自動化",
-    "AIコンサルティングサービス",
     "デジタル変革",
+    "インテリジェント自動化",
+    "AIコンサルティング",
     "AI ROI"
   ],
   openGraph: {
-    title: "AIRAI | 台湾をリードする企業AI導入エキスパート - AIRAI テクノロジー",
-    description: "AIRAIは専門的な企業AI導入コンサルティングサービスを提供し、AI技術選択、ROI計算、実装ガイダンス、完全ソリューションを含みます。",
+    title: "AIRAI | 企業AI導入・AIエージェント専門家 - AIRAI テクノロジー",
+    description: "AIエージェントとAI導入の専門家｜台湾中小企業向けにAIエージェント、インテリジェントカスタマーサービス、RPA自動化を提供。診断から運用まで完全サポート。無料相談。",
     url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/ja`,
     siteName: "AIRAI テクノロジー",
     type: 'website',
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "AIRAI | 台湾をリードする企業AI導入エキスパート - AIRAI テクノロジー",
-    description: "AIRAIは専門的な企業AI導入コンサルティングサービスを提供し、AI技術選択、ROI計算、実装ガイダンス、完全ソリューションを含みます。",
+    title: "AIRAI | 企業AI導入・AIエージェント専門家 - AIRAI テクノロジー",
+    description: "AIエージェントとAI導入の専門家｜台湾中小企業向けにAIエージェント、インテリジェントカスタマーサービス、RPA自動化を提供。診断から運用まで完全サポート。無料相談。",
     images: ["/images/logo-full.png"],
   },
   alternates: {

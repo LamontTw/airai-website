@@ -15,9 +15,9 @@ export const translations = {
   zh: {
     // SEO 相關
     seo: {
-      title: 'AIRAI - 台灣領先的企業AI導入專家 | 智流科技',
-      description: 'AI導入專家｜協助台灣中小企業成功導入AI。提供智能客服、RPA流程自動化、數據分析等解決方案。從需求診斷到上線維護，完整陪跑服務。免費諮詢評估。',
-      keywords: 'AI導入,企業AI導入,智能客服,客製化AI解決方案,數位轉型,台灣AI,中小企業AI,自動化,機器學習,人工智能,RPA',
+      title: 'AIRAI - 台灣企業AI導入與AI Agent專家 | 智流科技',
+      description: 'AI Agent與AI導入專家｜協助台灣中小企業導入AI Agent、智能客服、RPA流程自動化、數據分析。從需求診斷到上線維護，完整陪跑服務。免費諮詢。',
+      keywords: 'AI Agent,AI Agent導入,AI導入,企業AI導入,企業AI Agent,智能客服,AI客服機器人,LINE AI客服,RAG知識庫,客製化AI解決方案,數位轉型,台灣AI,中小企業AI,自動化,RPA',
       siteName: 'AIRAI 智流科技'
     },
     
@@ -42,9 +42,17 @@ export const translations = {
       {
         question: "AI會取代人類工作嗎？",
         answer: "AI更多是增強人類能力而非完全取代。它能自動化重複性任務，讓員工專注於更有創意和策略性的工作。適當的AI導入通常會創造新的工作機會，並提升現有員工的工作價值和技能水平。"
+      },
+      {
+        question: "什麼是AI Agent？和傳統自動化有什麼不同？",
+        answer: "AI Agent是具備自主判斷能力的智能代理，能理解自然語言、存取知識庫（RAG）、自動執行任務。與傳統RPA不同，AI Agent能處理非結構化問題，例如理解客戶意圖並給出個人化回應，而非僅依照固定腳本執行。"
+      },
+      {
+        question: "導入AI Agent需要準備什麼？",
+        answer: "主要需準備：(1) 業務知識文件（FAQ、產品手冊、SOP等），用於建立RAG知識庫；(2) 確認服務入口（LINE官方帳號、網站等）；(3) 內部一位負責人配合需求訪談。技術面由我們全程處理，企業不需要有AI技術背景。"
       }
     ],
-    
+
     // 導航
     nav: {
       home: '首頁',
@@ -370,9 +378,17 @@ export const translations = {
       {
         question: "Will AI replace human jobs?",
         answer: "AI is more about augmenting human capabilities rather than complete replacement. It can automate repetitive tasks, allowing employees to focus on more creative and strategic work. Proper AI implementation typically creates new job opportunities and enhances the value and skills of existing employees."
+      },
+      {
+        question: "What is an AI Agent? How is it different from traditional automation?",
+        answer: "An AI Agent is an intelligent system capable of autonomous judgment — it understands natural language, accesses knowledge bases (RAG), and executes tasks automatically. Unlike traditional RPA that follows fixed scripts, AI Agents handle unstructured problems, such as understanding customer intent and providing personalized responses."
+      },
+      {
+        question: "What do we need to prepare for AI Agent implementation?",
+        answer: "You'll mainly need: (1) business knowledge documents (FAQs, product manuals, SOPs) for building the RAG knowledge base; (2) service entry points (LINE Official Account, website, etc.); (3) one internal point of contact for requirements interviews. We handle all technical aspects — no AI expertise required on your end."
       }
     ],
-    
+
     // Navigation
     nav: {
       home: 'Home',
@@ -698,9 +714,17 @@ export const translations = {
       {
         question: "AIは人間の仕事を置き換えますか？",
         answer: "AIは完全な置き換えよりも人間の能力を強化することが多いです。反復的なタスクを自動化し、従業員がより創造的で戦略的な仕事に集中できるようにします。適切なAI導入は通常、新しい雇用機会を創出し、既存従業員の仕事の価値とスキルレベルを向上させます。"
+      },
+      {
+        question: "AIエージェントとは？従来の自動化との違いは？",
+        answer: "AIエージェントは自律的な判断能力を持つ知的システムです。自然言語を理解し、ナレッジベース（RAG）にアクセスし、タスクを自動実行します。固定スクリプトに従う従来のRPAとは異なり、AIエージェントは顧客の意図を理解し、パーソナライズされた対応を提供するなど、非構造化な問題に対応できます。"
+      },
+      {
+        question: "AIエージェント導入に必要な準備は？",
+        answer: "主に必要なのは：(1) 業務知識文書（FAQ、製品マニュアル、SOPなど）でRAGナレッジベースを構築；(2) サービス入口の確認（LINE公式アカウント、ウェブサイトなど）；(3) 要件ヒアリング用の社内担当者1名。技術面はすべて弊社が対応しますので、AI技術の専門知識は不要です。"
       }
     ],
-    
+
     // ナビゲーション
     nav: {
       home: 'ホーム',
