@@ -5,7 +5,6 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
-import { ArticleSchema, BreadcrumbSchema } from '@/components/seo/StructuredData';
 import {
   BookOpenIcon,
   CheckCircleIcon,
@@ -655,26 +654,6 @@ export default function AITransformationGuide() {
       </div>
 
       <Footer />
-
-      {/* JSON-LD Structured Data - GEO 優化 */}
-      <ArticleSchema
-        headline="AI轉型完整指南：從評估到導入"
-        description="完整的中小企業AI導入指南，涵蓋需求評估、技術選擇、實施規劃到效果追蹤的全流程。"
-        url="https://airai.tw/resources/ai-guide/1"
-        datePublished="2025-12-01"
-        dateModified="2026-02-03"
-        wordCount={4000}
-        articleSection="AI 導入指南"
-        keywords={['AI轉型指南', 'AI導入流程', '企業AI評估', 'AI技術選擇', '中小企業AI', 'AI實施規劃']}
-      />
-      <BreadcrumbSchema
-        items={[
-          { name: "首頁", url: "https://airai.tw" },
-          { name: "資源中心", url: "https://airai.tw/resources" },
-          { name: "AI導入指南", url: "https://airai.tw/resources/ai-guide" },
-          { name: "AI轉型完整指南", url: "https://airai.tw/resources/ai-guide/1" },
-        ]}
-      />
     </main>
   );
 } 

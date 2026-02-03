@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import { siteConfig } from '@/lib/seo';
+import { SoftwareApplicationSchema, BreadcrumbSchema } from '@/components/seo/StructuredData';
 
 export const metadata: Metadata = {
   title: 'AI需求評估工具 | 免費企業AI導入評估',
@@ -47,5 +48,25 @@ export default function ToolsLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return children;
+  return (
+    <>
+      {children}
+      <SoftwareApplicationSchema
+        name="AI需求評估工具"
+        description="免費的AI需求評估工具，幫助企業快速評估AI導入需求，分析現有流程與改善機會。包含業務流程分析、AI適用性評估、ROI預估等功能。"
+        url="https://airai.tw/resources/tools/1"
+        applicationCategory="BusinessApplication"
+        operatingSystem="Web"
+        offers={{ price: "0", priceCurrency: "TWD" }}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "首頁", url: "https://airai.tw" },
+          { name: "資源中心", url: "https://airai.tw/resources" },
+          { name: "實用工具", url: "https://airai.tw/resources/tools" },
+          { name: "AI需求評估工具", url: "https://airai.tw/resources/tools/1" },
+        ]}
+      />
+    </>
+  );
 } 

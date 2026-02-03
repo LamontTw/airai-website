@@ -5,7 +5,6 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
-import { SoftwareApplicationSchema, BreadcrumbSchema } from '@/components/seo/StructuredData';
 import {
   CheckCircleIcon,
   ChevronRightIcon,
@@ -819,24 +818,6 @@ export default function AIAssessmentTool() {
       </section>
 
       <Footer />
-
-      {/* JSON-LD Structured Data - GEO 優化 */}
-      <SoftwareApplicationSchema
-        name="AI需求評估工具"
-        description="免費的AI需求評估工具，幫助企業快速評估AI導入需求，分析現有流程與改善機會。包含業務流程分析、AI適用性評估、ROI預估等功能。"
-        url="https://airai.tw/resources/tools/1"
-        applicationCategory="BusinessApplication"
-        operatingSystem="Web"
-        offers={{ price: "0", priceCurrency: "TWD" }}
-      />
-      <BreadcrumbSchema
-        items={[
-          { name: "首頁", url: "https://airai.tw" },
-          { name: "資源中心", url: "https://airai.tw/resources" },
-          { name: "實用工具", url: "https://airai.tw/resources/tools" },
-          { name: "AI需求評估工具", url: "https://airai.tw/resources/tools/1" },
-        ]}
-      />
     </main>
   );
 } 

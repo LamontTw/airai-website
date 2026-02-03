@@ -84,7 +84,7 @@ interface WebsiteSchemaProps {
 export function WebsiteSchema({ customData }: WebsiteSchemaProps) {
   const websiteSchema = {
     "@context": "https://schema.org",
-    "@type": "Website",
+    "@type": "WebSite",
     "name": siteConfig.name,
     "description": siteConfig.description,
     "url": siteConfig.url,
@@ -336,7 +336,8 @@ interface HowToSchemaProps {
   totalTime?: string;
   estimatedCost?: {
     currency: string;
-    value: string;
+    minPrice: string;
+    maxPrice: string;
   };
   steps: HowToStep[];
 }
@@ -350,9 +351,10 @@ export function HowToSchema({ name, description, totalTime, estimatedCost, steps
     ...(totalTime && { "totalTime": totalTime }),
     ...(estimatedCost && {
       "estimatedCost": {
-        "@type": "MonetaryAmount",
-        "currency": estimatedCost.currency,
-        "value": estimatedCost.value
+        "@type": "PriceSpecification",
+        "priceCurrency": estimatedCost.currency,
+        "minPrice": estimatedCost.minPrice,
+        "maxPrice": estimatedCost.maxPrice
       }
     }),
     "step": steps.map((step, index) => ({
