@@ -64,7 +64,7 @@ export default function AITransformationGuide() {
 
             {/* TL;DR - GEO 優化 */}
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
-              <p className="text-sm font-semibold text-blue-900 mb-1">摘要 TL;DR</p>
+              <p className="sr-only">摘要 TL;DR</p>
               <p className="text-sm text-blue-800 leading-relaxed">
                 AI 轉型是企業透過人工智能技術改造業務流程的系統化過程。本指南涵蓋四大階段：需求評估、技術選擇、實施規劃、效果追蹤，平均 12 週完成，成功率達 95%。適合正在評估是否導入 AI 的台灣中小企業主。
               </p>

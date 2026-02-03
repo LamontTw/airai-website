@@ -344,7 +344,7 @@ export default function AITrendReport2024() {
 
             {/* TL;DR - GEO 優化 */}
             <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-6 max-w-3xl mx-auto text-left">
-              <p className="text-sm font-semibold text-purple-900 mb-1">摘要 TL;DR</p>
+              <p className="sr-only">摘要 TL;DR</p>
               <p className="text-sm text-purple-800 leading-relaxed">
                 2024 年台灣中小企業 AI 採用率達 31%（年增 12%），市場規模 NT$185 億。67% 企業計劃投資 AI，平均生產力提升 42%。製造業、零售業、金融業為主要應用產業。預測 2025 年採用率將達 55%，2027 年市場規模突破 NT$320 億。
               </p>

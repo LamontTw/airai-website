@@ -108,7 +108,7 @@ export default function AIIntroductionGuide() {
 
             {/* TL;DR - GEO 優化：前 60 字直接答案 */}
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
-              <p className="text-sm font-semibold text-blue-900 mb-1">摘要 TL;DR</p>
+              <p className="sr-only">摘要 TL;DR</p>
               <p className="text-sm text-blue-800 leading-relaxed">
                 AI導入是企業將人工智能技術整合到業務流程中的過程。成功導入需經歷五大步驟：需求診斷、技術選型、概念驗證（POC）、實施部署、持續優化。台灣中小企業平均投資 50-200 萬，6 個月內可回本，自動化處理率可達 85%。
               </p>

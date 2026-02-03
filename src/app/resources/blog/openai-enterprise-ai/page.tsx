@@ -65,7 +65,7 @@ export default function OpenAIEnterpriseAIArticle() {
 
             {/* TL;DR - GEO 優化 */}
             <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
-              <p className="text-sm font-semibold text-blue-900 mb-1">摘要 TL;DR</p>
+              <p className="sr-only">摘要 TL;DR</p>
               <p className="text-sm text-blue-800 leading-relaxed">
                 OpenAI 認為企業 AI 導入的關鍵在於從小規模試點開始、建立數據治理框架、持續教育訓練員工。預測 2025 年 70% 企業將導入基礎 AI 應用，2030 年 AI 將成為企業標準配備。台灣企業可善用製造業優勢，從智慧製造與客服自動化切入。
               </p>
