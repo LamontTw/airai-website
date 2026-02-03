@@ -15,7 +15,6 @@ import {
   ClockIcon,
   CogIcon,
   ChartBarIcon,
-  ArrowDownTrayIcon,
   PlusIcon,
   MinusIcon,
   PencilIcon,
@@ -36,9 +35,6 @@ import {
   TrophyIcon,
   ChevronDownIcon,
   ChevronRightIcon,
-  AcademicCapIcon,
-  BuildingOfficeIcon,
-  CommandLineIcon,
   ComputerDesktopIcon
 } from '@heroicons/react/24/outline';
 
@@ -460,8 +456,7 @@ export default function AIProjectPlanningTemplate() {
     { id: 'phases', label: '階段規劃', icon: CalendarIcon },
     { id: 'milestones', label: '里程碑', icon: FlagIcon },
     { id: 'risks', label: '風險管理', icon: ExclamationTriangleIcon },
-    { id: 'resources', label: '資源配置', icon: UsersIcon },
-    { id: 'templates', label: '範本下載', icon: ArrowDownTrayIcon }
+    { id: 'resources', label: '資源配置', icon: UsersIcon }
   ];
 
   const priorityColors = {
@@ -1035,182 +1030,6 @@ export default function AIProjectPlanningTemplate() {
                           </div>
                         </div>
                       ))}
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Templates Tab */}
-              {activeTab === 'templates' && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="space-y-8"
-                >
-                  <div>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
-                      <ArrowDownTrayIcon className="w-8 h-8 text-green-600 mr-3" />
-                      範本下載
-                    </h2>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {/* Project Planning Templates */}
-                      <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-                        <h3 className="text-lg font-bold text-blue-900 mb-4 flex items-center">
-                          <DocumentTextIcon className="w-6 h-6 mr-2" />
-                          專案規劃範本
-                        </h3>
-                        <div className="space-y-3">
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-blue-900">AI專案計畫書範本</h4>
-                                <p className="text-blue-600 text-sm">完整的專案規劃文件</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-blue-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-blue-900">工作分解結構(WBS)</h4>
-                                <p className="text-blue-600 text-sm">詳細任務分解表</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-blue-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-blue-900">甘特圖範本</h4>
-                                <p className="text-blue-600 text-sm">時程規劃圖表</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-blue-600" />
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Risk Management Templates */}
-                      <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
-                        <h3 className="text-lg font-bold text-orange-900 mb-4 flex items-center">
-                          <ShieldCheckIcon className="w-6 h-6 mr-2" />
-                          風險管理範本
-                        </h3>
-                        <div className="space-y-3">
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-orange-900">風險登記表</h4>
-                                <p className="text-orange-600 text-sm">風險識別與追蹤</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-orange-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-orange-900">風險評估矩陣</h4>
-                                <p className="text-orange-600 text-sm">風險等級評估</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-orange-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-orange-900">應變計畫範本</h4>
-                                <p className="text-orange-600 text-sm">風險應對策略</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-orange-600" />
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Resource Management Templates */}
-                      <div className="bg-purple-50 border border-purple-200 rounded-xl p-6">
-                        <h3 className="text-lg font-bold text-purple-900 mb-4 flex items-center">
-                          <UsersIcon className="w-6 h-6 mr-2" />
-                          資源管理範本
-                        </h3>
-                        <div className="space-y-3">
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-purple-200 hover:bg-purple-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-purple-900">團隊架構圖</h4>
-                                <p className="text-purple-600 text-sm">組織與角色分工</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-purple-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-purple-200 hover:bg-purple-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-purple-900">預算分配表</h4>
-                                <p className="text-purple-600 text-sm">成本與預算管理</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-purple-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-purple-200 hover:bg-purple-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-purple-900">資源需求表</h4>
-                                <p className="text-purple-600 text-sm">人力與設備需求</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-purple-600" />
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Quality Assurance Templates */}
-                      <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-                        <h3 className="text-lg font-bold text-green-900 mb-4 flex items-center">
-                          <CheckBadgeIcon className="w-6 h-6 mr-2" />
-                          品質管理範本
-                        </h3>
-                        <div className="space-y-3">
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-green-200 hover:bg-green-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-green-900">測試計畫書</h4>
-                                <p className="text-green-600 text-sm">測試策略與執行</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-green-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-green-200 hover:bg-green-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-green-900">品質檢查清單</h4>
-                                <p className="text-green-600 text-sm">品質控制標準</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-green-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-green-200 hover:bg-green-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-green-900">驗收標準表</h4>
-                                <p className="text-green-600 text-sm">交付驗收條件</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-green-600" />
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Download All Button */}
-                    <div className="text-center mt-8">
-                      <button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200 inline-flex items-center text-lg">
-                        <ArrowDownTrayIcon className="w-6 h-6 mr-3" />
-                        下載完整範本包
-                      </button>
-                      <p className="text-gray-600 text-sm mt-2">包含所有規劃範本與工具，ZIP格式</p>
                     </div>
                   </div>
                 </motion.div>
