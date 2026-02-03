@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { siteConfig } from '@/lib/seo';
+import { siteConfig, articleDates } from '@/lib/seo';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/seo/StructuredData';
 
 export const metadata: Metadata = {
@@ -53,8 +53,8 @@ export default function OpenAIEnterpriseAILayout({
         headline="OpenAI企業AI觀點深度解析"
         description="解讀OpenAI對企業AI應用的前瞻觀點，探索AI如何重塑企業競爭力，以及台灣企業的機會。"
         url="https://airai.tw/resources/blog/openai-enterprise-ai"
-        datePublished="2025-11-15"
-        dateModified="2026-02-03"
+        datePublished={articleDates['blog-openai'].published}
+        dateModified={articleDates['blog-openai'].modified}
         wordCount={3500}
         articleSection="部落格"
         keywords={['OpenAI', '企業AI', '數位轉型', 'AI導入策略', '台灣企業AI', 'AI趨勢']}

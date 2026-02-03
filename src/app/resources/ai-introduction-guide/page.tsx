@@ -4,6 +4,7 @@ import Footer from '@/components/ui/Footer';
 import TableOfContents from '@/components/pillar/TableOfContents';
 import FaqAccordion from '@/components/pillar/FaqAccordion';
 import { detailedCases } from '@/lib/data/caseStudies';
+import { articleDates } from '@/lib/seo';
 import { ArticleSchema, HowToSchema, FAQSchema, BreadcrumbSchema } from '@/components/seo/StructuredData';
 import {
   BookOpenIcon,
@@ -822,8 +823,8 @@ export default function AIIntroductionGuide() {
         description={articleMeta.description}
         url="https://airai.tw/resources/ai-introduction-guide"
         image="https://airai.tw/images/og-image.jpg"
-        datePublished="2026-01-28"
-        dateModified="2026-02-03"
+        datePublished={articleDates['ai-introduction-guide'].published}
+        dateModified={articleDates['ai-introduction-guide'].modified}
         authorName="智流科技 AIRAI 研究團隊"
         authorJobTitle="AI 導入顧問"
         wordCount={5000}

@@ -49,6 +49,14 @@ export const siteConfig = {
   }
 };
 
+// 文章日期集中管理 — 更新內容時只需改這裡
+export const articleDates: Record<string, { published: string; modified: string }> = {
+  'ai-introduction-guide': { published: '2026-01-28', modified: '2026-02-03' },
+  'ai-guide-1':            { published: '2025-05-24', modified: '2026-02-03' },
+  'blog-openai':           { published: '2025-05-26', modified: '2026-02-03' },
+  'trends-1':              { published: '2024-11-01', modified: '2026-02-03' },
+};
+
 export const defaultMetadata = {
   metadataBase: new URL(siteConfig.url),
   title: {

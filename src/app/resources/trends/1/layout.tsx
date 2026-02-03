@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { siteConfig } from '@/lib/seo';
+import { siteConfig, articleDates } from '@/lib/seo';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/seo/StructuredData';
 
 export const metadata: Metadata = {
@@ -55,8 +55,8 @@ export default function TrendsLayout({
         headline="2024年中小企業AI應用趨勢報告"
         description="深度分析台灣中小企業AI應用現況，預測未來發展趨勢與投資機會。涵蓋市場數據、技術趨勢、應用案例等完整分析。"
         url="https://airai.tw/resources/trends/1"
-        datePublished="2024-11-01"
-        dateModified="2026-02-03"
+        datePublished={articleDates['trends-1'].published}
+        dateModified={articleDates['trends-1'].modified}
         wordCount={4500}
         articleSection="趨勢報告"
         keywords={['AI趨勢報告', '中小企業AI', 'AI市場分析', '台灣AI市場', 'AI採用率', 'AI投資機會']}

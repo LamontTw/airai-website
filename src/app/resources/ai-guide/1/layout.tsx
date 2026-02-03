@@ -1,5 +1,5 @@
 import { Metadata } from 'next';
-import { siteConfig } from '@/lib/seo';
+import { siteConfig, articleDates } from '@/lib/seo';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/seo/StructuredData';
 
 export const metadata: Metadata = {
@@ -56,8 +56,8 @@ export default function AIGuideLayout({
         headline="AI轉型完整指南：從評估到導入"
         description="完整的中小企業AI導入指南，涵蓋需求評估、技術選擇、實施規劃到效果追蹤的全流程。"
         url="https://airai.tw/resources/ai-guide/1"
-        datePublished="2025-12-01"
-        dateModified="2026-02-03"
+        datePublished={articleDates['ai-guide-1'].published}
+        dateModified={articleDates['ai-guide-1'].modified}
         wordCount={4000}
         articleSection="AI 導入指南"
         keywords={['AI轉型指南', 'AI導入流程', '企業AI評估', 'AI技術選擇', '中小企業AI', 'AI實施規劃']}
