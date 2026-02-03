@@ -14,7 +14,6 @@ import {
   StarIcon,
   CheckCircleIcon,
   ExclamationTriangleIcon,
-  ArrowDownTrayIcon,
   MagnifyingGlassIcon,
   BeakerIcon,
   CommandLineIcon,
@@ -30,7 +29,6 @@ import {
   ArrowTrendingUpIcon,
   PauseIcon,
   HandRaisedIcon,
-  AcademicCapIcon,
   Cog6ToothIcon,
   SpeakerWaveIcon,
   CloudIcon,
@@ -325,8 +323,7 @@ export default function AITechnologySelectionGuide() {
     { id: 'categories', label: '技術分類', icon: BuildingOfficeIcon },
     { id: 'comparison', label: '技術比較', icon: ChartBarIcon },
     { id: 'decision-matrix', label: '決策矩陣', icon: MagnifyingGlassIcon },
-    { id: 'guide', label: '選型指南', icon: LightBulbIcon },
-    { id: 'resources', label: '資源下載', icon: ArrowDownTrayIcon }
+    { id: 'guide', label: '選型指南', icon: LightBulbIcon }
   ];
 
   const maturityColors = {
@@ -1075,182 +1072,6 @@ export default function AITechnologySelectionGuide() {
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
-                </motion.div>
-              )}
-
-              {/* Resources Tab */}
-              {activeTab === 'resources' && (
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6 }}
-                  className="space-y-8"
-                >
-                  <div>
-                    <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
-                      <ArrowDownTrayIcon className="w-8 h-8 text-green-600 mr-3" />
-                      資源下載
-                    </h2>
-                    
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      {/* Selection Tools */}
-                      <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
-                        <h3 className="text-lg font-bold text-blue-900 mb-4 flex items-center">
-                          <MagnifyingGlassIcon className="w-6 h-6 mr-2" />
-                          選型工具
-                        </h3>
-                        <div className="space-y-3">
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-blue-900">AI技術評估矩陣</h4>
-                                <p className="text-blue-600 text-sm">量化評估決策工具</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-blue-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-blue-900">需求分析問卷</h4>
-                                <p className="text-blue-600 text-sm">業務需求調研模板</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-blue-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-blue-200 hover:bg-blue-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-blue-900">ROI計算器</h4>
-                                <p className="text-blue-600 text-sm">投資回報率評估</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-blue-600" />
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Technical Guides */}
-                      <div className="bg-green-50 border border-green-200 rounded-xl p-6">
-                        <h3 className="text-lg font-bold text-green-900 mb-4 flex items-center">
-                          <DocumentTextIcon className="w-6 h-6 mr-2" />
-                          技術指南
-                        </h3>
-                        <div className="space-y-3">
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-green-200 hover:bg-green-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-green-900">AI技術白皮書</h4>
-                                <p className="text-green-600 text-sm">詳細技術介紹文件</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-green-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-green-200 hover:bg-green-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-green-900">實施最佳實踐</h4>
-                                <p className="text-green-600 text-sm">成功案例與經驗</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-green-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-green-200 hover:bg-green-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-green-900">技術比較報告</h4>
-                                <p className="text-green-600 text-sm">深度技術對比分析</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-green-600" />
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Vendor Resources */}
-                      <div className="bg-purple-50 border border-purple-200 rounded-xl p-6">
-                        <h3 className="text-lg font-bold text-purple-900 mb-4 flex items-center">
-                          <BuildingOfficeIcon className="w-6 h-6 mr-2" />
-                          供應商資源
-                        </h3>
-                        <div className="space-y-3">
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-purple-200 hover:bg-purple-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-purple-900">供應商評估表</h4>
-                                <p className="text-purple-600 text-sm">供應商選擇標準</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-purple-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-purple-200 hover:bg-purple-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-purple-900">RFP範本</h4>
-                                <p className="text-purple-600 text-sm">請求提案書模板</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-purple-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-purple-200 hover:bg-purple-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-purple-900">合約檢查清單</h4>
-                                <p className="text-purple-600 text-sm">合約要點提醒</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-purple-600" />
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-
-                      {/* Training Materials */}
-                      <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
-                        <h3 className="text-lg font-bold text-orange-900 mb-4 flex items-center">
-                          <AcademicCapIcon className="w-6 h-6 mr-2" />
-                          培訓材料
-                        </h3>
-                        <div className="space-y-3">
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-orange-900">AI基礎知識</h4>
-                                <p className="text-orange-600 text-sm">入門教學資料</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-orange-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-orange-900">技術研習課程</h4>
-                                <p className="text-orange-600 text-sm">深度技術培訓</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-orange-600" />
-                            </div>
-                          </button>
-                          <button className="w-full text-left p-3 bg-white rounded-lg border border-orange-200 hover:bg-orange-50 transition-colors duration-200">
-                            <div className="flex items-center justify-between">
-                              <div>
-                                <h4 className="font-medium text-orange-900">案例研究集</h4>
-                                <p className="text-orange-600 text-sm">實際應用案例</p>
-                              </div>
-                              <ArrowDownTrayIcon className="w-5 h-5 text-orange-600" />
-                            </div>
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Download All Button */}
-                    <div className="text-center mt-8">
-                      <button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-4 px-8 rounded-lg transition-colors duration-200 inline-flex items-center text-lg">
-                        <ArrowDownTrayIcon className="w-6 h-6 mr-3" />
-                        下載完整選型工具包
-                      </button>
-                      <p className="text-gray-600 text-sm mt-2">包含所有評估工具、指南與資源，ZIP格式</p>
                     </div>
                   </div>
                 </motion.div>
