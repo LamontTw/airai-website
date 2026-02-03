@@ -241,4 +241,187 @@ export function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
       }}
     />
   );
+}
+
+// === GEO 優化：強化版 Article Schema ===
+
+interface ArticleSchemaProps {
+  headline: string;
+  description: string;
+  url: string;
+  image?: string;
+  datePublished: string;
+  dateModified: string;
+  authorName?: string;
+  authorJobTitle?: string;
+  wordCount?: number;
+  articleSection?: string;
+  keywords?: string[];
+  inLanguage?: string;
+}
+
+export function ArticleSchema({
+  headline,
+  description,
+  url,
+  image,
+  datePublished,
+  dateModified,
+  authorName = '智流科技 AIRAI 研究團隊',
+  authorJobTitle = 'AI 導入顧問',
+  wordCount,
+  articleSection,
+  keywords,
+  inLanguage = 'zh-TW',
+}: ArticleSchemaProps) {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": headline,
+    "description": description,
+    "url": url,
+    "image": image || `${siteConfig.url}/images/og-image.jpg`,
+    "author": {
+      "@type": "Person",
+      "name": authorName,
+      "jobTitle": authorJobTitle,
+      "worksFor": {
+        "@type": "Organization",
+        "name": siteConfig.company.name,
+        "url": siteConfig.url
+      }
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": siteConfig.company.name,
+      "logo": {
+        "@type": "ImageObject",
+        "url": `${siteConfig.url}/images/logo-full.png`
+      }
+    },
+    "datePublished": datePublished,
+    "dateModified": dateModified,
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": url
+    },
+    "inLanguage": inLanguage,
+    ...(wordCount && { "wordCount": wordCount }),
+    ...(articleSection && { "articleSection": articleSection }),
+    ...(keywords && keywords.length > 0 && { "keywords": keywords.join(', ') }),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(articleSchema, null, 2),
+      }}
+    />
+  );
+}
+
+// === GEO 優化：HowTo Schema ===
+
+interface HowToStep {
+  name: string;
+  text: string;
+  url?: string;
+  estimatedTime?: string;
+}
+
+interface HowToSchemaProps {
+  name: string;
+  description: string;
+  totalTime?: string;
+  estimatedCost?: {
+    currency: string;
+    value: string;
+  };
+  steps: HowToStep[];
+}
+
+export function HowToSchema({ name, description, totalTime, estimatedCost, steps }: HowToSchemaProps) {
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": name,
+    "description": description,
+    ...(totalTime && { "totalTime": totalTime }),
+    ...(estimatedCost && {
+      "estimatedCost": {
+        "@type": "MonetaryAmount",
+        "currency": estimatedCost.currency,
+        "value": estimatedCost.value
+      }
+    }),
+    "step": steps.map((step, index) => ({
+      "@type": "HowToStep",
+      "position": index + 1,
+      "name": step.name,
+      "text": step.text,
+      ...(step.url && { "url": step.url }),
+    }))
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(howToSchema, null, 2),
+      }}
+    />
+  );
+}
+
+// === GEO 優化：SoftwareApplication Schema ===
+
+interface SoftwareApplicationSchemaProps {
+  name: string;
+  description: string;
+  url: string;
+  applicationCategory?: string;
+  operatingSystem?: string;
+  offers?: {
+    price: string;
+    priceCurrency: string;
+  };
+}
+
+export function SoftwareApplicationSchema({
+  name,
+  description,
+  url,
+  applicationCategory = 'BusinessApplication',
+  operatingSystem = 'Web',
+  offers,
+}: SoftwareApplicationSchemaProps) {
+  const appSchema = {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": name,
+    "description": description,
+    "url": url,
+    "applicationCategory": applicationCategory,
+    "operatingSystem": operatingSystem,
+    "offers": {
+      "@type": "Offer",
+      "price": offers?.price || "0",
+      "priceCurrency": offers?.priceCurrency || "TWD",
+    },
+    "provider": {
+      "@type": "Organization",
+      "name": siteConfig.company.name,
+      "url": siteConfig.url
+    }
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{
+        __html: JSON.stringify(appSchema, null, 2),
+      }}
+    />
+  );
 } 

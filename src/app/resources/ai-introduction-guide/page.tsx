@@ -4,6 +4,7 @@ import Footer from '@/components/ui/Footer';
 import TableOfContents from '@/components/pillar/TableOfContents';
 import FaqAccordion from '@/components/pillar/FaqAccordion';
 import { detailedCases } from '@/lib/data/caseStudies';
+import { ArticleSchema, HowToSchema, FAQSchema, BreadcrumbSchema } from '@/components/seo/StructuredData';
 import {
   BookOpenIcon,
   CheckCircleIcon,
@@ -99,10 +100,18 @@ export default function AIIntroductionGuide() {
                 AI導入完整指南
               </h1>
             </div>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 mb-4 leading-relaxed">
               企業如何成功導入人工智能？從需求診斷到上線維護的完整指南，<br />
               專為台灣中小企業量身打造
             </p>
+
+            {/* TL;DR - GEO 優化：前 60 字直接答案 */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
+              <p className="text-sm font-semibold text-blue-900 mb-1">摘要 TL;DR</p>
+              <p className="text-sm text-blue-800 leading-relaxed">
+                AI導入是企業將人工智能技術整合到業務流程中的過程。成功導入需經歷五大步驟：需求診斷、技術選型、概念驗證（POC）、實施部署、持續優化。台灣中小企業平均投資 50-200 萬，6 個月內可回本，自動化處理率可達 85%。
+              </p>
+            </div>
 
             {/* Guide Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-8">
@@ -807,82 +816,41 @@ export default function AIIntroductionGuide() {
 
       <Footer />
 
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": articleMeta.headline,
-            "description": articleMeta.description,
-            "author": {
-              "@type": "Organization",
-              "name": "智流科技",
-              "url": "https://airai.tw"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "智流科技",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://airai.tw/images/logo.png"
-              }
-            },
-            "datePublished": "2026-01-28",
-            "dateModified": "2026-01-28",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://airai.tw/resources/ai-introduction-guide"
-            }
-          })
-        }}
+      {/* JSON-LD Structured Data - GEO 優化強化版 */}
+      <ArticleSchema
+        headline={articleMeta.headline}
+        description={articleMeta.description}
+        url="https://airai.tw/resources/ai-introduction-guide"
+        image="https://airai.tw/images/og-image.jpg"
+        datePublished="2026-01-28"
+        dateModified="2026-02-03"
+        authorName="智流科技 AIRAI 研究團隊"
+        authorJobTitle="AI 導入顧問"
+        wordCount={5000}
+        articleSection="AI 導入指南"
+        keywords={['AI導入', 'AI導入流程', 'AI導入成本', '企業AI', '台灣中小企業AI', 'AI實施指南', 'AI技術選型', 'AI概念驗證']}
+        inLanguage="zh-TW"
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqData.map(faq => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-              }
-            }))
-          })
-        }}
+      <HowToSchema
+        name="企業 AI 導入五大步驟"
+        description="台灣中小企業成功導入 AI 的完整流程，從需求診斷到持續優化，平均 2-6 個月完成，投資 50-200 萬可在 6 個月內回本。"
+        totalTime="P6M"
+        estimatedCost={{ currency: "TWD", value: "500000-2000000" }}
+        steps={[
+          { name: "需求診斷", text: "深入了解企業現況、痛點、目標，評估 AI 導入的可行性與預期效益。交付物包含需求診斷報告、現況流程圖（AS-IS）、ROI 初步估算。", url: "https://airai.tw/resources/ai-introduction-guide#five-steps" },
+          { name: "技術選型", text: "根據需求選擇最適合的 AI 技術方案，包含工具、平台、架構的評估與建議。交付物包含技術選型報告、系統架構圖（TO-BE）、專案時程與報價。" },
+          { name: "概念驗證（POC）", text: "以最小可行產品（MVP）驗證技術可行性，確保方案能解決實際問題。交付物包含 POC 原型系統、測試結果報告、調整建議書。" },
+          { name: "實施部署", text: "開發完整功能、整合現有系統、進行 UAT 測試、教育訓練，正式上線。交付物包含正式版系統、UAT 測試報告、操作手冊與教育訓練。" },
+          { name: "持續優化", text: "監控系統表現、收集使用者回饋、持續優化模型，確保長期效益。交付物包含月度效能報告、優化建議與執行、技術支援服務。" },
+        ]}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "首頁",
-                "item": "https://airai.tw"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "資源中心",
-                "item": "https://airai.tw/resources"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "AI導入完整指南",
-                "item": "https://airai.tw/resources/ai-introduction-guide"
-              }
-            ]
-          })
-        }}
+      <FAQSchema questions={faqData} />
+      <BreadcrumbSchema
+        items={[
+          { name: "首頁", url: "https://airai.tw" },
+          { name: "資源中心", url: "https://airai.tw/resources" },
+          { name: "AI導入完整指南", url: "https://airai.tw/resources/ai-introduction-guide" },
+        ]}
       />
     </main>
   );

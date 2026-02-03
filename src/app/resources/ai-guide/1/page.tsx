@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
+import { ArticleSchema, BreadcrumbSchema } from '@/components/seo/StructuredData';
 import {
   BookOpenIcon,
   CheckCircleIcon,
@@ -58,9 +59,17 @@ export default function AITransformationGuide() {
                 AI轉型完整指南
               </h1>
             </div>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 mb-4 leading-relaxed">
               從評估到導入的全流程指導，專為台灣中小企業量身打造
             </p>
+
+            {/* TL;DR - GEO 優化 */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
+              <p className="text-sm font-semibold text-blue-900 mb-1">摘要 TL;DR</p>
+              <p className="text-sm text-blue-800 leading-relaxed">
+                AI 轉型是企業透過人工智能技術改造業務流程的系統化過程。本指南涵蓋四大階段：需求評估、技術選擇、實施規劃、效果追蹤，平均 12 週完成，成功率達 95%。適合正在評估是否導入 AI 的台灣中小企業主。
+              </p>
+            </div>
             
             {/* Guide Stats */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-2xl mx-auto mb-8">
@@ -646,6 +655,26 @@ export default function AITransformationGuide() {
       </div>
 
       <Footer />
+
+      {/* JSON-LD Structured Data - GEO 優化 */}
+      <ArticleSchema
+        headline="AI轉型完整指南：從評估到導入"
+        description="完整的中小企業AI導入指南，涵蓋需求評估、技術選擇、實施規劃到效果追蹤的全流程。"
+        url="https://airai.tw/resources/ai-guide/1"
+        datePublished="2025-12-01"
+        dateModified="2026-02-03"
+        wordCount={4000}
+        articleSection="AI 導入指南"
+        keywords={['AI轉型指南', 'AI導入流程', '企業AI評估', 'AI技術選擇', '中小企業AI', 'AI實施規劃']}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "首頁", url: "https://airai.tw" },
+          { name: "資源中心", url: "https://airai.tw/resources" },
+          { name: "AI導入指南", url: "https://airai.tw/resources/ai-guide" },
+          { name: "AI轉型完整指南", url: "https://airai.tw/resources/ai-guide/1" },
+        ]}
+      />
     </main>
   );
 } 

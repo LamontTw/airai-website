@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
+import { ArticleSchema, BreadcrumbSchema } from '@/components/seo/StructuredData';
 import {
   ChartBarIcon,
   ArrowTrendingUpIcon,
@@ -340,7 +341,15 @@ export default function AITrendReport2024() {
                 2024年中小企業AI應用趨勢報告
               </h1>
             </div>
-            <p className="text-xl text-gray-600 mb-6 leading-relaxed">              深度分析台灣中小企業AI應用現況，預測未來發展趨勢與投資機會            </p>                        {/* Data Source Notice */}            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 max-w-4xl mx-auto">              <div className="flex items-center mb-2">                <DocumentTextIcon className="w-5 h-5 text-blue-600 mr-2" />                <h3 className="text-sm font-semibold text-blue-900">數據來源說明</h3>              </div>              <p className="text-sm text-blue-800 leading-relaxed">                本報告部分數據參考自 PwC Taiwan《中小企業數位化現況調查》、行政院主計總處、                經濟部中小企業處等官方統計資料，以及智流科技自主市場調研數據。                所有數據僅供參考，實際情況可能因不同調查方法而有所差異。              </p>              <div className="mt-2">                <a                   href="https://www.pwc.tw/zh/publications/topic-report/sme-digitalisation-survey.html"                  target="_blank"                  rel="noopener noreferrer"                  className="text-blue-600 hover:text-blue-800 text-sm underline"                >                  參考資料：PwC Taiwan 中小企業數位化調查報告                </a>              </div>            </div>                        {/* Report Stats */}            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-8">
+            <p className="text-xl text-gray-600 mb-4 leading-relaxed">              深度分析台灣中小企業AI應用現況，預測未來發展趨勢與投資機會            </p>
+
+            {/* TL;DR - GEO 優化 */}
+            <div className="bg-purple-50 border border-purple-200 rounded-lg p-4 mb-6 max-w-3xl mx-auto text-left">
+              <p className="text-sm font-semibold text-purple-900 mb-1">摘要 TL;DR</p>
+              <p className="text-sm text-purple-800 leading-relaxed">
+                2024 年台灣中小企業 AI 採用率達 31%（年增 12%），市場規模 NT$185 億。67% 企業計劃投資 AI，平均生產力提升 42%。製造業、零售業、金融業為主要應用產業。預測 2025 年採用率將達 55%，2027 年市場規模突破 NT$320 億。
+              </p>
+            </div>                        {/* Data Source Notice */}            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 max-w-4xl mx-auto">              <div className="flex items-center mb-2">                <DocumentTextIcon className="w-5 h-5 text-blue-600 mr-2" />                <h3 className="text-sm font-semibold text-blue-900">數據來源說明</h3>              </div>              <p className="text-sm text-blue-800 leading-relaxed">                本報告部分數據參考自 PwC Taiwan《中小企業數位化現況調查》、行政院主計總處、                經濟部中小企業處等官方統計資料，以及智流科技自主市場調研數據。                所有數據僅供參考，實際情況可能因不同調查方法而有所差異。              </p>              <div className="mt-2">                <a                   href="https://www.pwc.tw/zh/publications/topic-report/sme-digitalisation-survey.html"                  target="_blank"                  rel="noopener noreferrer"                  className="text-blue-600 hover:text-blue-800 text-sm underline"                >                  參考資料：PwC Taiwan 中小企業數位化調查報告                </a>              </div>            </div>                        {/* Report Stats */}            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto mb-8">
               <div className="text-center">
                 <div className="text-2xl font-bold text-purple-600 mb-1">1,250</div>
                 <div className="text-sm text-gray-600">調查企業</div>
@@ -991,6 +1000,26 @@ export default function AITrendReport2024() {
       </div>
 
       <Footer />
+
+      {/* JSON-LD Structured Data - GEO 優化 */}
+      <ArticleSchema
+        headline="2024年中小企業AI應用趨勢報告"
+        description="深度分析台灣中小企業AI應用現況，預測未來發展趨勢與投資機會。涵蓋市場數據、技術趨勢、應用案例等完整分析。"
+        url="https://airai.tw/resources/trends/1"
+        datePublished="2024-11-01"
+        dateModified="2026-02-03"
+        wordCount={4500}
+        articleSection="趨勢報告"
+        keywords={['AI趨勢報告', '中小企業AI', 'AI市場分析', '台灣AI市場', 'AI採用率', 'AI投資機會']}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "首頁", url: "https://airai.tw" },
+          { name: "資源中心", url: "https://airai.tw/resources" },
+          { name: "趨勢報告", url: "https://airai.tw/resources/trends" },
+          { name: "2024年AI應用趨勢報告", url: "https://airai.tw/resources/trends/1" },
+        ]}
+      />
     </main>
   );
 } 

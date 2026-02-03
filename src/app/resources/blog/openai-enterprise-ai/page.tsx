@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
+import { ArticleSchema, BreadcrumbSchema } from '@/components/seo/StructuredData';
 import { 
   BuildingOfficeIcon,
   LightBulbIcon,
@@ -59,9 +60,17 @@ export default function OpenAIEnterpriseAIArticle() {
                 OpenAI企業AI觀點深度解析
               </h1>
             </div>
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+            <p className="text-xl text-gray-600 mb-4 leading-relaxed">
               解讀OpenAI對企業AI應用的前瞻觀點，探索AI如何重塑企業競爭力
             </p>
+
+            {/* TL;DR - GEO 優化 */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
+              <p className="text-sm font-semibold text-blue-900 mb-1">摘要 TL;DR</p>
+              <p className="text-sm text-blue-800 leading-relaxed">
+                OpenAI 認為企業 AI 導入的關鍵在於從小規模試點開始、建立數據治理框架、持續教育訓練員工。預測 2025 年 70% 企業將導入基礎 AI 應用，2030 年 AI 將成為企業標準配備。台灣企業可善用製造業優勢，從智慧製造與客服自動化切入。
+              </p>
+            </div>
             
             {/* Article Meta */}
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 mb-8">
@@ -639,6 +648,26 @@ export default function OpenAIEnterpriseAIArticle() {
       </section>
 
       <Footer />
+
+      {/* JSON-LD Structured Data - GEO 優化 */}
+      <ArticleSchema
+        headline="OpenAI企業AI觀點深度解析"
+        description="解讀OpenAI對企業AI應用的前瞻觀點，探索AI如何重塑企業競爭力，以及台灣企業的機會。"
+        url="https://airai.tw/resources/blog/openai-enterprise-ai"
+        datePublished="2025-11-15"
+        dateModified="2026-02-03"
+        wordCount={3500}
+        articleSection="部落格"
+        keywords={['OpenAI', '企業AI', '數位轉型', 'AI導入策略', '台灣企業AI', 'AI趨勢']}
+      />
+      <BreadcrumbSchema
+        items={[
+          { name: "首頁", url: "https://airai.tw" },
+          { name: "資源中心", url: "https://airai.tw/resources" },
+          { name: "部落格", url: "https://airai.tw/resources/blog" },
+          { name: "OpenAI企業AI觀點", url: "https://airai.tw/resources/blog/openai-enterprise-ai" },
+        ]}
+      />
     </main>
   );
 } 
