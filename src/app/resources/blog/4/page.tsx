@@ -12,8 +12,6 @@ import {
   UserGroupIcon,
   ClockIcon,
   TagIcon,
-  BookmarkIcon,
-  ShareIcon,
   CheckCircleIcon,
   ExclamationTriangleIcon,
   LightBulbIcon,
@@ -93,16 +91,12 @@ export default function SmallBusinessAIArticle() {
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap justify-center gap-4">
-              <button className="flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors duration-200">
-                <BookmarkIcon className="w-5 h-5 mr-2" />
-                收藏文章
-              </button>
-              <button className="flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                <ShareIcon className="w-5 h-5 mr-2" />
-                分享文章
-              </button>
+            {/* TL;DR - GEO 優化 */}
+            <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
+              <p className="sr-only">摘要 TL;DR</p>
+              <p className="text-sm text-orange-800 leading-relaxed">
+                小型企業 AI 導入預算建議控制在營收的 1-3%，優先選擇 SaaS 型 AI 工具（月費 NT$500-3,000）降低初期投入。採用「小步快跑」策略：從單一痛點切入、3 個月內驗證 ROI、再逐步擴展。善用免費或低成本方案如 ChatGPT API、Google Cloud AutoML，首年總成本可控制在 NT$10-30 萬。
+              </p>
             </div>
           </motion.div>
         </div>

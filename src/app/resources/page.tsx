@@ -550,52 +550,53 @@ export default function ResourcesPage() {
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {blogPosts.map((post, index) => (
-              <motion.article
-                key={post.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.1 + index * 0.1 }}
-                className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-4">
-                    <span className={`px-3 py-1 rounded-full text-sm font-medium ${colorClasses[post.color]}`}>
-                      {post.category}
-                    </span>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <ClockIcon className="w-4 h-4 mr-1" />
-                      {post.readTime}
-                    </div>
-                  </div>
-                  
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">{post.title}</h3>
-                  <p className="text-gray-600 mb-4">{post.excerpt}</p>
-                  
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center">
-                      <UserIcon className="w-4 h-4 text-gray-400 mr-2" />
-                      <span className="text-sm text-gray-600">{post.author}</span>
-                    </div>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <CalendarIcon className="w-4 h-4 mr-1" />
-                      {post.date}
-                    </div>
-                  </div>
-                  
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {post.tags.map((tag) => (
-                      <span key={tag} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
-                        #{tag}
+              <Link key={post.id} href={post.id === 1 ? `/resources/blog/openai-enterprise-ai` : post.id === 5 ? `/resources/blog/ai-customer-service-agent` : `/resources/blog/${post.id}`} className="block">
+                <motion.article
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, delay: 0.1 + index * 0.1 }}
+                  className="bg-white rounded-xl border border-gray-200 overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-4">
+                      <span className={`px-3 py-1 rounded-full text-sm font-medium ${colorClasses[post.color]}`}>
+                        {post.category}
                       </span>
-                    ))}
+                      <div className="flex items-center text-sm text-gray-500">
+                        <ClockIcon className="w-4 h-4 mr-1" />
+                        {post.readTime}
+                      </div>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-gray-900 mb-3">{post.title}</h3>
+                    <p className="text-gray-600 mb-4">{post.excerpt}</p>
+
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="flex items-center">
+                        <UserIcon className="w-4 h-4 text-gray-400 mr-2" />
+                        <span className="text-sm text-gray-600">{post.author}</span>
+                      </div>
+                      <div className="flex items-center text-sm text-gray-500">
+                        <CalendarIcon className="w-4 h-4 mr-1" />
+                        {post.date}
+                      </div>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2 mb-4">
+                      {post.tags.map((tag) => (
+                        <span key={tag} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                          #{tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <span className="text-green-600 hover:text-green-700 font-medium text-sm inline-flex items-center group">
+                      閱讀全文
+                      <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
+                    </span>
                   </div>
-                  
-                  <Link href={post.id === 1 ? `/resources/blog/openai-enterprise-ai` : post.id === 5 ? `/resources/blog/ai-customer-service-agent` : `/resources/blog/${post.id}`} className="text-green-600 hover:text-green-700 font-medium text-sm inline-flex items-center group">
-                    閱讀全文
-                    <ArrowRightIcon className="w-4 h-4 ml-1 group-hover:translate-x-1 transition-transform duration-200" />
-                  </Link>
-                </div>
-              </motion.article>
+                </motion.article>
+              </Link>
             ))}
           </div>
         </div>
@@ -620,74 +621,74 @@ export default function ResourcesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {tools.map((tool, index) => (
-              <motion.div
-                key={tool.id}
-                initial={{ opacity: 0, y: 30 }}
-                animate={inView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.8, delay: 0.1 + index * 0.1 }}
-                className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="flex items-center justify-between mb-4">
-                  <div className="flex items-center">
-                    {tool.type === 'calculator' && <CalculatorIcon className={`w-8 h-8 ${iconColorClasses[tool.color]} mr-3`} />}
-                    {tool.type === 'assessment' && <CheckCircleIcon className={`w-8 h-8 ${iconColorClasses[tool.color]} mr-3`} />}
-                    {tool.type === 'template' && <DocumentTextIcon className={`w-8 h-8 ${iconColorClasses[tool.color]} mr-3`} />}
-                    {tool.type === 'guide' && <LightBulbIcon className={`w-8 h-8 ${iconColorClasses[tool.color]} mr-3`} />}
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900">{tool.title}</h3>
-                      <span className={`text-sm font-medium ${iconColorClasses[tool.color]}`}>{tool.category}</span>
+              <Link key={tool.id} href={`/resources/tools/${tool.id}`} className="block">
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={inView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, delay: 0.1 + index * 0.1 }}
+                  className="bg-white rounded-xl p-6 shadow-md hover:shadow-lg transition-shadow duration-300"
+                >
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center">
+                      {tool.type === 'calculator' && <CalculatorIcon className={`w-8 h-8 ${iconColorClasses[tool.color]} mr-3`} />}
+                      {tool.type === 'assessment' && <CheckCircleIcon className={`w-8 h-8 ${iconColorClasses[tool.color]} mr-3`} />}
+                      {tool.type === 'template' && <DocumentTextIcon className={`w-8 h-8 ${iconColorClasses[tool.color]} mr-3`} />}
+                      {tool.type === 'guide' && <LightBulbIcon className={`w-8 h-8 ${iconColorClasses[tool.color]} mr-3`} />}
+                      <div>
+                        <h3 className="text-xl font-bold text-gray-900">{tool.title}</h3>
+                        <span className={`text-sm font-medium ${iconColorClasses[tool.color]}`}>{tool.category}</span>
+                      </div>
+                    </div>
+                    <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
+                      免費
+                    </span>
+                  </div>
+
+                  <p className="text-gray-600 mb-4">{tool.description}</p>
+
+                  <div className="mb-4">
+                    <h4 className="text-sm font-semibold text-gray-900 mb-2">主要功能：</h4>
+                    <div className="space-y-1">
+                      {tool.features.map((feature) => (
+                        <div key={feature} className="flex items-center text-sm text-gray-600">
+                          <CheckCircleIcon className={`w-4 h-4 ${iconColorClasses[tool.color]} mr-2`} />
+                          {feature}
+                        </div>
+                      ))}
                     </div>
                   </div>
-                  <span className="bg-green-100 text-green-700 px-3 py-1 rounded-full text-sm font-medium">
-                    免費
-                  </span>
-                </div>
 
-                <p className="text-gray-600 mb-4">{tool.description}</p>
+                  <div className="flex items-center justify-between mb-4 text-sm text-gray-500">
+                    <div className="flex items-center">
+                      <ArrowDownTrayIcon className="w-4 h-4 mr-1" />
+                      {tool.downloadCount} 次下載
+                    </div>
+                    <div className="flex items-center">
+                      <CalendarIcon className="w-4 h-4 mr-1" />
+                      {tool.date}
+                    </div>
+                  </div>
 
-                <div className="mb-4">
-                  <h4 className="text-sm font-semibold text-gray-900 mb-2">主要功能：</h4>
-                  <div className="space-y-1">
-                    {tool.features.map((feature) => (
-                      <div key={feature} className="flex items-center text-sm text-gray-600">
-                        <CheckCircleIcon className={`w-4 h-4 ${iconColorClasses[tool.color]} mr-2`} />
-                        {feature}
-                      </div>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {tool.tags.map((tag) => (
+                      <span key={tag} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
+                        #{tag}
+                      </span>
                     ))}
                   </div>
-                </div>
 
-                <div className="flex items-center justify-between mb-4 text-sm text-gray-500">
-                  <div className="flex items-center">
-                    <ArrowDownTrayIcon className="w-4 h-4 mr-1" />
-                    {tool.downloadCount} 次下載
-                  </div>
-                  <div className="flex items-center">
-                    <CalendarIcon className="w-4 h-4 mr-1" />
-                    {tool.date}
-                  </div>
-                </div>
-
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {tool.tags.map((tag) => (
-                    <span key={tag} className="px-2 py-1 bg-gray-100 text-gray-700 text-xs rounded-full">
-                      #{tag}
-                    </span>
-                  ))}
-                </div>
-
-                <Link 
-                  href={`/resources/tools/${tool.id}`} 
-                  className={`w-full text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 text-center block ${
-                    tool.color === 'blue' ? 'bg-blue-600 hover:bg-blue-700' :
-                    tool.color === 'green' ? 'bg-green-600 hover:bg-green-700' :
-                    tool.color === 'purple' ? 'bg-purple-600 hover:bg-purple-700' :
-                    'bg-indigo-600 hover:bg-indigo-700'
-                  }`}
-                >
-                  立即使用工具
-                </Link>
-              </motion.div>
+                  <span
+                    className={`w-full text-white font-medium py-3 px-4 rounded-lg transition-colors duration-200 text-center block ${
+                      tool.color === 'blue' ? 'bg-blue-600 hover:bg-blue-700' :
+                      tool.color === 'green' ? 'bg-green-600 hover:bg-green-700' :
+                      tool.color === 'purple' ? 'bg-purple-600 hover:bg-purple-700' :
+                      'bg-indigo-600 hover:bg-indigo-700'
+                    }`}
+                  >
+                    立即使用工具
+                  </span>
+                </motion.div>
+              </Link>
             ))}
           </div>
         </div>

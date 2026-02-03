@@ -10,8 +10,6 @@ import {
   CpuChipIcon,
   ClockIcon,
   TagIcon,
-  BookmarkIcon,
-  ShareIcon,
   CheckCircleIcon,
   ExclamationTriangleIcon,
   LightBulbIcon,
@@ -80,10 +78,10 @@ export default function AiCustomerServiceAgentArticle() {
               </div>
             </div>
 
-            {/* TL;DR */}
-            <div className="bg-white/80 backdrop-blur-sm rounded-xl p-6 max-w-3xl mx-auto text-left">
-              <h2 className="text-sm font-bold text-orange-600 uppercase tracking-wide mb-2">TL;DR 重點摘要</h2>
-              <p className="text-gray-700 text-base leading-relaxed">
+            {/* TL;DR - GEO 優化 */}
+            <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
+              <p className="sr-only">摘要 TL;DR</p>
+              <p className="text-sm text-orange-800 leading-relaxed">
                 AI 客服 Agent 結合 RAG 知識庫，能自動處理 60-80% 的常見客戶問題，回應時間從 15 分鐘縮短至 30 秒內。
                 透過 LINE 整合覆蓋台灣 2,100 萬用戶，建置費約 NT$8-30 萬、月營運費 NT$5,000-30,000。
                 本文完整解析技術架構、導入流程（4-7 週）、成本 ROI 與常見迷思。

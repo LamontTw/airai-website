@@ -18,8 +18,6 @@ import {
   ArrowRightIcon,
   ClockIcon,
   TagIcon,
-  ShareIcon,
-  BookmarkIcon
 } from '@heroicons/react/24/outline';
 
 export default function OpenAIEnterpriseAIArticle() {
@@ -87,17 +85,6 @@ export default function OpenAIEnterpriseAIArticle() {
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap justify-center gap-4">
-              <button className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200">
-                <BookmarkIcon className="w-5 h-5 mr-2" />
-                收藏文章
-              </button>
-              <button className="flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                <ShareIcon className="w-5 h-5 mr-2" />
-                分享文章
-              </button>
-            </div>
           </motion.div>
         </div>
       </section>

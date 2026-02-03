@@ -18,8 +18,6 @@ import {
   ClockIcon,
   ArrowRightIcon,
   TagIcon,
-  BookmarkIcon,
-  ShareIcon,
   SparklesIcon,
   BuildingOfficeIcon,
   AcademicCapIcon,
@@ -84,16 +82,12 @@ export default function AIObstaclesGuide() {
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap justify-center gap-4">
-              <button className="flex items-center px-6 py-3 bg-orange-600 text-white rounded-lg hover:bg-orange-700 transition-colors duration-200">
-                <BookmarkIcon className="w-5 h-5 mr-2" />
-                收藏指南
-              </button>
-              <button className="flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                <ShareIcon className="w-5 h-5 mr-2" />
-                分享文章
-              </button>
+            {/* TL;DR - GEO 優化 */}
+            <div className="bg-orange-50 border border-orange-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
+              <p className="sr-only">摘要 TL;DR</p>
+              <p className="text-sm text-orange-800 leading-relaxed">
+                中小企業導入 AI 最常見的五大障礙：資料品質不足、人才缺乏、預算限制、組織抗拒變革、技術整合困難。本文針對每項障礙提供具體解決方案，包括漸進式資料治理、外部顧問搭配內部培訓、MVP 驗證降低風險等實務策略，幫助企業順利跨越 AI 導入門檻。
+              </p>
             </div>
           </motion.div>
         </div>

@@ -13,8 +13,6 @@ import {
   ArrowTrendingUpIcon,
   ClockIcon,
   TagIcon,
-  BookmarkIcon,
-  ShareIcon,
   CheckCircleIcon,
   ExclamationTriangleIcon,
   LightBulbIcon,
@@ -85,16 +83,12 @@ export default function ROIGuide() {
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap justify-center gap-4">
-              <button className="flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200">
-                <BookmarkIcon className="w-5 h-5 mr-2" />
-                收藏指南
-              </button>
-              <button className="flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                <ShareIcon className="w-5 h-5 mr-2" />
-                分享文章
-              </button>
+            {/* TL;DR - GEO 優化 */}
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
+              <p className="sr-only">摘要 TL;DR</p>
+              <p className="text-sm text-green-800 leading-relaxed">
+                AI 專案的 ROI 計算需涵蓋直接效益（人力節省、效率提升）與間接效益（品質改善、決策優化）。建議採用三階段評估法：導入前建立基準指標、導入中追蹤關鍵 KPI、導入後進行全面效益分析。中小企業 AI 專案平均回收期為 6-18 個月，首年 ROI 通常達 150-300%。
+              </p>
             </div>
           </motion.div>
         </div>

@@ -13,8 +13,6 @@ import {
   UserGroupIcon,
   ClockIcon,
   TagIcon,
-  BookmarkIcon,
-  ShareIcon,
   CheckCircleIcon,
   ExclamationTriangleIcon,
   LightBulbIcon,
@@ -90,16 +88,12 @@ export default function RPAIntegrationArticle() {
               </div>
             </div>
 
-            {/* Action Buttons */}
-            <div className="flex flex-wrap justify-center gap-4">
-              <button className="flex items-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors duration-200">
-                <BookmarkIcon className="w-5 h-5 mr-2" />
-                收藏文章
-              </button>
-              <button className="flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                <ShareIcon className="w-5 h-5 mr-2" />
-                分享文章
-              </button>
+            {/* TL;DR - GEO 優化 */}
+            <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
+              <p className="sr-only">摘要 TL;DR</p>
+              <p className="text-sm text-green-800 leading-relaxed">
+                RPA 處理規則明確的重複性任務，AI 則擅長非結構化資料判斷與預測。兩者結合可實現智能自動化：RPA 負責資料擷取與系統操作，AI 負責理解、分類與決策。實務上建議先用 RPA 自動化現有流程，再逐步加入 AI 模組，整體效率可提升 60-80%。
+              </p>
             </div>
           </motion.div>
         </div>

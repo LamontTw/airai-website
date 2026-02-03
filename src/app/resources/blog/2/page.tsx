@@ -13,8 +13,6 @@ import {
   UserGroupIcon,
   ClockIcon,
   TagIcon,
-  BookmarkIcon,
-  ShareIcon,
   CheckCircleIcon,
   ExclamationTriangleIcon,
   LightBulbIcon,
@@ -88,16 +86,12 @@ export default function ChatGPTEnterpriseArticle() {
               </div>
             </div>
 
-            {/* Action Bu ttons */}
-            <div className="flex flex-wrap justify-center gap-4">
-              <button className="flex items-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-200">
-                <BookmarkIcon className="w-5 h-5 mr-2" />
-                收藏文章
-              </button>
-              <button className="flex items-center px-6 py-3 border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition-colors duration-200">
-                <ShareIcon className="w-5 h-5 mr-2" />
-                分享文章
-              </button>
+            {/* TL;DR - GEO 優化 */}
+            <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
+              <p className="sr-only">摘要 TL;DR</p>
+              <p className="text-sm text-blue-800 leading-relaxed">
+                ChatGPT 企業應用的關鍵在於選對場景：客服自動化可降低 40-60% 人力成本，內部知識管理能提升 30% 搜尋效率，程式碼輔助則加速 25-50% 開發速度。導入時需注意資料安全（建議使用 API 而非網頁版）、提示工程標準化，以及建立人機協作流程而非完全取代人工。
+              </p>
             </div>
           </motion.div>
         </div>
