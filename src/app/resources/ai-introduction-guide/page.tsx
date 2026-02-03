@@ -835,7 +835,7 @@ export default function AIIntroductionGuide() {
         name="企業 AI 導入五大步驟"
         description="台灣中小企業成功導入 AI 的完整流程，從需求診斷到持續優化，平均 2-6 個月完成，投資 50-200 萬可在 6 個月內回本。"
         totalTime="P180D"
-        estimatedCost={{ currency: "TWD", minPrice: "500000", maxPrice: "2000000" }}
+        estimatedCost={{ currency: "TWD", value: "50萬-200萬" }}
         steps={[
           { name: "需求診斷", text: "深入了解企業現況、痛點、目標，評估 AI 導入的可行性與預期效益。交付物包含需求診斷報告、現況流程圖（AS-IS）、ROI 初步估算。", url: "https://airai.tw/resources/ai-introduction-guide#five-steps" },
           { name: "技術選型", text: "根據需求選擇最適合的 AI 技術方案，包含工具、平台、架構的評估與建議。交付物包含技術選型報告、系統架構圖（TO-BE）、專案時程與報價。" },

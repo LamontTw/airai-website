@@ -336,8 +336,7 @@ interface HowToSchemaProps {
   totalTime?: string;
   estimatedCost?: {
     currency: string;
-    minPrice: string;
-    maxPrice: string;
+    value: string;
   };
   steps: HowToStep[];
 }
@@ -351,10 +350,9 @@ export function HowToSchema({ name, description, totalTime, estimatedCost, steps
     ...(totalTime && { "totalTime": totalTime }),
     ...(estimatedCost && {
       "estimatedCost": {
-        "@type": "PriceSpecification",
-        "priceCurrency": estimatedCost.currency,
-        "minPrice": estimatedCost.minPrice,
-        "maxPrice": estimatedCost.maxPrice
+        "@type": "MonetaryAmount",
+        "currency": estimatedCost.currency,
+        "value": estimatedCost.value
       }
     }),
     "step": steps.map((step, index) => ({
