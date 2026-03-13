@@ -345,6 +345,16 @@ export const translations = {
       privacy: '隱私政策',
       terms: '服務條款',
       copyright: '版權所有'
+    },
+
+    // 首頁公告條
+    announcementBar: {
+      badge: 'New',
+      desktopSuffix: 'AI 幫你接客服 — 5 分鐘開通',
+      mobileSuffix: 'AI 接客服，5 分鐘開通',
+      ctaButton: '免費試用',
+      linkTitle: '前往 Air AI Agent 產品站',
+      closeLabel: '關閉公告'
     }
   },
   
@@ -508,6 +518,16 @@ export const translations = {
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
       copyright: 'All rights reserved'
+    },
+
+    // Homepage Announcement Bar
+    announcementBar: {
+      badge: 'New',
+      desktopSuffix: 'AI handles your support — set up in 5 min',
+      mobileSuffix: 'AI support in 5 min',
+      ctaButton: 'Free Trial',
+      linkTitle: 'Visit Air AI Agent',
+      closeLabel: 'Close announcement'
     },
 
     // Problem Solution Section
@@ -844,6 +864,16 @@ export const translations = {
       privacy: 'プライバシーポリシー',
       terms: '利用規約',
       copyright: '全著作権所有'
+    },
+
+    // ホームページアナウンスメントバー
+    announcementBar: {
+      badge: 'New',
+      desktopSuffix: 'AIがカスタマーサポートを代行 — 5分で開設',
+      mobileSuffix: 'AI接客、5分で開設',
+      ctaButton: '無料体験',
+      linkTitle: 'Air AI Agent サイトへ',
+      closeLabel: 'お知らせを閉じる'
     },
 
     // Problem Solution Section

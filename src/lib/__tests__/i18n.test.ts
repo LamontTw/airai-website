@@ -78,4 +78,40 @@ describe('i18n', () => {
       expect(locale).toBe('zh');
     });
   });
+
+  describe('announcementBar 翻譯完整性', () => {
+    const requiredFields = ['badge', 'desktopSuffix', 'mobileSuffix', 'ctaButton', 'linkTitle', 'closeLabel'] as const;
+
+    it.each(['zh', 'en', 'ja'] as const)('%s locale 應該包含所有 announcementBar 必要欄位', (locale) => {
+      const t = getTranslations(locale);
+      expect(t.announcementBar).toBeDefined();
+      for (const field of requiredFields) {
+        expect(t.announcementBar[field]).toBeDefined();
+        expect(typeof t.announcementBar[field]).toBe('string');
+        expect(t.announcementBar[field].length).toBeGreaterThan(0);
+      }
+    });
+
+    it('所有 locale 的 badge 應該都是 "New"', () => {
+      for (const locale of ['zh', 'en', 'ja'] as const) {
+        const t = getTranslations(locale);
+        expect(t.announcementBar.badge).toBe('New');
+      }
+    });
+
+    it('zh locale 的 closeLabel 應該是 "關閉公告"', () => {
+      const t = getTranslations('zh');
+      expect(t.announcementBar.closeLabel).toBe('關閉公告');
+    });
+
+    it('en locale 的 closeLabel 應該是 "Close announcement"', () => {
+      const t = getTranslations('en');
+      expect(t.announcementBar.closeLabel).toBe('Close announcement');
+    });
+
+    it('ja locale 的 closeLabel 應該是 "お知らせを閉じる"', () => {
+      const t = getTranslations('ja');
+      expect(t.announcementBar.closeLabel).toBe('お知らせを閉じる');
+    });
+  });
 }); 

@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Navigation from '@/components/ui/Navigation';
+import AnnouncementBar from '@/components/ui/AnnouncementBar';
 import Footer from '@/components/ui/Footer';
 import HeroSection from '@/components/sections/HeroSection';
 import ProblemSolutionSection from '@/components/sections/ProblemSolutionSection';
@@ -69,6 +70,7 @@ export default function JapanesePage() {
       <FAQSchema questions={faqData} />
       <main className="min-h-screen">
         {/* セマンティックタグ構造 */}
+        <AnnouncementBar locale="ja" />
         <header>
           <Navigation />
         </header>

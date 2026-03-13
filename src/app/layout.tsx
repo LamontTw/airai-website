@@ -4,6 +4,7 @@ import "./globals.css";
 import { defaultMetadata } from "@/lib/seo";
 import { OrganizationSchema, WebsiteSchema } from "@/components/seo/StructuredData";
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { Agentation } from "agentation";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -53,6 +54,7 @@ export default function RootLayout({
           </div>
         </noscript>
         <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
+        {process.env.NODE_ENV === "development" && <Agentation />}
       </body>
     </html>
   );
