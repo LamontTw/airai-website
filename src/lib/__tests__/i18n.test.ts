@@ -80,7 +80,7 @@ describe('i18n', () => {
   });
 
   describe('announcementBar 翻譯完整性', () => {
-    const requiredFields = ['badge', 'desktopSuffix', 'mobileSuffix', 'ctaButton', 'linkTitle', 'closeLabel'] as const;
+    const requiredFields = ['badge', 'brandName', 'desktopSuffix', 'mobileSuffix', 'ctaButton', 'linkTitle', 'closeLabel'] as const;
 
     it.each(['zh', 'en', 'ja'] as const)('%s locale 應該包含所有 announcementBar 必要欄位', (locale) => {
       const t = getTranslations(locale);

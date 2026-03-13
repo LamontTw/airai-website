@@ -350,10 +350,11 @@ export const translations = {
     // 首頁公告條
     announcementBar: {
       badge: 'New',
+      brandName: 'Airi（艾莉）',
       desktopSuffix: 'AI 幫你接客服 — 5 分鐘開通',
       mobileSuffix: 'AI 接客服，5 分鐘開通',
       ctaButton: '免費試用',
-      linkTitle: '前往 Air AI Agent 產品站',
+      linkTitle: '前往 Airi 產品站',
       closeLabel: '關閉公告'
     }
   },
@@ -523,10 +524,11 @@ export const translations = {
     // Homepage Announcement Bar
     announcementBar: {
       badge: 'New',
+      brandName: 'Airi',
       desktopSuffix: 'AI handles your support — set up in 5 min',
       mobileSuffix: 'AI support in 5 min',
       ctaButton: 'Free Trial',
-      linkTitle: 'Visit Air AI Agent',
+      linkTitle: 'Visit Airi',
       closeLabel: 'Close announcement'
     },
 
@@ -869,10 +871,11 @@ export const translations = {
     // ホームページアナウンスメントバー
     announcementBar: {
       badge: 'New',
+      brandName: 'Airi（アイリ）',
       desktopSuffix: 'AIがカスタマーサポートを代行 — 5分で開設',
       mobileSuffix: 'AI接客、5分で開設',
       ctaButton: '無料体験',
-      linkTitle: 'Air AI Agent サイトへ',
+      linkTitle: 'Airi サイトへ',
       closeLabel: 'お知らせを閉じる'
     },
 

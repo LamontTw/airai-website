@@ -108,9 +108,9 @@ describe('AnnouncementBar', () => {
       expect(badges.length).toBeGreaterThanOrEqual(1);
     });
 
-    it('應該顯示 Air AI Agent 品牌名', () => {
+    it('應該顯示 Airi 品牌名', () => {
       renderBar('zh');
-      const brandNames = screen.getAllByText('Air AI Agent');
+      const brandNames = screen.getAllByText('Airi（艾莉）');
       expect(brandNames.length).toBeGreaterThanOrEqual(1);
     });
 
@@ -178,22 +178,22 @@ describe('AnnouncementBar', () => {
       expect(screen.getByRole('button', { name: 'お知らせを閉じる' })).toBeInTheDocument();
     });
 
-    it('中文 locale 連結 title 為 "前往 Air AI Agent 產品站"', () => {
+    it('中文 locale 連結 title 為 "前往 Airi 產品站"', () => {
       renderBar('zh');
       const link = screen.getByRole('link');
-      expect(link).toHaveAttribute('title', '前往 Air AI Agent 產品站');
+      expect(link).toHaveAttribute('title', '前往 Airi 產品站');
     });
 
-    it('英文 locale 連結 title 為 "Visit Air AI Agent"', () => {
+    it('英文 locale 連結 title 為 "Visit Airi"', () => {
       renderBar('en');
       const link = screen.getByRole('link');
-      expect(link).toHaveAttribute('title', 'Visit Air AI Agent');
+      expect(link).toHaveAttribute('title', 'Visit Airi');
     });
 
-    it('日文 locale 連結 title 為 "Air AI Agent サイトへ"', () => {
+    it('日文 locale 連結 title 為 "Airi サイトへ"', () => {
       renderBar('ja');
       const link = screen.getByRole('link');
-      expect(link).toHaveAttribute('title', 'Air AI Agent サイトへ');
+      expect(link).toHaveAttribute('title', 'Airi サイトへ');
     });
   });
 

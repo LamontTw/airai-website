@@ -102,7 +102,7 @@ export default function AnnouncementBar({ locale = 'zh' }: AnnouncementBarProps)
             </span>
 
             <span className="text-white/90">
-              <span className="font-semibold text-white">Air AI Agent</span>
+              <span className="font-semibold text-white">{t.announcementBar.brandName}</span>
               {' '}{t.announcementBar.desktopSuffix}
             </span>
 
@@ -129,7 +129,7 @@ export default function AnnouncementBar({ locale = 'zh' }: AnnouncementBarProps)
             </span>
 
             <span className="text-white/90">
-              <span className="font-semibold text-white">Air AI Agent</span>
+              <span className="font-semibold text-white">{t.announcementBar.brandName}</span>
               {' '}{t.announcementBar.mobileSuffix}
             </span>
 
