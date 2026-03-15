@@ -59,7 +59,7 @@ export default function AiCustomerServiceAgentArticle() {
               </h1>
             </div>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              RAG知識庫 + LINE整合實戰指南：為中小企業打造24/7智能客服
+              RAG知識庫 + LINE整合實戰指南：為中小企業打造 24/7 AI 客服
             </p>
 
             {/* Article Meta */}
@@ -152,7 +152,7 @@ export default function AiCustomerServiceAgentArticle() {
 
                     <div className="text-gray-700 leading-relaxed space-y-4">
                       <p>
-                        AI 客服 Agent 是一種結合大型語言模型（LLM）與企業知識庫的智能客服系統。
+                        AI 客服 Agent 是一種結合大型語言模型（LLM）與企業知識庫的 AI 客服系統。
                         它不只是傳統的「關鍵字比對」聊天機器人，而是能夠真正理解客戶問題語意、
                         從企業專屬知識庫中檢索正確資訊，並以自然語言回覆的 AI 助理。
                       </p>
@@ -700,30 +700,35 @@ export default function AiCustomerServiceAgentArticle() {
                   </motion.div>
                 </section>
 
-                {/* CTA */}
-                <div className="bg-gradient-to-r from-orange-600 to-amber-600 text-white rounded-xl p-8">
+                {/* Airi CTA */}
+                <div className="bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-xl p-8">
                   <div className="text-center">
-                    <h3 className="text-2xl font-bold mb-4">想了解 AI 客服 Agent 如何幫助您的企業？</h3>
-                    <p className="text-orange-100 mb-6 max-w-2xl mx-auto">
-                      預約免費諮詢，我們將為您量身規劃最適合的 AI 客服方案
+                    <h3 className="text-2xl font-bold mb-4">想要 5 分鐘擁有 AI 客服？試試 Airi</h3>
+                    <p className="text-violet-100 mb-6 max-w-2xl mx-auto">
+                      Airi 是我們專為中小企業打造的 AI 客服助理，串接 LINE、自動回覆、不需要技術背景。免費試用中。
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                       <a
-                        href="/contact"
-                        className="inline-flex items-center px-6 py-3 bg-white text-orange-600 rounded-lg font-medium hover:bg-gray-50 transition-colors duration-200"
+                        href="https://airi.airai.tw"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center px-6 py-3 bg-white text-violet-600 rounded-lg font-medium hover:bg-gray-50 transition-colors duration-200"
                       >
-                        <ChatBubbleLeftRightIcon className="w-5 h-5 mr-2" />
-                        免費諮詢
+                        <SparklesIcon className="w-5 h-5 mr-2" />
+                        免費試用 Airi
                         <ArrowRightIcon className="w-5 h-5 ml-2" />
                       </a>
                       <a
-                        href="/resources/tools/1"
-                        className="inline-flex items-center px-6 py-3 border border-white text-white rounded-lg font-medium hover:bg-white hover:text-orange-600 transition-colors duration-200"
+                        href="/resources/blog/airi-ai-customer-service-launch"
+                        className="inline-flex items-center px-6 py-3 border border-white text-white rounded-lg font-medium hover:bg-white hover:text-violet-600 transition-colors duration-200"
                       >
                         <DocumentTextIcon className="w-5 h-5 mr-2" />
-                        AI需求評估
+                        了解更多
                       </a>
                     </div>
+                    <p className="mt-4 text-sm text-violet-200">
+                      想要客製化方案？<a href="/contact" className="underline hover:text-white">預約免費諮詢</a>
+                    </p>
                   </div>
                 </div>
 

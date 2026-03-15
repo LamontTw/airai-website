@@ -74,7 +74,11 @@ export const articleDates: Record<string, { published: string; modified: string 
   'ai-introduction-guide': { published: '2026-01-30', modified: '2026-02-03' },
 
   // 2026 Q1：AI客服Agent專題
-  'blog-ai-cs-agent':      { published: '2026-02-03', modified: '2026-02-03' },
+  'blog-ai-cs-agent':      { published: '2026-02-03', modified: '2026-03-15' },
+
+  // 2026 Q1：Airi 推廣內容
+  'blog-airi-launch':       { published: '2026-03-13', modified: '2026-03-13' },
+  'blog-ai-chatbot-setup':  { published: '2026-03-15', modified: '2026-03-15' },
 };
 
 export const defaultMetadata = {

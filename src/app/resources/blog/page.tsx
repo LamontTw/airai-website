@@ -17,6 +17,28 @@ import {
 // 文章數據
 const blogPosts = [
   {
+    id: 'how-to-setup-ai-chatbot-for-business',
+    title: '中小企業 AI 客服完整教學：從零開始到上線',
+    excerpt: '不懂技術也能搞定！手把手教你用 Airi 在 5 分鐘內設定 AI 客服，串接 LINE 自動回覆客戶問題。含原理說明、工具選擇、實戰步驟。',
+    date: '2026年3月15日',
+    readTime: '15分鐘',
+    category: '教學指南',
+    tags: ['AI客服', '教學', 'LINE', 'Airi'],
+    image: '/images/og-image.jpg',
+    author: 'AIRAI研究團隊'
+  },
+  {
+    id: 'airi-ai-customer-service-launch',
+    title: 'Airi 上線：中小企業 AI 客服助理，5 分鐘完成設定',
+    excerpt: 'Airi 是專為中小企業設計的 AI 客服助理，串接 LINE、5 分鐘設定、24/7 自動回覆客戶問題。免費試用中。',
+    date: '2026年3月13日',
+    readTime: '6分鐘',
+    category: '產品發布',
+    tags: ['Airi', 'AI客服', 'LINE', '中小企業'],
+    image: '/images/og-image.jpg',
+    author: 'AIRAI研究團隊'
+  },
+  {
     id: 'openai-enterprise-ai',
     title: 'OpenAI企業版：重新定義商業AI應用的新標準',
     excerpt: '深入探討OpenAI企業版如何為現代企業提供安全、可擴展且符合合規要求的AI解決方案，以及它對商業AI應用生態系統的革命性影響。',
@@ -63,7 +85,7 @@ const blogPosts = [
   {
     id: 'ai-customer-service-agent',
     title: 'AI客服Agent完整解析：RAG知識庫 + LINE整合實戰指南',
-    excerpt: '深入了解AI客服Agent如何結合RAG知識庫與LINE整合，為中小企業打造24/7智能客服。含成本分析、導入流程與實戰案例。',
+    excerpt: '深入了解AI客服Agent如何結合RAG知識庫與LINE整合，為中小企業打造 24/7 AI 客服。含成本分析、導入流程與實戰案例。',
     date: '2026年2月3日',
     readTime: '12分鐘',
     category: 'AI Agent',
@@ -73,7 +95,7 @@ const blogPosts = [
   }
 ];
 
-const categories = ['全部', 'AI Agent', 'AI技術', '應用案例', '戰略規劃', '趨勢分析'];
+const categories = ['全部', '產品發布', '教學指南', 'AI Agent', 'AI技術', '應用案例', '戰略規劃', '趨勢分析'];
 
 export default function BlogPage() {
   const [selectedCategory, setSelectedCategory] = React.useState('全部');
