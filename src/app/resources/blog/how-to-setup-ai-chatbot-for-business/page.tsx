@@ -18,6 +18,8 @@ import {
   SparklesIcon,
   EyeIcon,
   QuestionMarkCircleIcon,
+  DocumentTextIcon,
+  CodeBracketIcon,
 } from '@heroicons/react/24/outline';
 
 export default function HowToSetupAiChatbotArticle() {
@@ -57,18 +59,18 @@ export default function HowToSetupAiChatbotArticle() {
               </h1>
             </div>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              不懂技術也能搞定，手把手帶你設定 AI 客服
+              不懂技術也能搞定，手把手帶你用 Airi 在網站上建立 AI 客服
             </p>
 
             {/* Article Meta */}
             <div className="flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500 mb-8">
               <div className="flex items-center">
                 <ClockIcon className="w-4 h-4 mr-1" />
-                <span>閱讀時間：15 分鐘</span>
+                <span>閱讀時間：12 分鐘</span>
               </div>
               <div className="flex items-center">
                 <TagIcon className="w-4 h-4 mr-1" />
-                <span>AI客服・教學・LINE・Airi・中小企業</span>
+                <span>AI客服・教學・網站Widget・Airi・中小企業</span>
               </div>
               <div className="flex items-center">
                 <EyeIcon className="w-4 h-4 mr-1" />
@@ -76,12 +78,13 @@ export default function HowToSetupAiChatbotArticle() {
               </div>
             </div>
 
-            {/* TL;DR - GEO */}
+            {/* TL;DR */}
             <div className="bg-teal-50 border border-teal-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
               <p className="sr-only">摘要 TL;DR</p>
               <p className="text-sm text-teal-800 leading-relaxed">
-                這篇教學帶你從零開始設定 AI 客服。不需要技術背景，用 Airi 只要 5 分鐘就能讓你的 LINE
-                官方帳號擁有 AI 自動回覆。本文涵蓋原理、選工具的重點、實戰步驟、以及上線後的優化技巧。
+                這篇教學帶你從零開始在網站上設定 AI 客服。不需要技術背景，用 Airi 只要 5 分鐘：
+                註冊帳號、建立 Chatbot、上傳知識庫文件、測試對話、把嵌入碼貼到網站。
+                本文涵蓋原理、選工具重點、實戰步驟、以及上線後的優化技巧。
               </p>
             </div>
           </motion.div>
@@ -149,9 +152,7 @@ export default function HowToSetupAiChatbotArticle() {
 
                     <div className="text-gray-700 leading-relaxed space-y-4">
                       <p>
-                        你有沒有這種經驗？白天忙著跑業務、盯進度，晚上回到家打開手機，LINE 官方帳號裡堆了
-                        二三十則客戶訊息沒回。有些是問營業時間，有些是問價格，有些是問退換貨 ——
-                        其實都是重複的問題，但你還是得一則一則回。
+                        你有沒有這種經驗？白天忙著跑業務、盯進度，晚上回到家打開手機，客戶在網站上留了好幾則詢問沒回。有些是問營業時間，有些是問價格，有些是問退換貨 —— 其實都是重複的問題，但你還是得一則一則回。
                       </p>
 
                       <p>
@@ -191,7 +192,7 @@ export default function HowToSetupAiChatbotArticle() {
                           <ul className="space-y-2 text-green-700 text-sm">
                             <li className="flex items-start">
                               <CheckCircleIcon className="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                              <span><strong>24 小時不休息：</strong>凌晨 3 點客戶問問題，AI 也秒回</span>
+                              <span><strong>24 小時不休息：</strong>凌晨 3 點客戶在你網站上問問題，AI 也秒回</span>
                             </li>
                             <li className="flex items-start">
                               <CheckCircleIcon className="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -201,7 +202,7 @@ export default function HowToSetupAiChatbotArticle() {
                           <ul className="space-y-2 text-green-700 text-sm">
                             <li className="flex items-start">
                               <CheckCircleIcon className="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                              <span><strong>成本超低：</strong>每月不到一千塊，比請工讀生還便宜</span>
+                              <span><strong>成本超低：</strong>免費方案每月 100 則訊息，付費最低 NT$490/月</span>
                             </li>
                             <li className="flex items-start">
                               <CheckCircleIcon className="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -212,7 +213,7 @@ export default function HowToSetupAiChatbotArticle() {
                       </div>
 
                       <p>
-                        簡單說，AI 幫你接客服，你去忙更重要的事。這就是 AI 客服最大的價值。
+                        簡單說，AI 幫你在網站上接客服，你去忙更重要的事。這就是 AI 客服最大的價值。
                       </p>
                     </div>
                   </motion.div>
@@ -232,13 +233,11 @@ export default function HowToSetupAiChatbotArticle() {
 
                     <div className="text-gray-700 leading-relaxed space-y-6">
                       <p>
-                        你可能聽過 ChatGPT，也可能用過。但你有沒有想過：「如果 ChatGPT 讀過我所有的產品資料，
-                        然後幫我回答客戶問題，那不就是 AI 客服了嗎？」
+                        你可能聽過 ChatGPT，也可能用過。但你有沒有想過：「如果 AI 讀過我所有的產品資料，然後幫我回答客戶問題，那不就是 AI 客服了嗎？」
                       </p>
 
                       <p>
-                        沒錯，概念就是這麼簡單。技術上叫做 <strong>RAG（檢索增強生成）</strong>，
-                        但你不需要記這個名詞。白話來說就是：
+                        沒錯，概念就是這麼簡單。技術上叫做 <strong>RAG（檢索增強生成）</strong>，但你不需要記這個名詞。白話來說就是：
                       </p>
 
                       <div className="bg-purple-50 border border-purple-200 rounded-xl p-6">
@@ -253,7 +252,7 @@ export default function HowToSetupAiChatbotArticle() {
                               <h4 className="font-semibold text-purple-800 mb-1">你上傳資料</h4>
                               <p className="text-purple-700 text-sm">
                                 把你的常見問題、產品資訊、退換貨政策、營業時間等資料丟給 AI。
-                                就像新人報到第一天，你給他一本員工手冊一樣。
+                                支援 PDF、Word（DOCX）、純文字檔案，也可以直接輸入網址讓 AI 爬取內容。
                               </p>
                             </div>
                           </div>
@@ -263,10 +262,10 @@ export default function HowToSetupAiChatbotArticle() {
                               2
                             </div>
                             <div>
-                              <h4 className="font-semibold text-purple-800 mb-1">AI 讀過、記住</h4>
+                              <h4 className="font-semibold text-purple-800 mb-1">AI 讀過、建立索引</h4>
                               <p className="text-purple-700 text-sm">
-                                AI 會把你的資料全部讀過一遍，建立索引。之後客戶問任何問題，
-                                AI 都會先去翻你的資料找答案。
+                                系統自動把你的文件拆成段落，轉成向量資料存到資料庫。
+                                之後客戶問任何問題，AI 都會先去搜索最相關的段落，找到答案。
                               </p>
                             </div>
                           </div>
@@ -278,8 +277,8 @@ export default function HowToSetupAiChatbotArticle() {
                             <div>
                               <h4 className="font-semibold text-purple-800 mb-1">客戶問，AI 答</h4>
                               <p className="text-purple-700 text-sm">
-                                客戶在 LINE 上問「你們週六有開嗎？」，AI 翻到營業時間那頁，
-                                用自然的語氣回：「有的，我們週六營業 10:00-18:00 喔！」
+                                客戶在你網站上的聊天窗問「你們週六有開嗎？」，AI 從知識庫找到營業時間，
+                                用自然的語氣回：「有的，我們週六營業 10:00-18:00！」回覆還會附上引用來源。
                               </p>
                             </div>
                           </div>
@@ -315,11 +314,11 @@ export default function HowToSetupAiChatbotArticle() {
                               </li>
                               <li className="flex items-start">
                                 <CheckCircleIcon className="w-4 h-4 text-teal-600 mr-2 mt-0.5 flex-shrink-0" />
-                                <span>回答有依據，不會亂掰</span>
+                                <span>回答有依據，附帶引用來源</span>
                               </li>
                               <li className="flex items-start">
                                 <CheckCircleIcon className="w-4 h-4 text-teal-600 mr-2 mt-0.5 flex-shrink-0" />
-                                <span>找不到答案就說「我幫你轉真人」</span>
+                                <span>找不到答案就誠實說「建議聯繫真人」</span>
                               </li>
                             </ul>
                           </div>
@@ -332,9 +331,9 @@ export default function HowToSetupAiChatbotArticle() {
                           不怕 AI 亂回答
                         </h4>
                         <p className="text-yellow-800 text-sm">
-                          好的 AI 客服有「安全機制」：當 AI 在你的資料裡找不到答案時，
-                          不會硬掰，而是直接說「這個問題我幫你轉給專人處理」。
-                          你可以完全掌控 AI 會回答什麼、不會回答什麼。
+                          Airi 使用 RAG 技術：AI 只根據你上傳的知識庫內容回答。
+                          當知識庫裡找不到答案時，不會硬掰，而是直接說「這個問題建議您聯繫真人客服」。
+                          你還可以在後台自訂 AI 的角色設定和語氣風格。
                         </p>
                       </div>
                     </div>
@@ -365,10 +364,10 @@ export default function HowToSetupAiChatbotArticle() {
                               1
                             </div>
                             <div>
-                              <h3 className="text-lg font-bold text-gray-900 mb-2">是否支援 LINE？</h3>
+                              <h3 className="text-lg font-bold text-gray-900 mb-2">嵌入方式簡不簡單？</h3>
                               <p className="text-gray-600 text-sm">
-                                台灣超過 2,100 萬人用 LINE，你的客戶八成也是。如果工具不支援 LINE，
-                                在台灣基本上沒什麼用。這是第一個也是最重要的條件。
+                                最好是一行程式碼就能搞定。像 Airi 只要貼一段 script 到你的網站 HTML，
+                                右下角就會出現聊天窗。不用安裝外掛、不用改網站架構。
                               </p>
                             </div>
                           </div>
@@ -398,7 +397,7 @@ export default function HowToSetupAiChatbotArticle() {
                               <h3 className="text-lg font-bold text-gray-900 mb-2">知識庫更新方不方便？</h3>
                               <p className="text-gray-600 text-sm">
                                 你的產品會換季、價格會調整、政策會更新。如果每次改資料都要找工程師，
-                                那太麻煩了。好的工具讓你自己上去改，像改 Word 文件一樣簡單。
+                                那太麻煩了。好的工具讓你自己上傳文件就好，像丟檔案到雲端硬碟一樣簡單。
                               </p>
                             </div>
                           </div>
@@ -410,10 +409,10 @@ export default function HowToSetupAiChatbotArticle() {
                               4
                             </div>
                             <div>
-                              <h3 className="text-lg font-bold text-gray-900 mb-2">有沒有轉接真人的機制？</h3>
+                              <h3 className="text-lg font-bold text-gray-900 mb-2">AI 回答不了時怎麼辦？</h3>
                               <p className="text-gray-600 text-sm">
-                                AI 不可能回答所有問題。客訴、退款、特殊狀況還是需要真人處理。
-                                好的工具會在 AI 搞不定的時候，自動通知你來接手。
+                                AI 不可能回答所有問題。好的工具在知識庫裡找不到答案時，會誠實告知客戶，
+                                並建議聯繫真人。你可以在後台查看這些對話，知道該補什麼資料進知識庫。
                               </p>
                             </div>
                           </div>
@@ -427,7 +426,7 @@ export default function HowToSetupAiChatbotArticle() {
                             <div>
                               <h3 className="text-lg font-bold text-gray-900 mb-2">費用透不透明？</h3>
                               <p className="text-gray-600 text-sm">
-                                有些工具表面便宜，但用量一多費用暴增。選擇費用結構清楚、有免費試用的工具，
+                                有些工具表面便宜，但用量一多費用暴增。選擇定價結構清楚、有免費方案的工具，
                                 先試了再決定。不要簽長約，不要被綁住。
                               </p>
                             </div>
@@ -437,7 +436,7 @@ export default function HowToSetupAiChatbotArticle() {
 
                       <div className="bg-teal-50 border-l-4 border-teal-400 p-4 my-6 rounded-r-lg">
                         <p className="text-teal-800 text-sm">
-                          <strong>以 Airi 為例：</strong>支援 LINE 串接、5 分鐘設定不用寫程式、知識庫自己就能改、AI 搞不定會自動通知你、免費試用沒有隱藏費用。下一段會手把手帶你實際設定。
+                          <strong>以 Airi 為例：</strong>一行嵌入碼、5 分鐘設定不用寫程式、知識庫拖曳上傳檔案即可、AI 找不到答案會誠實說、免費方案沒有隱藏費用。下一段會手把手帶你實際設定。
                         </p>
                       </div>
                     </div>
@@ -468,9 +467,10 @@ export default function HowToSetupAiChatbotArticle() {
                               1
                             </div>
                             <div className="flex-1">
-                              <h3 className="text-xl font-bold text-teal-900 mb-2">註冊帳號</h3>
+                              <h3 className="text-xl font-bold text-teal-900 mb-2">註冊帳號 + 建立 Chatbot</h3>
                               <p className="text-teal-700 text-sm mb-2">
-                                到 Airi 官網註冊，填個 Email 就好。免費的，不需要信用卡，沒有什麼試用期到期自動扣款的陷阱。
+                                到 Airi 官網用 Google 帳號或 Email 註冊。登入後進入 Dashboard，點「新建 Chatbot」。
+                                幫你的 AI 客服取個名字，設定歡迎訊息（例如「你好！我是 XX 公司的 AI 客服，有什麼可以幫你的？」）。
                               </p>
                               <div className="bg-teal-100 rounded-lg p-3 text-xs text-teal-800">
                                 預估時間：1 分鐘
@@ -485,13 +485,14 @@ export default function HowToSetupAiChatbotArticle() {
                               2
                             </div>
                             <div className="flex-1">
-                              <h3 className="text-xl font-bold text-teal-900 mb-2">上傳你的 FAQ / 產品資料</h3>
+                              <h3 className="text-xl font-bold text-teal-900 mb-2">上傳知識庫文件</h3>
                               <p className="text-teal-700 text-sm mb-2">
-                                把你平常最常被客戶問的問題整理一下，丟到 Airi 的知識庫。
-                                格式不拘，Word、PDF、甚至直接打字都行。AI 會自己讀懂。
+                                進入 Chatbot 的「知識庫」頁面，把你的 FAQ、產品手冊、價目表拖曳上傳。
+                                支援 PDF、DOCX、TXT 格式，單檔最大 10MB。也可以輸入網址讓 AI 自動爬取。
+                                上傳後系統會自動處理（狀態會從「處理中」變為「就緒」）。
                               </p>
                               <div className="bg-teal-100 rounded-lg p-3 text-xs text-teal-800">
-                                預估時間：2 分鐘（如果你已經有 FAQ 整理好的話）
+                                預估時間：2 分鐘（取決於你有多少資料要上傳）
                               </div>
                             </div>
                           </div>
@@ -503,13 +504,14 @@ export default function HowToSetupAiChatbotArticle() {
                               3
                             </div>
                             <div className="flex-1">
-                              <h3 className="text-xl font-bold text-teal-900 mb-2">串接 LINE Official Account</h3>
+                              <h3 className="text-xl font-bold text-teal-900 mb-2">在後台測試對話</h3>
                               <p className="text-teal-700 text-sm mb-2">
-                                在 Airi 後台找到 LINE 串接的設定頁面，照著畫面指示把你的
-                                LINE Official Account 資訊填進去。不需要寫程式，複製貼上就好。
+                                回到 Chatbot 管理頁面，右側有測試對話面板。
+                                試著問一些你的客戶常問的問題，看看 AI 根據知識庫回答得好不好。
+                                不滿意的話，回去調整知識庫內容或修改系統提示詞。
                               </p>
                               <div className="bg-teal-100 rounded-lg p-3 text-xs text-teal-800">
-                                預估時間：1 分鐘
+                                預估時間：建議花 5-10 分鐘多測幾個問題
                               </div>
                             </div>
                           </div>
@@ -521,14 +523,14 @@ export default function HowToSetupAiChatbotArticle() {
                               4
                             </div>
                             <div className="flex-1">
-                              <h3 className="text-xl font-bold text-teal-900 mb-2">測試對話效果</h3>
+                              <h3 className="text-xl font-bold text-teal-900 mb-2">取得嵌入碼，貼到網站</h3>
                               <p className="text-teal-700 text-sm mb-2">
-                                用你自己的 LINE 帳號傳訊息給官方帳號，測試 AI 回答的品質。
-                                試著問一些你的客戶常問的問題，看看 AI 回答得好不好。
-                                不滿意的話，回去調整知識庫內容就好。
+                                {`進入「Widget 設定」頁面，可以自訂聊天窗的顏色、位置。
+                                設定好後複製嵌入碼（一段 <script> 標籤），貼到你的網站 HTML 裡。
+                                不管是 WordPress、Shopify、Wix 還是自架網站，都能用。`}
                               </p>
                               <div className="bg-teal-100 rounded-lg p-3 text-xs text-teal-800">
-                                預估時間：隨時測試，建議花 5-10 分鐘多測幾個問題
+                                預估時間：1 分鐘
                               </div>
                             </div>
                           </div>
@@ -542,8 +544,8 @@ export default function HowToSetupAiChatbotArticle() {
                             <div className="flex-1">
                               <h3 className="text-xl font-bold text-teal-900 mb-2">正式上線</h3>
                               <p className="text-teal-700 text-sm mb-2">
-                                測試沒問題之後，打開正式模式就完成了。從今天開始，你的客戶在 LINE 上問問題，
-                                AI 會自動回覆。你只需要處理 AI 搞不定的特殊狀況就好。
+                                打開你的網站，右下角就會出現 AI 聊天窗。從今天開始，你的網站訪客可以直接向 AI 提問，AI 會根據你的知識庫即時回覆。
+                                你可以在後台隨時查看對話紀錄和用量統計。
                               </p>
                               <div className="bg-teal-100 rounded-lg p-3 text-xs text-teal-800">
                                 預估時間：1 分鐘
@@ -558,8 +560,8 @@ export default function HowToSetupAiChatbotArticle() {
                         <div className="text-center">
                           <h3 className="text-2xl font-bold mb-3">5 分鐘就搞定，現在就試試看</h3>
                           <p className="text-teal-100 mb-6 max-w-xl mx-auto">
-                            Airi 免費試用中，不需要信用卡，不需要技術背景。
-                            你只要有 LINE 官方帳號，就能開始用 AI 幫你接客服。
+                            Airi 免費方案每月 100 則訊息，不需要信用卡。
+                            你只要有網站，就能開始用 AI 幫你接客服。
                           </p>
                           <a
                             href="https://airi.airai.tw"
@@ -601,7 +603,7 @@ export default function HowToSetupAiChatbotArticle() {
                             看對話紀錄，找出 AI 回不好的問題
                           </h3>
                           <p className="text-amber-700 text-sm">
-                            Airi 後台可以看到所有的對話紀錄。花個 10 分鐘翻一下，找出 AI 回答不夠好的地方。
+                            Airi 後台有完整的對話紀錄。花個 10 分鐘翻一下，找出 AI 回答不夠好的地方。
                             通常是因為你的知識庫裡沒有相關資料，補上去就好了。
                           </p>
                         </div>
@@ -613,29 +615,30 @@ export default function HowToSetupAiChatbotArticle() {
                           </h3>
                           <p className="text-amber-700 text-sm">
                             每次有客戶問了 AI 答不出來的問題，就把答案加進知識庫。
-                            這樣下次有人問同樣的事，AI 就會了。一個月下來，AI 的回答能力會明顯進步。
+                            可以上傳新的文件，也可以刪除過時的內容重新上傳。一個月下來，AI 的回答能力會明顯進步。
                           </p>
                         </div>
 
                         <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
                           <h3 className="text-lg font-bold text-amber-900 mb-3 flex items-center">
                             <span className="w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">3</span>
-                            設定常見問題的標準答案
+                            調整系統提示詞
                           </h3>
                           <p className="text-amber-700 text-sm">
-                            有些問題你希望 AI 用特定的方式回答，例如促銷活動的話術、退貨政策的標準說法。
-                            在知識庫裡把這些寫清楚，AI 就會照著你的意思回。
+                            在 Chatbot 設定裡可以修改系統提示詞，控制 AI 的角色和語氣。
+                            例如你可以讓 AI 用比較輕鬆的語氣回答，或是加上特定的回答規則
+                           （「遇到退貨問題，引導客戶撥打客服專線」）。
                           </p>
                         </div>
 
                         <div className="bg-amber-50 border border-amber-200 rounded-xl p-6">
                           <h3 className="text-lg font-bold text-amber-900 mb-3 flex items-center">
                             <span className="w-8 h-8 bg-amber-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3 flex-shrink-0">4</span>
-                            定期檢查客戶滿意度
+                            關注用量統計
                           </h3>
                           <p className="text-amber-700 text-sm">
-                            可以在 AI 對話結束後加一個簡單的評分（例如「這次回答有幫助嗎？」），
-                            追蹤客戶滿意度的變化。如果滿意度下降，就知道該調整了。
+                            在 Dashboard 可以看到每月的訊息用量。如果接近方案上限，考慮升級。
+                            同時觀察對話量的變化趨勢，判斷 AI 客服是否真的有在幫你分擔工作。
                           </p>
                         </div>
                       </div>
@@ -669,33 +672,33 @@ export default function HowToSetupAiChatbotArticle() {
                           <h3 className="text-lg font-bold text-gray-900 mb-2">Q：設定很難嗎？需要懂技術嗎？</h3>
                           <p className="text-gray-600">
                             用 Airi 的話，5 分鐘就能搞定，完全不需要寫程式。
-                            如果你會用 LINE 傳訊息，你就會用 Airi 設定 AI 客服。就是這麼簡單。
+                            {`你只要會上傳檔案、會複製貼上一段 <script>，就能在你的網站上建立 AI 客服。`}
                           </p>
                         </div>
 
                         <div className="bg-white border border-gray-200 rounded-xl p-6">
-                          <h3 className="text-lg font-bold text-gray-900 mb-2">Q：客戶會不會覺得在跟機器人講話？</h3>
+                          <h3 className="text-lg font-bold text-gray-900 mb-2">Q：客戶會不會發現是在跟 AI 聊天？</h3>
                           <p className="text-gray-600">
-                            現在的 AI 回答非常自然，語氣跟真人差不多。根據我們的測試，
-                            超過 70% 的客戶在對話結束後不知道自己是在跟 AI 講話。
-                            而且你可以自訂 AI 的語氣，讓它用你品牌的口吻來回答。
+                            Airi 使用的 Claude AI 回覆非常自然。你可以在系統提示詞裡設定 AI 的語氣和角色，
+                            讓它用你品牌的口吻來回答。如果客戶直接問「你是 AI 嗎？」，建議讓 AI 誠實說明。
+                            誠實比假裝更重要，也更能建立信任。
                           </p>
                         </div>
 
                         <div className="bg-white border border-gray-200 rounded-xl p-6">
-                          <h3 className="text-lg font-bold text-gray-900 mb-2">Q：客人會不會發現是在跟 AI 聊天？</h3>
+                          <h3 className="text-lg font-bold text-gray-900 mb-2">Q：支援哪些網站平台？</h3>
                           <p className="text-gray-600">
-                            Airi 的回覆風格可以自訂，語氣調整成你品牌的口吻，大部分客人分不出來。
-                            但如果客人直接問「你是 AI 嗎？」，Airi 會誠實說明。誠實比假裝更重要，也更能建立信任。
+                            {`任何可以加入 HTML 的網站都支援。WordPress、Shopify、Wix、Squarespace、自架網站都行。
+                            只要能貼一段 <script> 標籤，就能用。`}
                           </p>
                         </div>
 
                         <div className="bg-white border border-gray-200 rounded-xl p-6">
                           <h3 className="text-lg font-bold text-gray-900 mb-2">Q：費用大概多少？</h3>
                           <p className="text-gray-600">
-                            Airi 現在免費試用中，定價方案請參考官網。
-                            跟請一個客服人員每月 3-4 萬比起來，AI 客服的成本低非常多。
-                            而且 AI 不用休假、不用加班費、不會離職。
+                            免費方案每月 100 則訊息，適合先試用。入門方案 NT$490/月（2,000 則），
+                            專業方案 NT$1,490/月（10,000 則），商務方案 NT$3,990/月（50,000 則）。
+                            跟請一個客服人員每月 3-4 萬比起來，成本低非常多。
                           </p>
                         </div>
                       </div>
@@ -703,12 +706,27 @@ export default function HowToSetupAiChatbotArticle() {
                   </motion.div>
                 </section>
 
+                {/* Related Articles */}
+                <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-8">
+                  <h3 className="text-lg font-bold text-gray-900 mb-4">相關文章</h3>
+                  <div className="space-y-3">
+                    <a href="/resources/blog/airi-ai-customer-service-launch" className="flex items-center text-teal-600 hover:text-teal-800 text-sm">
+                      <DocumentTextIcon className="w-4 h-4 mr-2 flex-shrink-0" />
+                      Airi 上線：上傳文件，5 分鐘建好你的 AI 客服
+                    </a>
+                    <a href="/resources/blog/ai-customer-service-agent" className="flex items-center text-teal-600 hover:text-teal-800 text-sm">
+                      <DocumentTextIcon className="w-4 h-4 mr-2 flex-shrink-0" />
+                      AI 客服 Agent 完整解析：RAG 知識庫技術與實戰指南
+                    </a>
+                  </div>
+                </div>
+
                 {/* Bottom CTA */}
                 <div className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-xl p-8">
                   <div className="text-center">
                     <h3 className="text-2xl font-bold mb-4">準備好讓 AI 幫你接客服了嗎？</h3>
                     <p className="text-teal-100 mb-6 max-w-2xl mx-auto">
-                      不用再一則一則回 LINE 訊息了。讓 AI 處理重複問題，你去忙更重要的事。
+                      不用再一則一則回客戶訊息了。讓 AI 處理重複問題，你去忙更重要的事。
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                       <a

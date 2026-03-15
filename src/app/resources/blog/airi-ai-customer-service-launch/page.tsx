@@ -18,6 +18,8 @@ import {
   RocketLaunchIcon,
   BoltIcon,
   GiftIcon,
+  DocumentTextIcon,
+  CodeBracketIcon,
 } from '@heroicons/react/24/outline';
 
 export default function AiriLaunchArticle() {
@@ -31,9 +33,10 @@ export default function AiriLaunchArticle() {
   const tableOfContents = [
     { id: 'why-airi', title: '為什麼做 Airi', icon: LightBulbIcon },
     { id: 'what-airi-can-do', title: 'Airi 能做什麼', icon: BoltIcon },
+    { id: 'how-it-works', title: '怎麼運作的', icon: CodeBracketIcon },
     { id: 'vs-traditional', title: '跟傳統客服機器人的差別', icon: SparklesIcon },
     { id: 'who-needs-airi', title: '誰適合用 Airi', icon: UserGroupIcon },
-    { id: 'free-trial', title: '免費試用', icon: GiftIcon },
+    { id: 'pricing', title: '方案與免費試用', icon: GiftIcon },
   ];
 
   return (
@@ -52,11 +55,11 @@ export default function AiriLaunchArticle() {
             <div className="flex items-center justify-center mb-6">
               <RocketLaunchIcon className="w-12 h-12 text-violet-600 mr-4" />
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
-                Airi 上線：中小企業 AI 客服助理，5 分鐘完成設定
+                Airi 上線：上傳文件，5 分鐘建好你的 AI 客服
               </h1>
             </div>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              串接 LINE、免費試用 — 中小企業不用再自己當客服了
+              專為中小企業打造的 AI 客服 SaaS，一行嵌入碼讓你的網站擁有 24/7 智慧客服
             </p>
 
             {/* Article Meta */}
@@ -67,7 +70,7 @@ export default function AiriLaunchArticle() {
               </div>
               <div className="flex items-center">
                 <TagIcon className="w-4 h-4 mr-1" />
-                <span>Airi・AI客服・LINE・中小企業</span>
+                <span>Airi・AI客服・網站Widget・中小企業</span>
               </div>
               <div className="flex items-center">
                 <EyeIcon className="w-4 h-4 mr-1" />
@@ -82,8 +85,8 @@ export default function AiriLaunchArticle() {
             <div className="bg-violet-50 border border-violet-200 rounded-lg p-4 mb-8 max-w-3xl mx-auto text-left">
               <p className="sr-only">摘要 TL;DR</p>
               <p className="text-sm text-violet-800 leading-relaxed">
-                Airi 是專為中小企業設計的 AI 客服助理，串接 LINE、5 分鐘設定、24/7 自動回覆。
-                不是傳統的關鍵字機器人，而是真正能理解客戶問題的 AI。現在免費試用中。
+                Airi 是專為台灣中小企業設計的 AI 客服 SaaS。上傳你的 FAQ、產品手冊等文件，AI 就能根據這些資料自動回答客戶問題。
+                在你的網站貼上一行嵌入碼，右下角就會出現 AI 聊天窗，24/7 不間斷服務。免費方案每月 100 則訊息，付費方案最低 NT$490/月起。
               </p>
             </div>
           </motion.div>
@@ -147,7 +150,7 @@ export default function AiriLaunchArticle() {
                         <ul className="space-y-3 text-gray-700">
                           <li className="flex items-start">
                             <span className="text-xl mr-3">1.</span>
-                            <span>早上忙業務、下午跑客戶，晚上回到家還要回 LINE 訊息。客戶問的問題十之八九都一樣：「營業時間幾點？」「可以刷卡嗎？」「有沒有停車位？」</span>
+                            <span>網站上有聯絡表單，但客戶等回信等太久就跑了。他們問的問題十之八九都一樣：「營業時間幾點？」「可以刷卡嗎？」「運費怎麼算？」</span>
                           </li>
                           <li className="flex items-start">
                             <span className="text-xl mr-3">2.</span>
@@ -165,7 +168,7 @@ export default function AiriLaunchArticle() {
                       </p>
 
                       <p>
-                        <strong>Airi 就是為了解決這件事而做的。</strong>一句話說完：AI 幫你接客服，你去忙更重要的事。
+                        <strong>Airi 就是為了解決這件事而做的。</strong>一句話說完：上傳你的公司資料，AI 幫你在網站上接客服，你去忙更重要的事。
                       </p>
                     </div>
                   </motion.div>
@@ -185,7 +188,7 @@ export default function AiriLaunchArticle() {
 
                     <div className="text-gray-700 leading-relaxed space-y-6">
                       <p>
-                        Airi 不是什麼花俏的新概念，它就是一個很實在的 AI 客服助理。以下是它能幫你做的事：
+                        Airi 不是什麼花俏的新概念，它就是一個很實在的 AI 客服工具。你上傳公司資料，它幫你回答客戶問題。以下是具體功能：
                       </p>
 
                       <div className="space-y-4">
@@ -196,7 +199,7 @@ export default function AiriLaunchArticle() {
                               <div>
                                 <h4 className="font-semibold text-violet-900 mb-1">24/7 自動回覆</h4>
                                 <p className="text-violet-700 text-sm">
-                                  半夜三點客戶問問題？Airi 秒回。假日、颱風天、過年期間，通通不間斷。
+                                  半夜三點客戶在你網站上問問題？Airi 秒回。假日、颱風天、過年期間，通通不間斷。
                                 </p>
                               </div>
                             </div>
@@ -204,9 +207,9 @@ export default function AiriLaunchArticle() {
                             <div className="flex items-start">
                               <CheckCircleIcon className="w-6 h-6 text-violet-600 mr-3 mt-0.5 flex-shrink-0" />
                               <div>
-                                <h4 className="font-semibold text-violet-900 mb-1">串接 LINE 官方帳號</h4>
+                                <h4 className="font-semibold text-violet-900 mb-1">一行程式碼嵌入網站</h4>
                                 <p className="text-violet-700 text-sm">
-                                  客戶在 LINE 上直接對話，不用下載新 App、不用記新網址。用他們最熟悉的方式聯繫你。
+                                  {`複製一段 <script> 貼到你的網站 HTML 裡，右下角就會出現 AI 聊天窗。不用裝軟體、不用改網站架構。`}
                                 </p>
                               </div>
                             </div>
@@ -216,7 +219,7 @@ export default function AiriLaunchArticle() {
                               <div>
                                 <h4 className="font-semibold text-violet-900 mb-1">RAG 知識庫</h4>
                                 <p className="text-violet-700 text-sm">
-                                  把你的 FAQ、產品資訊、服務說明丟進去，Airi 就會根據這些資料精準回答。不是隨便瞎掰，是有根據的回覆。
+                                  把你的 FAQ、產品手冊、價目表丟上去，Airi 就會根據這些資料精準回答。不是隨便瞎掰，是有根據的回覆，還會附上引用來源。
                                 </p>
                               </div>
                             </div>
@@ -224,9 +227,9 @@ export default function AiriLaunchArticle() {
                             <div className="flex items-start">
                               <CheckCircleIcon className="w-6 h-6 text-violet-600 mr-3 mt-0.5 flex-shrink-0" />
                               <div>
-                                <h4 className="font-semibold text-violet-900 mb-1">回答不了就轉真人</h4>
+                                <h4 className="font-semibold text-violet-900 mb-1">知識庫裡沒有就誠實說</h4>
                                 <p className="text-violet-700 text-sm">
-                                  遇到 Airi 不確定的問題，會自動通知你來接手。不會硬回一個錯的答案。
+                                  遇到知識庫裡找不到答案的問題，Airi 不會硬掰，而是誠實告知「建議您聯繫真人客服」。你可以在後台看到這些對話，知道該補什麼資料。
                                 </p>
                               </div>
                             </div>
@@ -234,10 +237,10 @@ export default function AiriLaunchArticle() {
                         </div>
 
                         <div className="bg-indigo-50 border-l-4 border-indigo-500 p-6 rounded-r-lg">
-                          <h4 className="font-semibold text-indigo-900 mb-2">5 分鐘就能設定上線</h4>
+                          <h4 className="font-semibold text-indigo-900 mb-2">支援多種文件格式</h4>
                           <p className="text-indigo-700 text-sm">
-                            不需要寫程式、不需要找工程師。登入後台、連結 LINE 帳號、上傳你的資料，就完成了。
-                            真的就這麼簡單。
+                            PDF、TXT、DOCX 都能上傳。Airi 會自動讀取內容、切成段落、建立向量索引。
+                            你也可以直接把網站 URL 丟進去，Airi 會自動爬取網頁內容建立知識庫。
                           </p>
                         </div>
                       </div>
@@ -245,10 +248,74 @@ export default function AiriLaunchArticle() {
                   </motion.div>
                 </section>
 
+                {/* Section 3: 怎麼運作的 */}
+                <section id="how-it-works" className="scroll-mt-20 mb-12">
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={inView ? { opacity: 1, y: 0 } : {}}
+                    transition={{ duration: 0.6, delay: 0.25 }}
+                  >
+                    <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
+                      <CodeBracketIcon className="w-8 h-8 text-indigo-600 mr-3" />
+                      怎麼運作的？
+                    </h2>
+
+                    <div className="text-gray-700 leading-relaxed space-y-6">
+                      <p>
+                        Airi 用的是 RAG（檢索增強生成）技術 + Claude AI。白話來說就是三步：
+                      </p>
+
+                      <div className="bg-indigo-50 border border-indigo-200 rounded-xl p-6">
+                        <div className="space-y-4">
+                          <div className="flex items-start p-4 bg-white rounded-lg border border-indigo-200">
+                            <div className="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">
+                              1
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-indigo-800 mb-1">你上傳資料</h4>
+                              <p className="text-indigo-700 text-sm">
+                                在 Airi 後台上傳你的 FAQ、產品手冊、價目表。系統自動把文件拆成段落，轉成 AI 能搜索的向量資料。
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="flex items-start p-4 bg-white rounded-lg border border-indigo-200">
+                            <div className="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">
+                              2
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-indigo-800 mb-1">客戶在你的網站上問問題</h4>
+                              <p className="text-indigo-700 text-sm">
+                                訪客點擊右下角的聊天窗，輸入問題。系統先在知識庫裡搜索最相關的段落，再把這些段落交給 Claude AI 生成自然語言回覆。
+                              </p>
+                            </div>
+                          </div>
+
+                          <div className="flex items-start p-4 bg-white rounded-lg border border-indigo-200">
+                            <div className="w-10 h-10 bg-indigo-600 text-white rounded-full flex items-center justify-center text-sm font-bold mr-4 flex-shrink-0">
+                              3
+                            </div>
+                            <div>
+                              <h4 className="font-semibold text-indigo-800 mb-1">AI 即時串流回覆</h4>
+                              <p className="text-indigo-700 text-sm">
+                                回覆以打字機效果即時出現，附帶引用來源（例如「來自：FAQ.pdf 第 3 頁」），讓客戶知道答案有依據。整個過程通常在 2 秒內完成。
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <p>
+                        你可以在後台查看所有對話紀錄，了解客戶都在問什麼、AI 回答得好不好。不滿意的回答，補充知識庫內容就能改善。
+                      </p>
+                    </div>
+                  </motion.div>
+                </section>
+
                 {/* Mid-article CTA */}
                 <div className="bg-violet-50 border border-violet-200 rounded-lg p-4 mb-12 text-center">
                   <p className="text-violet-800 text-sm">
-                    想直接試試看？免費設定只要 5 分鐘 →{' '}
+                    想直接試試看？免費方案每月 100 則訊息 →{' '}
                     <a
                       href="https://airi.airai.tw"
                       target="_blank"
@@ -260,7 +327,7 @@ export default function AiriLaunchArticle() {
                   </p>
                 </div>
 
-                {/* Section 3: 跟傳統客服機器人有什麼不同 */}
+                {/* Section 4: 跟傳統客服機器人有什麼不同 */}
                 <section id="vs-traditional" className="scroll-mt-20 mb-12">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -278,7 +345,7 @@ export default function AiriLaunchArticle() {
                       </p>
 
                       <p>
-                        Airi 用的是大型語言模型加上 RAG 技術，白話一點就是：<strong>客戶用任何方式問，它都聽得懂</strong>。不管是「你們幾點開門」還是「明天早上可以去嗎」，Airi 都能理解這是在問營業時間。
+                        Airi 用的是大型語言模型（Claude AI）加上 RAG 技術，白話一點就是：<strong>客戶用任何方式問，它都聽得懂</strong>。不管是「你們幾點開門」還是「明天早上可以去嗎」，Airi 都能理解這是在問營業時間，然後從你的知識庫裡找到答案回覆。
                       </p>
 
                       <div className="bg-purple-50 border border-purple-200 rounded-xl p-6 my-6">
@@ -306,7 +373,7 @@ export default function AiriLaunchArticle() {
                             </ul>
                           </div>
                           <div className="bg-white p-4 rounded-lg border border-green-200">
-                            <h4 className="font-semibold text-green-800 mb-3">Airi（AI 客服助理）</h4>
+                            <h4 className="font-semibold text-green-800 mb-3">Airi（AI 客服 SaaS）</h4>
                             <ul className="text-green-700 text-sm space-y-2">
                               <li className="flex items-start">
                                 <CheckCircleIcon className="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
@@ -318,11 +385,11 @@ export default function AiriLaunchArticle() {
                               </li>
                               <li className="flex items-start">
                                 <CheckCircleIcon className="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                                <span>更新知識庫就好，不用一條一條加規則</span>
+                                <span>上傳文件即可，不用一條一條加規則</span>
                               </li>
                               <li className="flex items-start">
                                 <CheckCircleIcon className="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                                <span>客戶體驗好，回覆率高</span>
+                                <span>回覆附帶引用來源，有根據</span>
                               </li>
                             </ul>
                           </div>
@@ -336,7 +403,7 @@ export default function AiriLaunchArticle() {
                   </motion.div>
                 </section>
 
-                {/* Section 4: 誰適合用 Airi */}
+                {/* Section 5: 誰適合用 Airi */}
                 <section id="who-needs-airi" className="scroll-mt-20 mb-12">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -358,9 +425,9 @@ export default function AiriLaunchArticle() {
                           <div className="flex items-start">
                             <CheckCircleIcon className="w-6 h-6 text-indigo-600 mr-3 mt-0.5 flex-shrink-0" />
                             <div>
-                              <h4 className="font-semibold text-indigo-900 mb-1">每月客服詢問量 100+</h4>
+                              <h4 className="font-semibold text-indigo-900 mb-1">有自己的網站</h4>
                               <p className="text-gray-600 text-sm">
-                                每天都有客戶在問差不多的問題，你或你的員工每天花超過一小時在回訊息。
+                                不管是 WordPress、Shopify、自架網站，只要能加一行 HTML，就能嵌入 Airi 的聊天窗。
                               </p>
                             </div>
                           </div>
@@ -370,9 +437,9 @@ export default function AiriLaunchArticle() {
                           <div className="flex items-start">
                             <CheckCircleIcon className="w-6 h-6 text-indigo-600 mr-3 mt-0.5 flex-shrink-0" />
                             <div>
-                              <h4 className="font-semibold text-indigo-900 mb-1">有 LINE 官方帳號</h4>
+                              <h4 className="font-semibold text-indigo-900 mb-1">客戶常問重複問題</h4>
                               <p className="text-gray-600 text-sm">
-                                客戶習慣用 LINE 聯繫你。Airi 直接串在你的 LINE 官方帳號上，無縫接軌。
+                                每天都有客戶在問差不多的問題，你或你的員工每天花超過一小時在回訊息。讓 AI 處理這些，人去做更有價值的事。
                               </p>
                             </div>
                           </div>
@@ -384,7 +451,7 @@ export default function AiriLaunchArticle() {
                             <div>
                               <h4 className="font-semibold text-indigo-900 mb-1">想降低客服人力成本</h4>
                               <p className="text-gray-600 text-sm">
-                                請一個客服一個月三萬多，但大部分時間都在回答重複的問題。讓 AI 處理這些，人去做更有價值的事。
+                                請一個客服一個月三萬多，但大部分時間都在回答重複的問題。Airi 最低免費，付費也只要 NT$490/月起。
                               </p>
                             </div>
                           </div>
@@ -396,7 +463,7 @@ export default function AiriLaunchArticle() {
                             <div>
                               <h4 className="font-semibold text-indigo-900 mb-1">下班後也想服務客戶</h4>
                               <p className="text-gray-600 text-sm">
-                                週末、假日、半夜的客戶詢問，以前只能等上班再回。現在 Airi 隨時在線。
+                                週末、假日、半夜的客戶詢問，以前只能等上班再回。現在 Airi 在你的網站上隨時待命。
                               </p>
                             </div>
                           </div>
@@ -405,7 +472,7 @@ export default function AiriLaunchArticle() {
 
                       <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-lg">
                         <p className="text-yellow-800 text-sm">
-                          <strong>不適合的情況：</strong>如果你的客服問題非常複雜（例如需要查系統、修改訂單），Airi 目前還做不到。
+                          <strong>不適合的情況：</strong>如果你的客服問題非常複雜（例如需要查系統、修改訂單、處理退款），Airi 目前還做不到。
                           但那些佔 60-80% 的常見問題，Airi 處理起來綽綽有餘。
                         </p>
                       </div>
@@ -413,8 +480,8 @@ export default function AiriLaunchArticle() {
                   </motion.div>
                 </section>
 
-                {/* Section 5: 免費試用 */}
-                <section id="free-trial" className="scroll-mt-20 mb-12">
+                {/* Section 6: 方案與免費試用 */}
+                <section id="pricing" className="scroll-mt-20 mb-12">
                   <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={inView ? { opacity: 1, y: 0 } : {}}
@@ -422,44 +489,53 @@ export default function AiriLaunchArticle() {
                   >
                     <h2 className="text-3xl font-bold text-gray-900 mb-6 flex items-center">
                       <GiftIcon className="w-8 h-8 text-green-600 mr-3" />
-                      免費試用
+                      方案與免費試用
                     </h2>
 
                     <div className="text-gray-700 leading-relaxed space-y-4">
                       <p>
-                        我們知道你可能還在觀望。所以 Airi 上線後的第一個月，完全免費使用。
+                        Airi 採用 SaaS 訂閱制，不用簽長約、不用一次付大筆建置費。有免費方案讓你先試用，覺得好用再升級。
                       </p>
 
                       <div className="bg-green-50 border border-green-200 rounded-xl p-6 my-6">
-                        <h3 className="text-xl font-bold text-green-900 mb-4">免費試用包含什麼？</h3>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                          <ul className="space-y-2 text-green-700 text-sm">
-                            <li className="flex items-start">
-                              <CheckCircleIcon className="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                              <span>完整的 AI 客服功能，沒有功能閹割</span>
-                            </li>
-                            <li className="flex items-start">
-                              <CheckCircleIcon className="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                              <span>LINE 官方帳號串接</span>
-                            </li>
-                          </ul>
-                          <ul className="space-y-2 text-green-700 text-sm">
-                            <li className="flex items-start">
-                              <CheckCircleIcon className="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                              <span>知識庫設定協助</span>
-                            </li>
-                            <li className="flex items-start">
-                              <CheckCircleIcon className="w-4 h-4 text-green-600 mr-2 mt-0.5 flex-shrink-0" />
-                              <span>不需要信用卡，不需要技術背景</span>
-                            </li>
-                          </ul>
+                        <h3 className="text-xl font-bold text-green-900 mb-4">定價方案</h3>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                          <div className="bg-white p-4 rounded-lg border border-green-200 text-center">
+                            <h4 className="font-semibold text-green-800 mb-1">免費</h4>
+                            <p className="text-2xl font-bold text-green-900 mb-2">NT$0</p>
+                            <p className="text-green-700 text-xs">100 則/月・1 個 Chatbot</p>
+                          </div>
+                          <div className="bg-white p-4 rounded-lg border border-green-200 text-center">
+                            <h4 className="font-semibold text-green-800 mb-1">入門</h4>
+                            <p className="text-2xl font-bold text-green-900 mb-2">NT$490</p>
+                            <p className="text-green-700 text-xs">2,000 則/月・2 個 Chatbot</p>
+                          </div>
+                          <div className="bg-white p-4 rounded-lg border border-green-200 text-center">
+                            <h4 className="font-semibold text-green-800 mb-1">專業</h4>
+                            <p className="text-2xl font-bold text-green-900 mb-2">NT$1,490</p>
+                            <p className="text-green-700 text-xs">10,000 則/月・5 個 Chatbot</p>
+                          </div>
+                          <div className="bg-white p-4 rounded-lg border border-green-200 text-center">
+                            <h4 className="font-semibold text-green-800 mb-1">商務</h4>
+                            <p className="text-2xl font-bold text-green-900 mb-2">NT$3,990</p>
+                            <p className="text-green-700 text-xs">50,000 則/月・不限 Chatbot</p>
+                          </div>
                         </div>
                       </div>
 
                       <p>
-                        試用一個月之後，你覺得有幫助再繼續用。覺得不適合，隨時可以停掉，不會有任何費用。
-                        我們對 Airi 有信心，所以不怕你試。
+                        免費方案不需要信用卡，也沒有試用期到期自動扣款的陷阱。每月 100 則訊息足夠你測試 AI 客服的效果。覺得有幫助再升級，覺得不適合隨時可以停。
                       </p>
+
+                      <div className="bg-violet-50 border-l-4 border-violet-400 p-4 rounded-r-lg">
+                        <p className="text-violet-800 text-sm">
+                          <strong>想了解更多 AI 客服的設定方式？</strong>
+                          <a href="/resources/blog/how-to-setup-ai-chatbot-for-business" className="text-violet-600 underline hover:text-violet-800 ml-1">
+                            閱讀《中小企業 AI 客服完整教學》
+                          </a>
+                          ，手把手帶你從註冊到上線。
+                        </p>
+                      </div>
                     </div>
                   </motion.div>
                 </section>
@@ -467,9 +543,9 @@ export default function AiriLaunchArticle() {
                 {/* CTA */}
                 <div className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-xl p-8">
                   <div className="text-center">
-                    <h3 className="text-2xl font-bold mb-4">AI 幫你接客服，你去忙更重要的事</h3>
+                    <h3 className="text-2xl font-bold mb-4">上傳文件，5 分鐘建好你的 AI 客服</h3>
                     <p className="text-violet-100 mb-6 max-w-2xl mx-auto">
-                      Airi 現在免費試用中。5 分鐘設定，今天就讓 AI 開始幫你回訊息。
+                      Airi 免費方案每月 100 則訊息，不需要信用卡。今天就讓 AI 開始在你的網站上幫你回答客戶問題。
                     </p>
                     <div className="flex flex-wrap justify-center gap-4">
                       <a

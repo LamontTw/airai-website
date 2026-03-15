@@ -3,20 +3,21 @@ import { siteConfig, articleDates } from '@/lib/seo';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/seo/StructuredData';
 
 export const metadata: Metadata = {
-  title: 'Airi 上線：中小企業 AI 客服助理，5 分鐘完成設定 | AIRAI',
-  description: 'Airi 是專為中小企業設計的 AI 客服助理，串接 LINE、5 分鐘設定、24/7 自動回覆客戶問題。免費試用中。',
+  title: 'Airi 上線：上傳文件，5 分鐘建好你的 AI 客服 | AIRAI',
+  description: 'Airi 是專為台灣中小企業設計的 AI 客服 SaaS。上傳文件建立知識庫，一行嵌入碼讓你的網站擁有 24/7 AI 客服。免費方案每月 100 則訊息。',
   keywords: [
     'Airi',
-    'AI客服助理',
-    'LINE AI客服',
-    'AI客服機器人',
-    '中小企業客服',
-    '自動回覆',
     'AI客服',
+    'AI客服SaaS',
+    '網站AI客服',
+    '中小企業客服',
+    'RAG知識庫',
+    'AI聊天窗',
+    '自動回覆',
   ],
   openGraph: {
-    title: 'Airi 上線：中小企業 AI 客服助理，5 分鐘完成設定',
-    description: 'Airi 是專為中小企業設計的 AI 客服助理，串接 LINE、5 分鐘設定、24/7 自動回覆客戶問題。免費試用中。',
+    title: 'Airi 上線：上傳文件，5 分鐘建好你的 AI 客服',
+    description: 'Airi 是專為台灣中小企業設計的 AI 客服 SaaS。上傳文件建立知識庫，一行嵌入碼讓你的網站擁有 24/7 AI 客服。',
     url: `${siteConfig.url}/resources/blog/airi-ai-customer-service-launch`,
     siteName: siteConfig.name,
     type: 'article',
@@ -35,14 +36,14 @@ export default function AiriLaunchLayout({
     <>
       {children}
       <ArticleSchema
-        headline="Airi 上線：中小企業 AI 客服助理，5 分鐘完成設定"
-        description="Airi 是專為中小企業設計的 AI 客服助理，串接 LINE、5 分鐘設定、24/7 自動回覆客戶問題。免費試用中。"
+        headline="Airi 上線：上傳文件，5 分鐘建好你的 AI 客服"
+        description="Airi 是專為台灣中小企業設計的 AI 客服 SaaS。上傳文件建立知識庫，一行嵌入碼讓你的網站擁有 24/7 AI 客服。免費方案每月 100 則訊息。"
         url="https://airai.tw/resources/blog/airi-ai-customer-service-launch"
         datePublished={articleDates['blog-airi-launch'].published}
         dateModified={articleDates['blog-airi-launch'].modified}
-        wordCount={2500}
+        wordCount={2800}
         articleSection="產品發布"
-        keywords={['Airi', 'AI客服助理', 'LINE AI客服', 'AI客服機器人', '中小企業客服', '自動回覆', 'AI客服']}
+        keywords={['Airi', 'AI客服SaaS', '網站AI客服', 'RAG知識庫', '中小企業客服', '自動回覆']}
       />
       <BreadcrumbSchema
         items={[

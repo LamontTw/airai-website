@@ -3,21 +3,21 @@ import { siteConfig, articleDates } from '@/lib/seo';
 import { ArticleSchema, BreadcrumbSchema } from '@/components/seo/StructuredData';
 
 export const metadata: Metadata = {
-  title: 'AI客服Agent完整解析：RAG知識庫 + LINE整合實戰指南 | AIRAI',
-  description: '深入了解AI客服Agent如何結合RAG知識庫與LINE整合，為中小企業打造24/7AI 客服。含成本分析、導入流程與實戰案例。',
+  title: 'AI 客服 Agent 完整解析：RAG 知識庫技術與實戰指南 | AIRAI',
+  description: '深入了解 AI 客服 Agent 如何用 RAG 知識庫技術有根據地回答客戶問題。含技術原理、Widget 嵌入方式、SaaS 定價比較與 ROI 分析。',
   keywords: [
     'AI客服Agent',
     'AI客服機器人',
     'RAG知識庫',
-    'LINE AI客服',
-    'AI Agent導入',
-    'AI 客服',
+    '網站AI客服',
+    'AI Agent',
+    'AI客服',
     'AI客服成本',
-    '企業AI客服',
+    'Widget嵌入',
   ],
   openGraph: {
-    title: 'AI客服Agent完整解析：RAG知識庫 + LINE整合實戰指南',
-    description: '深入了解AI客服Agent如何結合RAG知識庫與LINE整合，為中小企業打造24/7AI 客服。',
+    title: 'AI 客服 Agent 完整解析：RAG 知識庫技術與實戰指南',
+    description: '深入了解 AI 客服 Agent 如何用 RAG 知識庫技術回答客戶問題。含技術原理、導入流程與成本分析。',
     url: `${siteConfig.url}/resources/blog/ai-customer-service-agent`,
     siteName: siteConfig.name,
     type: 'article',
@@ -36,21 +36,21 @@ export default function AiCustomerServiceAgentLayout({
     <>
       {children}
       <ArticleSchema
-        headline="AI客服Agent完整解析：RAG知識庫 + LINE整合實戰指南"
-        description="深入了解AI客服Agent如何結合RAG知識庫與LINE整合，為中小企業打造24/7AI 客服。含成本分析、導入流程與實戰案例。"
+        headline="AI 客服 Agent 完整解析：RAG 知識庫技術與實戰指南"
+        description="深入了解 AI 客服 Agent 如何用 RAG 知識庫技術有根據地回答客戶問題。含技術原理、Widget 嵌入方式、SaaS 定價比較與 ROI 分析。"
         url="https://airai.tw/resources/blog/ai-customer-service-agent"
         datePublished={articleDates['blog-ai-cs-agent'].published}
         dateModified={articleDates['blog-ai-cs-agent'].modified}
         wordCount={5000}
         articleSection="部落格"
-        keywords={['AI客服Agent', 'RAG知識庫', 'LINE AI客服', 'AI Agent導入', 'AI 客服']}
+        keywords={['AI客服Agent', 'RAG知識庫', '網站AI客服', 'AI Agent', 'AI客服', 'Widget嵌入']}
       />
       <BreadcrumbSchema
         items={[
           { name: "首頁", url: "https://airai.tw" },
           { name: "資源中心", url: "https://airai.tw/resources" },
           { name: "部落格", url: "https://airai.tw/resources/blog" },
-          { name: "AI客服Agent完整解析", url: "https://airai.tw/resources/blog/ai-customer-service-agent" },
+          { name: "AI 客服 Agent 完整解析", url: "https://airai.tw/resources/blog/ai-customer-service-agent" },
         ]}
       />
     </>
