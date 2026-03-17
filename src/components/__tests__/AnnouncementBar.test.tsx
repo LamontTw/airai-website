@@ -114,6 +114,14 @@ describe('AnnouncementBar', () => {
       expect(brandNames.length).toBeGreaterThanOrEqual(1);
     });
 
+    it('應該顯示 Airi Logo 裝飾圖片', () => {
+      renderBar('zh');
+      const container = document.querySelector('.fixed');
+      const logos = container?.querySelectorAll('img[aria-hidden="true"]') ?? [];
+      const airiLogos = Array.from(logos).filter((img) => img.getAttribute('src')?.includes('airi-logo'));
+      expect(airiLogos.length).toBeGreaterThanOrEqual(1);
+    });
+
     it('應該顯示利益導向文案', () => {
       renderBar('zh');
       expect(screen.getByText(/AI 幫你接客服/)).toBeInTheDocument();

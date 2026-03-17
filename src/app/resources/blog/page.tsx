@@ -24,7 +24,8 @@ const blogPosts = [
     readTime: '15分鐘',
     category: '教學指南',
     tags: ['AI客服', '教學', 'LINE', 'Airi'],
-    image: '/images/og-image.jpg',
+    image: '/images/airi-logo-md.webp',
+    imageFit: 'contain' as const,
     author: 'AIRAI研究團隊'
   },
   {
@@ -35,7 +36,8 @@ const blogPosts = [
     readTime: '6分鐘',
     category: '產品發布',
     tags: ['Airi', 'AI客服', 'LINE', '中小企業'],
-    image: '/images/og-image.jpg',
+    image: '/images/airi-logo-md.webp',
+    imageFit: 'contain' as const,
     author: 'AIRAI研究團隊'
   },
   {
@@ -172,7 +174,11 @@ export default function BlogPage() {
                     <img
                       src={post.image}
                       alt={post.title}
-                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                      className={`w-full h-48 group-hover:scale-105 transition-transform duration-300 ${
+                        'imageFit' in post && post.imageFit === 'contain'
+                          ? 'object-contain bg-blue-50 p-4'
+                          : 'object-cover'
+                      }`}
                     />
                     <div className="absolute top-4 left-4">
                       <span className="px-3 py-1 bg-blue-600 text-white text-xs font-medium rounded-full">

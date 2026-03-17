@@ -18,9 +18,9 @@ import {
   RocketLaunchIcon,
   BoltIcon,
   GiftIcon,
-  DocumentTextIcon,
   CodeBracketIcon,
 } from '@heroicons/react/24/outline';
+import AiriLogo from '@/components/ui/AiriLogo';
 
 export default function AiriLaunchArticle() {
   const [ref, inView] = useInView({
@@ -53,7 +53,7 @@ export default function AiriLaunchArticle() {
             className="max-w-4xl mx-auto text-center"
           >
             <div className="flex items-center justify-center mb-6">
-              <RocketLaunchIcon className="w-12 h-12 text-violet-600 mr-4" />
+              <AiriLogo size={48} className="mr-4" />
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900">
                 Airi 上線：上傳文件，5 分鐘建好你的 AI 客服
               </h1>
@@ -543,6 +543,7 @@ export default function AiriLaunchArticle() {
                 {/* CTA */}
                 <div className="bg-gradient-to-r from-violet-600 to-indigo-600 text-white rounded-xl p-8">
                   <div className="text-center">
+                    <AiriLogo size={40} className="mx-auto mb-3 rounded-full bg-white p-1" />
                     <h3 className="text-2xl font-bold mb-4">上傳文件，5 分鐘建好你的 AI 客服</h3>
                     <p className="text-violet-100 mb-6 max-w-2xl mx-auto">
                       Airi 免費方案每月 100 則訊息，不需要信用卡。今天就讓 AI 開始在你的網站上幫你回答客戶問題。

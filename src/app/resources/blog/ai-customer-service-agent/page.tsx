@@ -22,6 +22,7 @@ import {
   QuestionMarkCircleIcon,
   CodeBracketIcon,
 } from '@heroicons/react/24/outline';
+import AiriLogo from '@/components/ui/AiriLogo';
 
 export default function AiCustomerServiceAgentArticle() {
   const [ref, inView] = useInView({
@@ -681,6 +682,7 @@ export default function AiCustomerServiceAgentArticle() {
                 {/* Airi CTA */}
                 <div className="bg-gradient-to-r from-violet-600 to-purple-600 text-white rounded-xl p-8">
                   <div className="text-center">
+                    <AiriLogo size={40} className="mx-auto mb-3 rounded-full bg-white p-1" />
                     <h3 className="text-2xl font-bold mb-4">想要 5 分鐘擁有 AI 客服？試試 Airi</h3>
                     <p className="text-violet-100 mb-6 max-w-2xl mx-auto">
                       Airi 是專為台灣中小企業打造的 AI 客服 SaaS。上傳文件、嵌入網站，免費方案就能開始用。

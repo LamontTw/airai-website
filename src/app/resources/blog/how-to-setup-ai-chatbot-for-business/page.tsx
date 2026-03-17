@@ -21,6 +21,7 @@ import {
   DocumentTextIcon,
   CodeBracketIcon,
 } from '@heroicons/react/24/outline';
+import AiriLogo from '@/components/ui/AiriLogo';
 
 export default function HowToSetupAiChatbotArticle() {
   const [ref, inView] = useInView({
@@ -558,6 +559,7 @@ export default function HowToSetupAiChatbotArticle() {
                       {/* Airi CTA Box */}
                       <div className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-xl p-8 my-8">
                         <div className="text-center">
+                          <AiriLogo size={40} className="mx-auto mb-3 rounded-full bg-white p-1" />
                           <h3 className="text-2xl font-bold mb-3">5 分鐘就搞定，現在就試試看</h3>
                           <p className="text-teal-100 mb-6 max-w-xl mx-auto">
                             Airi 免費方案每月 100 則訊息，不需要信用卡。
@@ -724,6 +726,7 @@ export default function HowToSetupAiChatbotArticle() {
                 {/* Bottom CTA */}
                 <div className="bg-gradient-to-r from-teal-600 to-cyan-600 text-white rounded-xl p-8">
                   <div className="text-center">
+                    <AiriLogo size={40} className="mx-auto mb-3 rounded-full bg-white p-1" />
                     <h3 className="text-2xl font-bold mb-4">準備好讓 AI 幫你接客服了嗎？</h3>
                     <p className="text-teal-100 mb-6 max-w-2xl mx-auto">
                       不用再一則一則回客戶訊息了。讓 AI 處理重複問題，你去忙更重要的事。

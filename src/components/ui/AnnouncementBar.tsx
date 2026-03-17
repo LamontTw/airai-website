@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from 'react'
 import { getTranslations, type Locale } from '@/lib/i18n'
+import AiriLogo from './AiriLogo'
 
 const STORAGE_KEY = 'airai-announcement'
 const SESSION_KEY = 'airai-announcement-dismissed'
@@ -101,7 +102,8 @@ export default function AnnouncementBar({ locale = 'zh' }: AnnouncementBarProps)
               </span>
             </span>
 
-            <span className="text-white/90">
+            <span className="inline-flex items-center gap-2 text-white/90">
+              <AiriLogo size={20} className="rounded-full bg-white p-0.5" />
               <span className="font-semibold text-white">{t.announcementBar.brandName}</span>
               {' '}{t.announcementBar.desktopSuffix}
             </span>
@@ -128,7 +130,8 @@ export default function AnnouncementBar({ locale = 'zh' }: AnnouncementBarProps)
               </span>
             </span>
 
-            <span className="text-white/90">
+            <span className="inline-flex items-center gap-1.5 text-white/90">
+              <AiriLogo size={16} className="rounded-full bg-white p-0.5" />
               <span className="font-semibold text-white">{t.announcementBar.brandName}</span>
               {' '}{t.announcementBar.mobileSuffix}
             </span>
