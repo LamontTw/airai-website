@@ -13,11 +13,12 @@ describe('Footer', () => {
     expect(logo).toBeInTheDocument();
   });
 
-  it('應該顯示公司聯絡資訊', () => {
+  it('應該顯示結束營運說明（不再提供聯絡資訊）', () => {
     render(<Footer />);
-    expect(screen.getByText('新北市板橋區倉後街26號')).toBeInTheDocument();
-    expect(screen.getByText('+886 953-202-811')).toBeInTheDocument();
-    expect(screen.getByText('contact@airai.tw')).toBeInTheDocument();
+    expect(screen.getByText('本站不再提供諮詢與聯絡服務。')).toBeInTheDocument();
+    // 結束營運後不再顯示電話與地址
+    expect(screen.queryByText('+886 953-202-811')).toBeNull();
+    expect(screen.queryByText('新北市板橋區倉後街26號')).toBeNull();
   });
 
   it('應該顯示服務項目連結', () => {
@@ -33,7 +34,8 @@ describe('Footer', () => {
     expect(screen.getByText('關於我們')).toBeInTheDocument();
     expect(screen.getByText('成功案例')).toBeInTheDocument();
     expect(screen.getByText('資源洞察')).toBeInTheDocument();
-    expect(screen.getByText('聯絡我們')).toBeInTheDocument();
+    // 結束營運後「聯絡我們」改為「結束營運說明」
+    expect(screen.getAllByText('結束營運說明').length).toBeGreaterThanOrEqual(1);
   });
 
   it('應該顯示版權資訊', () => {
@@ -61,8 +63,13 @@ describe('Footer', () => {
     // 檢查快速連結
     const aboutLink = screen.getByText('關於我們').closest('a');
     expect(aboutLink).toHaveAttribute('href', '/about');
-    
-    const contactLink = screen.getByText('聯絡我們').closest('a');
-    expect(contactLink).toHaveAttribute('href', '/contact');
+
+    // 結束營運說明連結應指向 /announcement
+    const announcementLinks = screen
+      .getAllByText('結束營運說明')
+      .map((el) => el.closest('a'));
+    expect(
+      announcementLinks.some((a) => a?.getAttribute('href') === '/announcement')
+    ).toBe(true);
   });
 }); 

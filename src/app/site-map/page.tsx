@@ -56,10 +56,10 @@ export default function Sitemap() {
       color: 'orange'
     },
     {
-      name: '聯絡我們',
-      href: '/contact',
+      name: '結束營運說明',
+      href: '/announcement',
       icon: PhoneIcon,
-      description: '聯絡方式、服務諮詢、預約會議',
+      description: 'AIRAI 結束營運說明與後續安排',
       color: 'red'
     }
   ];
@@ -172,7 +172,7 @@ export default function Sitemap() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
+      <section className="pt-32 pb-12 bg-gradient-to-br from-indigo-50 via-purple-50 to-pink-50">
         <div className="container-max section-padding">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -358,18 +358,18 @@ export default function Sitemap() {
           >
             <h2 className="text-3xl font-bold mb-6">快速導航</h2>
             <p className="text-indigo-100 mb-8 max-w-2xl mx-auto">
-              立即開始您的AI轉型之旅，我們提供完整的解決方案與專業諮詢服務
+              AIRAI 已結束營運，本站內容保留供參考。歡迎瀏覽過往的知識資源。
             </p>
-            
+
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <Link
-                href="/contact"
+                href="/announcement"
                 className="flex items-center justify-center p-6 bg-white bg-opacity-20 rounded-xl hover:bg-opacity-30 transition-all duration-200 group"
               >
                 <PhoneIcon className="w-8 h-8 mr-3" />
                 <div className="text-left">
-                  <div className="font-semibold">聯絡諮詢</div>
-                  <div className="text-indigo-100 text-sm">免費AI評估</div>
+                  <div className="font-semibold">結束營運說明</div>
+                  <div className="text-indigo-100 text-sm">後續安排</div>
                 </div>
                 <ArrowRightIcon className="w-5 h-5 ml-auto group-hover:translate-x-1 transition-transform duration-200" />
               </Link>

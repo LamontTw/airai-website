@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import Navigation from '@/components/ui/Navigation';
-import AnnouncementBar from '@/components/ui/AnnouncementBar';
 import Footer from '@/components/ui/Footer';
 import HeroSection from '@/components/sections/HeroSection';
 import ProblemSolutionSection from '@/components/sections/ProblemSolutionSection';
@@ -13,23 +12,21 @@ import { getTranslations } from '@/lib/i18n';
 const t = getTranslations('en');
 
 export const metadata: Metadata = {
-  title: "AIRAI | Enterprise AI & AI Agent Implementation Expert",
-  description: "AI Agent & AI implementation expert for Taiwan SMEs. We deliver AI Agent customer service, RPA automation, and data analytics solutions. Full support from diagnosis to deployment. Free consultation.",
+  title: "AIRAI Technology - Closure Notice",
+  description: "AIRAI Technology ceased operations in May 2026 and the team has joined Aiworks. This site keeps its AI implementation knowledge articles and resources available for reference.",
   keywords: [
-    "AI Agent",
-    "Enterprise AI Agent",
+    "AIRAI",
+    "AIRAI Technology",
+    "Closure Notice",
     "AI Implementation",
-    "AI Chatbot",
-    "RAG Knowledge Base",
     "Enterprise AI",
-    "Digital Transformation",
-    "Intelligent Automation",
-    "AI Solutions",
-    "AI Consulting Services"
+    "AI Knowledge Articles",
+    "AI Resources",
+    "RAG Knowledge Base"
   ],
   openGraph: {
-    title: "AIRAI | Enterprise AI & AI Agent Implementation Expert",
-    description: "AI Agent & AI implementation expert for Taiwan SMEs. We deliver AI Agent customer service, RPA automation, and data analytics solutions. Full support from diagnosis to deployment. Free consultation.",
+    title: "AIRAI Technology - Closure Notice",
+    description: "AIRAI Technology ceased operations in May 2026 and the team has joined Aiworks. This site keeps its AI knowledge articles available for reference.",
     url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/en`,
     siteName: "AIRAI Technology",
     type: 'website',
@@ -44,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "AIRAI | Enterprise AI & AI Agent Implementation Expert",
-    description: "AI Agent & AI implementation expert for Taiwan SMEs. We deliver AI Agent customer service, RPA automation, and data analytics solutions. Full support from diagnosis to deployment. Free consultation.",
+    title: "AIRAI Technology - Closure Notice",
+    description: "AIRAI Technology ceased operations in May 2026 and the team has joined Aiworks. This site keeps its AI knowledge articles available for reference.",
     images: ["/images/logo-full.png"],
   },
   alternates: {
@@ -53,6 +50,8 @@ export const metadata: Metadata = {
     languages: {
       'zh-TW': process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw",
       'en-US': `${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/en`,
+      'ja-JP': `${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/ja`,
+      'x-default': process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw",
     },
   },
 };
@@ -69,7 +68,6 @@ export default function EnglishHomePage() {
       <FAQSchema questions={faqData} />
       <main className="min-h-screen">
         {/* Semantic tag structure */}
-        <AnnouncementBar locale="en" />
         <header>
           <Navigation />
         </header>

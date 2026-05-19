@@ -32,7 +32,7 @@ export default function TermsOfService() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+      <section className="pt-32 pb-12 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
         <div className="container-max section-padding">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -614,8 +614,7 @@ export default function TermsOfService() {
                     <p className="text-green-100 text-sm">
                       <strong>Company Name:</strong> AIRAI Technology Co., Ltd.<br />
                       <strong>Registration No.:</strong> 93979905<br />
-                      <strong>Address:</strong> No. 26, Canghou Street, Banqiao District, New Taipei City<br />
-                      <strong>LINE Official:</strong> @365cpgih
+                      <strong>Address:</strong> No. 26, Canghou Street, Banqiao District, New Taipei City
                     </p>
                   </div>
                 </div>

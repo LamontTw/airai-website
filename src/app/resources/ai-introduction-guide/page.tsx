@@ -83,7 +83,7 @@ export default function AIIntroductionGuide() {
       <Navigation />
 
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <section className="pt-32 pb-12 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
         <div className="container-max section-padding">
           <div className="max-w-4xl mx-auto text-center">
             {/* Breadcrumb */}

@@ -119,7 +119,7 @@ export default function CasesPage() {
       <Navigation />
       <main className="min-h-screen">
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
         <div className="container-max">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
@@ -326,17 +326,17 @@ export default function CasesPage() {
         <div className="container-max">
           <div className="text-center text-white">
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              あなたの会社も成功事例の一つになりませんか？
+              この AI 変革の道のりをともにできたことに感謝します
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              無料相談で、お客様のビジネスに最適なAIソリューションをご提案します
+              AIRAI は営業を終了しました。これらの事例は参考用として保持しています。
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="/ja/contact"
+                href="/ja/announcement"
                 className="bg-white hover:bg-gray-100 text-blue-600 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 inline-flex items-center justify-center"
               >
-                無料相談を申し込む
+                営業終了のお知らせを見る
                 <ArrowRightIcon className="w-5 h-5 ml-2" />
               </a>
               <a

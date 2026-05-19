@@ -79,8 +79,8 @@ describe('i18n', () => {
     });
   });
 
-  describe('announcementBar 翻譯完整性', () => {
-    const requiredFields = ['badge', 'brandName', 'desktopSuffix', 'mobileSuffix', 'ctaButton', 'linkTitle', 'closeLabel'] as const;
+  describe('announcementBar 翻譯完整性（結束營運公告）', () => {
+    const requiredFields = ['text', 'textMobile', 'linkText'] as const;
 
     it.each(['zh', 'en', 'ja'] as const)('%s locale 應該包含所有 announcementBar 必要欄位', (locale) => {
       const t = getTranslations(locale);
@@ -91,27 +91,25 @@ describe('i18n', () => {
         expect(t.announcementBar[field].length).toBeGreaterThan(0);
       }
     });
+  });
 
-    it('所有 locale 的 badge 應該都是 "New"', () => {
-      for (const locale of ['zh', 'en', 'ja'] as const) {
-        const t = getTranslations(locale);
-        expect(t.announcementBar.badge).toBe('New');
-      }
+  describe('announcement 結束營運說明頁翻譯完整性', () => {
+    it.each(['zh', 'en', 'ja'] as const)('%s locale 應該包含 announcement 主要欄位', (locale) => {
+      const t = getTranslations(locale);
+      expect(t.announcement).toBeDefined();
+      expect(t.announcement.pageTitle.length).toBeGreaterThan(0);
+      expect(t.announcement.metaTitle.length).toBeGreaterThan(0);
+      expect(t.announcement.metaDescription.length).toBeGreaterThan(0);
+      expect(Array.isArray(t.announcement.smeResources)).toBe(true);
+      expect(t.announcement.smeResources.length).toBeGreaterThan(0);
     });
 
-    it('zh locale 的 closeLabel 應該是 "關閉公告"', () => {
-      const t = getTranslations('zh');
-      expect(t.announcementBar.closeLabel).toBe('關閉公告');
-    });
-
-    it('en locale 的 closeLabel 應該是 "Close announcement"', () => {
-      const t = getTranslations('en');
-      expect(t.announcementBar.closeLabel).toBe('Close announcement');
-    });
-
-    it('ja locale 的 closeLabel 應該是 "お知らせを閉じる"', () => {
-      const t = getTranslations('ja');
-      expect(t.announcementBar.closeLabel).toBe('お知らせを閉じる');
+    it.each(['zh', 'en', 'ja'] as const)('%s locale 應該包含 contactClosed 感謝訊息', (locale) => {
+      const t = getTranslations(locale);
+      expect(t.contactClosed).toBeDefined();
+      expect(t.contactClosed.heading.length).toBeGreaterThan(0);
+      expect(t.contactClosed.body.length).toBeGreaterThan(0);
+      expect(t.contactClosed.linkText.length).toBeGreaterThan(0);
     });
   });
 }); 

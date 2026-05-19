@@ -15,9 +15,9 @@ export const translations = {
   zh: {
     // SEO 相關
     seo: {
-      title: 'AIRAI - 台灣企業AI導入與AI Agent專家 | 智流科技',
-      description: 'AI Agent與AI導入專家｜協助台灣中小企業導入AI Agent、智能客服、RPA流程自動化、數據分析。從需求診斷到上線維護，完整陪跑服務。免費諮詢。',
-      keywords: 'AI Agent,AI Agent導入,AI導入,企業AI導入,企業AI Agent,智能客服,AI客服機器人,LINE AI客服,RAG知識庫,客製化AI解決方案,數位轉型,台灣AI,中小企業AI,自動化,RPA',
+      title: 'AIRAI 智流科技 - 結束營運說明',
+      description: 'AIRAI（智流科技）已於 2026 年 5 月結束營運，團隊加入 Aiworks。本站保留過往的 AI 導入知識文章與資源，供企業參考。',
+      keywords: 'AIRAI,智流科技,結束營運,AI導入,企業AI,AI Agent,知識文章,資源',
       siteName: 'AIRAI 智流科技'
     },
     
@@ -60,8 +60,7 @@ export const translations = {
       services: '服務項目',
       cases: '成功案例',
       resources: '資源洞察',
-      contact: '聯絡我們',
-      consultation: '免費諮詢'
+      contact: '聯絡我們'
     },
     
     // 首頁
@@ -71,7 +70,7 @@ export const translations = {
       subtitle: '加速中小企業AI轉型',
       description: '解決人力短缺、提升作業效率，從需求診斷到上線維護，完整陪跑服務。',
       cta: {
-        primary: 'LINE 免費諮詢',
+        primary: '查看結束營運說明',
         secondary: '免費 AI 導入指南'
       },
       stats: {
@@ -295,25 +294,25 @@ export const translations = {
       }
     },
 
-    // CTA 區塊
+    // CTA 區塊（結束營運：告別／說明導向）
     cta: {
-      title: '準備好開始您的',
-      titleHighlight: 'AI 轉型之旅',
-      titleSuffix: '了嗎？',
-      subtitle: '不要讓競爭對手搶得先機。立即與我們聯繫，獲得專屬的AI導入諮詢，讓您的企業在數位時代中脫穎而出。',
-      primaryButton: '立即免費諮詢',
-      secondaryButton: '查看成功案例',
-      whyChooseTitle: '為什麼選擇智流科技？',
-      urgencyNote: '限時優惠：本月諮詢免費提供AI導入可行性評估報告',
+      title: '感謝這段',
+      titleHighlight: 'AI 轉型旅程',
+      titleSuffix: '的同行',
+      subtitle: 'AIRAI 已於 2026 年 5 月結束營運，本站不再承接諮詢與合作。團隊已加入 Aiworks，這些年累積的內容仍會保留供您參考。',
+      primaryButton: '查看結束營運說明',
+      secondaryButton: '瀏覽成功案例',
+      whyChooseTitle: '這些年我們一起完成的',
+      urgencyNote: '本站內容保留供參考，不再受理新的諮詢與報價',
       customerQuote: '智流科技不只是技術供應商，更是我們數位轉型路上的最佳夥伴',
       customerQuoteSource: '客戶真實回饋',
       benefits: [
-        '免費評估您的AI導入需求',
-        '客製化解決方案設計',
-        '專業團隊全程服務',
-        '可衡量的投資回報',
-        '完整的培訓與支援',
-        '持續優化與維護'
+        '陪伴台灣中小企業導入 AI',
+        '客製化解決方案設計經驗',
+        '智能客服與流程自動化實作',
+        '數據分析與決策支援',
+        '從需求診斷到上線維護',
+        '完整的知識文章持續開放'
       ],
       stats: {
         cases: {
@@ -347,24 +346,56 @@ export const translations = {
       copyright: '版權所有'
     },
 
-    // 首頁公告條
+    // 全站結束營運公告條
     announcementBar: {
-      badge: 'New',
-      brandName: 'Airi（艾莉）',
-      desktopSuffix: 'AI 幫你接客服 — 5 分鐘開通',
-      mobileSuffix: 'AI 接客服，5 分鐘開通',
-      ctaButton: '免費試用',
-      linkTitle: '前往 Airi 產品站',
-      closeLabel: '關閉公告'
+      text: 'AIRAI 已結束營運，團隊加入 Aiworks ｜ 本站不再承接諮詢',
+      textMobile: 'AIRAI 已結束營運，本站不再承接諮詢',
+      linkText: '查看說明'
+    },
+
+    // 結束營運說明頁
+    announcement: {
+      metaTitle: 'AIRAI 結束營運說明',
+      metaDescription: 'AIRAI 已於 2026 年 5 月結束獨立營運，停止承接新的諮詢與合作。團隊已加入 Aiworks。本頁說明後續安排與中小企業可用的免費 AI 資源。',
+      pageTitle: 'AIRAI 結束營運說明',
+      intro: 'AIRAI 已於 2026 年 5 月結束獨立營運，並停止承接新的諮詢、報價與合作洽詢。',
+      thanksLine: '感謝您一路以來對 AIRAI 的信任與支持。AIRAI 團隊已加入 Aiworks —— AppWorks School 旗下的 AI 自動化導入與培訓服務，將在新的崗位上繼續推動企業的 AI 與自動化導入。',
+      aiworksHeading: '關於 Aiworks',
+      aiworksBodyBefore: 'Aiworks 提供企業端的 AI 導入顧問，也有對外開放的 AI 課程。無論您的團隊規模大小，想推動 AI 與自動化，都歡迎前往 ',
+      aiworksBodyAfter: ' 看看適合的方案。',
+      aiworksLinkLabel: 'aiworks.tw',
+      smeHeading: '若您想先自行嘗試',
+      smeBody: '如果您是剛起步、資源有限的小團隊，可以先從免費工具熟悉 AI 的基本用法。以下幾個資源是很好的起點：',
+      smeResources: [
+        { name: 'ChatGPT 免費版', desc: '可用來練習文案、回信、發想等日常工作情境', url: '' },
+        { name: 'NotebookLM', desc: '上傳您的文件，自動整理重點與摘要', url: '' },
+        { name: 'Perplexity', desc: '會標註資料來源的 AI 搜尋，方便追溯與交叉查證', url: '' },
+        { name: '中小企業網路大學校', desc: '政府免費線上學習資源，提供 AI、數位轉型等中小企業相關課程', url: 'https://www.smelearning.org.tw/ai_zone.php' }
+      ],
+      smeClosing: '邊用邊找出「您想用 AI 解決什麼」，再決定下一步。',
+      dataHeading: '資料處理',
+      dataBodyBefore: '本網站已停止收集新的諮詢資料；過往透過網站提供的資料，將依原',
+      dataBodyAfter: '與法定保存期限處理。',
+      privacyLinkLabel: '隱私權政策',
+      farewell: '謝謝這段旅程中的每一位。AIRAI 的服務到這裡告一段落，願您接下來也能找到適合自己團隊的 AI 起點。',
+      signature: 'AIRAI 團隊 敬上 ｜ 2026 年 5 月',
+      contactNote: '公告與既有合作事宜：contact@airai.tw（不受理新諮詢）'
+    },
+
+    // 結束營運感謝訊息（取代聯絡表單）
+    contactClosed: {
+      heading: '感謝您的支持',
+      body: 'AIRAI 已結束營運，本站不再提供諮詢、報價與 LINE 聯繫服務。想了解結束營運說明、Aiworks 服務範圍，或中小企業可用的替代資源，請見「結束營運說明」。',
+      linkText: '查看結束營運說明'
     }
   },
   
   en: {
     // SEO Related
     seo: {
-      title: 'AIRAI - Leading Enterprise AI Implementation Expert in Taiwan | AIRAI Technology',
-      description: 'Professional enterprise AI implementation solutions including AI Agent intelligent customer service and software outsourcing. Helping Taiwan SMEs with digital transformation, improving operational efficiency, and reducing costs. Free consultation available.',
-      keywords: 'AI implementation,enterprise AI,intelligent customer service,software outsourcing,digital transformation,Taiwan AI,SME,automation,machine learning,artificial intelligence',
+      title: 'AIRAI Technology - Closure Notice',
+      description: 'AIRAI Technology ceased operations in May 2026 and the team has joined Aiworks. This site keeps its AI implementation knowledge articles and resources available for reference.',
+      keywords: 'AIRAI,AIRAI Technology,closure notice,AI implementation,enterprise AI,AI knowledge articles,AI resources',
       siteName: 'AIRAI Technology'
     },
     
@@ -407,8 +438,7 @@ export const translations = {
       services: 'Services',
       cases: 'Case Studies',
       resources: 'Resources',
-      contact: 'Contact',
-      consultation: 'Free Consultation'
+      contact: 'Contact'
     },
     
     // Homepage
@@ -418,7 +448,7 @@ export const translations = {
       subtitle: 'Accelerate Digital Transformation for SMEs',
       description: 'Solve staffing shortages, boost efficiency — full support from diagnosis to deployment.',
       cta: {
-        primary: 'LINE Consultation',
+        primary: 'View the Closure Notice',
         secondary: 'AI Implementation Guide'
       },
       stats: {
@@ -521,15 +551,47 @@ export const translations = {
       copyright: 'All rights reserved'
     },
 
-    // Homepage Announcement Bar
+    // Site-wide Closure Announcement Bar
     announcementBar: {
-      badge: 'New',
-      brandName: 'Airi',
-      desktopSuffix: 'AI handles your support — set up in 5 min',
-      mobileSuffix: 'AI support in 5 min',
-      ctaButton: 'Free Trial',
-      linkTitle: 'Visit Airi',
-      closeLabel: 'Close announcement'
+      text: 'AIRAI has ceased operations; our team has joined Aiworks — this site no longer takes inquiries',
+      textMobile: 'AIRAI has ceased operations',
+      linkText: 'Learn more'
+    },
+
+    // Closure Announcement Page
+    announcement: {
+      metaTitle: 'Notice of AIRAI Closure',
+      metaDescription: 'AIRAI ceased independent operations in May 2026 and no longer accepts new inquiries or engagements. The team has joined Aiworks. This page explains the transition and free AI resources available to small businesses.',
+      pageTitle: 'Notice of AIRAI Closure',
+      intro: 'AIRAI ceased independent operations in May 2026 and has stopped accepting new inquiries, quotes, and partnership requests.',
+      thanksLine: 'Thank you for the trust and support you have shown AIRAI throughout this journey. The AIRAI team has joined Aiworks — the AI automation and training service under AppWorks School — and will continue to advance enterprise AI and automation adoption in this new role.',
+      aiworksHeading: 'About Aiworks',
+      aiworksBodyBefore: 'Aiworks provides AI adoption consulting for enterprises and also offers AI courses open to the public. Whatever the size of your team, if you are looking to advance AI and automation, you are welcome to visit ',
+      aiworksBodyAfter: ' to explore the options that suit you.',
+      aiworksLinkLabel: 'aiworks.tw',
+      smeHeading: 'If You’d Like to Start on Your Own',
+      smeBody: 'We know that many who supported AIRAI were small teams just getting started with limited resources. You can begin by getting familiar with the basics of AI using free tools. The following are good starting points:',
+      smeResources: [
+        { name: 'ChatGPT (free tier)', desc: 'Practice everyday work tasks such as writing copy, replying to emails, and brainstorming', url: '' },
+        { name: 'NotebookLM', desc: 'Upload your documents and have key points and summaries organized automatically', url: '' },
+        { name: 'Perplexity', desc: 'AI search that cites its sources, making it easier to trace and cross-check information', url: '' },
+        { name: 'SME Online University (Taiwan)', desc: 'Free government online learning resources offering courses on AI, digital transformation, and other topics relevant to small businesses', url: 'https://www.smelearning.org.tw/ai_zone.php' }
+      ],
+      smeClosing: 'Discover "what you want AI to solve" as you use these tools, then decide on your next step.',
+      dataHeading: 'Data Handling',
+      dataBodyBefore: 'This website has stopped collecting new inquiry data; information previously submitted through the site will be handled in accordance with the original ',
+      dataBodyAfter: ' and statutory retention periods.',
+      privacyLinkLabel: 'Privacy Policy',
+      farewell: 'Thank you to everyone who was part of this journey. AIRAI’s services conclude here, and we hope you find the right starting point for AI that suits your own team.',
+      signature: 'The AIRAI Team | May 2026',
+      contactNote: 'For announcements and existing engagements: contact@airai.tw (new inquiries not accepted)'
+    },
+
+    // Closure thank-you message (replaces the contact form)
+    contactClosed: {
+      heading: 'Thank You for Your Support',
+      body: 'AIRAI has ceased operations and this site no longer provides consultation, quotes, or LINE contact services. To learn about the closure, the scope of Aiworks services, or alternative resources available to small businesses, please see the closure notice.',
+      linkText: 'View the closure notice'
     },
 
     // Problem Solution Section
@@ -665,25 +727,25 @@ export const translations = {
       }
     },
 
-    // CTA Section
+    // CTA Section (closure: farewell / informational)
     cta: {
-      title: 'Ready to Start Your',
+      title: 'Thank You for Sharing This',
       titleHighlight: 'AI Transformation Journey',
-      titleSuffix: '?',
-      subtitle: 'Don\'t let competitors get ahead. Contact us now for dedicated AI implementation consulting and make your business stand out in the digital age.',
-      primaryButton: 'Free Consultation Now',
-      secondaryButton: 'View Success Stories',
-      whyChooseTitle: 'Why Choose AIRAI Technology?',
-      urgencyNote: 'Limited Time Offer: Free AI Implementation Feasibility Assessment Report with this month\'s consultation',
+      titleSuffix: '',
+      subtitle: 'AIRAI ceased operations in May 2026 and no longer accepts inquiries or engagements. The team has joined Aiworks, and the content built over these years remains available for your reference.',
+      primaryButton: 'View the Closure Notice',
+      secondaryButton: 'Browse Success Stories',
+      whyChooseTitle: 'What We Accomplished Together',
+      urgencyNote: 'This site\'s content is kept for reference; new inquiries and quotes are no longer accepted',
       customerQuote: 'AIRAI Technology is not just a technology supplier, but our best partner on the digital transformation journey',
       customerQuoteSource: 'Actual Client Feedback',
       benefits: [
-        'Free AI implementation needs assessment',
-        'Customized solution design',
-        'Professional team full-process service',
-        'Measurable return on investment',
-        'Complete training and support',
-        'Continuous optimization and maintenance'
+        'Supported Taiwan SMEs in adopting AI',
+        'Experience in custom solution design',
+        'Intelligent customer service & process automation',
+        'Data analytics and decision support',
+        'From needs diagnosis to deployment',
+        'A full library of knowledge articles kept open'
       ],
       stats: {
         cases: {
@@ -709,9 +771,9 @@ export const translations = {
   ja: {
     // SEO関連
     seo: {
-      title: 'AIRAI - 台湾をリードする企業AI導入エキスパート | AIRAI テクノロジー',
-      description: 'AIエージェント・インテリジェントカスタマーサービス、ソフトウェア外注を含む専門的な企業AI導入ソリューション。台湾の中小企業のデジタル変革を支援し、運営効率を向上させ、コストを削減。無料相談サービス。',
-      keywords: 'AI導入,企業AI,インテリジェントカスタマーサービス,ソフトウェア外注,デジタル変革,台湾AI,中小企業,自動化,機械学習,人工知能',
+      title: 'AIRAI テクノロジー - 営業終了のお知らせ',
+      description: 'AIRAI テクノロジーは 2026 年 5 月をもって営業を終了し、チームは Aiworks に参加しました。本サイトはこれまでの AI 導入に関するナレッジ記事とリソースを参考用として公開しています。',
+      keywords: 'AIRAI,AIRAI テクノロジー,営業終了,AI導入,企業AI,AIナレッジ記事,AIリソース',
       siteName: 'AIRAI テクノロジー'
     },
     
@@ -754,8 +816,7 @@ export const translations = {
       services: 'サービス',
       cases: 'ケーススタディ',
       resources: 'リソース',
-      contact: 'お問い合わせ',
-      consultation: '無料相談'
+      contact: 'お問い合わせ'
     },
     
     // ホームページ
@@ -765,7 +826,7 @@ export const translations = {
       subtitle: '中小企業のデジタル変革を加速',
       description: '人材不足を解決し、効率を向上。診断から導入まで、フルサポート。',
       cta: {
-        primary: 'LINE 無料相談',
+        primary: '営業終了のお知らせを見る',
         secondary: 'AI導入ガイド'
       },
       stats: {
@@ -868,15 +929,47 @@ export const translations = {
       copyright: '全著作権所有'
     },
 
-    // ホームページアナウンスメントバー
+    // サイト全体の営業終了アナウンスメントバー
     announcementBar: {
-      badge: 'New',
-      brandName: 'Airi（アイリ）',
-      desktopSuffix: 'AIがカスタマーサポートを代行 — 5分で開設',
-      mobileSuffix: 'AI接客、5分で開設',
-      ctaButton: '無料体験',
-      linkTitle: 'Airi サイトへ',
-      closeLabel: 'お知らせを閉じる'
+      text: 'AIRAI は営業を終了し、チームは Aiworks に参加しました｜本サイトでの相談受付は終了しました',
+      textMobile: 'AIRAI は営業を終了しました',
+      linkText: '詳細を見る'
+    },
+
+    // 営業終了のお知らせページ
+    announcement: {
+      metaTitle: 'AIRAI 営業終了のお知らせ',
+      metaDescription: 'AIRAI は 2026 年 5 月をもって独立した事業運営を終了し、新規のご相談・お見積り・協業のお問い合わせの受付を停止いたしました。チームは Aiworks に参加しています。本ページでは今後の対応と、中小企業がご利用いただける無料の AI リソースをご案内します。',
+      pageTitle: 'AIRAI 営業終了のお知らせ',
+      intro: 'AIRAI は 2026 年 5 月をもって独立した事業運営を終了し、新規のご相談・お見積り・協業のお問い合わせの受付を停止いたしました。',
+      thanksLine: 'これまで AIRAI をご信頼・ご支援くださり、誠にありがとうございました。AIRAI チームは、AppWorks School が運営する AI 自動化導入・研修サービス「Aiworks」に参加し、新たな立場で企業の AI・自動化導入を引き続き推進してまいります。',
+      aiworksHeading: 'Aiworks について',
+      aiworksBodyBefore: 'Aiworks は、企業向けの AI 導入コンサルティングに加え、一般の方も受講できる AI 講座も提供しています。チームの規模を問わず、AI・自動化の推進をお考えの方は、',
+      aiworksBodyAfter: ' で最適なプランをご覧ください。',
+      aiworksLinkLabel: 'aiworks.tw',
+      smeHeading: 'まずはご自身で試してみたい方へ',
+      smeBody: 'AIRAI を支えてくださった方の多くが、立ち上げて間もない、リソースの限られた小さなチームであることを私たちは理解しています。まずは無料のツールで AI の基本的な使い方に慣れるところから始められます。以下のリソースが良い出発点になります：',
+      smeResources: [
+        { name: 'ChatGPT 無料版', desc: '文章作成、メール返信、アイデア出しなど、日常業務の場面で活用できます', url: '' },
+        { name: 'NotebookLM', desc: '資料をアップロードすると、要点と要約を自動で整理します', url: '' },
+        { name: 'Perplexity', desc: '情報源を明示する AI 検索で、出典の確認や照合がしやすくなります', url: '' },
+        { name: '中小企業ネット大学校（台湾）', desc: 'AI やデジタル変革など、中小企業向けの講座を提供する、政府の無料オンライン学習リソース', url: 'https://www.smelearning.org.tw/ai_zone.php' }
+      ],
+      smeClosing: '使いながら「AI で何を解決したいのか」を見つけ、次のステップを検討してみてください。',
+      dataHeading: 'データの取り扱い',
+      dataBodyBefore: '本サイトは新規のご相談データの収集を停止しています。これまでにサイトを通じてご提供いただいた情報は、従来の',
+      dataBodyAfter: 'および法定の保存期間に従って取り扱います。',
+      privacyLinkLabel: 'プライバシーポリシー',
+      farewell: 'この道のりをともにしてくださったすべての皆さまに感謝申し上げます。AIRAI のサービスはここで一区切りとなりますが、皆さまがご自身のチームに合った AI の出発点を見つけられますよう願っております。',
+      signature: 'AIRAI チーム一同 ｜ 2026 年 5 月',
+      contactNote: 'お知らせおよび既存の協業に関するお問い合わせ：contact@airai.tw（新規のご相談は受け付けておりません）'
+    },
+
+    // 営業終了の感謝メッセージ（お問い合わせフォームの代替）
+    contactClosed: {
+      heading: 'ご支援に感謝いたします',
+      body: 'AIRAI は営業を終了し、本サイトでのご相談・お見積り・LINE でのご連絡の受付は行っておりません。営業終了の詳細、Aiworks のサービス範囲、中小企業がご利用いただける代替リソースについては、「営業終了のお知らせ」をご覧ください。',
+      linkText: '営業終了のお知らせを見る'
     },
 
     // Problem Solution Section
@@ -1012,25 +1105,25 @@ export const translations = {
       }
     },
 
-    // CTA Section
+    // CTA Section（営業終了：お別れ・ご案内）
     cta: {
-      title: 'あなたの',
-      titleHighlight: 'AI変革の旅を始める',
-      titleSuffix: '準備はできましたか？',
-      subtitle: '競合他社に先を越されないでください。今すぐお問い合わせいただき、専用のAI導入コンサルティングを受けて、デジタル時代でビジネスを際立たせましょう。',
-      primaryButton: '今すぐ無料相談',
+      title: 'この',
+      titleHighlight: 'AI変革の道のり',
+      titleSuffix: 'をともにできたことに感謝します',
+      subtitle: 'AIRAI は 2026 年 5 月をもって営業を終了し、ご相談や協業の受付を停止いたしました。チームは Aiworks に参加し、これまで積み重ねた内容は引き続き参考としてご覧いただけます。',
+      primaryButton: '営業終了のお知らせを見る',
       secondaryButton: '成功事例を見る',
-      whyChooseTitle: 'なぜAIRAIテクノロジーを選ぶのか？',
-      urgencyNote: '期間限定オファー：今月のコンサルティングでAI導入実現可能性評価レポートを無料提供',
+      whyChooseTitle: 'これまで一緒に実現してきたこと',
+      urgencyNote: '本サイトの内容は参考用として保持しており、新規のご相談・お見積りは受け付けておりません',
       customerQuote: 'AIRAIテクノロジーは単なる技術サプライヤーではなく、私たちのデジタル変革路上の最良のパートナーです',
       customerQuoteSource: '実際のクライアントフィードバック',
       benefits: [
-        'AI導入ニーズの無料評価',
-        'カスタマイズソリューション設計',
-        '専門チーム全工程サービス',
-        '測定可能な投資収益',
-        '完全なトレーニングとサポート',
-        '継続的最適化とメンテナンス'
+        '台湾の中小企業の AI 導入を支援',
+        'カスタムソリューション設計の経験',
+        'インテリジェント接客と業務自動化の実装',
+        'データ分析と意思決定支援',
+        'ニーズ診断から運用保守まで',
+        '充実したナレッジ記事を引き続き公開'
       ],
       stats: {
         cases: {

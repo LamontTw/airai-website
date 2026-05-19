@@ -16,7 +16,7 @@ export default function NotFound() {
     <main className="min-h-screen bg-gray-50">
       <Navigation />
       
-      <section className="pt-20 pb-16">
+      <section className="pt-32 pb-16">
         <div className="container-max section-padding">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -81,10 +81,10 @@ export default function NotFound() {
                   AI導入指南
                 </Link>
                 <Link
-                  href="/contact"
+                  href="/announcement"
                   className="text-blue-600 hover:text-blue-700 font-medium"
                 >
-                  聯絡我們
+                  結束營運說明
                 </Link>
               </div>
             </div>

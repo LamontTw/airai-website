@@ -48,7 +48,7 @@ export default function AIObstaclesGuide() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50">
+      <section className="pt-32 pb-12 bg-gradient-to-br from-red-50 via-orange-50 to-yellow-50">
         <div className="container-max section-padding">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

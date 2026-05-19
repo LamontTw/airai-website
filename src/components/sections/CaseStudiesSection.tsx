@@ -223,7 +223,7 @@ export default function CaseStudiesSection({ locale = 'zh' }: { locale?: Locale 
               <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
             </Link>
             <Link
-              href={locale === 'zh' ? "/contact" : `/${locale}/contact`}
+              href={locale === 'zh' ? "/announcement" : `/${locale}/announcement`}
               className="btn-secondary inline-flex items-center group mb-4"
             >
               {t.caseStudies.ctaButtons.startJourney}

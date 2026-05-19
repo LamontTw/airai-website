@@ -119,7 +119,7 @@ export default function ToolsPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-indigo-50 via-blue-50 to-cyan-50">
+      <section className="pt-32 pb-12 bg-gradient-to-br from-indigo-50 via-blue-50 to-cyan-50">
         <div className="container-max section-padding">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

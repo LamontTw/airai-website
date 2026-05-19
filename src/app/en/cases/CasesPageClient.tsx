@@ -477,7 +477,7 @@ export default function CasesPageClient() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="relative pt-20 pb-16 overflow-hidden">
+      <section className="relative pt-32 pb-16 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-indigo-600/20 to-purple-600/20"></div>
         <div className="relative container mx-auto px-6">
           <motion.div
@@ -550,17 +550,17 @@ export default function CasesPageClient() {
             className="text-center text-white"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              Ready to Join Our Success Stories?
+              Thank You for This AI Transformation Journey
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
-              Let&apos;s discuss how AI can transform your business with proven strategies and measurable results.
+              AIRAI has ceased operations and no longer accepts inquiries or engagements. These case studies remain available for your reference.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                href="/en/contact" 
+              <Link
+                href="/en/announcement"
                 className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-blue-50 transition-colors duration-200 flex items-center justify-center space-x-2"
               >
-                <span>Start Your AI Journey</span>
+                <span>View the Closure Notice</span>
                 <ArrowRightIcon className="h-5 w-5" />
               </Link>
               <Link 

@@ -42,7 +42,7 @@ export default function CTASection({ locale = 'zh' }: { locale?: Locale }) {
             {/* CTA Buttons */}
             <ScrollReveal delay={800} className="flex flex-col sm:flex-row gap-4">
               <Link
-                href={locale === 'zh' ? "/contact" : `/${locale}/contact`}
+                href={locale === 'zh' ? "/announcement" : `/${locale}/announcement`}
                 className="bg-white hover:bg-gray-100 text-blue-600 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-blue-600 inline-flex items-center justify-center group"
               >
                 {t.cta.primaryButton}

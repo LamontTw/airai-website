@@ -118,7 +118,7 @@ export default function ServicesPage() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+      <section className="pt-32 pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
         <div className="container-max section-padding">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -357,19 +357,19 @@ export default function ServicesPage() {
             className="text-white"
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-              準備開始您的專案了嗎？
+              感謝這段 AI 轉型旅程的同行
             </h2>
             <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-              讓我們的專業團隊為您提供最適合的解決方案，
-              立即聯繫我們獲得免費諮詢
+              AIRAI 已結束營運，本站不再承接諮詢與合作。
+              這些服務說明與內容仍會保留供您參考。
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
-                href="/contact"
+                href="/announcement"
                 className="bg-white hover:bg-gray-100 text-blue-600 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 inline-flex items-center justify-center group"
               >
-                立即免費諮詢
+                查看結束營運說明
                 <ArrowRightIcon className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform duration-200" />
               </Link>
               <Link

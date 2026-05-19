@@ -1,25 +1,20 @@
 // SEO配置文件
 export const siteConfig = {
   name: "AIRAI - 智流科技",
-  title: "AIRAI | 企業AI導入專家 - 智流科技",
-  description: "AIRAI提供專業的企業AI導入與AI Agent諮詢服務，包含AI Agent客服、RPA流程自動化、ROI計算、實施指南等完整解決方案。幫助企業成功轉型，提升營運效率。",
+  title: "AIRAI 智流科技 - 結束營運說明",
+  description: "AIRAI（智流科技）已於 2026 年 5 月結束營運，團隊加入 Aiworks。本站保留過往的 AI 導入知識文章與資源，供企業參考。",
   keywords: [
+    "AIRAI",
+    "智流科技",
+    "結束營運",
+    "AI導入",
+    "企業AI",
     "AI Agent",
-    "AI Agent導入",
-    "企業AI Agent",
-    "AI客服機器人",
-    "LINE AI客服",
     "RAG知識庫",
-    "企業AI導入",
-    "AI解決方案",
-    "智能自動化",
-    "AI顧問服務",
     "數位轉型",
-    "AI投資回報率",
+    "AI知識文章",
+    "AI資源",
     "人工智慧應用",
-    "企業數位化",
-    "AI實施指南",
-    "AI諮詢",
     "大型語言模型",
     "自然語言處理",
     "機器學習",
@@ -35,17 +30,15 @@ export const siteConfig = {
   },
   company: {
     name: "智流科技有限公司",
-    description: "專業的企業AI導入解決方案提供商",
+    description: "智流科技有限公司（AIRAI），已於 2026 年 5 月結束營運。",
     address: "新北市板橋區倉後街26號",
-    phone: "+886 953-202-811",
     email: "contact@airai.tw"
   },
   social: {
     twitter: "https://twitter.com/airai_tw",
     linkedin: "https://linkedin.com/company/airai",
     facebook: "https://facebook.com/airai.tw",
-    youtube: "https://youtube.com/@airai",
-    line: "https://line.me/R/ti/p/@365cpgih"
+    youtube: "https://youtube.com/@airai"
   }
 };
 

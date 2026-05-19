@@ -118,7 +118,7 @@ export default function ServicesPageClient() {
       <Navigation />
       <main className="min-h-screen">
         {/* Hero Section */}
-        <section className="pt-20 pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
+        <section className="pt-32 pb-16 bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50">
           <div className="container-max section-padding">
             <motion.div
               initial={{ opacity: 0, y: 30 }}
@@ -282,12 +282,12 @@ export default function ServicesPageClient() {
               transition={{ duration: 0.8, delay: 0.8 }}
               className="bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl p-8 text-white text-center"
             >
-              <h3 className="text-2xl font-bold mb-6">Ready to Transform Your Business with AI?</h3>
+              <h3 className="text-2xl font-bold mb-6">Thank You for This AI Transformation Journey</h3>
               <p className="text-blue-100 mb-6 max-w-2xl mx-auto">
-                Let us help you implement AI solutions that drive real results and competitive advantage
+                AIRAI has ceased operations. The service information here remains available for your reference.
               </p>
-              <Link href="/en/contact" className="btn-secondary inline-flex items-center">
-                Start Your AI Journey
+              <Link href="/en/announcement" className="btn-secondary inline-flex items-center">
+                View the Closure Notice
                 <ArrowRightIcon className="w-5 h-5 ml-2" />
               </Link>
             </motion.div>
@@ -351,14 +351,14 @@ export default function ServicesPageClient() {
               className="text-center max-w-4xl mx-auto"
             >
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Ready to Start Your Project?
+                Thank You for This AI Transformation Journey
               </h2>
               <p className="text-xl text-gray-600 mb-8">
-                Let&apos;s discuss how we can help transform your business with our software development and AI solutions
+                AIRAI has ceased operations and no longer accepts inquiries or engagements. The content here remains available for your reference.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/en/contact" className="btn-primary inline-flex items-center">
-                  Get Free Consultation
+                <Link href="/en/announcement" className="btn-primary inline-flex items-center">
+                  View the Closure Notice
                   <ArrowRightIcon className="w-5 h-5 ml-2" />
                 </Link>
                 <Link href="/en/cases" className="btn-secondary inline-flex items-center">

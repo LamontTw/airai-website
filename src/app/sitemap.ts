@@ -60,6 +60,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'yearly' as const,
       priority: 0.6,
     },
+    {
+      url: `${baseUrl}/announcement`,
+      lastModified: new Date('2026-05-19'),
+      changeFrequency: 'yearly' as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/en/announcement`,
+      lastModified: new Date('2026-05-19'),
+      changeFrequency: 'yearly' as const,
+      priority: 0.6,
+    },
+    {
+      url: `${baseUrl}/ja/announcement`,
+      lastModified: new Date('2026-05-19'),
+      changeFrequency: 'yearly' as const,
+      priority: 0.6,
+    },
   ]
 
   // 資源頁面 - 提高優先級

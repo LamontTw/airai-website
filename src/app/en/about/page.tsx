@@ -31,7 +31,7 @@ export default function AboutPage() {
   return (
     <>
       <Navigation />
-      <main className="min-h-screen pt-20">
+      <main className="min-h-screen pt-32">
         {/* Hero Section */}
         <section className="bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-20">
           <div className="container-max text-center">
@@ -131,16 +131,16 @@ export default function AboutPage() {
         <section className="section-padding">
           <div className="container-max text-center">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Ready to Transform Your Business?
+              Thank You for This AI Transformation Journey
             </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Let&apos;s discuss how AI can help your business grow. Schedule a free consultation with our experts today.
+              AIRAI has ceased operations and no longer accepts inquiries or engagements. The content here remains available for your reference.
             </p>
             <a
-              href="/en/contact"
+              href="/en/announcement"
               className="btn-primary inline-flex items-center"
             >
-              Schedule Free Consultation
+              View the Closure Notice
             </a>
           </div>
         </section>

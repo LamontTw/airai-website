@@ -3,8 +3,21 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { EnvelopeIcon, PhoneIcon, MapPinIcon } from '@heroicons/react/24/outline';
 import { getTranslations } from '@/lib/i18n';
+
+// 結束營運：頁尾不再提供諮詢與聯絡服務的說明文字
+const closureNotice = {
+  zh: '本站不再提供諮詢與聯絡服務。',
+  en: 'This site no longer provides consultation or contact services.',
+  ja: '本サイトでのご相談・お問い合わせの受付は終了しました。',
+} as const;
+
+// 結束營運說明的頁尾連結文字
+const announcementLinkLabel = {
+  zh: '結束營運說明',
+  en: 'Closure Notice',
+  ja: '営業終了のお知らせ',
+} as const;
 
 export default function Footer() {
   const pathname = usePathname();
@@ -50,7 +63,7 @@ export default function Footer() {
     company: [
       { name: t.nav.about, href: `${prefix}/about` },
       { name: t.nav.cases, href: `${prefix}/cases` },
-      { name: t.nav.contact, href: `${prefix}/contact` },
+      { name: announcementLinkLabel[currentLocale], href: `${prefix}/announcement` },
     ] as Array<{ name: string; href: string }>,
     resources: currentLocale === 'zh' ? [
       { name: 'AI轉型指南', href: `${prefix}/resources/ai-guide` },
@@ -83,19 +96,14 @@ export default function Footer() {
             <p className="text-gray-300 mb-6 text-sm leading-relaxed">
               {t.footer.description}
             </p>
-            <div className="space-y-2 text-sm">
-              <div className="flex items-center space-x-2 text-gray-300">
-                <MapPinIcon className="w-4 h-4" />
-                <span>{t.company.address}</span>
-              </div>
-              <div className="flex items-center space-x-2 text-gray-300">
-                <PhoneIcon className="w-4 h-4" />
-                <span>{t.company.phone}</span>
-              </div>
-              <div className="flex items-center space-x-2 text-gray-300">
-                <EnvelopeIcon className="w-4 h-4" />
-                <span>{t.company.email}</span>
-              </div>
+            <div className="text-sm text-gray-400 leading-relaxed">
+              <p>{closureNotice[currentLocale]}</p>
+              <Link
+                href={`${prefix}/announcement`}
+                className="inline-block mt-2 text-gray-300 hover:text-white underline transition-colors duration-200"
+              >
+                {announcementLinkLabel[currentLocale]}
+              </Link>
             </div>
           </div>
 

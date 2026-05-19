@@ -14,7 +14,6 @@ export function OrganizationSchema({ customData }: OrganizationSchemaProps) {
     "logo": `${siteConfig.url}/images/logo-full.png`,
     "image": `${siteConfig.url}/images/logo-full.png`,
     "email": siteConfig.company.email,
-    "telephone": siteConfig.company.phone,
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "倉後街26號",
@@ -26,43 +25,13 @@ export function OrganizationSchema({ customData }: OrganizationSchemaProps) {
       siteConfig.social.linkedin,
       siteConfig.social.twitter,
       siteConfig.social.facebook,
-      siteConfig.social.youtube,
-      siteConfig.social.line
+      siteConfig.social.youtube
     ],
     "foundingDate": "2024",
+    "dissolutionDate": "2026-05",
     "areaServed": {
       "@type": "Country",
       "name": "台灣"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": "AI解決方案服務",
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "AI技術導入諮詢",
-            "description": "專業的AI技術評估與導入策略制定"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "AI投資回報率分析",
-            "description": "科學化的AI專案ROI計算與風險評估"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "AI實施指導",
-            "description": "從規劃到部署的全程AI專案實施服務"
-          }
-        }
-      ]
     },
     ...customData
   };
@@ -119,16 +88,16 @@ interface ServiceSchemaProps {
   serviceName: string;
   serviceDescription: string;
   serviceUrl: string;
-  price?: string;
   customData?: object;
 }
 
-export function ServiceSchema({ 
-  serviceName, 
-  serviceDescription, 
-  serviceUrl, 
-  price,
-  customData 
+// 註：AIRAI 已結束營運，不再提供可承接的服務。
+// ServiceSchema 保留供文章型內容描述使用，已移除銷售聯絡與供應宣告。
+export function ServiceSchema({
+  serviceName,
+  serviceDescription,
+  serviceUrl,
+  customData
 }: ServiceSchemaProps) {
   const serviceSchema = {
     "@context": "https://schema.org",
@@ -140,35 +109,11 @@ export function ServiceSchema({
       "@type": "Organization",
       "name": siteConfig.company.name,
       "url": siteConfig.url,
-      "logo": `${siteConfig.url}/images/logo-full.png`,
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "telephone": siteConfig.company.phone,
-        "contactType": "sales",
-        "areaServed": "TW",
-        "availableLanguage": ["Chinese", "English"]
-      }
+      "logo": `${siteConfig.url}/images/logo-full.png`
     },
     "areaServed": {
       "@type": "Country",
       "name": "台灣"
-    },
-    "hasOfferCatalog": {
-      "@type": "OfferCatalog",
-      "name": serviceName,
-      "itemListElement": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": serviceName,
-            "description": serviceDescription
-          },
-          "price": price || "聯繫報價",
-          "priceCurrency": "TWD",
-          "availability": "https://schema.org/InStock"
-        }
-      ]
     },
     ...customData
   };
@@ -404,11 +349,14 @@ export function SoftwareApplicationSchema({
     "url": url,
     "applicationCategory": applicationCategory,
     "operatingSystem": operatingSystem,
-    "offers": {
-      "@type": "Offer",
-      "price": offers?.price || "0",
-      "priceCurrency": offers?.priceCurrency || "TWD",
-    },
+    // offers 僅在明確傳入時才輸出；AIRAI 已結束營運，預設不對外發送 Offer 結構化資料
+    ...(offers && {
+      "offers": {
+        "@type": "Offer",
+        "price": offers.price,
+        "priceCurrency": offers.priceCurrency,
+      },
+    }),
     "provider": {
       "@type": "Organization",
       "name": siteConfig.company.name,

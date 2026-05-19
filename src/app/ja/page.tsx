@@ -1,6 +1,5 @@
 import { Metadata } from 'next';
 import Navigation from '@/components/ui/Navigation';
-import AnnouncementBar from '@/components/ui/AnnouncementBar';
 import Footer from '@/components/ui/Footer';
 import HeroSection from '@/components/sections/HeroSection';
 import ProblemSolutionSection from '@/components/sections/ProblemSolutionSection';
@@ -13,23 +12,21 @@ import { getTranslations } from '@/lib/i18n';
 const t = getTranslations('ja');
 
 export const metadata: Metadata = {
-  title: "AIRAI | 企業AI導入・AIエージェント専門家 - AIRAI テクノロジー",
-  description: "AIエージェントとAI導入の専門家｜台湾中小企業向けにAIエージェント、インテリジェントカスタマーサービス、RPA自動化を提供。診断から運用まで完全サポート。無料相談。",
+  title: "AIRAI テクノロジー - 営業終了のお知らせ",
+  description: "AIRAI テクノロジーは 2026 年 5 月をもって営業を終了し、チームは Aiworks に参加しました。本サイトはこれまでの AI 導入に関するナレッジ記事とリソースを参考用として公開しています。",
   keywords: [
-    "AIエージェント",
-    "AIエージェント導入",
-    "企業AI導入",
-    "AIチャットボット",
-    "RAGナレッジベース",
-    "AIソリューション",
-    "デジタル変革",
-    "インテリジェント自動化",
-    "AIコンサルティング",
-    "AI ROI"
+    "AIRAI",
+    "AIRAI テクノロジー",
+    "営業終了",
+    "AI導入",
+    "企業AI",
+    "AIナレッジ記事",
+    "AIリソース",
+    "RAGナレッジベース"
   ],
   openGraph: {
-    title: "AIRAI | 企業AI導入・AIエージェント専門家 - AIRAI テクノロジー",
-    description: "AIエージェントとAI導入の専門家｜台湾中小企業向けにAIエージェント、インテリジェントカスタマーサービス、RPA自動化を提供。診断から運用まで完全サポート。無料相談。",
+    title: "AIRAI テクノロジー - 営業終了のお知らせ",
+    description: "AIRAI テクノロジーは 2026 年 5 月をもって営業を終了し、チームは Aiworks に参加しました。本サイトはこれまでのナレッジ記事を参考用として公開しています。",
     url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/ja`,
     siteName: "AIRAI テクノロジー",
     type: 'website',
@@ -44,8 +41,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "AIRAI | 企業AI導入・AIエージェント専門家 - AIRAI テクノロジー",
-    description: "AIエージェントとAI導入の専門家｜台湾中小企業向けにAIエージェント、インテリジェントカスタマーサービス、RPA自動化を提供。診断から運用まで完全サポート。無料相談。",
+    title: "AIRAI テクノロジー - 営業終了のお知らせ",
+    description: "AIRAI テクノロジーは 2026 年 5 月をもって営業を終了し、チームは Aiworks に参加しました。本サイトはこれまでのナレッジ記事を参考用として公開しています。",
     images: ["/images/logo-full.png"],
   },
   alternates: {
@@ -54,6 +51,7 @@ export const metadata: Metadata = {
       'zh-TW': process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw",
       'en-US': `${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/en`,
       'ja-JP': `${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/ja`,
+      'x-default': process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw",
     },
   },
 };
@@ -70,7 +68,6 @@ export default function JapanesePage() {
       <FAQSchema questions={faqData} />
       <main className="min-h-screen">
         {/* セマンティックタグ構造 */}
-        <AnnouncementBar locale="ja" />
         <header>
           <Navigation />
         </header>

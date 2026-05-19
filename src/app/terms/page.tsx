@@ -32,7 +32,7 @@ export default function TermsOfService() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
+      <section className="pt-32 pb-12 bg-gradient-to-br from-green-50 via-emerald-50 to-teal-50">
         <div className="container-max section-padding">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -615,8 +615,7 @@ export default function TermsOfService() {
                     <p className="text-green-100 text-sm">
                       <strong>公司全名：</strong>智流科技有限公司 AIRAI Technology Co., Ltd.<br />
                       <strong>統一編號：</strong>93979905<br />
-                      <strong>公司地址：</strong>新北市板橋區倉後街26號<br />
-                      <strong>LINE官方帳號：</strong>@365cpgih
+                      <strong>公司地址：</strong>新北市板橋區倉後街26號
                     </p>
                   </div>
                 </div>

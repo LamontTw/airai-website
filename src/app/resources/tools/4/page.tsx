@@ -349,7 +349,7 @@ export default function AITechnologySelectionGuide() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-12 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
+      <section className="pt-32 pb-12 bg-gradient-to-br from-purple-50 via-blue-50 to-indigo-50">
         <div className="container-max section-padding">
           <motion.div
             initial={{ opacity: 0, y: 30 }}

@@ -57,7 +57,6 @@ export default function ToolsLayout({
         url="https://airai.tw/resources/tools/4"
         applicationCategory="BusinessApplication"
         operatingSystem="Web"
-        offers={{ price: "0", priceCurrency: "TWD" }}
       />
       <BreadcrumbSchema
         items={[

@@ -11,26 +11,21 @@ const notoSansJP = Noto_Sans_JP({
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"),
   title: {
-    default: 'AIRAI - 台湾をリードする企業AI導入エキスパート | AIRAI テクノロジー',
+    default: 'AIRAI テクノロジー - 営業終了のお知らせ',
     template: '%s | AIRAI テクノロジー'
   },
-  description: 'AIエージェント・インテリジェントカスタマーサービス、ソフトウェア外注を含む専門的な企業AI導入ソリューション。台湾の中小企業のデジタル変革を支援し、運営効率を向上させ、コストを削減。無料相談サービス。',
+  description: 'AIRAI テクノロジーは 2026 年 5 月をもって営業を終了し、チームは Aiworks に参加しました。本サイトはこれまでの AI 導入に関するナレッジ記事とリソースを参考用として公開しています。',
   keywords: [
+    'AIRAI',
+    'AIRAI テクノロジー',
+    '営業終了',
     'AI導入',
     '企業AI',
-    'インテリジェントカスタマーサービス',
-    'ソフトウェア外注',
-    'デジタル変革',
-    '台湾AI',
-    '中小企業',
-    '自動化',
+    'AIナレッジ記事',
+    'AIリソース',
     '機械学習',
     '人工知能',
-    'AIエージェント',
-    'AIコンサルティング',
-    'AIソリューション',
-    'スマートテクノロジー',
-    'AI実装ガイド'
+    'AIエージェント'
   ],
   authors: [{ name: 'AIRAI テクノロジー', url: 'https://airai.tw' }],
   creator: 'AIRAI テクノロジー',
@@ -56,8 +51,8 @@ export const metadata: Metadata = {
     locale: 'ja_JP',
     url: `${process.env.NEXT_PUBLIC_SITE_URL || "https://airai.tw"}/ja`,
     siteName: 'AIRAI テクノロジー',
-    title: 'AIRAI - 台湾をリードする企業AI導入エキスパート',
-    description: 'AIエージェント・インテリジェントカスタマーサービス、ソフトウェア外注を含む専門的な企業AI導入ソリューション。',
+    title: 'AIRAI テクノロジー - 営業終了のお知らせ',
+    description: 'AIRAI テクノロジーは 2026 年 5 月をもって営業を終了し、チームは Aiworks に参加しました。本サイトはこれまでのナレッジ記事を参考用として公開しています。',
     images: [
       {
         url: "/images/logo-full.png",
@@ -69,8 +64,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AIRAI - 台湾をリードする企業AI導入エキスパート',
-    description: 'AIエージェント・インテリジェントカスタマーサービス、ソフトウェア外注を含む専門的な企業AI導入ソリューション。',
+    title: 'AIRAI テクノロジー - 営業終了のお知らせ',
+    description: 'AIRAI テクノロジーは 2026 年 5 月をもって営業を終了し、チームは Aiworks に参加しました。本サイトはこれまでのナレッジ記事を参考用として公開しています。',
     images: ["/images/logo-full.png"],
     creator: "@airai_tw",
   },
